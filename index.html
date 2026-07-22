@@ -3,13 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" /> <!-- PERF: Faster perceived paint on mobile Chrome -->
   <title>AgoraCrew — E-Commerce Customer Service Outsourcing</title>
   <meta name="description" content="Scale your e-commerce brand with AgoraCrew. AI-powered chatbots, professionally supervised human agents, or both — starting at $749/mo for AI or $12/hr for human support." />
   <meta name="keywords" content="e-commerce customer service, AI chatbot, support outsourcing, offshore support, social media management, affordable support, CRM expertise, customer experience" />
   <meta property="og:title" content="AgoraCrew — AI + Human Customer Support for E-Commerce" />
   <meta property="og:description" content="AI-powered instant responses, supervised human agents, or a hybrid of both. Premium, affordable support tailored to your e-commerce brand." />
   <meta property="og:type" content="website" />
+
+  <!-- PERF: Preconnect to Google Fonts domains — eliminates DNS+TLS latency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- PERF: Google Fonts loaded as <link> instead of CSS @import to avoid chained blocking waterfall -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <!-- PERF: Critical above-the-fold CSS inlined to enable first paint without waiting for styles.css -->
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #ffffff; color: #2D3B42; line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background 0.4s cubic-bezier(0.16,1,0.3,1); border-bottom: 1px solid transparent; }
+    .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; }
+    .nav-logo .logo-image { height: 54px; width: auto; display: block; }
+    .nav-center { display: flex; align-items: center; gap: 36px; }
+    .nav-center a { font-size: 0.85rem; color: rgba(45,59,66,0.8); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-cta { background: #EF4623; color: #fff !important; padding: 10px 22px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 1001; cursor: pointer; border: none; background: none; }
+    .mobile-menu-btn span { width: 22px; height: 2px; background: #2D3B42; border-radius: 2px; }
+    .nav-links { display: none; }
+    .hero { position: relative; padding: 140px 24px 80px; max-width: 1280px; margin: 0 auto; text-align: center; overflow: visible; }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #FDF1EE; border-radius: 9999px; font-size: 0.85rem; font-weight: 500; color: #2D3B42; margin-bottom: 32px; }
+    .hero-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(3rem, 9vw, 8rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; color: #2D3B42; }
+    .hero-title .accent-text { font-style: italic; color: #EF4623; display: block; }
+    .hero-subtitle { font-size: 1.125rem; color: rgba(45,59,66,0.7); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .hero-cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .hero-cta { display: inline-flex; align-items: center; background: #EF4623; color: #fff; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; background: transparent; color: #2D3B42; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; border: 2px solid rgba(45,59,66,0.1); }
+    .hero-trial-note { font-size: 0.85rem; color: rgba(45,59,66,0.5); margin-bottom: 48px; }
+    .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: translateY(0) rotate(0deg); } }
+    @media (max-width: 768px) {
+      .nav-center { display: none; } .nav-right { display: none; } .mobile-menu-btn { display: flex; }
+      .hero { padding: 110px 20px 48px; }
+      .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .hero-cta-group { flex-direction: column; gap: 12px; }
+      .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <!-- Main stylesheet — loaded normally to ensure iOS Safari compatibility.
+       The @import waterfall fix + image lazy loading already eliminate the main bottleneck. -->
   <link rel="stylesheet" href="styles.css" />
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
 </head>
 <body>
@@ -18,7 +69,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#" class="nav-logo">
-        <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" />
+        <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" width="162" height="54" fetchpriority="high" />
       </a>
 
       <div class="nav-center" id="navCenter">
@@ -91,67 +142,67 @@
           <p>Certified Agency Partners</p>
           <div class="platform-logos">
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Gorgias</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Shopify</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Klaviyo</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Zendesk</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Intercom</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Freshdesk</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.aircall.io&size=64" alt="Aircall" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.aircall.io&size=64" alt="Aircall" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Aircall</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.kustomer.com&size=64" alt="Kustomer" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.kustomer.com&size=64" alt="Kustomer" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Kustomer</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Recharge</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Loop</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>ShipStation</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>ShipBob</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.yotpo.com&size=64" alt="Yotpo" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.yotpo.com&size=64" alt="Yotpo" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Yotpo</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.attentive.com&size=64" alt="Attentive" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.attentive.com&size=64" alt="Attentive" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Attentive</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.okendo.io&size=64" alt="Okendo" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.okendo.io&size=64" alt="Okendo" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Okendo</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://postscript.io&size=64" alt="Postscript" class="brand-logo" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://postscript.io&size=64" alt="Postscript" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
               <span>Postscript</span>
             </div>
           </div>
@@ -563,7 +614,7 @@
           </div>
         </div>
         <div class="location-image reveal reveal-delay-1">
-          <img src="budapest.png" alt="Budapest cityscape — the Danube River, Chain Bridge, and Parliament Building at golden hour" />
+          <img src="budapest.png" alt="Budapest cityscape — the Danube River, Chain Bridge, and Parliament Building at golden hour" width="640" height="427" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -696,7 +747,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" />
+            <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" width="162" height="54" loading="lazy" decoding="async" />
           </a>
           <p>
             AI-powered chatbots and professionally supervised human agents, meticulously tailored for e-commerce brands. From $749/mo AI to $12/hr offshore — scale fearlessly with our CRM expertise.
@@ -727,7 +778,7 @@
           </a>
           <a href="#contact">Book a free CX Audit</a>
           <a href="https://maps.google.com/?q=Budapest,+Hungary" target="_blank" rel="noopener" class="footer-minimap">
-            <img src="minimap.png" alt="AgoraCrew — Budapest, Hungary" />
+            <img src="minimap.png" alt="AgoraCrew — Budapest, Hungary" width="180" height="120" loading="lazy" decoding="async" />
           </a>
         </div>
       </div>
@@ -742,6 +793,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- PERF: defer allows HTML parsing to complete before script execution -->
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
    ============================================ */
 
 /* --- Google Fonts: Instrument Serif + Manrope --- */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
+/* PERF: @import removed — fonts now loaded via <link rel="preconnect"> + <link rel="stylesheet"> in HTML <head> to avoid chained blocking request */
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -2027,6 +2027,15 @@ ul, ol { list-style: none; }
   .hero-video-container { height: 300px; }
   .hero::before,
   .hero::after { width: 250px; height: 250px; }
+
+  /* PERF/iOS: Disable expensive blur() filters on mobile — iOS WebKit's GPU
+     cannot composite large blurred layers without stalling, causing a black screen.
+     Replace with a simple static radial gradient on the hero instead. */
+  .hero::before,
+  .hero::after {
+    filter: none;
+    background: radial-gradient(circle, rgba(239, 70, 35, 0.06) 0%, transparent 70%);
+  }
   .hero-cta-group { flex-direction: column; gap: 12px; }
   .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
 
