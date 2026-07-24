@@ -219,6 +219,17 @@ ul, ol { list-style: none; }
   transform: translateY(-1px);
 }
 
+.nav-cta-secondary {
+  font-size: 0.85rem;
+  color: var(--ink-70);
+  font-weight: 600;
+  transition: color 0.2s var(--ease-out);
+}
+
+.nav-cta-secondary:hover {
+  color: var(--ink);
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;

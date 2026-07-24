@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" /> <!-- PERF: Faster perceived paint on mobile Chrome -->
   <title>AgoraCrew — E-Commerce Customer Service Outsourcing</title>
-  <meta name="description" content="Scale your e-commerce brand with AgoraCrew. AI-powered chatbots, professionally supervised human agents, or both — starting at $749/mo for AI or $12/hr for human support." />
+  <meta name="description" content="AgoraCrew powers e-commerce customer support with AI (from $0.50/ticket) and supervised human agents (from $12/hr). Start with 60 AI-resolved tickets free — no commitment." />
   <meta name="keywords" content="e-commerce customer service, AI chatbot, support outsourcing, offshore support, social media management, affordable support, CRM expertise, customer experience" />
   <meta property="og:title" content="AgoraCrew — AI + Human Customer Support for E-Commerce" />
-  <meta property="og:description" content="AI-powered instant responses, supervised human agents, or a hybrid of both. Premium, affordable support tailored to your e-commerce brand." />
+  <meta property="og:description" content="Try AgoraCrew free — your first 60 AI-resolved tickets are on us, no commitment. AI from $0.50/ticket, supervised human agents from $12/hr." />
   <meta property="og:type" content="website" />
 
   <!-- PERF: Preconnect to Google Fonts domains — eliminates DNS+TLS latency -->
@@ -33,6 +33,7 @@
     .nav-center a { font-size: 0.85rem; color: rgba(45,59,66,0.8); font-weight: 600; }
     .nav-right { display: flex; align-items: center; gap: 16px; }
     .nav-cta { background: #EF4623; color: #fff !important; padding: 10px 22px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .nav-cta-secondary { font-size: 0.85rem; color: rgba(45,59,66,0.7); font-weight: 600; }
     .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 1001; cursor: pointer; border: none; background: none; }
     .mobile-menu-btn span { width: 22px; height: 2px; background: #2D3B42; border-radius: 2px; }
     .nav-links { display: none; }
@@ -80,7 +81,8 @@
       </div>
 
       <div class="nav-right">
-        <a href="#contact" class="nav-cta">Book a free CX Audit</a>
+        <a href="#contact" class="nav-cta-secondary">Book a CX Audit</a>
+        <a href="#contact" class="nav-cta">Start My Free Trial</a>
       </div>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -95,7 +97,8 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-cta">Book a free CX Audit</a>
+        <a href="#contact">Book a free CX Audit</a>
+        <a href="#contact" class="nav-cta">Start My Free Trial</a>
       </div>
     </div>
   </nav>
@@ -122,13 +125,13 @@
 
     <!-- CTA Buttons -->
     <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
-      <a href="#contact" class="hero-cta">Book a Strategy Call</a>
-      <a href="#pricing" class="hero-cta-secondary">See Pricing ↓</a>
+      <a href="#contact" class="hero-cta">Start My Free Trial</a>
+      <a href="#contact" class="hero-cta-secondary">Book a Free CX Audit</a>
     </div>
 
     <!-- Microcopy -->
     <p class="hero-trial-note animate-fade-up" style="opacity:0; animation-delay: 0.55s;">
-      Start with 60 tickets on us. Cancel anytime.
+      Start with 60 AI-resolved tickets free — <strong>no commitment</strong>, cancel anytime.
     </p>
 
   </section>
@@ -353,7 +356,7 @@
           <div class="ai-plan-badge">🦁 New — Lion AI</div>
           <h3>Lion AI — <em>Pilot Plan</em></h3>
           <p class="ai-plan-subtitle">
-            Zendesk and Gorgias charge $2 per AI-resolved ticket. We charge $0.50. Same automation, plugged directly into your existing helpdesk.
+            Zendesk and Gorgias charge $2 per AI-resolved ticket. We charge $0.50. Same automation, plugged directly into your existing helpdesk. Your first 60 tickets are free — no commitment.
           </p>
           <ul class="ai-plan-features">
             <li class="ai-plan-feature">
@@ -393,7 +396,7 @@
             <span class="ai-price-currency" data-usd="$" data-eur="€">$</span><span class="ai-price-value" data-usd="0.5" data-eur="0.45">0.5</span><span class="ai-price-period" data-usd="/AI resolved ticket" data-eur="/AI resolved ticket">/AI resolved ticket</span>
           </div>
           <p class="ai-plan-price-note" data-usd="Option to prepay your first 2000 AI resolutions for just $799" data-eur="Option to prepay your first 2000 AI resolutions for just €715">Option to prepay your first 2000 AI resolutions for just $799</p>
-          <a href="#contact" class="ai-plan-cta">Book a free CX Audit</a>
+          <a href="#contact" class="ai-plan-cta">Start My Free Trial</a>
           <p class="ai-plan-savings">Save 75% vs Zendesk & Gorgias AI pricing</p>
         </div>
       </div>
@@ -636,7 +639,7 @@
           <span class="trial-badge"><span class="emoji">🌍</span> AI + supervised human agents</span>
         </div>
         <a href="#contact" class="btn-primary">
-          <span>Book a free CX Audit →</span>
+          <span>Start My Free Trial →</span>
         </a>
         <div class="trial-trust-bar">Trusted by e-commerce brands worldwide</div>
       </div>
@@ -708,7 +711,7 @@
               <label for="tier">Interested Plan (Optional)</label>
               <select id="tier" name="interested_tier">
                 <option value="" disabled selected>Select a plan</option>
-                <option value="Lion AI Pilot - $749/mo">Lion AI — Pilot Plan ($749/mo)</option>
+                <option value="Lion AI Pilot - $0.50/ticket">Lion AI — Pilot Plan ($0.50/ticket)</option>
                 <option value="Nearshore (Hungary) - $19/hr">Nearshore — Hungary ($19/hr)</option>
                 <option value="Offshore (Philippines) - $12/hr">Offshore — Philippines ($12/hr)</option>
                 <option value="Scale Plan - Custom">Scale Plan (Custom Mix)</option>
@@ -722,7 +725,7 @@
             </div>
 
             <button type="submit" class="form-submit" id="submitBtn">
-              Book a free CX Audit →
+              Get Started →
             </button>
 
             <p class="form-privacy">
@@ -750,7 +753,7 @@
             <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" width="162" height="54" loading="lazy" decoding="async" />
           </a>
           <p>
-            AI-powered chatbots and professionally supervised human agents, meticulously tailored for e-commerce brands. From $749/mo AI to $12/hr offshore — scale fearlessly with our CRM expertise.
+            AI-powered chatbots and professionally supervised human agents, meticulously tailored for e-commerce brands. From $0.50/ticket AI to $12/hr offshore — scale fearlessly with our CRM expertise.
           </p>
         </div>
         <div class="footer-col">
