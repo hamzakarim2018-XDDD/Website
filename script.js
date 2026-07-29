@@ -51,52 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================
-  // HERO TAB BAR — Auto-cycling & Click
-  // ============================
-  const tabs = ['onboarding', 'training', 'quality', 'golive'];
-  let currentTabIndex = 0;
-  let tabInterval;
-
-  function activateTab(tabName) {
-    // Update button states (both desktop & mobile)
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === tabName);
-    });
-
-    // Show/hide overlays
-    tabs.forEach(t => {
-      const overlay = document.getElementById(`overlay-${t}`);
-      if (overlay) {
-        overlay.style.display = (t === tabName) ? 'flex' : 'none';
-      }
-    });
-  }
-
-  function startTabCycle() {
-    tabInterval = setInterval(() => {
-      currentTabIndex = (currentTabIndex + 1) % tabs.length;
-      activateTab(tabs[currentTabIndex]);
-    }, 4000);
-  }
-
-  // Initialize tab cycling
-  activateTab(tabs[0]);
-  startTabCycle();
-
-  // Tab click handlers
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tabName = btn.dataset.tab;
-      currentTabIndex = tabs.indexOf(tabName);
-      activateTab(tabName);
-
-      // Reset interval on manual click
-      clearInterval(tabInterval);
-      startTabCycle();
-    });
-  });
-
-  // ============================
   // SCROLL REVEAL (Intersection Observer)
   // ============================
   const revealElements = document.querySelectorAll('.reveal');
@@ -114,49 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
-
-  // ============================
-  // CURRENCY TOGGLE (USD / EUR)
-  // ============================
-  const currencyToggle = document.getElementById('currencyToggle');
-  const labelUSD = document.getElementById('labelUSD');
-  const labelEUR = document.getElementById('labelEUR');
-
-  if (currencyToggle) {
-    // Clicking the labels should also toggle
-    labelUSD.addEventListener('click', () => {
-      currencyToggle.checked = false;
-      currencyToggle.dispatchEvent(new Event('change'));
-    });
-    labelEUR.addEventListener('click', () => {
-      currencyToggle.checked = true;
-      currencyToggle.dispatchEvent(new Event('change'));
-    });
-
-    currencyToggle.addEventListener('change', () => {
-      const isEUR = currencyToggle.checked;
-      const key = isEUR ? 'eur' : 'usd';
-
-      // Toggle active label
-      labelUSD.classList.toggle('currency-label--active', !isEUR);
-      labelEUR.classList.toggle('currency-label--active', isEUR);
-
-      // Swap currency symbols (includes AI plan)
-      document.querySelectorAll('.price-currency[data-usd], .ai-price-currency[data-usd]').forEach(el => {
-        el.textContent = el.dataset[key];
-      });
-
-      // Swap price values (includes AI plan)
-      document.querySelectorAll('.price-value[data-usd], .ai-price-value[data-usd]').forEach(el => {
-        el.textContent = el.dataset[key];
-      });
-
-      // Swap text content (staffing fees, overage, etc.)
-      document.querySelectorAll('[data-usd][data-eur]:not(.price-currency):not(.price-value):not(.ai-price-currency):not(.ai-price-value)').forEach(el => {
-        el.textContent = el.dataset[key];
-      });
-    });
-  }
 
   // ============================
   // CONTACT FORM HANDLING

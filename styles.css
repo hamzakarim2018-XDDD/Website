@@ -2010,6 +2010,52 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================
+   OVERAGE CALLOUT
+   ============================================ */
+.overage-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 64px;
+  padding: 28px 32px;
+  background: var(--peach);
+  border: 1px solid var(--ink-5);
+  border-radius: var(--radius-lg);
+}
+
+.overage-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+.overage-callout p {
+  font-size: 0.9rem;
+  color: var(--ink-50);
+  line-height: 1.75;
+}
+
+.overage-callout strong { color: var(--ink); }
+
+/* ============================================
+   HUMAN PRICING HEADER
+   ============================================ */
+.human-pricing-header {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  padding-top: 64px;
+  border-top: 1px solid var(--ink-5);
+}
+
+.human-pricing-header .section-subtitle {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   3-COLUMN STEPS GRID VARIANT
+   ============================================ */
+.steps-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ============================================
    SCROLL REVEAL
    ============================================ */
 .reveal {
@@ -2125,6 +2171,7 @@ ul, ol { list-style: none; }
 
   .benefits-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid--three { grid-template-columns: 1fr; }
   .steps-grid::before { display: none; }
   .pricing-cards { grid-template-columns: 1fr; }
   .pricing-cards .price-card:last-child { max-width: 100%; }
@@ -2146,6 +2193,7 @@ ul, ol { list-style: none; }
 
 @media (max-width: 480px) {
   .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid--three { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .qa-highlights { grid-template-columns: 1fr; }
   .overlay-card { width: 280px; padding: 20px; }
