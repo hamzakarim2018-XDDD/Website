@@ -77,9 +77,13 @@ reportForm.addEventListener('submit', async (e) => {
       body: JSON.stringify({ url: lastScannedUrl, email }),
     });
     const data = await res.json();
-    reportStatus.textContent = res.ok && data.success
-      ? 'Sent! Check your inbox for the full report.'
-      : 'Couldn’t send the report — please double-check your email and try again.';
+    if (res.ok && data.success) {
+      reportStatus.textContent = 'Sent! Check your inbox for the full report.';
+    } else if (data.error === 'email_unavailable') {
+      reportStatus.textContent = 'The report couldn’t be emailed right now — please try again later.';
+    } else {
+      reportStatus.textContent = 'Couldn’t send the report — please double-check your email and try again.';
+    }
   } catch {
     reportStatus.textContent = 'Couldn’t reach the audit service. Please try again shortly.';
   }
