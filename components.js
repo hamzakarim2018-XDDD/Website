@@ -19,9 +19,8 @@
     navbarRoot.outerHTML =
       '<nav class="navbar" id="navbar">' +
         '<div class="container">' +
-          '<a href="' + base + '/index.html" class="nav-logo">' +
-            '<span class="nav-logo-icon" aria-hidden="true"></span>' +
-            '<span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>' +
+          '<a href="' + base + '/index.html" class="nav-logo" aria-label="AgoraCrew">' +
+            '<span class="nav-logo-icon"></span>' +
           '</a>' +
 
           '<div class="nav-center" id="navCenter">' +
@@ -112,9 +111,8 @@
 
             /* Brand Column */
             '<div class="footer-brand">' +
-              '<a href="' + base + '/index.html" class="nav-logo">' +
-                '<span class="nav-logo-icon" aria-hidden="true"></span>' +
-                '<span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>' +
+              '<a href="' + base + '/index.html" class="nav-logo" aria-label="AgoraCrew">' +
+                '<span class="nav-logo-icon"></span>' +
               '</a>' +
               '<p>Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.</p>' +
             '</div>' +

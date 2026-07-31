@@ -160,26 +160,16 @@ ul, ol { list-style: none; }
 
 /* Logo mark is cropped from logo-new-orange.png via background-position —
    the wordmark baked into that file fades to near-white and is unreadable
-   on a light navbar, so the visible name is set as real text below instead. */
+   on a light navbar, so only the icon mark is shown (no text lockup). */
 .nav-logo-icon {
-  width: 59px;
-  height: 44px;
+  width: 64px;
+  height: 48px;
   background-image: url('logo-new-orange.png');
   background-repeat: no-repeat;
-  background-size: 126px 72px;
-  background-position: -34px 0;
+  background-size: 137px 79px;
+  background-position: -37px 0;
   flex-shrink: 0;
 }
-
-.nav-logo-text {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.nav-logo-text-agora { color: var(--ink); }
-.nav-logo-text-crew { color: var(--coral); }
 
 .nav-center {
   display: flex;
@@ -2132,16 +2122,11 @@ ul, ol { list-style: none; }
 .footer .nav-logo { margin-bottom: 16px; }
 
 .footer .nav-logo-icon {
-  width: 69px;
-  height: 52px;
-  background-size: 149px 85px;
-  background-position: -40px 0;
+  width: 77px;
+  height: 58px;
+  background-size: 166px 95px;
+  background-position: -44px 0;
   filter: brightness(0) invert(1);
-}
-
-.footer .nav-logo-text-agora,
-.footer .nav-logo-text-crew {
-  color: var(--white);
 }
 
 .footer-brand p {
