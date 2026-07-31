@@ -27,6 +27,7 @@
             '<a href="' + base + '/index.html#problem">The Math</a>' +
             '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
             '<a href="' + base + '/index.html#pricing">Pricing</a>' +
+            '<a href="' + base + '/tools/cx-audit/index.html">Free Store Grader</a>' +
             '<div class="nav-dropdown">' +
               '<button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">' +
                 'Learn' +
@@ -81,6 +82,7 @@
             '<a href="' + base + '/index.html#problem">The Math</a>' +
             '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
             '<a href="' + base + '/index.html#pricing">Pricing</a>' +
+            '<a href="' + base + '/tools/cx-audit/index.html">Free Store Grader</a>' +
             '<button class="mobile-dropdown-toggle" onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\')">' +
               'Learn' +
               '<svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
