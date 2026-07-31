@@ -20,11 +20,12 @@
       '<nav class="navbar" id="navbar">' +
         '<div class="container">' +
           '<a href="' + base + '/index.html" class="nav-logo">' +
-            '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew — AI Support for E-Commerce" class="logo-image" width="162" height="54" />' +
+            '<span class="nav-logo-icon" aria-hidden="true"></span>' +
+            '<span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>' +
           '</a>' +
 
           '<div class="nav-center" id="navCenter">' +
-            '<a href="' + base + '/index.html#problem">The Problem</a>' +
+            '<a href="' + base + '/index.html#problem">The Math</a>' +
             '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
             '<a href="' + base + '/index.html#pricing">Pricing</a>' +
             '<div class="nav-dropdown">' +
@@ -36,37 +37,30 @@
                 '<div class="nav-dropdown-col">' +
                   '<div class="nav-dropdown-col-title">Solutions</div>' +
                   '<a href="' + base + '/solutions/shopify-customer-service.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">🛍️</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Shopify CX Guide</span><span class="nav-dropdown-link-desc">Manage support on Shopify</span></span>' +
                   '</a>' +
                   '<a href="' + base + '/solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">📋</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Strategy</span><span class="nav-dropdown-link-desc">Build a CX playbook</span></span>' +
                   '</a>' +
                   '<a href="' + base + '/solutions/wismo-automation.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">📦</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">WISMO Automation</span><span class="nav-dropdown-link-desc">Eliminate order tracking tickets</span></span>' +
                   '</a>' +
                 '</div>' +
                 '<div class="nav-dropdown-col">' +
                   '<div class="nav-dropdown-col-title">Resources</div>' +
                   '<a href="' + base + '/resources/reduce-support-costs.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">💰</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Cut Support Costs</span><span class="nav-dropdown-link-desc">7 proven cost-saving tactics</span></span>' +
                   '</a>' +
                   '<a href="' + base + '/resources/customer-service-templates.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">📝</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Response Templates</span><span class="nav-dropdown-link-desc">Free copy-paste templates</span></span>' +
                   '</a>' +
                   '<a href="' + base + '/resources/cx-metrics-guide.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">📊</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Metrics Guide</span><span class="nav-dropdown-link-desc">6 metrics that matter</span></span>' +
                   '</a>' +
                 '</div>' +
                 '<div class="nav-dropdown-col">' +
                   '<div class="nav-dropdown-col-title">Blog</div>' +
                   '<a href="' + base + '/blog/index.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-icon">✍️</span>' +
                     '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">All Articles</span><span class="nav-dropdown-link-desc">Latest CX insights & guides</span></span>' +
                   '</a>' +
                 '</div>' +
@@ -85,7 +79,7 @@
           '</button>' +
 
           '<div class="nav-links" id="navLinks">' +
-            '<a href="' + base + '/index.html#problem">The Problem</a>' +
+            '<a href="' + base + '/index.html#problem">The Math</a>' +
             '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
             '<a href="' + base + '/index.html#pricing">Pricing</a>' +
             '<button class="mobile-dropdown-toggle" onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\')">' +
@@ -119,7 +113,8 @@
             /* Brand Column */
             '<div class="footer-brand">' +
               '<a href="' + base + '/index.html" class="nav-logo">' +
-                '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew" class="logo-image" width="162" height="54" loading="lazy" decoding="async" />' +
+                '<span class="nav-logo-icon" aria-hidden="true"></span>' +
+                '<span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>' +
               '</a>' +
               '<p>Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.</p>' +
             '</div>' +
@@ -144,12 +139,8 @@
             /* Contact Column */
             '<div class="footer-col footer-col--contact">' +
               '<h4>Get In Touch</h4>' +
-              '<a href="mailto:anne@agoracrew.com">' +
-                '<span class="footer-contact-icon">✉️</span> anne@agoracrew.com' +
-              '</a>' +
-              '<a href="tel:+36300841533">' +
-                '<span class="footer-contact-icon">📞</span> +36 30 084 1533' +
-              '</a>' +
+              '<a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>' +
+              '<a href="tel:+36300841533">+36 30 084 1533</a>' +
               '<a href="' + base + '/index.html#contact">Book a free CX Audit</a>' +
             '</div>' +
 

@@ -32,32 +32,15 @@
       overflow: visible;
     }
 
-    .privacy-hero::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      right: -120px;
-      width: 500px;
-      height: 500px;
-      background: var(--coral-10);
-      border-radius: 50%;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
+    /* Masthead hairline, matching the guide pages — no ambient blur circles. */
     .privacy-hero::after {
       content: '';
       position: absolute;
+      left: 24px;
+      right: 24px;
       bottom: 0;
-      left: -150px;
-      width: 400px;
-      height: 400px;
-      background: var(--coral-10);
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
+      height: 1px;
+      background: var(--ink-5);
     }
 
     .privacy-hero > * {
@@ -361,7 +344,8 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo">
-        <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" />
+        <span class="nav-logo-icon" aria-hidden="true"></span>
+        <span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>
       </a>
 
       <div class="nav-center" id="navCenter">
@@ -377,21 +361,18 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Solutions</div>
               <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">🛍️</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Shopify CX Guide</span>
                   <span class="nav-dropdown-link-desc">Manage support on Shopify</span>
                 </span>
               </a>
               <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📋</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">CX Strategy</span>
                   <span class="nav-dropdown-link-desc">Build a CX playbook</span>
                 </span>
               </a>
               <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📦</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">WISMO Automation</span>
                   <span class="nav-dropdown-link-desc">Eliminate order tracking tickets</span>
@@ -401,21 +382,18 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Resources</div>
               <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">💰</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Cut Support Costs</span>
                   <span class="nav-dropdown-link-desc">7 proven cost-saving tactics</span>
                 </span>
               </a>
               <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📝</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Response Templates</span>
                   <span class="nav-dropdown-link-desc">Free copy-paste templates</span>
                 </span>
               </a>
               <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📊</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">CX Metrics Guide</span>
                   <span class="nav-dropdown-link-desc">6 metrics that matter</span>
@@ -425,7 +403,6 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Blog</div>
               <a href="blog/index.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">✍️</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">All Articles</span>
                   <span class="nav-dropdown-link-desc">Latest CX insights &amp; guides</span>
@@ -844,7 +821,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="logo-new-orange.png" alt="AgoraCrew — E-Commerce Outsourcing Partner" class="logo-image" />
+            <span class="nav-logo-icon" aria-hidden="true"></span>
+            <span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>
           </a>
           <p>
             AI-powered chatbots and professionally supervised human agents, meticulously tailored for e-commerce brands. From $749/mo AI to $12/hr offshore — scale fearlessly with our CRM expertise.
@@ -867,12 +845,8 @@
         </div>
         <div class="footer-col footer-col--contact">
           <h4>Get In Touch</h4>
-          <a href="mailto:anne@agoracrew.com">
-            <span class="footer-contact-icon">✉️</span> anne@agoracrew.com
-          </a>
-          <a href="tel:+36300841533">
-            <span class="footer-contact-icon">📞</span> +36 30 084 1533
-          </a>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
           <a href="index.html#contact">Book a free CX Audit</a>
           <a href="https://maps.google.com/?q=Budapest,+Hungary" target="_blank" rel="noopener" class="footer-minimap">
             <img src="minimap.png" alt="AgoraCrew — Budapest, Hungary" />

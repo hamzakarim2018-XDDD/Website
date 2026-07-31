@@ -158,11 +158,28 @@ ul, ol { list-style: none; }
   gap: 8px;
 }
 
-.nav-logo .logo-image {
-  height: 54px;
-  width: auto;
-  display: block;
+/* Logo mark is cropped from logo-new-orange.png via background-position —
+   the wordmark baked into that file fades to near-white and is unreadable
+   on a light navbar, so the visible name is set as real text below instead. */
+.nav-logo-icon {
+  width: 59px;
+  height: 44px;
+  background-image: url('logo-new-orange.png');
+  background-repeat: no-repeat;
+  background-size: 126px 72px;
+  background-position: -34px 0;
+  flex-shrink: 0;
 }
+
+.nav-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nav-logo-text-agora { color: var(--ink); }
+.nav-logo-text-crew { color: var(--coral); }
 
 .nav-center {
   display: flex;
@@ -372,12 +389,6 @@ ul, ol { list-style: none; }
   background: var(--peach);
 }
 
-.nav-dropdown-link-icon {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  flex-shrink: 0;
-}
-
 .nav-dropdown-link-text {
   display: flex;
   flex-direction: column;
@@ -465,31 +476,17 @@ ul, ol { list-style: none; }
   overflow: visible;
 }
 
-/* Ambient blur circles */
+/* One warm peach ground behind the headline — the same peach the alternating
+   sections use — instead of a pair of floating blurred coral orbs. */
 .hero::before {
   content: '';
   position: absolute;
-  top: -60px;
-  right: -120px;
-  width: 500px;
-  height: 500px;
-  background: var(--coral-10);
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -150px;
-  width: 400px;
-  height: 400px;
-  background: var(--coral-10);
-  border-radius: 50%;
-  filter: blur(100px);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1100px, 130%);
+  height: 640px;
+  background: radial-gradient(58% 58% at 50% 42%, var(--peach) 0%, rgba(253, 241, 238, 0) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -513,8 +510,13 @@ ul, ol { list-style: none; }
   margin-bottom: 32px;
 }
 
-.hero-badge .sparkle {
-  font-size: 1rem;
+/* The same live-status dot the section labels use, rather than a lone emoji. */
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--coral);
+  border-radius: 50%;
+  animation: pulse-dot 2.5s ease-in-out infinite;
 }
 
 /* Hero Heading */
@@ -1668,17 +1670,12 @@ ul, ol { list-style: none; }
 
 /* Trial Guarantee */
 .pricing-trial-guarantee {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
   margin-top: 40px;
-  padding: 28px 32px;
+  padding: 24px 30px;
   background: var(--peach);
-  border: 1px solid var(--ink-5);
-  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--coral);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 }
-
-.trial-guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
 
 .pricing-trial-guarantee p {
   font-size: 0.9rem;
@@ -1843,8 +1840,6 @@ ul, ol { list-style: none; }
   color: var(--white);
   backdrop-filter: blur(4px);
 }
-
-.trial-badge .emoji { font-size: 1rem; }
 
 .btn-primary {
   display: inline-flex;
@@ -2088,7 +2083,17 @@ ul, ol { list-style: none; }
 
 .form-success.show { display: block; }
 
-.success-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--peach);
+  color: var(--coral);
+}
 
 .form-success h4 {
   font-family: var(--font-serif);
@@ -2126,9 +2131,17 @@ ul, ol { list-style: none; }
 
 .footer .nav-logo { margin-bottom: 16px; }
 
-.footer .nav-logo .logo-image {
-  height: 60px;
+.footer .nav-logo-icon {
+  width: 69px;
+  height: 52px;
+  background-size: 149px 85px;
+  background-position: -40px 0;
   filter: brightness(0) invert(1);
+}
+
+.footer .nav-logo-text-agora,
+.footer .nav-logo-text-crew {
+  color: var(--white);
 }
 
 .footer-brand p {
@@ -2165,8 +2178,6 @@ ul, ol { list-style: none; }
   align-items: center;
   gap: 8px;
 }
-
-.footer-contact-icon { font-size: 0.95rem; }
 
 .footer-minimap {
   margin-top: 8px;
@@ -2213,19 +2224,16 @@ ul, ol { list-style: none; }
 /* ============================================
    OVERAGE CALLOUT
    ============================================ */
+/* Marginal note on the pricing table — same coral-edge treatment the guide
+   pages use for callouts. */
 .overage-callout {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
   margin-top: 24px;
   margin-bottom: 64px;
-  padding: 28px 32px;
+  padding: 24px 30px;
   background: var(--peach);
-  border: 1px solid var(--ink-5);
-  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--coral);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 }
-
-.overage-icon { font-size: 1.5rem; flex-shrink: 0; }
 
 .overage-callout p {
   font-size: 0.9rem;
@@ -2274,6 +2282,26 @@ ul, ol { list-style: none; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .animate-fade-up,
+  .animate-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 /* ============================================
    RESPONSIVE
@@ -2338,17 +2366,9 @@ ul, ol { list-style: none; }
   .hero { padding: 110px 20px 48px; }
   .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
   .hero-video-container { height: 300px; }
-  .hero::before,
-  .hero::after { width: 250px; height: 250px; }
-
-  /* PERF/iOS: Disable expensive blur() filters on mobile — iOS WebKit's GPU
-     cannot composite large blurred layers without stalling, causing a black screen.
-     Replace with a simple static radial gradient on the hero instead. */
-  .hero::before,
-  .hero::after {
-    filter: none;
-    background: radial-gradient(circle, rgba(239, 70, 35, 0.06) 0%, transparent 70%);
-  }
+  /* PERF/iOS: the hero ground is a plain gradient (no blur() filter) — iOS WebKit
+     cannot composite large blurred layers without stalling. */
+  .hero::before { height: 460px; }
   .hero-cta-group { flex-direction: column; gap: 12px; }
   .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
 
@@ -2401,4 +2421,216 @@ ul, ol { list-style: none; }
   .hero-title { font-size: 2.2rem; }
   .trial-banner-inner h2 { font-size: 1.8rem; }
   .section-title { font-size: 1.7rem; }
+}
+
+/* ==================== ROI CALCULATOR ==================== */
+.roi-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  margin-top: 56px;
+  align-items: stretch;
+}
+
+.roi-calc-card {
+  background: var(--peach);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.roi-calc-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.roi-field { margin-bottom: 24px; }
+
+.roi-field-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-70);
+  margin-bottom: 10px;
+}
+
+.roi-field-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.roi-field-value input {
+  width: 64px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  color: var(--coral);
+  text-align: right;
+  padding: 0;
+}
+
+.roi-field-value input:focus { outline: none; border-bottom: 1px solid var(--coral); }
+
+.roi-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--ink-10);
+  outline: none;
+}
+
+.roi-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--coral);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.roi-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--coral);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.roi-divider {
+  height: 1px;
+  background: var(--ink-10);
+  margin: 8px 0 20px;
+}
+
+.roi-output-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.95rem;
+  color: var(--ink-70);
+  margin-bottom: 10px;
+}
+
+.roi-output-row strong {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.roi-savings-block { margin-top: 4px; }
+
+.roi-savings-amount {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--coral);
+  line-height: 1.1;
+}
+
+.roi-savings-subline {
+  font-size: 0.85rem;
+  color: var(--ink-50);
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.roi-neutral-message {
+  font-size: 0.95rem;
+  color: var(--ink-70);
+  margin: 4px 0 24px;
+}
+
+.roi-cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.roi-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--coral);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.roi-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--ink);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--ink-10);
+}
+
+.roi-stats-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roi-stats-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.roi-stat-card {
+  background: var(--white);
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.roi-stat-icon { font-size: 1.75rem; line-height: 1; }
+
+.roi-stat-figure {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--coral);
+  line-height: 1.1;
+}
+
+.roi-stat-text {
+  font-size: 0.9rem;
+  color: var(--ink-70);
+  margin-top: 4px;
+}
+
+.roi-stat-source {
+  font-size: 0.75rem;
+  color: var(--ink-50);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .roi-grid { grid-template-columns: 1fr; }
+  .roi-calc-card { padding: 28px 24px; }
 }

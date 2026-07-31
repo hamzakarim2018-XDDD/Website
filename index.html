@@ -28,7 +28,10 @@
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background 0.4s cubic-bezier(0.16,1,0.3,1); border-bottom: 1px solid transparent; }
     .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .nav-logo { display: flex; align-items: center; gap: 8px; }
-    .nav-logo .logo-image { height: 54px; width: auto; display: block; }
+    .nav-logo-icon { width: 59px; height: 44px; background-image: url('logo-new-orange.png'); background-repeat: no-repeat; background-size: 126px 72px; background-position: -34px 0; flex-shrink: 0; }
+    .nav-logo-text { font-family: 'Instrument Serif', Georgia, serif; font-size: 1.6rem; line-height: 1; white-space: nowrap; }
+    .nav-logo-text-agora { color: #2D3B42; }
+    .nav-logo-text-crew { color: #EF4623; }
     .nav-center { display: flex; align-items: center; gap: 36px; }
     .nav-center a { font-size: 0.85rem; color: rgba(45,59,66,0.8); font-weight: 600; }
     .nav-right { display: flex; align-items: center; gap: 16px; }
@@ -40,6 +43,7 @@
     .hero { position: relative; padding: 140px 24px 80px; max-width: 1280px; margin: 0 auto; text-align: center; overflow: visible; }
     .hero > * { position: relative; z-index: 1; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #FDF1EE; border-radius: 9999px; font-size: 0.85rem; font-weight: 500; color: #2D3B42; margin-bottom: 32px; }
+    .hero-badge .dot { width: 6px; height: 6px; background: #EF4623; border-radius: 50%; }
     .hero-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(3rem, 9vw, 8rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; color: #2D3B42; }
     .hero-title .accent-text { font-style: italic; color: #EF4623; display: block; }
     .hero-subtitle { font-size: 1.125rem; color: rgba(45,59,66,0.7); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
@@ -78,11 +82,12 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#" class="nav-logo">
-        <img src="logo-new-orange.png" alt="AgoraCrew — AI Support for E-Commerce" class="logo-image" width="162" height="54" fetchpriority="high" />
+        <span class="nav-logo-icon" aria-hidden="true"></span>
+        <span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>
       </a>
 
       <div class="nav-center" id="navCenter">
-        <a href="#problem">The Problem</a>
+        <a href="#problem">The Math</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#pricing">Pricing</a>
         <div class="nav-dropdown">
@@ -94,21 +99,18 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Solutions</div>
               <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">🛍️</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Shopify CX Guide</span>
                   <span class="nav-dropdown-link-desc">Manage support on Shopify</span>
                 </span>
               </a>
               <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📋</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">CX Strategy</span>
                   <span class="nav-dropdown-link-desc">Build a CX playbook</span>
                 </span>
               </a>
               <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📦</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">WISMO Automation</span>
                   <span class="nav-dropdown-link-desc">Eliminate order tracking tickets</span>
@@ -118,21 +120,18 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Resources</div>
               <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">💰</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Cut Support Costs</span>
                   <span class="nav-dropdown-link-desc">7 proven cost-saving tactics</span>
                 </span>
               </a>
               <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📝</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">Response Templates</span>
                   <span class="nav-dropdown-link-desc">Free copy-paste templates</span>
                 </span>
               </a>
               <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">📊</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">CX Metrics Guide</span>
                   <span class="nav-dropdown-link-desc">6 metrics that matter</span>
@@ -142,7 +141,6 @@
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-col-title">Blog</div>
               <a href="blog/index.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-icon">✍️</span>
                 <span class="nav-dropdown-link-text">
                   <span class="nav-dropdown-link-title">All Articles</span>
                   <span class="nav-dropdown-link-desc">Latest CX insights & guides</span>
@@ -167,7 +165,7 @@
 
       <!-- Mobile Slide-out Nav -->
       <div class="nav-links" id="navLinks">
-        <a href="#problem">The Problem</a>
+        <a href="#problem">The Math</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#pricing">Pricing</a>
         <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
@@ -195,7 +193,7 @@
 
     <!-- Pill Badge -->
     <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
-      <span class="sparkle">⚡</span> AI Agents for E-Commerce Support
+      <span class="dot"></span> AI Agents for E-Commerce Support
     </div>
 
     <!-- Main Heading -->
@@ -206,7 +204,7 @@
 
     <!-- Subheading -->
     <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
-      For less than $100/mo, you never have to manually answer a "Where is my order?" email again. Trained AI agents handle your support inbox or chat 24/7. Add human agents if you need them. Flat fee. No surprises.
+      For less than $100/mo, you never have to manually answer a "Where is my order?" email again. Trained AI agents work your support inbox or chat around the clock, pulling live order and tracking data from your store, and you can add human agents whenever a ticket needs one.
     </p>
 
     <!-- CTA Buttons -->
@@ -277,40 +275,85 @@
   </section>
 
 
-  <!-- ==================== PROBLEM / AGITATION ==================== -->
+  <!-- ==================== ROI CALCULATOR ==================== -->
   <section class="benefits" id="problem">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot"></span> The Problem</span>
-        <h2 class="section-title">Support Is Eating Your Margins.<br/><span class="accent-text">And Your Sanity.</span></h2>
+        <span class="section-label"><span class="dot"></span> The Math</span>
+        <h2 class="section-title">See What Your Inbox Is<br/><span class="accent-text">Really Costing You.</span></h2>
         <p class="section-subtitle mx-auto">
-          You started a brand, not a help desk. But your inbox doesn't care.
+          Most stores overpay for support and still lose sales to slow response times. Run your own numbers.
         </p>
       </div>
 
-      <div class="benefits-grid">
-        <div class="benefit-card benefit-card--peach reveal">
-          <div class="benefit-icon">💸</div>
-          <h3 class="benefit-title">The Cost Trap</h3>
-          <p class="benefit-text">
-            A full-time support rep costs $2,000–$4,000/mo before benefits. And you still need coverage for nights, weekends, and Black Friday spikes.
-          </p>
+      <div class="roi-grid">
+        <div class="roi-calc-card reveal">
+          <h3 class="roi-calc-heading">Your Numbers</h3>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Monthly support tickets</span>
+              <span class="roi-field-value"><input type="number" id="roiVolumeNumber" value="800" min="100" max="6000" step="50" aria-label="Monthly support tickets" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiVolumeSlider" min="100" max="6000" step="50" value="800" aria-label="Monthly support tickets" />
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Cost per ticket today</span>
+              <span class="roi-field-value">$<input type="number" id="roiCostNumber" value="4.50" min="1" max="15" step="0.5" aria-label="Cost per ticket today in dollars" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiCostSlider" min="1" max="15" step="0.5" value="4.5" aria-label="Cost per ticket today in dollars" />
+          </div>
+
+          <div class="roi-divider"></div>
+
+          <div id="roiOutput" aria-live="polite">
+            <div class="roi-output-row"><span>Your cost today</span><strong id="roiCurrentCost">$3,600</strong></div>
+            <div class="roi-output-row"><span>AgoraCrew (<span id="roiPlanName">Growth</span>)</span><strong id="roiPlanFee">$249</strong></div>
+
+            <div class="roi-savings-block" id="roiSavingsBlock">
+              <div class="roi-savings-amount"><span id="roiSavingsAmount">$3,351/mo</span></div>
+              <p class="roi-savings-subline" id="roiSavingsSubline">(93% less &middot; $40,212/yr)</p>
+            </div>
+            <p class="roi-neutral-message" id="roiNeutralMessage" hidden>AgoraCrew scales with your ticket volume &mdash; no surprise cliffs.</p>
+          </div>
+
+          <div class="roi-cta-group">
+            <a href="#contact" class="roi-cta-primary">Start My Free Trial</a>
+            <a href="#pricing" class="roi-cta-secondary">See Full Pricing</a>
+          </div>
         </div>
 
-        <div class="benefit-card benefit-card--dark reveal reveal-delay-1">
-          <div class="benefit-icon">⏱️</div>
-          <h3 class="benefit-title">The Time Drain</h3>
-          <p class="benefit-text">
-            Every hour in the inbox is an hour not spent on product, marketing, or growth. And the inbox never empties.
-          </p>
-        </div>
+        <div class="roi-stats-stack reveal reveal-delay-1">
+          <h3 class="roi-stats-heading">Why Chat Converts Better</h3>
 
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="benefit-icon">📈</div>
-          <h3 class="benefit-title">The Scaling Cliff</h3>
-          <p class="benefit-text">
-            Per-ticket pricing sounds cheap until your order volume doubles overnight. Suddenly your "affordable" support bill is a runaway cost you can't predict.
-          </p>
+          <div class="roi-stat-card">
+            <div class="roi-stat-icon">💬</div>
+            <div>
+              <div class="roi-stat-figure">~20% lift</div>
+              <p class="roi-stat-text">Adding live chat lifts overall site conversion.</p>
+              <p class="roi-stat-source">Source: Forrester (industry-aggregated data)</p>
+            </div>
+          </div>
+
+          <div class="roi-stat-card">
+            <div class="roi-stat-icon">🛍️</div>
+            <div>
+              <div class="roi-stat-figure">10&ndash;15% of revenue</div>
+              <p class="roi-stat-text">What e-commerce brands attribute to live chat interactions.</p>
+              <p class="roi-stat-source">Source: Forrester</p>
+            </div>
+          </div>
+
+          <div class="roi-stat-card">
+            <div class="roi-stat-icon">🤝</div>
+            <div>
+              <div class="roi-stat-figure">79% of businesses</div>
+              <p class="roi-stat-text">Say live chat improved sales, revenue, and customer loyalty.</p>
+              <p class="roi-stat-source">Source: Kayako</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -324,7 +367,7 @@
         <span class="section-label"><span class="dot"></span> How It Works</span>
         <h2 class="section-title">Live in <span class="accent-text">Under 24 Hours.</span></h2>
         <p class="section-subtitle mx-auto">
-          No long onboarding. No "implementation phase." Connect, train, launch.
+          Three steps, and the longest one is us reading your policy pages. Most stores are answering their first ticket the next morning.
         </p>
       </div>
 
@@ -366,7 +409,7 @@
         <!-- STARTER -->
         <div class="price-card reveal" id="plan-starter">
           <div class="price-card-header">
-            <div class="price-card-label">⚡ Starter</div>
+            <div class="price-card-label">Starter</div>
             <div class="price-card-amount">
               <span class="price-currency">$</span>
               <span class="price-value">99</span>
@@ -421,7 +464,7 @@
         <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-growth">
           <div class="price-card-badge">Most Popular</div>
           <div class="price-card-header">
-            <div class="price-card-label">🚀 Growth</div>
+            <div class="price-card-label">Growth</div>
             <div class="price-card-amount">
               <span class="price-currency">$</span>
               <span class="price-value">249</span>
@@ -441,25 +484,25 @@
               <span class="feature-check">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
-              <span>🛒 Proactive Cart Recovery</span>
+              <span>Proactive Cart Recovery</span>
             </li>
             <li class="price-card-feature">
               <span class="feature-check">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
-              <span>💌 Win-Back Campaigns</span>
+              <span>Win-Back Campaigns</span>
             </li>
             <li class="price-card-feature">
               <span class="feature-check">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
-              <span>🔄 Replenishment Reminders</span>
+              <span>Replenishment Reminders</span>
             </li>
             <li class="price-card-feature">
               <span class="feature-check">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
-              <span>📊 Conversational Wins Feed</span>
+              <span>Conversational Wins Feed</span>
             </li>
 
           </ul>
@@ -469,7 +512,7 @@
         <!-- SCALE -->
         <div class="price-card reveal reveal-delay-2" id="plan-scale">
           <div class="price-card-header">
-            <div class="price-card-label">🏆 Scale</div>
+            <div class="price-card-label">Scale</div>
             <div class="price-card-amount">
               <span class="price-currency">$</span>
               <span class="price-value">599</span>
@@ -518,7 +561,6 @@
 
       <!-- Overage Callout -->
       <div class="overage-callout reveal">
-        <span class="overage-icon">🛡️</span>
         <p>
           <strong>No surprises when you grow.</strong> Go over your included tickets? No cliff, no penalty. Just $0.20 per extra ticket. Your costs stay predictable even when your order volume spikes.
         </p>
@@ -538,7 +580,7 @@
         <!-- CARD 1 — Nearshore (Hungary) -->
         <div class="price-card reveal" id="plan-nearshore">
           <div class="price-card-header">
-            <div class="price-card-label">🇭🇺 Nearshore — Hungary</div>
+            <div class="price-card-label">Nearshore — Hungary</div>
             <div class="price-card-amount">
               <span class="price-currency">$</span>
               <span class="price-value">19</span>
@@ -586,7 +628,7 @@
         <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-offshore">
           <div class="price-card-badge">Best Value</div>
           <div class="price-card-header">
-            <div class="price-card-label">🇵🇭 Offshore — Philippines</div>
+            <div class="price-card-label">Offshore — Philippines</div>
             <div class="price-card-amount">
               <span class="price-currency">$</span>
               <span class="price-value">12</span>
@@ -633,7 +675,7 @@
         <!-- CARD 3 — Scale / Custom -->
         <div class="price-card reveal reveal-delay-2" id="plan-human-scale">
           <div class="price-card-header">
-            <div class="price-card-label">🌐 Custom Team</div>
+            <div class="price-card-label">Custom Team</div>
             <div class="price-card-amount">
               <span class="price-value price-value--custom">Custom</span>
             </div>
@@ -679,7 +721,6 @@
 
       <!-- Trial Guarantee -->
       <div class="pricing-trial-guarantee reveal">
-        <span class="trial-guarantee-icon">🛡️</span>
         <p><strong>Zero-Risk Guarantee:</strong> Start with your first <strong>60 tickets</strong> or <strong>5 days</strong> completely free (whichever comes first) — including all Growth-tier features. No commitment. No credit card required.</p>
       </div>
 
@@ -696,10 +737,10 @@
           For less than $100/mo, your AI agent handles the inbox while you build your brand. Start free. No credit card required.
         </p>
         <div class="trial-badge-row">
-          <span class="trial-badge"><span class="emoji">🎁</span> 5 days free / 60 tickets</span>
-          <span class="trial-badge"><span class="emoji">💳</span> No credit card required</span>
-          <span class="trial-badge"><span class="emoji">🤝</span> No lock-in contract</span>
-          <span class="trial-badge"><span class="emoji">🛡️</span> Human backup included</span>
+          <span class="trial-badge">5 days free / 60 tickets</span>
+          <span class="trial-badge">No credit card required</span>
+          <span class="trial-badge">No lock-in contract</span>
+          <span class="trial-badge">Human backup included</span>
         </div>
         <a href="#contact" class="btn-primary">
           <span>Start My Free Trial →</span>
@@ -724,7 +765,7 @@
       <div class="contact-grid contact-grid--single">
         <!-- Contact Form Side -->
         <div class="form-side reveal">
-          <h3>✉️ Send Us a Message</h3>
+          <h3>Send Us a Message</h3>
           <p>Prefer to write? Fill out the form and we'll respond within 4 business hours.</p>
 
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgojjvrv" method="POST">
@@ -793,12 +834,14 @@
             </button>
 
             <p class="form-privacy">
-              🔒 Your information is secure. We'll never share your data with third parties.
+              Your information is secure. We'll never share your data with third parties.
             </p>
           </form>
 
           <div class="form-success" id="formSuccess">
-            <div class="success-icon">✅</div>
+            <div class="success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
             <h4>Message Sent!</h4>
             <p>Thanks for reaching out. We'll be in touch within 4 business hours to get your AI agent set up.</p>
           </div>
@@ -814,7 +857,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="nav-logo">
-            <img src="logo-new-orange.png" alt="AgoraCrew — AI Support for E-Commerce" class="logo-image" width="162" height="54" loading="lazy" decoding="async" />
+            <span class="nav-logo-icon" aria-hidden="true"></span>
+            <span class="nav-logo-text"><span class="nav-logo-text-agora">Agora</span><span class="nav-logo-text-crew">Crew</span></span>
           </a>
           <p>
             Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.
@@ -834,12 +878,8 @@
         </div>
         <div class="footer-col footer-col--contact">
           <h4>Get In Touch</h4>
-          <a href="mailto:anne@agoracrew.com">
-            <span class="footer-contact-icon">✉️</span> anne@agoracrew.com
-          </a>
-          <a href="tel:+36300841533">
-            <span class="footer-contact-icon">📞</span> +36 30 084 1533
-          </a>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
           <a href="#contact">Book a free CX Audit</a>
         </div>
       </div>
@@ -855,6 +895,7 @@
   </footer>
 
   <!-- PERF: defer allows HTML parsing to complete before script execution -->
+  <script src="roi-calc.js" defer></script>
   <script src="script.js" defer></script>
 
   <!-- AgoraCrew AI chat widget — live demo of the product itself -->

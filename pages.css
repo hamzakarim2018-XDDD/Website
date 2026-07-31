@@ -14,32 +14,16 @@
   overflow: visible;
 }
 
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: -120px;
-  width: 500px;
-  height: 500px;
-  background: var(--coral-10);
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
+/* These pages are articles, not landing pages — the hero is a masthead.
+   A single hairline closes it off; no ambient blur circles. */
 .page-hero::after {
   content: '';
   position: absolute;
-  bottom: -40px;
-  left: -150px;
-  width: 400px;
-  height: 400px;
-  background: var(--coral-10);
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 0;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink-5);
 }
 
 .page-hero > * {
@@ -47,17 +31,24 @@
   z-index: 1;
 }
 
+/* Kicker naming the kind of document you're about to read. */
 .page-hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  background: var(--peach);
-  border-radius: 9999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 32px;
+  gap: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 28px;
+}
+
+.page-hero-badge::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--coral);
 }
 
 .page-hero h1 {
@@ -122,18 +113,16 @@
   margin-bottom: 64px;
 }
 
-.content-section-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--coral);
-  color: var(--white);
-  border-radius: 50%;
-  font-size: 0.85rem;
+/* Names what the section is for. These guides aren't a sequence, so they
+   get a label rather than a counter. */
+.content-section-eyebrow {
+  display: block;
+  font-size: 0.7rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-30);
+  margin-bottom: 10px;
 }
 
 .content-section h2 {
@@ -188,21 +177,14 @@
   margin: 32px 0;
 }
 
+/* Static content, so no hover lift — on these pages a card that moves under
+   the pointer is a card you can click, and none of these are. */
 .info-card {
   background: var(--white);
   border: 1px solid var(--ink-5);
   border-radius: var(--radius-md);
-  padding: 32px 28px;
-  transition: all 0.3s var(--ease-out);
+  padding: 30px 28px;
 }
-
-.info-card:hover {
-  border-color: var(--ink-10);
-  box-shadow: 0 8px 30px rgba(45, 59, 66, 0.06);
-  transform: translateY(-4px);
-}
-
-.info-card-icon { font-size: 2rem; margin-bottom: 16px; }
 
 .info-card h3 {
   font-family: var(--font-sans);
@@ -226,25 +208,25 @@
 
 /* --- Callout / Tip Box --- */
 .callout {
-  display: flex;
-  gap: 16px;
-  padding: 24px 28px;
+  padding: 22px 26px;
   border-radius: var(--radius-md);
   margin: 32px 0;
-  border-left: 4px solid;
+  border-left: 3px solid var(--callout-accent);
 }
 
-.callout--tip     { background: var(--peach);  border-color: var(--coral); }
-.callout--info    { background: #EEF4FF;       border-color: #4A7BF7; }
-.callout--warning { background: #FFF8E6;       border-color: #E5A100; }
+.callout--tip     { --callout-accent: var(--coral); background: var(--peach); }
+.callout--info    { --callout-accent: #4A7BF7;      background: #EEF4FF; }
+.callout--warning { --callout-accent: #E5A100;      background: #FFF8E6; }
 
-.callout-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1.6; }
-
+/* The label carries the callout's job, so it doubles as the marker. */
 .callout-content strong {
   display: block;
-  font-size: 0.9rem;
-  color: var(--ink);
-  margin-bottom: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--callout-accent);
+  margin-bottom: 8px;
 }
 
 .callout-content p {
@@ -347,28 +329,29 @@
 }
 
 /* --- Metric Card --- */
+/* A metric card is a block of reading, not a control — it doesn't react to
+   the pointer. The coral edge marks it as a definition instead. */
 .metric-card {
   background: var(--white);
   border: 1px solid var(--ink-5);
-  border-radius: var(--radius-md);
+  border-left: 3px solid var(--coral);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 36px 32px;
   margin-bottom: 24px;
-  transition: all 0.3s var(--ease-out);
-}
-
-.metric-card:hover {
-  border-color: var(--ink-10);
-  box-shadow: 0 8px 30px rgba(45, 59, 66, 0.06);
 }
 
 .metric-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
   margin-bottom: 20px;
 }
 
-.metric-card-icon { font-size: 2rem; flex-shrink: 0; }
+/* The shorthand each metric is actually called in the trade. */
+.metric-card-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--coral);
+  margin-bottom: 6px;
+}
 
 .metric-card-title {
   font-family: var(--font-serif);
@@ -648,23 +631,46 @@
   gap: 28px;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 20px 24px 48px;
 }
 
+.blog-grid:last-of-type { padding-bottom: 80px; }
+
 .blog-card {
+  position: relative;
   background: var(--white);
   border: 1px solid var(--ink-5);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: all 0.3s var(--ease-out);
+  transition: border-color 0.3s var(--ease-out);
   display: flex;
   flex-direction: column;
 }
 
-.blog-card:hover {
-  border-color: var(--ink-10);
-  box-shadow: 0 12px 40px rgba(45, 59, 66, 0.08);
-  transform: translateY(-4px);
+/* An index of links shouldn't jump off the page on hover the way a feature
+   tile does — it underscores itself instead. */
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.blog-card:hover,
+.blog-card:focus-visible { border-color: var(--ink-10); }
+
+.blog-card:hover::before,
+.blog-card:focus-visible::before { transform: scaleX(1); }
+
+.blog-card:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
 }
 
 .blog-card-body {
@@ -710,15 +716,40 @@
   transition: gap 0.2s var(--ease-out);
 }
 
-.blog-card:hover .blog-card-link { gap: 10px; }
+.blog-card:hover .blog-card-link,
+.blog-card:focus-visible .blog-card-link { gap: 10px; }
 
-/* Blog Post */
-.blog-post-header {
-  position: relative;
-  text-align: center;
-  padding: 140px 24px 48px;
+/* Section heads for the blog index — separates written articles from the
+   evergreen guides. */
+.blog-section-head {
   max-width: var(--max-w);
   margin: 0 auto;
+  padding: 40px 24px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.blog-section-head h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.blog-section-head p {
+  font-size: 0.85rem;
+  color: var(--ink-50);
+}
+
+/* Blog Post — the masthead sits on the same measure and left edge as the
+   article body, so the page reads as one column of writing. */
+.blog-post-header {
+  position: relative;
+  padding: 140px 24px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--ink-5);
 }
 
 .blog-post-meta {
@@ -743,8 +774,6 @@
 .blog-post-description {
   font-size: 1.1rem;
   color: var(--ink-50);
-  max-width: 36rem;
-  margin: 0 auto;
   line-height: 1.8;
 }
 
@@ -752,7 +781,7 @@
 .blog-post-content {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 32px 24px 80px;
 }
 
 .blog-post-content h2 {
@@ -845,12 +874,13 @@
 
 /* Blog States */
 .blog-empty {
-  text-align: center;
-  padding: 60px 24px;
+  grid-column: 1 / -1;
+  padding: 40px 28px;
+  border: 1px dashed var(--ink-10);
+  border-radius: var(--radius-md);
   color: var(--ink-50);
+  font-size: 0.95rem;
 }
-
-.blog-empty-icon { font-size: 3rem; margin-bottom: 16px; }
 
 .blog-loading {
   text-align: center;
@@ -884,13 +914,10 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .page-hero::before,
-  .page-hero::after {
-    filter: none;
-    background: radial-gradient(circle, rgba(239, 70, 35, 0.06) 0%, transparent 70%);
-  }
+  .page-hero::after { left: 20px; right: 20px; }
 
   .info-cards { grid-template-columns: 1fr; }
+  .blog-section-head { flex-direction: column; gap: 4px; padding-top: 32px; }
   .stats-row  { grid-template-columns: 1fr 1fr; }
   .blog-grid  { grid-template-columns: 1fr; }
 

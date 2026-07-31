@@ -63,8 +63,7 @@
         if (!posts || posts.length === 0) {
           blogGrid.innerHTML =
             '<div class="blog-empty">' +
-              '<div class="blog-empty-icon">📝</div>' +
-              '<p>No posts yet. Check back soon!</p>' +
+              '<p>Nothing published yet. The guides below are the place to start.</p>' +
             '</div>';
           return;
         }
@@ -80,7 +79,7 @@
             '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="blog-card">' +
               '<div class="blog-card-body">' +
                 '<div class="blog-card-date">' + formatDate(post.date) + '</div>' +
-                '<h2 class="blog-card-title">' + escapeHtml(post.title) + '</h2>' +
+                '<h3 class="blog-card-title">' + escapeHtml(post.title) + '</h3>' +
                 '<p class="blog-card-excerpt">' + escapeHtml(post.description) + '</p>' +
                 '<span class="blog-card-link">Read article →</span>' +
               '</div>' +
@@ -92,8 +91,7 @@
       .catch(function () {
         blogGrid.innerHTML =
           '<div class="blog-empty">' +
-            '<div class="blog-empty-icon">⚠️</div>' +
-            '<p>Could not load posts. Please try again later.</p>' +
+            '<p>The article list didn\'t load. Reload the page, or browse the guides below.</p>' +
           '</div>';
       });
   }
@@ -153,8 +151,7 @@
       .catch(function () {
         postContentEl.innerHTML =
           '<div class="blog-empty">' +
-            '<div class="blog-empty-icon">📄</div>' +
-            '<p>Post not found. <a href="./">Back to blog</a></p>' +
+            '<p>That article isn\'t here. <a href="./">Back to the blog</a></p>' +
           '</div>';
       });
   }

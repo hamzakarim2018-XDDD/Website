@@ -30,68 +30,79 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="blog-hero">
-    <h1>The AgoraCrew <span class="accent-text">Blog</span></h1>
+    <h1>Notes from the <span class="accent-text">support inbox</span></h1>
     <p>
-      Practical guides, tutorials, and insights on e-commerce customer experience — from support automation to scaling your CX operations.
+      What we learn running customer support for e-commerce brands — which tickets repeat, what they cost to answer by hand, and which parts of the job are worth handing to a machine.
     </p>
   </section>
 
-  <!-- ==================== CONTENT GRID ==================== -->
+  <!-- ==================== ARTICLES (rendered from posts.json) ==================== -->
+  <div class="blog-section-head">
+    <h2>Articles</h2>
+    <p>Written as we go.</p>
+  </div>
+
+  <div class="blog-grid" id="blog-grid"></div>
+
+  <!-- ==================== GUIDES ==================== -->
+  <div class="blog-section-head">
+    <h2>Guides</h2>
+    <p>Longer references we keep up to date.</p>
+  </div>
+
   <div class="blog-grid">
 
-    <!-- Solutions -->
     <a href="../solutions/shopify-customer-service.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Guide · Solutions</div>
-        <h2 class="blog-card-title">Shopify Customer Service: The Complete Guide</h2>
-        <p class="blog-card-excerpt">How to set up, manage, and scale your Shopify store's support — from inbox zero to AI-powered automation.</p>
+        <div class="blog-card-date">Shopify</div>
+        <h3 class="blog-card-title">Managing customer service on Shopify</h3>
+        <p class="blog-card-excerpt">The five tickets that fill a Shopify inbox, the stack that handles them, and where the line between AI and a human actually falls.</p>
         <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
     <a href="../solutions/ecommerce-cx-strategy.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Guide · Solutions</div>
-        <h2 class="blog-card-title">E-Commerce CX Strategy: Build Your Playbook</h2>
-        <p class="blog-card-excerpt">A step-by-step framework for creating a customer experience strategy that reduces churn and increases lifetime value.</p>
+        <div class="blog-card-date">Strategy</div>
+        <h3 class="blog-card-title">Building a CX strategy for your store</h3>
+        <p class="blog-card-excerpt">What support really costs once you count your own hours, how to write the playbook, and what to change at each order volume.</p>
         <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
     <a href="../solutions/wismo-automation.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Guide · Solutions</div>
-        <h2 class="blog-card-title">WISMO Automation: Eliminate Order Tracking Tickets</h2>
-        <p class="blog-card-excerpt">Why "Where Is My Order?" makes up 40% of your tickets — and how to resolve them automatically with AI.</p>
+        <div class="blog-card-date">WISMO</div>
+        <h3 class="blog-card-title">Eliminating "where is my order?" tickets</h3>
+        <p class="blog-card-excerpt">Order-status questions are 40–60% of e-commerce support volume. Proactive shipping updates plus live order lookup close most of them.</p>
         <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
-    <!-- Resources -->
     <a href="../resources/reduce-support-costs.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Resource · Cost Optimization</div>
-        <h2 class="blog-card-title">7 Proven Ways to Reduce E-Commerce Support Costs</h2>
-        <p class="blog-card-excerpt">Actionable tactics to cut your customer service spend without sacrificing quality — from self-service to AI deflection.</p>
-        <span class="blog-card-link">Read resource →</span>
+        <div class="blog-card-date">Costs</div>
+        <h3 class="blog-card-title">Cutting support costs without cutting corners</h3>
+        <p class="blog-card-excerpt">Seven tactics, each with the ticket reduction you can expect — starting with the ones that stop tickets being created at all.</p>
+        <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
     <a href="../resources/customer-service-templates.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Resource · Templates</div>
-        <h2 class="blog-card-title">Free Customer Service Response Templates</h2>
-        <p class="blog-card-excerpt">Copy-paste email and chat templates for refunds, shipping delays, complaints, and more. Ready to use today.</p>
-        <span class="blog-card-link">Read resource →</span>
+        <div class="blog-card-date">Templates</div>
+        <h3 class="blog-card-title">Response templates for e-commerce support</h3>
+        <p class="blog-card-excerpt">Copy-paste replies for delayed deliveries, returns, damaged items, and complaints. Swap the bracketed fields and send.</p>
+        <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
     <a href="../resources/cx-metrics-guide.html" class="blog-card">
       <div class="blog-card-body">
-        <div class="blog-card-date">Resource · Analytics</div>
-        <h2 class="blog-card-title">The 6 CX Metrics That Actually Matter</h2>
-        <p class="blog-card-excerpt">Stop tracking vanity metrics. Here are the 6 KPIs that directly impact revenue, retention, and customer loyalty.</p>
-        <span class="blog-card-link">Read resource →</span>
+        <div class="blog-card-date">Metrics</div>
+        <h3 class="blog-card-title">The six CX metrics worth tracking</h3>
+        <p class="blog-card-excerpt">First response time, CSAT, FCR, resolution time, cost per ticket, and customer effort — with benchmarks by store size.</p>
+        <span class="blog-card-link">Read guide →</span>
       </div>
     </a>
 
@@ -99,21 +110,22 @@
 
   <!-- ==================== CTA ==================== -->
   <section class="page-cta-section">
-    <h2>Ready to Automate <span class="accent-text">Your Support?</span></h2>
+    <h2>We Run This Playbook <span class="accent-text">For You</span></h2>
     <p>
-      Everything we write about, our AI agents do automatically. WISMO resolution, cart recovery, and 24/7 support — from $99/mo.
+      Everything above is what our AI agents already do on live stores — order-status answers, cart recovery, and cover at 3am. From $99/mo.
     </p>
     <a href="../index.html#contact" class="cta-button">Start My Free Trial →</a>
     <div class="page-cta-badges">
-      <span class="page-cta-badge">🎁 5 days free</span>
-      <span class="page-cta-badge">💳 No credit card</span>
-      <span class="page-cta-badge">🤝 No lock-in</span>
+      <span class="page-cta-badge">5 days free</span>
+      <span class="page-cta-badge">No credit card</span>
+      <span class="page-cta-badge">No lock-in</span>
     </div>
   </section>
 
   <div id="footer-root"></div>
 
   <script src="../components.js" data-base=".."></script>
+  <script src="blog.js"></script>
   <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
 </body>
 </html>

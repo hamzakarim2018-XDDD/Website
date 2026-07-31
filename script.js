@@ -129,4 +129,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ============================
+  // ROI CALCULATOR
+  // ============================
+  const roiVolumeSlider = document.getElementById('roiVolumeSlider');
+  const roiVolumeNumber = document.getElementById('roiVolumeNumber');
+  const roiCostSlider = document.getElementById('roiCostSlider');
+  const roiCostNumber = document.getElementById('roiCostNumber');
+  const roiCurrentCost = document.getElementById('roiCurrentCost');
+  const roiPlanName = document.getElementById('roiPlanName');
+  const roiPlanFee = document.getElementById('roiPlanFee');
+  const roiSavingsAmount = document.getElementById('roiSavingsAmount');
+  const roiSavingsSubline = document.getElementById('roiSavingsSubline');
+  const roiSavingsBlock = document.getElementById('roiSavingsBlock');
+  const roiNeutralMessage = document.getElementById('roiNeutralMessage');
+
+  if (roiVolumeSlider) {
+    const roiCurrencyFormatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    });
+
+    const updateROI = () => {
+      let volume = parseInt(roiVolumeNumber.value, 10);
+      let cost = parseFloat(roiCostNumber.value);
+
+      if (isNaN(volume) || volume < 100) volume = 100;
+      if (volume > 6000) volume = 6000;
+      if (isNaN(cost) || cost < 1) cost = 1;
+      if (cost > 15) cost = 15;
+
+      roiVolumeSlider.value = volume;
+      roiVolumeNumber.value = volume;
+      roiCostSlider.value = cost;
+      roiCostNumber.value = cost.toFixed(2);
+
+      const result = computeROI(volume, cost);
+
+      roiCurrentCost.textContent = roiCurrencyFormatter.format(result.currentCost);
+      roiPlanName.textContent = result.plan;
+      roiPlanFee.textContent = roiCurrencyFormatter.format(result.fee);
+
+      if (result.savings > 0) {
+        roiSavingsBlock.hidden = false;
+        roiNeutralMessage.hidden = true;
+        roiSavingsAmount.textContent = roiCurrencyFormatter.format(result.savings) + '/mo';
+        roiSavingsSubline.textContent = '(' + result.savingsPercent + '% less · ' + roiCurrencyFormatter.format(result.annualSavings) + '/yr)';
+      } else {
+        roiSavingsBlock.hidden = true;
+        roiNeutralMessage.hidden = false;
+      }
+    };
+
+    roiVolumeSlider.addEventListener('input', () => {
+      roiVolumeNumber.value = roiVolumeSlider.value;
+      updateROI();
+    });
+    roiVolumeNumber.addEventListener('input', updateROI);
+    roiCostSlider.addEventListener('input', () => {
+      roiCostNumber.value = parseFloat(roiCostSlider.value).toFixed(2);
+      updateROI();
+    });
+    roiCostNumber.addEventListener('input', updateROI);
+
+    updateROI();
+  }
+
 });
