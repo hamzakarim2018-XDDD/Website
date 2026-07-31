@@ -1,6 +1,7 @@
 // AgoraCrew CX & Conversion Health Audit — frontend glue.
-// Update AUDIT_API_BASE to the deployed Project FirstClient URL once it's live.
-const AUDIT_API_BASE = 'http://localhost:4100';
+// Backed by the existing Project Rising Lion backend at api.agoracrew.com
+// (routes/cxAudit.js, mounted at /api/audit), not a separate service.
+const AUDIT_API_BASE = 'https://api.agoracrew.com';
 
 const PILLAR_LABELS = {
   support: 'Customer Support Responsiveness',
@@ -27,7 +28,7 @@ form.addEventListener('submit', async (e) => {
   resultsEl.hidden = true;
 
   try {
-    const res = await fetch(`${AUDIT_API_BASE}/api/scan`, {
+    const res = await fetch(`${AUDIT_API_BASE}/api/audit/scan`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url }),
@@ -71,7 +72,7 @@ reportForm.addEventListener('submit', async (e) => {
   reportStatus.textContent = 'Sending…';
 
   try {
-    const res = await fetch(`${AUDIT_API_BASE}/api/report`, {
+    const res = await fetch(`${AUDIT_API_BASE}/api/audit/report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: lastScannedUrl, email }),
