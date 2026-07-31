@@ -2599,35 +2599,31 @@ ul, ol { list-style: none; }
   margin-bottom: 4px;
 }
 
-.roi-stat-card {
-  background: var(--white);
-  border: 1px solid var(--ink-10);
-  border-radius: var(--radius-md);
-  padding: 24px 28px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
+.roi-stat {
+  padding-top: 24px;
 }
 
-.roi-stat-icon { font-size: 1.75rem; line-height: 1; }
+.roi-stat + .roi-stat {
+  border-top: 1px solid var(--ink-10);
+}
 
 .roi-stat-figure {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   color: var(--coral);
   line-height: 1.1;
 }
 
 .roi-stat-text {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--ink-70);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .roi-stat-source {
   font-size: 0.75rem;
   color: var(--ink-50);
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
