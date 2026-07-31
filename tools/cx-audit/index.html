@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Free CX &amp; Conversion Health Audit | AgoraCrew</title>
+  <meta name="description" content="Enter your Shopify store URL and get a free, instant Conversion & Support Health Score — with specific findings from your own store, not generic filler." />
+  <meta property="og:title" content="Free CX & Conversion Health Audit" />
+  <meta property="og:description" content="A free, instant 0-100 score across customer support responsiveness, site speed, trust signals, and checkout friction." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="page-hero">
+    <div class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="sep">→</span>
+      <span>Free Tools</span>
+    </div>
+    <div class="page-hero-badge">100% free, no signup required</div>
+    <h1>Free CX &amp; Conversion <span class="accent-text">Health Audit</span></h1>
+    <p class="page-hero-subtitle">
+      Enter your Shopify store URL. In about 15 seconds you'll get a 0-100 score across customer support responsiveness, site speed, trust signals, and checkout friction — with specific findings pulled from your own store, not generic filler.
+    </p>
+  </section>
+
+  <!-- ==================== CONTENT ==================== -->
+  <div class="page-content">
+
+    <div class="content-section">
+      <form class="contact-form" id="audit-form">
+        <div class="form-group">
+          <label for="store-url">Your Shopify Store URL</label>
+          <input type="text" id="store-url" name="store-url" placeholder="yourstore.myshopify.com" required />
+        </div>
+        <button type="submit" class="form-submit" id="audit-submit">Run My Free Audit →</button>
+        <p class="form-privacy" id="audit-status" role="status"></p>
+      </form>
+    </div>
+
+    <div class="content-section" id="audit-results" hidden>
+      <span class="content-section-eyebrow">Your results</span>
+      <h2>Conversion &amp; Support Health Score: <span class="accent-text" id="score-display">—</span></h2>
+
+      <div class="info-cards reveal" id="pillars-display"></div>
+
+      <h3>What we found</h3>
+      <ul id="findings-list"></ul>
+
+      <div class="content-section" id="report-gate">
+        <h3>Want the full report with specific fixes?</h3>
+        <form class="contact-form" id="report-form">
+          <div class="form-group">
+            <label for="report-email">Your Email</label>
+            <input type="email" id="report-email" name="report-email" placeholder="you@yourstore.com" required />
+          </div>
+          <button type="submit" class="form-submit">Email Me The Full Report →</button>
+          <p class="form-privacy" id="report-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="page-cta-section">
+    <h2>Found Gaps in Your <span class="accent-text">Customer Support?</span></h2>
+    <p>
+      AgoraCrew's AI agents handle your Shopify support inbox 24/7 — WISMO, returns, product questions — so nothing falls through the cracks.
+    </p>
+    <a href="../../index.html#contact" class="cta-button">Start My Free Trial →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">5 days free</span>
+      <span class="page-cta-badge">No credit card</span>
+      <span class="page-cta-badge">No lock-in</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../../components.js" data-base="../.."></script>
+  <script src="audit.js"></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
