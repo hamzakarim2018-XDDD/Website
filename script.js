@@ -145,9 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const roiNeutralMessage = document.getElementById('roiNeutralMessage');
 
   if (roiVolumeSlider) {
-    const roiCurrencyFormatter = new Intl.NumberFormat('en-US', {
+    // Same document.documentElement.lang detection used elsewhere on this
+    // site (see the language banner below) — French pages show EUR with
+    // French grouping/punctuation, English pages keep USD.
+    const roiIsFrench = document.documentElement.lang === 'fr';
+    const roiCurrencyFormatter = new Intl.NumberFormat(roiIsFrench ? 'fr-FR' : 'en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: roiIsFrench ? 'EUR' : 'USD',
       maximumFractionDigits: 0
     });
 
@@ -174,8 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (result.savings > 0) {
         roiSavingsBlock.hidden = false;
         roiNeutralMessage.hidden = true;
-        roiSavingsAmount.textContent = roiCurrencyFormatter.format(result.savings) + '/mo';
-        roiSavingsSubline.textContent = '(' + result.savingsPercent + '% less · ' + roiCurrencyFormatter.format(result.annualSavings) + '/yr)';
+        roiSavingsAmount.textContent = roiCurrencyFormatter.format(result.savings) + (roiIsFrench ? '/mois' : '/mo');
+        roiSavingsSubline.textContent = roiIsFrench
+          ? '(' + result.savingsPercent + ' % de moins · ' + roiCurrencyFormatter.format(result.annualSavings) + '/an)'
+          : '(' + result.savingsPercent + '% less · ' + roiCurrencyFormatter.format(result.annualSavings) + '/yr)';
       } else {
         roiSavingsBlock.hidden = true;
         roiNeutralMessage.hidden = false;
