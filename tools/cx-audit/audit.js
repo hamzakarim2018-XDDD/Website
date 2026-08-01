@@ -16,13 +16,13 @@ const AUDIT_STRINGS = {
   },
   fr: {
     scanning: 'Analyse de votre boutique en cours…',
-    invalidUrl: 'Cela ne ressemble pas à une URL de boutique valide. Indiquez juste le domaine, par ex. votreboutique.myshopify.com.',
-    scanFailed: 'Une erreur s’est produite pendant l’audit. Merci de réessayer dans un instant.',
-    genericError: 'Impossible de contacter le service d’audit. Merci de réessayer sous peu.',
+    invalidUrl: 'Cette URL ne semble pas valide. Indiquez simplement le domaine, par ex. votreboutique.myshopify.com.',
+    scanFailed: 'Un problème est survenu pendant l’audit. Merci de réessayer dans un instant.',
+    genericError: 'Impossible de joindre le service d’audit. Merci de réessayer sous peu.',
     sending: 'Envoi en cours…',
-    sent: 'Envoyé ! Consultez votre boîte de réception pour le rapport complet.',
+    sent: 'Envoyé ! Consultez votre boîte de réception pour recevoir le rapport complet.',
     emailFailed: 'Le rapport n’a pas pu être envoyé pour le moment — merci de réessayer plus tard.',
-    emailInvalid: 'Impossible d’envoyer le rapport — merci de vérifier votre adresse e-mail et de réessayer.',
+    emailInvalid: 'Impossible d’envoyer le rapport — vérifiez votre adresse e-mail et réessayez.',
   },
 };
 const auditLocale = document.documentElement.lang === 'fr' ? 'fr' : 'en';

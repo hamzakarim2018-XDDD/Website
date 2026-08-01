@@ -76,7 +76,7 @@
       copyright: '© 2026 AgoraCrew. All rights reserved.', taxId: 'Tax ID (Adószám): HU92198362'
     },
     fr: {
-      tagline: 'Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 $/mois — résolution des tickets de suivi de commande, récupération de panier, et support 24h/24 et 7j/7 qui s\'adapte à votre boutique.',
+      tagline: 'Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 €/mois — résolution des demandes de suivi de commande, récupération de paniers abandonnés, et support 24h/24 et 7j/7 qui s\'adapte à votre boutique.',
       solutionsCol: 'Solutions', resourcesCol: 'Ressources', contactCol: 'Nous contacter',
       shopifyService: 'Service client Shopify', cxStrategy: 'Stratégie CX e-commerce', wismo: 'Automatisation WISMO',
       reduceCosts: 'Réduire les coûts de support', templates: 'Modèles de réponses', metrics: 'Guide des métriques CX', blog: 'Blog',
