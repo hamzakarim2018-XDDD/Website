@@ -7,7 +7,8 @@
  * and generates a posts.json file for the blog engine.
  *
  * Usage:
- *   node build-blog.js
+ *   node build-blog.js                Builds English posts (./posts/*.md -> ./posts.json)
+ *   node build-blog.js --lang=fr      Builds French posts (./posts/fr/*.md -> ./posts.fr.json)
  *
  * Run this before deploying whenever you add or update a blog post.
  */
@@ -15,8 +16,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const POSTS_DIR = path.join(__dirname, 'posts');
-const OUTPUT_FILE = path.join(__dirname, 'posts.json');
+const langArg = process.argv.find(a => a.startsWith('--lang='));
+const lang = langArg ? langArg.split('=')[1] : 'en';
+const POSTS_DIR = lang === 'en' ? path.join(__dirname, 'posts') : path.join(__dirname, 'posts', lang);
+const OUTPUT_FILE = lang === 'en' ? path.join(__dirname, 'posts.json') : path.join(__dirname, `posts.${lang}.json`);
 
 function parseFrontmatter(content) {
   if (!content.startsWith('---')) return {};
