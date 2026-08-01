@@ -12,6 +12,49 @@
 (function () {
   var script = document.currentScript;
   var base = script.getAttribute('data-base') || '..';
+  var locale = script.getAttribute('data-locale') === 'fr' ? 'fr' : 'en';
+  // Prefixes an English-tree relative link with the /fr equivalent when
+  // this page is French. `base` already resolves "how many levels up to
+  // the site root" — this only changes what sits AFTER that root.
+  function localizeHref(href) {
+    if (locale !== 'fr') return href;
+    // href values here are always root-relative-from-base, e.g.
+    // base + '/index.html' or base + '/solutions/x.html' — insert /fr
+    // right after `base`.
+    return href.replace(base, base + '/fr');
+  }
+
+  var NAV_STRINGS = {
+    en: {
+      math: 'The Math', howItWorks: 'How It Works', pricing: 'Pricing',
+      grader: 'Free Store Grader', learn: 'Learn', contact: 'Contact',
+      bookAudit: 'Book a CX Audit', startTrial: 'Start Free Trial',
+      solutionsCol: 'Solutions', resourcesCol: 'Resources', blogCol: 'Blog',
+      shopifyGuideTitle: 'Shopify CX Guide', shopifyGuideDesc: 'Manage support on Shopify',
+      cxStrategyTitle: 'CX Strategy', cxStrategyDesc: 'Build a CX playbook',
+      wismoTitle: 'WISMO Automation', wismoDesc: 'Eliminate order tracking tickets',
+      costsTitle: 'Cut Support Costs', costsDesc: '7 proven cost-saving tactics',
+      templatesTitle: 'Response Templates', templatesDesc: 'Free copy-paste templates',
+      metricsTitle: 'CX Metrics Guide', metricsDesc: '6 metrics that matter',
+      allArticlesTitle: 'All Articles', allArticlesDesc: 'Latest CX insights & guides',
+      switcherLabel: 'FR', switcherHref: null // filled in per-page, see Step 4
+    },
+    fr: {
+      math: 'Le Calcul', howItWorks: 'Comment ça marche', pricing: 'Tarifs',
+      grader: 'Auditez ma boutique', learn: 'Ressources', contact: 'Contact',
+      bookAudit: 'Réserver un audit CX', startTrial: 'Essai gratuit',
+      solutionsCol: 'Solutions', resourcesCol: 'Ressources', blogCol: 'Blog',
+      shopifyGuideTitle: 'Guide CX Shopify', shopifyGuideDesc: 'Gérer le support sur Shopify',
+      cxStrategyTitle: 'Stratégie CX', cxStrategyDesc: 'Construire un plan CX',
+      wismoTitle: 'Automatisation WISMO', wismoDesc: 'Éliminer les tickets de suivi de commande',
+      costsTitle: 'Réduire les coûts', costsDesc: '7 tactiques éprouvées',
+      templatesTitle: 'Modèles de réponses', templatesDesc: 'Modèles gratuits à copier-coller',
+      metricsTitle: 'Guide des métriques CX', metricsDesc: '6 métriques essentielles',
+      allArticlesTitle: 'Tous les articles', allArticlesDesc: 'Derniers articles et guides CX',
+      switcherLabel: 'EN', switcherHref: null
+    }
+  };
+  var nav = NAV_STRINGS[locale];
 
   /* ==================== NAVBAR ==================== */
   var navbarRoot = document.getElementById('navbar-root');
@@ -19,59 +62,63 @@
     navbarRoot.outerHTML =
       '<nav class="navbar" id="navbar">' +
         '<div class="container">' +
-          '<a href="' + base + '/index.html" class="nav-logo" aria-label="AgoraCrew">' +
+          '<a href="' + localizeHref(base + '/index.html') + '" class="nav-logo" aria-label="AgoraCrew">' +
             '<span class="nav-logo-icon"></span>' +
           '</a>' +
 
           '<div class="nav-center" id="navCenter">' +
-            '<a href="' + base + '/index.html#problem">The Math</a>' +
-            '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
-            '<a href="' + base + '/index.html#pricing">Pricing</a>' +
-            '<a href="' + base + '/tools/cx-audit/index.html">Free Store Grader</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#problem">' + nav.math + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#how-it-works">' + nav.howItWorks + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#pricing">' + nav.pricing + '</a>' +
+            '<a href="' + localizeHref(base + '/tools/cx-audit/index.html') + '">' + nav.grader + '</a>' +
             '<div class="nav-dropdown">' +
               '<button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">' +
-                'Learn' +
+                nav.learn +
                 '<svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
               '</button>' +
               '<div class="nav-dropdown-menu">' +
                 '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">Solutions</div>' +
-                  '<a href="' + base + '/solutions/shopify-customer-service.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Shopify CX Guide</span><span class="nav-dropdown-link-desc">Manage support on Shopify</span></span>' +
+                  '<div class="nav-dropdown-col-title">' + nav.solutionsCol + '</div>' +
+                  '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.shopifyGuideTitle + '</span><span class="nav-dropdown-link-desc">' + nav.shopifyGuideDesc + '</span></span>' +
                   '</a>' +
-                  '<a href="' + base + '/solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Strategy</span><span class="nav-dropdown-link-desc">Build a CX playbook</span></span>' +
+                  '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.cxStrategyTitle + '</span><span class="nav-dropdown-link-desc">' + nav.cxStrategyDesc + '</span></span>' +
                   '</a>' +
-                  '<a href="' + base + '/solutions/wismo-automation.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">WISMO Automation</span><span class="nav-dropdown-link-desc">Eliminate order tracking tickets</span></span>' +
-                  '</a>' +
-                '</div>' +
-                '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">Resources</div>' +
-                  '<a href="' + base + '/resources/reduce-support-costs.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Cut Support Costs</span><span class="nav-dropdown-link-desc">7 proven cost-saving tactics</span></span>' +
-                  '</a>' +
-                  '<a href="' + base + '/resources/customer-service-templates.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Response Templates</span><span class="nav-dropdown-link-desc">Free copy-paste templates</span></span>' +
-                  '</a>' +
-                  '<a href="' + base + '/resources/cx-metrics-guide.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Metrics Guide</span><span class="nav-dropdown-link-desc">6 metrics that matter</span></span>' +
+                  '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.wismoTitle + '</span><span class="nav-dropdown-link-desc">' + nav.wismoDesc + '</span></span>' +
                   '</a>' +
                 '</div>' +
                 '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">Blog</div>' +
-                  '<a href="' + base + '/blog/index.html" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">All Articles</span><span class="nav-dropdown-link-desc">Latest CX insights & guides</span></span>' +
+                  '<div class="nav-dropdown-col-title">' + nav.resourcesCol + '</div>' +
+                  '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.costsTitle + '</span><span class="nav-dropdown-link-desc">' + nav.costsDesc + '</span></span>' +
+                  '</a>' +
+                  '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.templatesTitle + '</span><span class="nav-dropdown-link-desc">' + nav.templatesDesc + '</span></span>' +
+                  '</a>' +
+                  '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.metricsTitle + '</span><span class="nav-dropdown-link-desc">' + nav.metricsDesc + '</span></span>' +
+                  '</a>' +
+                '</div>' +
+                '<div class="nav-dropdown-col">' +
+                  '<div class="nav-dropdown-col-title">' + nav.blogCol + '</div>' +
+                  '<a href="' + localizeHref(base + '/blog/index.html') + '" class="nav-dropdown-link">' +
+                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.allArticlesTitle + '</span><span class="nav-dropdown-link-desc">' + nav.allArticlesDesc + '</span></span>' +
                   '</a>' +
                 '</div>' +
               '</div>' +
             '</div>' +
-            '<a href="' + base + '/index.html#contact">Contact</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact">' + nav.contact + '</a>' +
           '</div>' +
 
           '<div class="nav-right">' +
-            '<a href="' + base + '/index.html#contact" class="nav-cta-secondary">Book a CX Audit</a>' +
-            '<a href="' + base + '/index.html#contact" class="nav-cta">Start Free Trial</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta-secondary">' + nav.bookAudit + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
+            '<a href="' + (locale === 'fr'
+              ? window.location.pathname.replace('/fr/', '/')
+              : window.location.pathname.replace(/^(\/)?/, '$1fr/')
+            ) + '" class="nav-lang-switch" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
           '</div>' +
 
           '<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">' +
@@ -79,25 +126,25 @@
           '</button>' +
 
           '<div class="nav-links" id="navLinks">' +
-            '<a href="' + base + '/index.html#problem">The Math</a>' +
-            '<a href="' + base + '/index.html#how-it-works">How It Works</a>' +
-            '<a href="' + base + '/index.html#pricing">Pricing</a>' +
-            '<a href="' + base + '/tools/cx-audit/index.html">Free Store Grader</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#problem">' + nav.math + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#how-it-works">' + nav.howItWorks + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#pricing">' + nav.pricing + '</a>' +
+            '<a href="' + localizeHref(base + '/tools/cx-audit/index.html') + '">' + nav.grader + '</a>' +
             '<button class="mobile-dropdown-toggle" onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\')">' +
-              'Learn' +
+              nav.learn +
               '<svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
             '</button>' +
             '<div class="mobile-dropdown-items">' +
-              '<a href="' + base + '/solutions/shopify-customer-service.html">Shopify CX Guide</a>' +
-              '<a href="' + base + '/solutions/ecommerce-cx-strategy.html">CX Strategy</a>' +
-              '<a href="' + base + '/solutions/wismo-automation.html">WISMO Automation</a>' +
-              '<a href="' + base + '/resources/reduce-support-costs.html">Cut Support Costs</a>' +
-              '<a href="' + base + '/resources/customer-service-templates.html">Response Templates</a>' +
-              '<a href="' + base + '/resources/cx-metrics-guide.html">CX Metrics Guide</a>' +
-              '<a href="' + base + '/blog/index.html">Blog</a>' +
+              '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '">' + nav.shopifyGuideTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '">' + nav.cxStrategyTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '">' + nav.wismoTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '">' + nav.costsTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '">' + nav.templatesTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '">' + nav.metricsTitle + '</a>' +
+              '<a href="' + localizeHref(base + '/blog/index.html') + '">' + nav.blogCol + '</a>' +
             '</div>' +
-            '<a href="' + base + '/index.html#contact">Contact</a>' +
-            '<a href="' + base + '/index.html#contact" class="nav-cta">Start Free Trial</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact">' + nav.contact + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
           '</div>' +
         '</div>' +
       '</nav>';
