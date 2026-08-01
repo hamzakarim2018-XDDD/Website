@@ -240,7 +240,7 @@ ul, ol { list-style: none; }
 .nav-lang-switch {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--ink-60, #666);
+  color: var(--ink-70);
   border: 1px solid currentColor;
   border-radius: var(--radius-pill);
   padding: 4px 10px;
