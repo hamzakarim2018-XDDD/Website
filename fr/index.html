@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>AgoraCrew — Agents IA de support client pour l'e-commerce | Dès 99 $/mois</title>
+  <meta name="description" content="AgoraCrew déploie des agents IA formés pour gérer le support client e-commerce, résoudre instantanément les tickets de suivi de commande (WISMO) et récupérer les paniers abandonnés — dès 99 $/mois, tarif fixe. Renfort humain inclus. Essai gratuit de 5 jours." />
+  <meta name="keywords" content="service client e-commerce, agent de support IA, résolution WISMO, récupération de panier abandonné, support Shopify, IA Gorgias, support à tarif fixe" />
+  <meta property="og:title" content="AgoraCrew — Votre agent de support à 2 000 $/mois, remplacé pour 99 $." />
+  <meta property="og:description" content="Des agents IA formés gèrent votre boîte de support 24h/24 et 7j/7 — suivi de commande, questions fréquentes, récupération de panier. Avec renfort humain. Tarif mensuel fixe, sans surprise. Essai gratuit." />
+  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/index.html" />
+
+  <!-- PERF: Preconnect to Google Fonts domains — eliminates DNS+TLS latency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- PERF: Google Fonts loaded as <link> instead of CSS @import to avoid chained blocking waterfall -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <!-- PERF: Critical above-the-fold CSS inlined to enable first paint without waiting for styles.css -->
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #ffffff; color: #2D3B42; line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background 0.4s cubic-bezier(0.16,1,0.3,1); border-bottom: 1px solid transparent; }
+    .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; }
+    .nav-logo-icon { width: 64px; height: 48px; background-image: url('../logo-new-orange.png'); background-repeat: no-repeat; background-size: 137px 79px; background-position: -37px 0; flex-shrink: 0; }
+    .nav-center { display: flex; align-items: center; gap: 36px; }
+    .nav-center a { font-size: 0.85rem; color: rgba(45,59,66,0.8); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-cta { background: #EF4623; color: #fff !important; padding: 10px 22px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .nav-cta-secondary { font-size: 0.85rem; color: rgba(45,59,66,0.7); font-weight: 600; }
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 1001; cursor: pointer; border: none; background: none; }
+    .mobile-menu-btn span { width: 22px; height: 2px; background: #2D3B42; border-radius: 2px; }
+    .nav-links { display: none; }
+    .hero { position: relative; padding: 140px 24px 80px; max-width: 1280px; margin: 0 auto; text-align: center; overflow: visible; }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #FDF1EE; border-radius: 9999px; font-size: 0.85rem; font-weight: 500; color: #2D3B42; margin-bottom: 32px; }
+    .hero-badge .dot { width: 6px; height: 6px; background: #EF4623; border-radius: 50%; }
+    .hero-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(3rem, 9vw, 8rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; color: #2D3B42; }
+    .hero-title .accent-text { font-style: italic; color: #EF4623; display: block; }
+    .hero-subtitle { font-size: 1.125rem; color: rgba(45,59,66,0.7); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .hero-cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .hero-cta { display: inline-flex; align-items: center; background: #EF4623; color: #fff; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; background: transparent; color: #2D3B42; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; border: 2px solid rgba(45,59,66,0.1); }
+    .hero-trial-note { font-size: 0.85rem; color: rgba(45,59,66,0.5); margin-bottom: 48px; }
+    .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: translateY(0) rotate(0deg); } }
+    @media (max-width: 768px) {
+      .nav-center { display: none; } .nav-right { display: none; } .mobile-menu-btn { display: flex; }
+      .hero { padding: 110px 20px 48px; }
+      .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .hero-cta-group { flex-direction: column; gap: 12px; }
+      .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="AgoraCrew">
+        <span class="nav-logo-icon"></span>
+      </a>
+
+      <div class="nav-center" id="navCenter">
+        <a href="#problem">Le Calcul</a>
+        <a href="#how-it-works">Comment ça marche</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="../fr/tools/cx-audit/index.html">Auditez ma boutique</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Ressources
+            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Solutions</div>
+              <a href="../fr/solutions/shopify-customer-service.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide CX Shopify</span>
+                  <span class="nav-dropdown-link-desc">Gérer le support sur Shopify</span>
+                </span>
+              </a>
+              <a href="../fr/solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Stratégie CX</span>
+                  <span class="nav-dropdown-link-desc">Construire un plan CX</span>
+                </span>
+              </a>
+              <a href="../fr/solutions/wismo-automation.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Automatisation WISMO</span>
+                  <span class="nav-dropdown-link-desc">Éliminer les tickets de suivi de commande</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Ressources</div>
+              <a href="../fr/resources/reduce-support-costs.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Réduire les coûts</span>
+                  <span class="nav-dropdown-link-desc">7 tactiques éprouvées</span>
+                </span>
+              </a>
+              <a href="../fr/resources/customer-service-templates.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Modèles de réponses</span>
+                  <span class="nav-dropdown-link-desc">Modèles gratuits à copier-coller</span>
+                </span>
+              </a>
+              <a href="../fr/resources/cx-metrics-guide.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide des métriques CX</span>
+                  <span class="nav-dropdown-link-desc">6 métriques essentielles</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Blog</div>
+              <a href="../fr/blog/index.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Tous les articles</span>
+                  <span class="nav-dropdown-link-desc">Derniers articles et guides CX</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="#contact" class="nav-cta-secondary">Réserver un audit CX</a>
+        <a href="#contact" class="nav-cta">Essai gratuit</a>
+        <a href="../index.html" class="nav-lang-switch" aria-label="Switch to English">EN</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Slide-out Nav -->
+      <div class="nav-links" id="navLinks">
+        <a href="#problem">Le Calcul</a>
+        <a href="#how-it-works">Comment ça marche</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="../fr/tools/cx-audit/index.html">Auditez ma boutique</a>
+        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Ressources
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-dropdown-items">
+          <a href="../fr/solutions/shopify-customer-service.html">Guide CX Shopify</a>
+          <a href="../fr/solutions/ecommerce-cx-strategy.html">Stratégie CX</a>
+          <a href="../fr/solutions/wismo-automation.html">Automatisation WISMO</a>
+          <a href="../fr/resources/reduce-support-costs.html">Réduire les coûts</a>
+          <a href="../fr/resources/customer-service-templates.html">Modèles de réponses</a>
+          <a href="../fr/resources/cx-metrics-guide.html">Guide des métriques CX</a>
+          <a href="../fr/blog/index.html">Blog</a>
+        </div>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Essai gratuit</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+
+    <!-- Pill Badge -->
+    <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
+      <span class="dot"></span> Agents IA pour le support e-commerce
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="hero-title animate-fade-up" style="opacity:0; animation-delay: 0.25s;">
+      Externalisez votre boîte de réception.<br/>
+      <span class="accent-text">Développez votre marque.</span>
+    </h1>
+
+    <!-- Subheading -->
+    <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
+      Pour moins de 100 $/mois, vous n'aurez plus jamais à répondre manuellement à un e-mail « Où est ma commande ? ». Des agents IA formés gèrent votre boîte de support ou votre chat 24h/24 et 7j/7, en récupérant en temps réel les données de commande et de suivi de votre boutique, et vous pouvez ajouter des agents humains dès qu'un ticket en a besoin.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
+      <a href="#contact" class="hero-cta">Essai gratuit</a>
+      <a href="#pricing" class="hero-cta-secondary">Voir les tarifs ↓</a>
+    </div>
+
+    <!-- Microcopy -->
+    <p class="hero-trial-note animate-fade-up" style="opacity:0; animation-delay: 0.55s;">
+      Commencez avec <strong>60 tickets résolus par l'IA</strong> ou <strong>5 jours</strong> gratuits — selon la première limite atteinte. <strong>Sans engagement</strong>, annulez à tout moment.
+    </p>
+
+  </section>
+
+
+  <!-- ==================== PLATFORMS ==================== -->
+  <section class="platforms" id="platforms">
+    <div class="container">
+      <div class="platforms-inner">
+        <div class="platforms-row">
+          <p>Compatible avec vos outils actuels</p>
+          <div class="platform-logos">
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Gorgias</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Shopify</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Klaviyo</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Zendesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Intercom</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Freshdesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>ShipStation</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>ShipBob</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Recharge</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <span>Loop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ROI CALCULATOR ==================== -->
+  <section class="benefits" id="problem">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Le Calcul</span>
+        <h2 class="section-title">Découvrez ce que votre boîte de réception<br/><span class="accent-text">vous coûte vraiment.</span></h2>
+        <p class="section-subtitle mx-auto">
+          La plupart des boutiques paient trop cher leur support et perdent quand même des ventes à cause de temps de réponse trop lents. Faites le calcul vous-même.
+        </p>
+      </div>
+
+      <div class="roi-grid">
+        <div class="roi-calc-card reveal">
+          <h3 class="roi-calc-heading">Vos chiffres</h3>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Tickets de support mensuels</span>
+              <span class="roi-field-value"><input type="number" id="roiVolumeNumber" value="800" min="100" max="6000" step="50" aria-label="Tickets de support mensuels" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiVolumeSlider" min="100" max="6000" step="50" value="800" aria-label="Tickets de support mensuels" />
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Coût par ticket aujourd'hui</span>
+              <span class="roi-field-value">$<input type="number" id="roiCostNumber" value="4.50" min="1" max="15" step="0.5" aria-label="Coût par ticket aujourd'hui, en dollars" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiCostSlider" min="1" max="15" step="0.5" value="4.5" aria-label="Coût par ticket aujourd'hui, en dollars" />
+          </div>
+
+          <div class="roi-divider"></div>
+
+          <div id="roiOutput" aria-live="polite">
+            <div class="roi-output-row"><span>Votre coût actuel</span><strong id="roiCurrentCost">$3,600</strong></div>
+            <div class="roi-output-row"><span>AgoraCrew (<span id="roiPlanName">Growth</span>)</span><strong id="roiPlanFee">$249</strong></div>
+
+            <div class="roi-savings-block" id="roiSavingsBlock">
+              <div class="roi-savings-amount"><span id="roiSavingsAmount">$3,351/mo</span></div>
+              <p class="roi-savings-subline" id="roiSavingsSubline">(93% less &middot; $40,212/yr)</p>
+            </div>
+            <p class="roi-neutral-message" id="roiNeutralMessage" hidden>AgoraCrew s'adapte à votre volume de tickets &mdash; aucune mauvaise surprise.</p>
+          </div>
+
+          <div class="roi-cta-group">
+            <a href="#contact" class="roi-cta-primary">Essai gratuit</a>
+            <a href="#pricing" class="roi-cta-secondary">Voir tous les tarifs</a>
+          </div>
+        </div>
+
+        <div class="roi-stats-stack reveal reveal-delay-1">
+          <h3 class="roi-stats-heading">Les boutiques avec chat en direct constatent généralement :</h3>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">~20 % de hausse</div>
+            <p class="roi-stat-text">L'ajout du chat en direct augmente le taux de conversion global du site.</p>
+            <p class="roi-stat-source">Source : Forrester (données agrégées du secteur)</p>
+          </div>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">10&ndash;15 % du chiffre d'affaires</div>
+            <p class="roi-stat-text">Ce que les marques e-commerce attribuent aux interactions par chat en direct.</p>
+            <p class="roi-stat-source">Source : Forrester</p>
+          </div>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">79 % des entreprises</div>
+            <p class="roi-stat-text">Affirment que le chat en direct a amélioré les ventes, le chiffre d'affaires et la fidélité client.</p>
+            <p class="roi-stat-source">Source : Kayako</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== HOW IT WORKS (COMPACT) ==================== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Comment ça marche</span>
+        <h2 class="section-title">Opérationnel en <span class="accent-text">moins de 24 heures.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Trois étapes, et la plus longue consiste à lire vos pages de politique. La plupart des boutiques répondent à leur premier ticket dès le lendemain matin.
+        </p>
+      </div>
+
+      <div class="steps-grid steps-grid--three">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Connectez votre boutique</h3>
+          <p class="step-text">Nous nous connectons à votre boutique Shopify et à votre helpdesk — Gorgias, Zendesk, ou en solution autonome.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Nous apprenons votre marque</h3>
+          <p class="step-text">Votre agent IA est formé sur le ton de votre marque, votre catalogue produits, votre FAQ et vos politiques de support.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Mise en ligne</h3>
+          <p class="step-text">L'IA traite les tickets 24h/24 et 7j/7. Des humains interviennent sur les cas complexes. Vous supervisez tout depuis votre tableau de bord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="pricing-services" id="pricing">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Tarification simple</span>
+        <h2 class="section-title">Un tarif fixe.<br/><span class="accent-text">Aucune surprise.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Chaque forfait inclut un support IA 24h/24 et 7j/7, une résolution instantanée des tickets de suivi de commande, et un renfort humain supervisé. Choisissez le volume adapté à votre boutique.
+        </p>
+      </div>
+
+      <!-- ===== AI SUBSCRIPTION TIERS ===== -->
+      <div class="pricing-cards" style="margin-top: 56px;">
+
+        <!-- STARTER -->
+        <div class="price-card reveal" id="plan-starter">
+          <div class="price-card-header">
+            <div class="price-card-label">Starter</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">99</span>
+              <span class="price-period">/ mois</span>
+            </div>
+            <p class="price-card-sub">500 tickets inclus. Pour les boutiques qui débutent avec le support IA.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Support par chat IA 24h/24 et 7j/7</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Réponses instantanées « Où est ma commande ? »</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Autonome ou intégrable à tout helpdesk</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Formation à la voix de votre marque</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Plus de 50 langues</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Rapports de performance hebdomadaires</span>
+            </li>
+
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-starter">Essai gratuit</a>
+        </div>
+
+        <!-- GROWTH (Most Popular) -->
+        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-growth">
+          <div class="price-card-badge">Le plus populaire</div>
+          <div class="price-card-header">
+            <div class="price-card-label">Growth</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">249</span>
+              <span class="price-period">/ mois</span>
+            </div>
+            <p class="price-card-sub">1 500 tickets inclus. Support IA + outils de récupération de revenus.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Tout ce qui est inclus dans Starter, plus :</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Récupération proactive de panier</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Campagnes de réactivation</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Rappels de réapprovisionnement</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Flux des réussites conversationnelles</span>
+            </li>
+
+          </ul>
+          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-growth">Essai gratuit</a>
+        </div>
+
+        <!-- SCALE -->
+        <div class="price-card reveal reveal-delay-2" id="plan-scale">
+          <div class="price-card-header">
+            <div class="price-card-label">Scale</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">599</span>
+              <span class="price-period">/ mois</span>
+            </div>
+            <p class="price-card-sub">4 000 tickets inclus. IA complète avec gestion de compte dédiée.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Tout ce qui est inclus dans Growth, plus :</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Gestionnaire de compte dédié</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Support prioritaire</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Intégrations personnalisées</span>
+            </li>
+
+            <li class="price-card-feature price-card-feature--note">
+              <span class="feature-check feature-check--note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+              <span>Dépassement : 0,20 $ par ticket supplémentaire</span>
+            </li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-scale">Essai gratuit</a>
+        </div>
+
+      </div>
+
+      <!-- Overage Callout -->
+      <div class="overage-callout reveal">
+        <p>
+          <strong>Aucune surprise quand vous grandissez.</strong> Vous dépassez vos tickets inclus ? Pas de rupture, pas de pénalité. Juste 0,20 $ par ticket supplémentaire. Vos coûts restent prévisibles, même en cas de pic de commandes.
+        </p>
+      </div>
+
+      <!-- ===== HUMAN AGENT TEAMS ===== -->
+      <div class="human-pricing-header text-center reveal">
+        <span class="section-label"><span class="dot"></span> Équipes d'agents humains</span>
+        <h3 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Besoin d'agents humains dédiés ?</h3>
+        <p class="section-subtitle mx-auto">
+          Pour les demandes complexes, les comptes VIP, ou la gestion complète de la relation client — ajoutez des agents humains supervisés à votre dispositif.
+        </p>
+      </div>
+
+      <div class="pricing-cards">
+
+        <!-- CARD 1 — Nearshore (Hungary) -->
+        <div class="price-card reveal" id="plan-nearshore">
+          <div class="price-card-header">
+            <div class="price-card-label">Nearshore — Hongrie</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">19</span>
+              <span class="price-period">/ Heure</span>
+            </div>
+            <p class="price-card-sub">Locuteurs natifs anglais ou français pour une gestion de compte et CRM de haut niveau, en temps réel.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Locuteurs natifs anglais ou français</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Gestion CRM &amp; de compte en temps réel</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Supervision professionnelle pour garantir la qualité</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Sans engagement — résiliable à tout moment</span>
+            </li>
+            <li class="price-card-feature price-card-feature--note">
+              <span class="feature-check feature-check--note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+              <span>Frais de recrutement unique de 369 $</span>
+            </li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-nearshore">Réserver un audit CX gratuit</a>
+        </div>
+
+        <!-- CARD 2 — Offshore (Philippines) -->
+        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-offshore">
+          <div class="price-card-badge">Meilleur rapport qualité-prix</div>
+          <div class="price-card-header">
+            <div class="price-card-label">Offshore — Philippines</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">12</span>
+              <span class="price-period">/ Heure</span>
+            </div>
+            <p class="price-card-sub">La meilleure solution pour le chat à fort volume, la gestion de tickets, et un support CRM e-commerce évolutif.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Chat et gestion de tickets à fort volume</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Support CRM e-commerce évolutif</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Supervision professionnelle pour garantir la qualité</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Sans engagement — résiliable à tout moment</span>
+            </li>
+            <li class="price-card-feature price-card-feature--note">
+              <span class="feature-check feature-check--note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+              <span>Frais de recrutement unique de 369 $</span>
+            </li>
+          </ul>
+          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-offshore">Réserver un audit CX gratuit</a>
+        </div>
+
+        <!-- CARD 3 — Scale / Custom -->
+        <div class="price-card reveal reveal-delay-2" id="plan-human-scale">
+          <div class="price-card-header">
+            <div class="price-card-label">Équipe sur mesure</div>
+            <div class="price-card-amount">
+              <span class="price-value price-value--custom">Sur mesure</span>
+            </div>
+            <p class="price-card-sub">Combinez agents nearshore &amp; offshore pour créer l'équipe idéale pour les marques à fort volume.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Combinez des agents HU &amp; PH selon vos besoins</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Pour les équipes de 5 agents et plus</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Gestionnaire de compte dédié</span>
+            </li>
+            <li class="price-card-feature">
+              <span class="feature-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Supervision professionnelle pour garantir la qualité</span>
+            </li>
+            <li class="price-card-feature price-card-feature--note">
+              <span class="feature-check feature-check--note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+              <span>Frais de recrutement unique sur devis</span>
+            </li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-human-scale">Réserver un audit CX gratuit</a>
+        </div>
+
+      </div>
+
+      <!-- Trial Guarantee -->
+      <div class="pricing-trial-guarantee reveal">
+        <p><strong>Garantie zéro risque :</strong> profitez de vos <strong>60 premiers tickets</strong> ou de <strong>5 jours</strong> entièrement gratuits (selon la première limite atteinte) — avec toutes les fonctionnalités du forfait Growth incluses. Sans engagement. Aucune carte bancaire requise.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== TRIAL CTA BANNER ==================== -->
+  <section class="trial-banner">
+    <div class="container">
+      <div class="trial-banner-inner reveal">
+        <h2>Arrêtez de payer 2 000 $/mois<br/>pour répondre à des e-mails.</h2>
+        <p>
+          Pour moins de 100 $/mois, votre agent IA gère la boîte de réception pendant que vous développez votre marque. Commencez gratuitement. Aucune carte bancaire requise.
+        </p>
+        <div class="trial-badge-row">
+          <span class="trial-badge">5 jours gratuits / 60 tickets</span>
+          <span class="trial-badge">Aucune carte bancaire requise</span>
+          <span class="trial-badge">Sans engagement contractuel</span>
+          <span class="trial-badge">Renfort humain inclus</span>
+        </div>
+        <a href="#contact" class="btn-primary">
+          <span>Essai gratuit →</span>
+        </a>
+        <div class="trial-trust-bar">Adopté par des marques e-commerce du monde entier</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT / SCHEDULE ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Commencer</span>
+        <h2 class="section-title">Entrer en <span class="accent-text">contact</span></h2>
+        <p class="section-subtitle mx-auto">
+          Remplissez le formulaire ci-dessous et votre agent IA sera prêt en moins de 24 heures.
+        </p>
+      </div>
+
+      <div class="contact-grid contact-grid--single">
+        <!-- Contact Form Side -->
+        <div class="form-side reveal">
+          <h3>Envoyez-nous un message</h3>
+          <p>Vous préférez écrire ? Remplissez le formulaire et nous vous répondrons sous 4 heures ouvrées.</p>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgojjvrv" method="POST">
+            <!-- Formspree config -->
+            <input type="text" name="_gotcha" style="display:none" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Prénom *</label>
+                <input type="text" id="firstName" name="first_name" placeholder="Julie" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Nom *</label>
+                <input type="text" id="lastName" name="last_name" placeholder="Dupont" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail professionnel *</label>
+              <input type="email" id="email" name="email" placeholder="julie@votremarque.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Entreprise / Nom de marque</label>
+              <input type="text" id="company" name="company" placeholder="Votre Marque SARL" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="website">Site web (facultatif)</label>
+                <input type="url" id="website" name="website" placeholder="https://votremarque.com" />
+              </div>
+              <div class="form-group">
+                <label for="volume">Volume de tickets mensuel (facultatif)</label>
+                <select id="volume" name="ticket_volume">
+                  <option value="" disabled selected>Sélectionnez une fourchette</option>
+                  <option value="0-500">0 – 500</option>
+                  <option value="500-1500">500 – 1 500</option>
+                  <option value="1500-4000">1 500 – 4 000</option>
+                  <option value="4000-10000">4 000 – 10 000</option>
+                  <option value="10000+">10 000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tier">Forfait souhaité (facultatif)</label>
+              <select id="tier" name="interested_tier">
+                <option value="" disabled selected>Sélectionnez un forfait</option>
+                <option value="Starter - $99/mo (500 tickets)">Starter — 99 $/mois (500 tickets)</option>
+                <option value="Growth - $249/mo (1500 tickets)">Growth — 249 $/mois (1 500 tickets)</option>
+                <option value="Scale - $599/mo (4000 tickets)">Scale — 599 $/mois (4 000 tickets)</option>
+                <option value="Nearshore (Hungary) - $19/hr">Agents humains — Nearshore (19 $/h)</option>
+                <option value="Offshore (Philippines) - $12/hr">Agents humains — Offshore (12 $/h)</option>
+                <option value="Not sure yet">Pas encore sûr — aidez-moi à choisir</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Parlez-nous de vos besoins (facultatif)</label>
+              <textarea id="message" name="message" placeholder="Quels sont vos plus grands défis en matière de support ? Quels canaux utilisez-vous actuellement ? Des objectifs spécifiques ?"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">
+              Commencer →
+            </button>
+
+            <p class="form-privacy">
+              Vos informations sont sécurisées. Nous ne partagerons jamais vos données avec des tiers.
+            </p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Message envoyé !</h4>
+            <p>Merci de nous avoir contactés. Nous vous recontacterons sous 4 heures ouvrées pour configurer votre agent IA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" aria-label="AgoraCrew">
+            <span class="nav-logo-icon"></span>
+          </a>
+          <p>
+            Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 $/mois — résolution des tickets de suivi de commande, récupération de panier, et support 24h/24 et 7j/7 qui s'adapte à votre boutique.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Forfaits IA</h4>
+          <a href="#pricing">Starter — 99 $/mois</a>
+          <a href="#pricing">Growth — 249 $/mois</a>
+          <a href="#pricing">Scale — 599 $/mois</a>
+        </div>
+        <div class="footer-col">
+          <h4>Agents humains</h4>
+          <a href="#pricing">Nearshore — Hongrie</a>
+          <a href="#pricing">Offshore — Philippines</a>
+          <a href="#pricing">Équipe sur mesure</a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h4>Nous contacter</h4>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
+          <a href="#contact">Réserver un audit CX gratuit</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AgoraCrew. Tous droits réservés.</span>
+        <span class="footer-tax-id">Numéro fiscal (Adószám) : HU92198362</span>
+        <div class="footer-bottom-links">
+          <a href="../fr/privacy-policy.html">Politique de confidentialité</a>
+          <a href="#">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PERF: defer allows HTML parsing to complete before script execution -->
+  <script src="../roi-calc.js" defer></script>
+  <script src="../script.js" defer></script>
+
+  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
