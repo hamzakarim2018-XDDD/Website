@@ -3,12 +3,46 @@
 // (routes/cxAudit.js, mounted at /api/audit), not a separate service.
 const AUDIT_API_BASE = 'https://api.agoracrew.com';
 
-const PILLAR_LABELS = {
-  support: 'Customer Support Responsiveness',
-  speed: 'Site Speed',
-  trust: 'Trust & Social Proof',
-  checkout: 'Checkout Friction',
+const AUDIT_STRINGS = {
+  en: {
+    scanning: 'Scanning your store…',
+    invalidUrl: 'That doesn’t look like a valid store URL. Try just the domain, e.g. yourstore.myshopify.com.',
+    scanFailed: 'Something went wrong running the audit. Please try again in a moment.',
+    genericError: 'Couldn’t reach the audit service. Please try again shortly.',
+    sending: 'Sending…',
+    sent: 'Sent! Check your inbox for the full report.',
+    emailFailed: 'The report couldn’t be emailed right now — please try again later.',
+    emailInvalid: 'Couldn’t send the report — please double-check your email and try again.',
+  },
+  fr: {
+    scanning: 'Analyse de votre boutique en cours…',
+    invalidUrl: 'Cela ne ressemble pas à une URL de boutique valide. Indiquez juste le domaine, par ex. votreboutique.myshopify.com.',
+    scanFailed: 'Une erreur s’est produite pendant l’audit. Merci de réessayer dans un instant.',
+    genericError: 'Impossible de contacter le service d’audit. Merci de réessayer sous peu.',
+    sending: 'Envoi en cours…',
+    sent: 'Envoyé ! Consultez votre boîte de réception pour le rapport complet.',
+    emailFailed: 'Le rapport n’a pas pu être envoyé pour le moment — merci de réessayer plus tard.',
+    emailInvalid: 'Impossible d’envoyer le rapport — merci de vérifier votre adresse e-mail et de réessayer.',
+  },
 };
+const auditLocale = document.documentElement.lang === 'fr' ? 'fr' : 'en';
+const t = AUDIT_STRINGS[auditLocale];
+
+const PILLAR_LABELS_BY_LOCALE = {
+  en: {
+    support: 'Customer Support Responsiveness',
+    speed: 'Site Speed',
+    trust: 'Trust & Social Proof',
+    checkout: 'Checkout Friction',
+  },
+  fr: {
+    support: 'Réactivité du support client',
+    speed: 'Vitesse du site',
+    trust: 'Confiance et preuve sociale',
+    checkout: 'Friction au paiement',
+  },
+};
+const PILLAR_LABELS = PILLAR_LABELS_BY_LOCALE[auditLocale];
 
 const form = document.getElementById('audit-form');
 const statusEl = document.getElementById('audit-status');
@@ -24,7 +58,7 @@ let lastScannedUrl = null;
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const url = document.getElementById('store-url').value.trim();
-  statusEl.textContent = 'Scanning your store…';
+  statusEl.textContent = t.scanning;
   resultsEl.hidden = true;
 
   try {
@@ -36,8 +70,8 @@ form.addEventListener('submit', async (e) => {
     const data = await res.json();
     if (!res.ok) {
       statusEl.textContent = data.error === 'invalid_url'
-        ? 'That doesn’t look like a valid store URL. Try just the domain, e.g. yourstore.myshopify.com.'
-        : 'Something went wrong running the audit. Please try again in a moment.';
+        ? t.invalidUrl
+        : t.scanFailed;
       return;
     }
 
@@ -62,14 +96,14 @@ form.addEventListener('submit', async (e) => {
     });
     resultsEl.hidden = false;
   } catch (err) {
-    statusEl.textContent = 'Couldn’t reach the audit service. Please try again shortly.';
+    statusEl.textContent = t.genericError;
   }
 });
 
 reportForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById('report-email').value.trim();
-  reportStatus.textContent = 'Sending…';
+  reportStatus.textContent = t.sending;
 
   try {
     const res = await fetch(`${AUDIT_API_BASE}/api/audit/report`, {
@@ -79,13 +113,13 @@ reportForm.addEventListener('submit', async (e) => {
     });
     const data = await res.json();
     if (res.ok && data.success) {
-      reportStatus.textContent = 'Sent! Check your inbox for the full report.';
+      reportStatus.textContent = t.sent;
     } else if (data.error === 'email_unavailable') {
-      reportStatus.textContent = 'The report couldn’t be emailed right now — please try again later.';
+      reportStatus.textContent = t.emailFailed;
     } else {
-      reportStatus.textContent = 'Couldn’t send the report — please double-check your email and try again.';
+      reportStatus.textContent = t.emailInvalid;
     }
   } catch {
-    reportStatus.textContent = 'Couldn’t reach the audit service. Please try again shortly.';
+    reportStatus.textContent = t.genericError;
   }
 });

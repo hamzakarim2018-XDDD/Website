@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Audit gratuit de santé CX &amp; conversion | AgoraCrew</title>
+  <meta name="description" content="Entrez l'URL de votre boutique Shopify et obtenez un score de santé Conversion &amp; Support gratuit et instantané — avec des constats précis tirés de votre propre boutique, pas de généralités." />
+  <meta property="og:title" content="Audit gratuit de santé CX & conversion" />
+  <meta property="og:description" content="Un score gratuit et instantané sur 100 points couvrant la réactivité du support client, la vitesse du site, les signaux de confiance et la friction au paiement." />
+  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/tools/cx-audit/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/tools/cx-audit/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/tools/cx-audit/index.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="stylesheet" href="../../../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="page-hero">
+    <div class="breadcrumb">
+      <a href="../../index.html">Accueil</a>
+      <span class="sep">→</span>
+      <span>Outils gratuits</span>
+    </div>
+    <div class="page-hero-badge">100 % gratuit, sans inscription</div>
+    <h1>Audit gratuit de santé <span class="accent-text">CX &amp; conversion</span></h1>
+    <p class="page-hero-subtitle">
+      Entrez l'URL de votre boutique Shopify. En environ 15 secondes, vous obtiendrez un score sur 100 couvrant la réactivité du support client, la vitesse du site, les signaux de confiance et la friction au paiement — avec des constats précis tirés de votre propre boutique, pas de généralités.
+    </p>
+  </section>
+
+  <!-- ==================== CONTENT ==================== -->
+  <div class="page-content">
+
+    <div class="content-section">
+      <form class="contact-form" id="audit-form">
+        <div class="form-group">
+          <label for="store-url">URL de votre boutique Shopify</label>
+          <input type="text" id="store-url" name="store-url" placeholder="votreboutique.myshopify.com" required />
+        </div>
+        <button type="submit" class="form-submit" id="audit-submit">Lancer mon audit gratuit →</button>
+        <p class="form-privacy" id="audit-status" role="status"></p>
+      </form>
+    </div>
+
+    <div class="content-section" id="audit-results" hidden>
+      <span class="content-section-eyebrow">Vos résultats</span>
+      <h2>Score de santé Conversion &amp; Support : <span class="accent-text" id="score-display">—</span></h2>
+
+      <div class="info-cards reveal" id="pillars-display"></div>
+
+      <h3>Ce que nous avons trouvé</h3>
+      <ul id="findings-list"></ul>
+
+      <div class="content-section" id="report-gate">
+        <h3>Vous voulez le rapport complet avec des corrections précises ?</h3>
+        <form class="contact-form" id="report-form">
+          <div class="form-group">
+            <label for="report-email">Votre e-mail</label>
+            <input type="email" id="report-email" name="report-email" placeholder="vous@votreboutique.com" required />
+          </div>
+          <button type="submit" class="form-submit">M'envoyer le rapport complet →</button>
+          <p class="form-privacy" id="report-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="page-cta-section">
+    <h2>Des lacunes dans votre <span class="accent-text">support client ?</span></h2>
+    <p>
+      Les agents IA d'AgoraCrew gèrent votre boîte de support Shopify 24h/24 et 7j/7 — WISMO, retours, questions produit — pour que rien ne passe à travers les mailles du filet.
+    </p>
+    <a href="../../index.html#contact" class="cta-button">Démarrer mon essai gratuit →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">5 jours gratuits</span>
+      <span class="page-cta-badge">Aucune carte bancaire</span>
+      <span class="page-cta-badge">Sans engagement</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../../../components.js" data-base="../../.." data-locale="fr"></script>
+  <script src="../../../tools/cx-audit/audit.js"></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
