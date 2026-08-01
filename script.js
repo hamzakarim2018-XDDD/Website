@@ -196,4 +196,59 @@ document.addEventListener('DOMContentLoaded', () => {
     updateROI();
   }
 
+  // ============================
+  // LANGUAGE BANNER
+  // ============================
+  // Suggests switching language based on browser locale; never
+  // auto-redirects (bad for SEO crawlability and for VPN/expat users).
+  // Cookie-remembered dismissal so it doesn't nag on every pageview.
+  (function () {
+    const COOKIE_NAME = 'agoracrew_lang_pref';
+    const currentLocale = document.documentElement.lang === 'fr' ? 'fr' : 'en';
+
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    }
+    function setCookie(name, value) {
+      document.cookie = name + '=' + value + ';path=/;max-age=' + (60 * 60 * 24 * 365);
+    }
+
+    if (getCookie(COOKIE_NAME)) return; // already dismissed or already chose, either language
+
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    const suggestFrench = currentLocale === 'en' && browserLang.indexOf('fr') === 0;
+    const suggestEnglish = currentLocale === 'fr' && browserLang.indexOf('fr') !== 0;
+    if (!suggestFrench && !suggestEnglish) return;
+
+    const banner = document.createElement('div');
+    banner.className = 'lang-banner';
+
+    const text = document.createElement('span');
+    text.textContent = suggestFrench
+      ? 'On dirait que vous préférez le français.'
+      : 'It looks like you might prefer English.';
+
+    const switchLink = document.createElement('a');
+    switchLink.href = suggestFrench
+      ? window.location.pathname.replace(/^(\/)?/, '$1fr/')
+      : window.location.pathname.replace('/fr/', '/');
+    switchLink.textContent = suggestFrench ? 'Voir en français' : 'View in English';
+    switchLink.addEventListener('click', () => setCookie(COOKIE_NAME, suggestFrench ? 'fr' : 'en'));
+
+    const dismiss = document.createElement('button');
+    dismiss.type = 'button';
+    dismiss.setAttribute('aria-label', 'Dismiss');
+    dismiss.textContent = '✕';
+    dismiss.addEventListener('click', () => {
+      setCookie(COOKIE_NAME, currentLocale);
+      banner.remove();
+    });
+
+    banner.appendChild(text);
+    banner.appendChild(switchLink);
+    banner.appendChild(dismiss);
+    document.body.appendChild(banner);
+  })();
+
 });
