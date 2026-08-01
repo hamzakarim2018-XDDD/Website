@@ -24,6 +24,16 @@
     return href.replace(base, base + '/fr');
   }
 
+  // Computes the URL for the "other" language, preserving the current
+  // page's path AND query string (e.g. blog post pages use ?slug=...,
+  // which must survive a language switch or the target page 404s/errors).
+  function otherLangUrl() {
+    var path = locale === 'fr'
+      ? window.location.pathname.replace('/fr/', '/')
+      : window.location.pathname.replace(/^(\/)?/, '$1fr/');
+    return path + window.location.search;
+  }
+
   var NAV_STRINGS = {
     en: {
       math: 'The Math', howItWorks: 'How It Works', pricing: 'Pricing',
@@ -37,7 +47,7 @@
       templatesTitle: 'Response Templates', templatesDesc: 'Free copy-paste templates',
       metricsTitle: 'CX Metrics Guide', metricsDesc: '6 metrics that matter',
       allArticlesTitle: 'All Articles', allArticlesDesc: 'Latest CX insights & guides',
-      switcherLabel: 'FR', switcherHref: null // filled in per-page, see Step 4
+      switcherLabel: 'FR'
     },
     fr: {
       math: 'Le Calcul', howItWorks: 'Comment ça marche', pricing: 'Tarifs',
@@ -51,10 +61,30 @@
       templatesTitle: 'Modèles de réponses', templatesDesc: 'Modèles gratuits à copier-coller',
       metricsTitle: 'Guide des métriques CX', metricsDesc: '6 métriques essentielles',
       allArticlesTitle: 'Tous les articles', allArticlesDesc: 'Derniers articles et guides CX',
-      switcherLabel: 'EN', switcherHref: null
+      switcherLabel: 'EN'
     }
   };
   var nav = NAV_STRINGS[locale];
+
+  var FOOTER_STRINGS = {
+    en: {
+      tagline: 'Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.',
+      solutionsCol: 'Solutions', resourcesCol: 'Resources', contactCol: 'Get In Touch',
+      shopifyService: 'Shopify Customer Service', cxStrategy: 'E-Commerce CX Strategy', wismo: 'WISMO Automation',
+      reduceCosts: 'Reduce Support Costs', templates: 'Response Templates', metrics: 'CX Metrics Guide', blog: 'Blog',
+      bookAudit: 'Book a free CX Audit', privacy: 'Privacy Policy', terms: 'Terms of Service',
+      copyright: '© 2026 AgoraCrew. All rights reserved.', taxId: 'Tax ID (Adószám): HU92198362'
+    },
+    fr: {
+      tagline: 'Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 $/mois — résolution des tickets de suivi de commande, récupération de panier, et support 24h/24 et 7j/7 qui s\'adapte à votre boutique.',
+      solutionsCol: 'Solutions', resourcesCol: 'Ressources', contactCol: 'Nous contacter',
+      shopifyService: 'Service client Shopify', cxStrategy: 'Stratégie CX e-commerce', wismo: 'Automatisation WISMO',
+      reduceCosts: 'Réduire les coûts de support', templates: 'Modèles de réponses', metrics: 'Guide des métriques CX', blog: 'Blog',
+      bookAudit: 'Réserver un audit CX gratuit', privacy: 'Politique de confidentialité', terms: 'Conditions d\'utilisation',
+      copyright: '© 2026 AgoraCrew. Tous droits réservés.', taxId: 'Numéro fiscal (Adószám) : HU92198362'
+    }
+  };
+  var footer = FOOTER_STRINGS[locale];
 
   /* ==================== NAVBAR ==================== */
   var navbarRoot = document.getElementById('navbar-root');
@@ -115,10 +145,7 @@
           '<div class="nav-right">' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta-secondary">' + nav.bookAudit + '</a>' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
-            '<a href="' + (locale === 'fr'
-              ? window.location.pathname.replace('/fr/', '/')
-              : window.location.pathname.replace(/^(\/)?/, '$1fr/')
-            ) + '" class="nav-lang-switch" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
+            '<a href="' + otherLangUrl() + '" class="nav-lang-switch" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
           '</div>' +
 
           '<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">' +
@@ -145,6 +172,7 @@
             '</div>' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact">' + nav.contact + '</a>' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
+            '<a href="' + otherLangUrl() + '" class="nav-lang-switch-mobile" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
           '</div>' +
         '</div>' +
       '</nav>';
@@ -160,46 +188,46 @@
 
             /* Brand Column */
             '<div class="footer-brand">' +
-              '<a href="' + base + '/index.html" class="nav-logo" aria-label="AgoraCrew">' +
+              '<a href="' + localizeHref(base + '/index.html') + '" class="nav-logo" aria-label="AgoraCrew">' +
                 '<span class="nav-logo-icon"></span>' +
               '</a>' +
-              '<p>Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.</p>' +
+              '<p>' + footer.tagline + '</p>' +
             '</div>' +
 
             /* Solutions Column */
             '<div class="footer-col">' +
-              '<h4>Solutions</h4>' +
-              '<a href="' + base + '/solutions/shopify-customer-service.html">Shopify Customer Service</a>' +
-              '<a href="' + base + '/solutions/ecommerce-cx-strategy.html">E-Commerce CX Strategy</a>' +
-              '<a href="' + base + '/solutions/wismo-automation.html">WISMO Automation</a>' +
+              '<h4>' + footer.solutionsCol + '</h4>' +
+              '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '">' + footer.shopifyService + '</a>' +
+              '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '">' + footer.cxStrategy + '</a>' +
+              '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '">' + footer.wismo + '</a>' +
             '</div>' +
 
             /* Resources Column */
             '<div class="footer-col">' +
-              '<h4>Resources</h4>' +
-              '<a href="' + base + '/resources/reduce-support-costs.html">Reduce Support Costs</a>' +
-              '<a href="' + base + '/resources/customer-service-templates.html">Response Templates</a>' +
-              '<a href="' + base + '/resources/cx-metrics-guide.html">CX Metrics Guide</a>' +
-              '<a href="' + base + '/blog/index.html">Blog</a>' +
+              '<h4>' + footer.resourcesCol + '</h4>' +
+              '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '">' + footer.reduceCosts + '</a>' +
+              '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '">' + footer.templates + '</a>' +
+              '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '">' + footer.metrics + '</a>' +
+              '<a href="' + localizeHref(base + '/blog/index.html') + '">' + footer.blog + '</a>' +
             '</div>' +
 
             /* Contact Column */
             '<div class="footer-col footer-col--contact">' +
-              '<h4>Get In Touch</h4>' +
+              '<h4>' + footer.contactCol + '</h4>' +
               '<a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>' +
               '<a href="tel:+36300841533">+36 30 084 1533</a>' +
-              '<a href="' + base + '/index.html#contact">Book a free CX Audit</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#contact">' + footer.bookAudit + '</a>' +
             '</div>' +
 
           '</div>' +
 
           /* Bottom Bar */
           '<div class="footer-bottom">' +
-            '<span>&copy; 2026 AgoraCrew. All rights reserved.</span>' +
-            '<span class="footer-tax-id">Tax ID (Adószám): HU92198362</span>' +
+            '<span>' + footer.copyright + '</span>' +
+            '<span class="footer-tax-id">' + footer.taxId + '</span>' +
             '<div class="footer-bottom-links">' +
-              '<a href="' + base + '/privacy-policy.html">Privacy Policy</a>' +
-              '<a href="#">Terms of Service</a>' +
+              '<a href="' + localizeHref(base + '/privacy-policy.html') + '">' + footer.privacy + '</a>' +
+              '<a href="#">' + footer.terms + '</a>' +
             '</div>' +
           '</div>' +
 

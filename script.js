@@ -230,9 +230,12 @@ document.addEventListener('DOMContentLoaded', () => {
       : 'It looks like you might prefer English.';
 
     const switchLink = document.createElement('a');
-    switchLink.href = suggestFrench
+    const otherLangPath = suggestFrench
       ? window.location.pathname.replace(/^(\/)?/, '$1fr/')
       : window.location.pathname.replace('/fr/', '/');
+    // Preserve the query string (e.g. ?slug=... on blog post pages) so the
+    // language switch lands on the same content instead of a bare index.
+    switchLink.href = otherLangPath + window.location.search;
     switchLink.textContent = suggestFrench ? 'Voir en français' : 'View in English';
     switchLink.addEventListener('click', () => setCookie(COOKIE_NAME, suggestFrench ? 'fr' : 'en'));
 
