@@ -1,0 +1,2 @@
+# local git worktrees (scratch, used for isolated feature work)
+.worktrees/
