@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — AgoraCrew</title>
+  <meta name="description" content="Politique de confidentialité d'AgoraCrew. Découvrez comment nous collectons, traitons et protégeons vos données lorsque vous utilisez nos services de support client propulsés par l'IA et nos applications Shopify." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/privacy-policy.html" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/privacy-policy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/privacy-policy.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
+
+  <style>
+    /* ============================================
+       PRIVACY POLICY — Page-Specific Styles
+       ============================================ */
+
+    .privacy-hero {
+      position: relative;
+      padding: 140px 24px 60px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+    }
+
+    /* Masthead hairline, matching the guide pages — no ambient blur circles. */
+    .privacy-hero::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 0;
+      height: 1px;
+      background: var(--ink-5);
+    }
+
+    .privacy-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero h1 .accent-text {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .privacy-hero .privacy-effective {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--ink-50);
+      font-weight: 500;
+    }
+
+    /* --- Privacy Content Area --- */
+    .privacy-content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .privacy-section {
+      margin-bottom: 56px;
+    }
+
+    .privacy-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--ink-5);
+    }
+
+    .privacy-section-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--peach);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .privacy-section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--ink-70);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 14px 0;
+    }
+
+    .privacy-section ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .privacy-section strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Highlight callout box */
+    .privacy-callout {
+      background: var(--peach);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .privacy-callout p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--ink-80);
+      font-weight: 500;
+    }
+
+    /* Data table */
+    .privacy-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--ink-5);
+    }
+
+    .privacy-data-table thead {
+      background: var(--ink);
+    }
+
+    .privacy-data-table th {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 14px 20px;
+      text-align: left;
+    }
+
+    .privacy-data-table td {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--ink-70);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--ink-5);
+      line-height: 1.6;
+    }
+
+    .privacy-data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .privacy-data-table tbody tr:nth-child(even) {
+      background: rgba(253, 241, 238, 0.3);
+    }
+
+    /* Contact card */
+    .privacy-contact-card {
+      background: var(--ink);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      color: var(--white);
+      margin-top: 24px;
+    }
+
+    .privacy-contact-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .privacy-contact-card p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .privacy-contact-card a.privacy-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 6px 20px var(--coral-20);
+    }
+
+    .privacy-contact-card a.privacy-email-link:hover {
+      background: #d93d1e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--coral-20);
+    }
+
+    /* Back to home link */
+    .privacy-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--coral);
+      margin-bottom: 32px;
+      transition: all 0.2s var(--ease-out);
+    }
+
+    .privacy-back-link:hover {
+      gap: 12px;
+      color: #d93d1e;
+    }
+
+    /* Table of Contents */
+    .privacy-toc {
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      border: 1px solid var(--ink-5);
+    }
+
+    .privacy-toc h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+      margin: 0;
+    }
+
+    .privacy-toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 6px;
+    }
+
+    .privacy-toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-70);
+      padding: 6px 0;
+      transition: color 0.2s var(--ease-out);
+      font-weight: 500;
+    }
+
+    .privacy-toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--coral);
+      min-width: 20px;
+    }
+
+    .privacy-toc ol li a:hover {
+      color: var(--ink);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .privacy-hero { padding: 110px 20px 40px; }
+      .privacy-hero h1 { font-size: 2.2rem; }
+      .privacy-content { padding: 0 20px 80px; }
+      .privacy-data-table th,
+      .privacy-data-table td { padding: 10px 14px; font-size: 0.82rem; }
+      .privacy-contact-card { padding: 28px 24px; }
+      .privacy-toc { padding: 22px 24px; }
+      .privacy-section-header h2 { font-size: 1.35rem; }
+    }
+
+    @media (max-width: 480px) {
+      .privacy-data-table { font-size: 0.78rem; }
+      .privacy-data-table th,
+      .privacy-data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+        <span class="nav-logo-icon"></span>
+      </a>
+
+      <div class="nav-center" id="navCenter">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Ressources
+            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Solutions</div>
+              <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide CX Shopify</span>
+                  <span class="nav-dropdown-link-desc">Gérer le support sur Shopify</span>
+                </span>
+              </a>
+              <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Stratégie CX</span>
+                  <span class="nav-dropdown-link-desc">Construire un plan CX</span>
+                </span>
+              </a>
+              <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Automatisation WISMO</span>
+                  <span class="nav-dropdown-link-desc">Éliminer les tickets de suivi de commande</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Ressources</div>
+              <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Réduire les coûts</span>
+                  <span class="nav-dropdown-link-desc">7 tactiques éprouvées</span>
+                </span>
+              </a>
+              <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Modèles de réponses</span>
+                  <span class="nav-dropdown-link-desc">Modèles gratuits à copier-coller</span>
+                </span>
+              </a>
+              <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide des métriques CX</span>
+                  <span class="nav-dropdown-link-desc">6 métriques essentielles</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Blog</div>
+              <a href="blog/index.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Tous les articles</span>
+                  <span class="nav-dropdown-link-desc">Derniers articles et guides CX</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Slide-out Nav -->
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Ressources
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-dropdown-items">
+          <a href="solutions/shopify-customer-service.html">Guide CX Shopify</a>
+          <a href="solutions/ecommerce-cx-strategy.html">Stratégie CX</a>
+          <a href="solutions/wismo-automation.html">Automatisation WISMO</a>
+          <a href="resources/reduce-support-costs.html">Réduire les coûts</a>
+          <a href="resources/customer-service-templates.html">Modèles de réponses</a>
+          <a href="resources/cx-metrics-guide.html">Guide des métriques CX</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== PRIVACY HERO ==================== -->
+  <section class="privacy-hero">
+    <a href="index.html" class="privacy-back-link">← Retour à l'accueil</a>
+    <h1>Politique de <span class="accent-text">confidentialité</span></h1>
+    <p class="privacy-effective">Date d'entrée en vigueur : 19 juillet 2026 &nbsp;·&nbsp; Dernière mise à jour : 27 juillet 2026</p>
+  </section>
+
+
+  <!-- ==================== PRIVACY CONTENT ==================== -->
+  <div class="privacy-content">
+
+    <!-- Table of Contents -->
+    <nav class="privacy-toc" aria-label="Table des matières">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#introduction">Introduction et champ d'application</a></li>
+        <li><a href="#data-controller">Responsable du traitement</a></li>
+        <li><a href="#data-collected">Données que nous collectons et traitons</a></li>
+        <li><a href="#data-minimization">Minimisation des données</a></li>
+        <li><a href="#ai-disclosure">Information sur l'IA et le traitement automatisé</a></li>
+        <li><a href="#human-agents">Agents de support humains</a></li>
+        <li><a href="#subprocessors">Sous-traitants tiers</a></li>
+        <li><a href="#data-retention">Conservation et suppression des données</a></li>
+        <li><a href="#legal-basis">Base légale du traitement</a></li>
+        <li><a href="#your-rights">Vos droits en vertu du RGPD</a></li>
+        <li><a href="#security">Mesures de sécurité</a></li>
+        <li><a href="#cookies-advertising">Cookies et publicité</a></li>
+        <li><a href="#changes">Modifications de cette politique</a></li>
+        <li><a href="#contact-privacy">Nous contacter</a></li>
+      </ol>
+    </nav>
+
+
+    <!-- 1. Introduction -->
+    <div class="privacy-section" id="introduction">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📋</div>
+        <h2>1. Introduction et champ d'application</h2>
+      </div>
+      <p>
+        Cette politique de confidentialité explique comment <strong>AgoraCrew</strong> (exploité sous Optimise Inbox, ci-après « nous », « notre » ou « nos ») collecte, traite, stocke et protège les données personnelles dans le cadre de nos services de support client et de notre application Shopify, <strong>AgoraCrew's AI</strong>.
+      </p>
+      <p>
+        Cette politique s'applique à tous les clients finaux (« vous » ou « personnes concernées ») dont les données sont traitées lorsqu'un marchand installe et utilise notre application sur sa boutique Shopify, ainsi qu'à toute personne interagissant avec nos services de support client propulsés par IA ou opérés par des humains au nom de la marque d'un marchand.
+      </p>
+      <p>
+        Nous nous engageons à respecter pleinement le <strong>Règlement général sur la protection des données (UE) 2016/679 (« RGPD »)</strong>, le <strong>UK Data Protection Act 2018</strong>, et les <strong>directives développeurs de l'App Store de Shopify</strong>.
+      </p>
+    </div>
+
+
+    <!-- 2. Data Controller -->
+    <div class="privacy-section" id="data-controller">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🏢</div>
+        <h2>2. Responsable du traitement</h2>
+      </div>
+      <p>
+        Aux fins du RGPD, <strong>AgoraCrew (Optimise Inbox)</strong> agit en tant que <strong>sous-traitant</strong> pour le compte du marchand Shopify ayant installé notre application. Le marchand demeure le <strong>responsable du traitement</strong> et doit s'assurer de disposer d'une base légale pour partager les données de ses clients avec nous.
+      </p>
+      <p>
+        Pour toute donnée que nous traitons de manière indépendante (comme les informations de compte marchand ou les demandes via notre site web), nous agissons en tant que responsable du traitement. Notre contact officiel pour les questions de protection des données est :
+      </p>
+      <div class="privacy-callout">
+        <p>
+          📧 <strong>Contact protection des données :</strong> anne@agoracrew.com<br />
+          📍 <strong>Adresse enregistrée :</strong> Budapest, Hongrie
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 3. Data Collected -->
+    <div class="privacy-section" id="data-collected">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📦</div>
+        <h2>3. Données que nous collectons et traitons</h2>
+      </div>
+      <p>
+        Lorsqu'un marchand utilise AgoraCrew's AI pour traiter les demandes de support client, nous accédons et traitons uniquement le minimum de données nécessaires pour répondre à la demande de support spécifique. Le tableau suivant détaille exactement ce qui est collecté :
+      </p>
+
+      <table class="privacy-data-table">
+        <thead>
+          <tr>
+            <th>Catégorie de données</th>
+            <th>Champs spécifiques</th>
+            <th>Finalité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Identité du client</strong></td>
+            <td>Prénom, nom</td>
+            <td>Personnaliser les réponses de support et identifier le client dans le CRM du marchand</td>
+          </tr>
+          <tr>
+            <td><strong>Coordonnées</strong></td>
+            <td>Adresse e-mail</td>
+            <td>Répondre au client via son ticket de support</td>
+          </tr>
+          <tr>
+            <td><strong>Données de commande</strong></td>
+            <td>Numéro de commande, statut de commande, informations de suivi</td>
+            <td>Répondre aux demandes WISMO (Where Is My Order) et fournir des mises à jour d'expédition</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="privacy-callout">
+        <p>
+          🚫 Nous ne collectons, ne stockons ni ne traitons <strong>pas</strong> de détails de paiement, de numéros de carte bancaire, d'adresses de facturation, de mots de passe, de comportement de navigation, ni aucune autre donnée personnelle sensible.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 4. Data Minimization -->
+    <div class="privacy-section" id="data-minimization">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🎯</div>
+        <h2>4. Minimisation des données</h2>
+      </div>
+      <p>
+        Nous respectons strictement le principe RGPD de <strong>minimisation des données</strong> (article 5(1)(c)). Cela signifie que :
+      </p>
+      <ul>
+        <li>Nous <strong>ne traitons que les noms des clients, adresses e-mail et numéros de commande</strong> — strictement pour répondre aux demandes WISMO (Where Is My Order) et résoudre les demandes de support client associées.</li>
+        <li>Aucune donnée supplémentaire n'est demandée, extraite, déduite ou collectée au-delà de ce qui est explicitement requis pour la finalité indiquée.</li>
+        <li>Nous ne construisons pas de profils clients, ne suivons pas le comportement, et n'agrégeons pas de données personnelles à des fins d'analyse ou de marketing.</li>
+      </ul>
+    </div>
+
+
+    <!-- 5. AI Disclosure -->
+    <div class="privacy-section" id="ai-disclosure">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🤖</div>
+        <h2>5. Information sur l'IA et le traitement automatisé</h2>
+      </div>
+      <p>
+        Conformément aux exigences de transparence du RGPD (articles 13-14) et aux directives de l'App Store de Shopify, nous informons tous les utilisateurs de ce qui suit :
+      </p>
+      <div class="privacy-callout">
+        <p>
+          <strong>Avis d'interaction avec l'IA :</strong> lorsque vous interagissez avec le support client propulsé par AgoraCrew's AI, vous pouvez communiquer avec un <strong>algorithme d'IA</strong> conçu pour automatiser les réponses de support client. Ce système IA lit votre demande, récupère les informations de commande pertinentes et rédige une réponse contextuellement appropriée.
+        </p>
+      </div>
+      <p>
+        Le système IA fonctionne selon les principes suivants :
+      </p>
+      <ul>
+        <li><strong>Aucune prise de décision autonome :</strong> l'IA ne prend pas de décisions produisant des effets juridiques ou affectant significativement les personnes concernées de manière similaire. Sa seule fonction est de rédiger et de suggérer des réponses de support.</li>
+        <li><strong>Supervision humaine :</strong> les marchands peuvent configurer des règles d'escalade afin que les demandes complexes ou sensibles soient transmises à des agents humains supervisés pour examen et réponse.</li>
+        <li><strong>Réponses alignées sur la marque :</strong> l'IA est configurée pour correspondre au ton, à la voix et aux politiques de support spécifiques du marchand. Elle ne génère pas de contenu non sollicité et n'agit pas au-delà du champ de la demande du client.</li>
+        <li><strong>Droit à l'intervention humaine :</strong> en vertu de l'article 22 du RGPD, vous avez le droit de demander une intervention humaine à toute étape de l'interaction de support. Contactez directement le marchand ou écrivez-nous à l'adresse e-mail indiquée dans cette politique.</li>
+      </ul>
+    </div>
+
+
+    <!-- 6. Human Support Agents -->
+    <div class="privacy-section" id="human-agents">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🧑‍💼</div>
+        <h2>6. Agents de support humains</h2>
+      </div>
+      <p>
+        En plus de notre automatisation propulsée par IA, AgoraCrew met à disposition des <strong>agents de support client humains supervisés de manière professionnelle</strong> qui peuvent également traiter votre demande. Lorsqu'un agent humain traite votre demande de support :
+      </p>
+      <ul>
+        <li><strong>Le même périmètre de données s'applique :</strong> les agents humains n'accèdent qu'aux mêmes catégories de données minimales décrites à la section 3 — nom du client, adresse e-mail et informations de commande — strictement pour résoudre votre ticket de support.</li>
+        <li><strong>Supervision professionnelle :</strong> tous les agents humains opèrent sous une gouvernance interne stricte, incluant des accords de traitement de données signés, des obligations de confidentialité, et une formation continue sur les exigences de protection des données.</li>
+        <li><strong>Assurance qualité :</strong> les interactions traitées par des agents humains font l'objet d'audits qualité réguliers par notre équipe de direction pour garantir la conformité avec les standards de marque du marchand et nos obligations de protection des données.</li>
+        <li><strong>Aucune exportation de données :</strong> il est interdit aux agents humains de télécharger, copier ou exporter des données personnelles en dehors des systèmes CRM et de ticketing autorisés fournis par le marchand.</li>
+      </ul>
+      <p>
+        Que votre demande de support soit traitée par notre système IA, un agent humain, ou une combinaison des deux, les mêmes standards de protection des données, principes de minimisation et politiques de conservation décrits dans cette politique de confidentialité s'appliquent également.
+      </p>
+    </div>
+
+
+    <!-- 7. Subprocessors -->
+    <div class="privacy-section" id="subprocessors">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔗</div>
+        <h2>7. Sous-traitants tiers</h2>
+      </div>
+      <p>
+        Pour fournir nos capacités de support propulsées par IA, nous transmettons de manière sécurisée des données client limitées à un fournisseur tiers de <strong>modèle de langage (LLM)</strong> dans le but de rédiger des réponses de support client.
+      </p>
+      <p>
+        Nous précisons ce qui suit concernant notre relation de sous-traitance :
+      </p>
+      <ul>
+        <li><strong>Données transmises :</strong> seuls le nom du client, son adresse e-mail, son numéro de commande et le contenu de sa demande de support sont transmis au fournisseur LLM.</li>
+        <li><strong>Finalité :</strong> uniquement pour générer une réponse contextuellement appropriée à la demande du client.</li>
+        <li><strong>Aucun entraînement de modèle :</strong> vos données ne sont <strong>jamais utilisées pour entraîner, affiner ou améliorer</strong> les modèles d'intelligence artificielle du fournisseur LLM. Nous maintenons des accords contractuels qui l'interdisent explicitement.</li>
+        <li><strong>Données en transit :</strong> toutes les données transmises vers et depuis notre fournisseur LLM sont chiffrées selon la norme industrielle TLS 1.2+.</li>
+        <li><strong>Aucune persistance des données :</strong> le fournisseur LLM ne conserve, ne met en cache ni ne stocke les données client au-delà du temps nécessaire pour traiter la requête API individuelle.</li>
+      </ul>
+
+      <table class="privacy-data-table">
+        <thead>
+          <tr>
+            <th>Sous-traitant</th>
+            <th>Finalité</th>
+            <th>Données partagées</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fournisseur LLM</strong> (infrastructure de modèle IA)</td>
+            <td>Rédiger les réponses de support client</td>
+            <td>Nom du client, e-mail, numéro de commande, contenu de la demande</td>
+          </tr>
+          <tr>
+            <td><strong>API Shopify</strong></td>
+            <td>Récupérer le statut de commande et les données de suivi</td>
+            <td>Numéro de commande (recherche uniquement)</td>
+          </tr>
+          <tr>
+            <td><strong>Fournisseur d'hébergement cloud</strong></td>
+            <td>Hébergement de l'application et infrastructure</td>
+            <td>Données chiffrées au repos et en transit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- 8. Data Retention -->
+    <div class="privacy-section" id="data-retention">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🗓️</div>
+        <h2>8. Conservation et suppression des données</h2>
+      </div>
+      <p>
+        Nous appliquons des pratiques strictes de conservation des données pour garantir que vos informations ne sont pas conservées plus longtemps que nécessaire :
+      </p>
+      <ul>
+        <li><strong>Suppression du cache actif :</strong> les données client traitées lors d'une interaction de support sont supprimées de nos caches actifs <strong>immédiatement après la résolution du ticket</strong>. Nous ne maintenons pas de bases de données à long terme de données personnelles clients.</li>
+        <li><strong>Demandes d'effacement :</strong> nous honorons toutes les demandes officielles d'effacement de données en pleine conformité avec l'article 17 du RGPD (droit à l'effacement). Toutes les demandes d'effacement sont traitées <strong>dans les 30 jours calendaires</strong> suivant leur réception.</li>
+        <li><strong>Désinstallation par le marchand :</strong> lorsqu'un marchand désinstalle AgoraCrew's AI de sa boutique Shopify, toutes les données client associées sont purgées de nos systèmes dans les 48 heures suivant la réception du webhook de désinstallation.</li>
+        <li><strong>Journaux anonymisés :</strong> nous pouvons conserver des journaux d'utilisation entièrement anonymisés et agrégés (ne contenant aucune donnée personnelle) à des fins d'amélioration du service et de suivi de performance.</li>
+      </ul>
+    </div>
+
+
+    <!-- 9. Legal Basis -->
+    <div class="privacy-section" id="legal-basis">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">⚖️</div>
+        <h2>9. Base légale du traitement</h2>
+      </div>
+      <p>
+        Notre traitement des données personnelles repose sur les fondements juridiques suivants en vertu de l'article 6 du RGPD :
+      </p>
+      <ul>
+        <li><strong>Intérêts légitimes (article 6(1)(f)) :</strong> traitement des demandes de support client au nom du marchand afin de maintenir et d'améliorer la relation client.</li>
+        <li><strong>Exécution d'un contrat (article 6(1)(b)) :</strong> lorsque le traitement est nécessaire à l'exécution des obligations contractuelles du marchand envers ses clients (par exemple, fournir des mises à jour de statut de commande).</li>
+        <li><strong>Consentement (article 6(1)(a)) :</strong> le cas échéant, le marchand est responsable de l'obtention et de la gestion du consentement du client final conformément à sa propre politique de confidentialité.</li>
+      </ul>
+    </div>
+
+
+    <!-- 10. Your Rights -->
+    <div class="privacy-section" id="your-rights">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🛡️</div>
+        <h2>10. Vos droits en vertu du RGPD</h2>
+      </div>
+      <p>
+        Si vous êtes situé(e) dans l'Espace économique européen (EEE) ou au Royaume-Uni, vous disposez des droits suivants concernant vos données personnelles :
+      </p>
+      <ul>
+        <li><strong>Droit d'accès</strong> — demander une copie des données personnelles que nous détenons à votre sujet.</li>
+        <li><strong>Droit de rectification</strong> — demander la correction de données inexactes ou incomplètes.</li>
+        <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données personnelles (« droit à l'oubli »).</li>
+        <li><strong>Droit à la limitation du traitement</strong> — demander la limitation du traitement sous certaines conditions.</li>
+        <li><strong>Droit à la portabilité des données</strong> — recevoir vos données dans un format structuré et lisible par machine.</li>
+        <li><strong>Droit d'opposition</strong> — s'opposer au traitement fondé sur des intérêts légitimes.</li>
+        <li><strong>Droit à l'intervention humaine</strong> — demander qu'une décision automatisée (y compris les réponses générées par IA) soit examinée par un humain.</li>
+      </ul>
+      <p>
+        Pour exercer l'un de ces droits, veuillez nous contacter à <strong>anne@agoracrew.com</strong>. Nous répondrons à toutes les demandes valides dans un délai de <strong>30 jours calendaires</strong>. Si votre demande est complexe, nous vous informerons de toute prolongation (jusqu'à un maximum de 90 jours au total) comme le permet le RGPD.
+      </p>
+      <p>
+        Vous avez également le droit de déposer une plainte auprès de votre autorité de contrôle locale. Pour la Hongrie, il s'agit du <strong>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</strong>.
+      </p>
+    </div>
+
+
+    <!-- 11. Security -->
+    <div class="privacy-section" id="security">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔒</div>
+        <h2>11. Mesures de sécurité</h2>
+      </div>
+      <p>
+        Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger les données personnelles contre tout accès non autorisé, altération, divulgation ou destruction :
+      </p>
+      <ul>
+        <li>Chiffrement TLS 1.2+ pour toutes les données en transit</li>
+        <li>Chiffrement AES-256 pour les données au repos</li>
+        <li>Contrôles d'accès basés sur le principe du moindre privilège</li>
+        <li>Audits de sécurité et évaluations de vulnérabilité réguliers</li>
+        <li>Formation obligatoire à la protection des données pour tout le personnel ayant accès aux données</li>
+        <li>Authentification API sécurisée via OAuth 2.0 pour les intégrations Shopify</li>
+      </ul>
+    </div>
+
+
+    <!-- 12. Cookies & Advertising -->
+    <div class="privacy-section" id="cookies-advertising">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🍪</div>
+        <h2>12. Cookies et publicité</h2>
+      </div>
+      <p>
+        Lorsque vous visitez ou vous connectez à notre site web, des cookies et technologies similaires peuvent être utilisés par nos partenaires ou fournisseurs de données en ligne pour associer ces activités à d'autres informations personnelles qu'ils possèdent ou que d'autres possèdent à votre sujet, y compris par association avec votre e-mail. Nous (ou des prestataires de services en notre nom) pouvons ensuite envoyer des communications et du marketing à ces adresses e-mail. Vous pouvez refuser cette publicité en visitant <a href="https://app.retention.com/optout" target="_blank" rel="noopener">https://app.retention.com/optout</a>.
+      </p>
+      <p>
+        Vous avez également la possibilité de refuser la collecte de vos données personnelles conformément au RGPD en visitant <a href="https://www.rb2b.com/rb2b-gdpr-opt-out" target="_blank" rel="noopener">https://www.rb2b.com/rb2b-gdpr-opt-out</a>.
+      </p>
+    </div>
+
+
+    <!-- 13. Changes -->
+    <div class="privacy-section" id="changes">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📝</div>
+        <h2>13. Modifications de cette politique</h2>
+      </div>
+      <p>
+        Nous nous réservons le droit de mettre à jour cette politique de confidentialité à tout moment. Lorsque nous apportons des modifications importantes, nous mettrons à jour la date de « Dernière mise à jour » en haut de cette page. Pour les changements significatifs affectant la manière dont nous traitons les données personnelles, nous fournirons un avis via le tableau de bord de notre application ou par e-mail aux marchands actifs.
+      </p>
+      <p>
+        Nous vous encourageons à consulter cette page périodiquement pour rester informé(e) de nos pratiques en matière de données.
+      </p>
+    </div>
+
+
+    <!-- 13. Contact -->
+    <div class="privacy-section" id="contact-privacy">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📧</div>
+        <h2>14. Nous contacter</h2>
+      </div>
+      <p>
+        Si vous avez des questions, préoccupations ou demandes relatives à cette politique de confidentialité ou à vos données personnelles, veuillez nous contacter :
+      </p>
+
+      <div class="privacy-contact-card">
+        <h3>Demandes relatives à la confidentialité des données</h3>
+        <p>
+          Notre équipe de protection des données est disponible pour répondre à toutes les demandes concernant le traitement des données personnelles, les demandes d'accès des personnes concernées, ou toute préoccupation quant à la manière dont vos informations sont traitées.
+        </p>
+        <a href="mailto:anne@agoracrew.com" class="privacy-email-link">
+          ✉️ anne@agoracrew.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+            <span class="nav-logo-icon"></span>
+          </a>
+          <p>
+            Des chatbots propulsés par l'IA et des agents humains supervisés de manière professionnelle, méticuleusement adaptés aux marques e-commerce. De 749 $/mois pour l'IA à 12 $/h offshore — évoluez sans crainte grâce à notre expertise CRM.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="index.html#services">Lion AI — Forfait pilote</a>
+          <a href="index.html#services">Nearshore — Hongrie</a>
+          <a href="index.html#services">Offshore — Philippines</a>
+          <a href="index.html#services">Forfait Scale</a>
+          <a href="index.html#quality-assurance">Assurance qualité</a>
+        </div>
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <a href="index.html#benefits">Pourquoi nous</a>
+          <a href="index.html#how-it-works">Comment ça marche</a>
+          <a href="index.html#pricing">Tarifs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h4>Nous contacter</h4>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
+          <a href="index.html#contact">Réserver un audit CX gratuit</a>
+          <a href="https://maps.google.com/?q=Budapest,+Hungary" target="_blank" rel="noopener" class="footer-minimap">
+            <img src="../minimap.png" alt="AgoraCrew — Budapest, Hongrie" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AgoraCrew. Tous droits réservés.</span>
+        <span class="footer-tax-id">Numéro fiscal (Adószám) : HU92198362</span>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Politique de confidentialité</a>
+          <a href="#">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+        });
+      });
+    }
+  </script>
+
+  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
