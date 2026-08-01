@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions légales — AgoraCrew</title>
+  <meta name="description" content="Mentions légales d'AgoraCrew (Optimise Inbox) : éditeur du site, directeur de la publication, hébergement, propriété intellectuelle et droit applicable." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/mentions-legales.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/fr/mentions-legales.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
+
+  <style>
+    /* ============================================
+       LEGAL PAGES — Page-Specific Styles
+       (shared by mentions-legales.html and cgv.html,
+       reusing privacy-policy.html's structural classes
+       verbatim so all three legal pages read as one system)
+       ============================================ */
+
+    .privacy-hero {
+      position: relative;
+      padding: 140px 24px 60px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+    }
+
+    .privacy-hero::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 0;
+      height: 1px;
+      background: var(--ink-5);
+    }
+
+    .privacy-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero h1 .accent-text {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .privacy-hero .privacy-effective {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--ink-50);
+      font-weight: 500;
+    }
+
+    .privacy-content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .privacy-section {
+      margin-bottom: 56px;
+    }
+
+    .privacy-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--ink-5);
+    }
+
+    .privacy-section-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--peach);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .privacy-section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--ink-70);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 14px 0;
+    }
+
+    .privacy-section ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .privacy-section strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .privacy-callout {
+      background: var(--peach);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .privacy-callout p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--ink-80);
+      font-weight: 500;
+    }
+
+    .privacy-contact-card {
+      background: var(--ink);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      color: var(--white);
+      margin-top: 24px;
+    }
+
+    .privacy-contact-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .privacy-contact-card p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .privacy-contact-card a.privacy-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 6px 20px var(--coral-20);
+    }
+
+    .privacy-contact-card a.privacy-email-link:hover {
+      background: #d93d1e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--coral-20);
+    }
+
+    .privacy-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--coral);
+      margin-bottom: 32px;
+      transition: all 0.2s var(--ease-out);
+    }
+
+    .privacy-back-link:hover {
+      gap: 12px;
+      color: #d93d1e;
+    }
+
+    .privacy-toc {
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      border: 1px solid var(--ink-5);
+    }
+
+    .privacy-toc h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+      margin: 0;
+    }
+
+    .privacy-toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 6px;
+    }
+
+    .privacy-toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-70);
+      padding: 6px 0;
+      transition: color 0.2s var(--ease-out);
+      font-weight: 500;
+    }
+
+    .privacy-toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--coral);
+      min-width: 20px;
+    }
+
+    .privacy-toc ol li a:hover {
+      color: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .privacy-hero { padding: 110px 20px 40px; }
+      .privacy-hero h1 { font-size: 2.2rem; }
+      .privacy-content { padding: 0 20px 80px; }
+      .privacy-contact-card { padding: 28px 24px; }
+      .privacy-toc { padding: 22px 24px; }
+      .privacy-section-header h2 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+        <span class="nav-logo-icon"></span>
+      </a>
+
+      <div class="nav-center" id="navCenter">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Ressources
+            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Solutions</div>
+              <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide CX Shopify</span>
+                  <span class="nav-dropdown-link-desc">Gérer le support sur Shopify</span>
+                </span>
+              </a>
+              <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Stratégie CX</span>
+                  <span class="nav-dropdown-link-desc">Construire un plan CX</span>
+                </span>
+              </a>
+              <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Automatisation WISMO</span>
+                  <span class="nav-dropdown-link-desc">Éliminer les tickets de suivi de commande</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Ressources</div>
+              <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Réduire les coûts</span>
+                  <span class="nav-dropdown-link-desc">7 tactiques éprouvées</span>
+                </span>
+              </a>
+              <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Modèles de réponses</span>
+                  <span class="nav-dropdown-link-desc">Modèles gratuits à copier-coller</span>
+                </span>
+              </a>
+              <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide des métriques CX</span>
+                  <span class="nav-dropdown-link-desc">6 métriques essentielles</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Blog</div>
+              <a href="blog/index.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Tous les articles</span>
+                  <span class="nav-dropdown-link-desc">Derniers articles et guides CX</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Slide-out Nav -->
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Ressources
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-dropdown-items">
+          <a href="solutions/shopify-customer-service.html">Guide CX Shopify</a>
+          <a href="solutions/ecommerce-cx-strategy.html">Stratégie CX</a>
+          <a href="solutions/wismo-automation.html">Automatisation WISMO</a>
+          <a href="resources/reduce-support-costs.html">Réduire les coûts</a>
+          <a href="resources/customer-service-templates.html">Modèles de réponses</a>
+          <a href="resources/cx-metrics-guide.html">Guide des métriques CX</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="privacy-hero">
+    <a href="index.html" class="privacy-back-link">← Retour à l'accueil</a>
+    <h1>Mentions <span class="accent-text">légales</span></h1>
+    <p class="privacy-effective">Dernière mise à jour : 1 août 2026</p>
+  </section>
+
+
+  <!-- ==================== CONTENT ==================== -->
+  <div class="privacy-content">
+
+    <!-- Table of Contents -->
+    <nav class="privacy-toc" aria-label="Table des matières">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#editeur">Éditeur du site</a></li>
+        <li><a href="#directeur-publication">Directeur de la publication</a></li>
+        <li><a href="#hebergement">Hébergement</a></li>
+        <li><a href="#propriete-intellectuelle">Propriété intellectuelle</a></li>
+        <li><a href="#donnees-personnelles">Données personnelles et cookies</a></li>
+        <li><a href="#liens-hypertextes">Liens hypertextes</a></li>
+        <li><a href="#droit-applicable">Droit applicable et litiges</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Éditeur -->
+    <div class="privacy-section" id="editeur">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🏢</div>
+        <h2>1. Éditeur du site</h2>
+      </div>
+      <p>
+        Le présent site accessible à l'adresse <strong>agoracrew.com</strong> (le « Site ») est édité par :
+      </p>
+      <div class="privacy-callout">
+        <p>
+          <strong>Optimise Inbox</strong>, exploitant la marque commerciale <strong>AgoraCrew</strong><br />
+          Forme juridique : [forme juridique à compléter]<br />
+          Siège social : Budapest, Hongrie [adresse postale complète à compléter]<br />
+          Numéro fiscal (Adószám) : HU92198362<br />
+          Numéro d'immatriculation (cégjegyzékszám) : [à compléter]<br />
+          Contact : <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a> — +36 30 084 1533
+        </p>
+      </div>
+      <p>
+        Optimise Inbox est une société de droit hongrois. Le Site s'adresse notamment à une clientèle professionnelle basée en France ; à ce titre, il se conforme aux exigences d'identification prévues par la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (« LCEN »), quand bien même la société éditrice n'est pas immatriculée en France.
+      </p>
+    </div>
+
+    <!-- 2. Directeur de la publication -->
+    <div class="privacy-section" id="directeur-publication">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">👤</div>
+        <h2>2. Directeur de la publication</h2>
+      </div>
+      <p>
+        Le directeur de la publication du Site est : <strong>[Nom et prénom du directeur de la publication à compléter]</strong>, joignable à l'adresse <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>.
+      </p>
+    </div>
+
+    <!-- 3. Hébergement -->
+    <div class="privacy-section" id="hebergement">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🖥️</div>
+        <h2>3. Hébergement</h2>
+      </div>
+      <p>
+        Le Site est hébergé par :
+      </p>
+      <div class="privacy-callout">
+        <p>
+          <strong>Vercel Inc.</strong><br />
+          340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br />
+          <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. Propriété intellectuelle -->
+    <div class="privacy-section" id="propriete-intellectuelle">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">⚖️</div>
+        <h2>4. Propriété intellectuelle</h2>
+      </div>
+      <p>
+        L'ensemble des éléments composant le Site (textes, images, logos, icônes, mise en page, code source, marques « AgoraCrew » et « Optimise Inbox ») est protégé par le droit d'auteur, le droit des marques et, plus généralement, par les dispositions du Code de la propriété intellectuelle et les conventions internationales applicables. Ces éléments sont la propriété exclusive d'Optimise Inbox ou de ses concédants.
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, publication, adaptation ou exploitation, totale ou partielle, de ces éléments, par quelque procédé que ce soit, sans l'autorisation écrite préalable d'Optimise Inbox, est strictement interdite et constitutive d'une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+      </p>
+    </div>
+
+    <!-- 5. Données personnelles et cookies -->
+    <div class="privacy-section" id="donnees-personnelles">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔒</div>
+        <h2>5. Données personnelles et cookies</h2>
+      </div>
+      <p>
+        Le traitement des données personnelles collectées via le Site et via les services AgoraCrew, ainsi que l'utilisation de cookies et technologies similaires, sont décrits en détail dans notre <a href="privacy-policy.html">Politique de confidentialité</a>, conforme au Règlement général sur la protection des données (UE) 2016/679 (« RGPD »).
+      </p>
+      <p>
+        Conformément à la réglementation applicable, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données personnelles, ainsi que du droit d'introduire une réclamation auprès d'une autorité de contrôle compétente (en France, la CNIL). Pour exercer ces droits, contactez-nous à <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>.
+      </p>
+    </div>
+
+    <!-- 6. Liens hypertextes -->
+    <div class="privacy-section" id="liens-hypertextes">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔗</div>
+        <h2>6. Liens hypertextes</h2>
+      </div>
+      <p>
+        Le Site peut contenir des liens hypertextes vers des sites tiers. Optimise Inbox n'exerce aucun contrôle sur le contenu de ces sites et décline toute responsabilité quant à leur contenu, leur disponibilité ou les pratiques qui y sont appliquées, notamment en matière de protection des données personnelles.
+      </p>
+      <p>
+        La mise en place de liens hypertextes vers le Site est soumise à l'accord préalable et écrit d'Optimise Inbox, sauf pour les liens simples renvoyant vers la page d'accueil, qui sont autorisés sans autorisation expresse.
+      </p>
+    </div>
+
+    <!-- 7. Droit applicable -->
+    <div class="privacy-section" id="droit-applicable">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📜</div>
+        <h2>7. Droit applicable et litiges</h2>
+      </div>
+      <p>
+        Les présentes mentions légales sont soumises au droit français en ce qui concerne leur interprétation à l'égard des utilisateurs situés en France. Pour les conditions contractuelles régissant l'utilisation des services AgoraCrew, se référer à nos <a href="cgv.html">Conditions Générales de Vente</a>.
+      </p>
+      <p>
+        En cas de différend relatif au contenu ou à l'utilisation du Site qui ne pourrait être résolu à l'amiable, les tribunaux compétents seront ceux déterminés conformément aux règles de droit commun applicables, sous réserve des dispositions particulières prévues par nos Conditions Générales de Vente pour les litiges liés au contrat de service.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="privacy-section">
+      <div class="privacy-contact-card">
+        <h3>Une question sur ces mentions légales ?</h3>
+        <p>
+          Notre équipe est disponible pour répondre à toute question relative à l'identification de l'éditeur, à l'hébergement ou aux droits de propriété intellectuelle du Site.
+        </p>
+        <a href="mailto:anne@agoracrew.com" class="privacy-email-link">
+          ✉️ anne@agoracrew.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+            <span class="nav-logo-icon"></span>
+          </a>
+          <p>
+            Des chatbots propulsés par l'IA et des agents humains supervisés de manière professionnelle, méticuleusement adaptés aux marques e-commerce. De 749 $/mois pour l'IA à 12 $/h offshore — évoluez sans crainte grâce à notre expertise CRM.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="index.html#services">Lion AI — Forfait pilote</a>
+          <a href="index.html#services">Nearshore — Hongrie</a>
+          <a href="index.html#services">Offshore — Philippines</a>
+          <a href="index.html#services">Forfait Scale</a>
+          <a href="index.html#quality-assurance">Assurance qualité</a>
+        </div>
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <a href="index.html#benefits">Pourquoi nous</a>
+          <a href="index.html#how-it-works">Comment ça marche</a>
+          <a href="index.html#pricing">Tarifs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h4>Nous contacter</h4>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
+          <a href="index.html#contact">Réserver un audit CX gratuit</a>
+          <a href="https://maps.google.com/?q=Budapest,+Hungary" target="_blank" rel="noopener" class="footer-minimap">
+            <img src="../minimap.png" alt="AgoraCrew — Budapest, Hongrie" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AgoraCrew. Tous droits réservés.</span>
+        <span class="footer-tax-id">Numéro fiscal (Adószám) : HU92198362</span>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Politique de confidentialité</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+        });
+      });
+    }
+  </script>
+
+  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

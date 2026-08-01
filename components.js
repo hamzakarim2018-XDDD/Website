@@ -80,7 +80,7 @@
       solutionsCol: 'Solutions', resourcesCol: 'Ressources', contactCol: 'Nous contacter',
       shopifyService: 'Service client Shopify', cxStrategy: 'Stratégie CX e-commerce', wismo: 'Automatisation WISMO',
       reduceCosts: 'Réduire les coûts de support', templates: 'Modèles de réponses', metrics: 'Guide des métriques CX', blog: 'Blog',
-      bookAudit: 'Réserver un audit CX gratuit', privacy: 'Politique de confidentialité', terms: 'Conditions d\'utilisation',
+      bookAudit: 'Réserver un audit CX gratuit', privacy: 'Politique de confidentialité', terms: 'CGV', mentionsLegales: 'Mentions légales',
       copyright: '© 2026 AgoraCrew. Tous droits réservés.', taxId: 'Numéro fiscal (Adószám) : HU92198362'
     }
   };
@@ -227,7 +227,14 @@
             '<span class="footer-tax-id">' + footer.taxId + '</span>' +
             '<div class="footer-bottom-links">' +
               '<a href="' + localizeHref(base + '/privacy-policy.html') + '">' + footer.privacy + '</a>' +
-              '<a href="#">' + footer.terms + '</a>' +
+              // Mentions légales/CGV are French-only pages (no English
+              // counterpart exists), so only render real links — and the
+              // extra mentions-légales link at all — on the French tree.
+              // English keeps its pre-existing '#' placeholder unchanged.
+              (locale === 'fr'
+                ? '<a href="' + base + '/fr/mentions-legales.html">' + footer.mentionsLegales + '</a>' +
+                  '<a href="' + base + '/fr/cgv.html">' + footer.terms + '</a>'
+                : '<a href="#">' + footer.terms + '</a>') +
             '</div>' +
           '</div>' +
 

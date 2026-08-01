@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions Générales de Vente — AgoraCrew</title>
+  <meta name="description" content="Conditions Générales de Vente d'AgoraCrew (Optimise Inbox) : description des services, tarifs et facturation, durée et résiliation, garanties et responsabilité." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/cgv.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/fr/cgv.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
+
+  <style>
+    /* ============================================
+       LEGAL PAGES — Page-Specific Styles
+       (shared by mentions-legales.html and cgv.html,
+       reusing privacy-policy.html's structural classes
+       verbatim so all three legal pages read as one system)
+       ============================================ */
+
+    .privacy-hero {
+      position: relative;
+      padding: 140px 24px 60px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+    }
+
+    .privacy-hero::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 0;
+      height: 1px;
+      background: var(--ink-5);
+    }
+
+    .privacy-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .privacy-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero h1 .accent-text {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .privacy-hero .privacy-effective {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--ink-50);
+      font-weight: 500;
+    }
+
+    .privacy-content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .privacy-section {
+      margin-bottom: 56px;
+    }
+
+    .privacy-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--ink-5);
+    }
+
+    .privacy-section-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--peach);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .privacy-section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--ink-70);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 14px 0;
+    }
+
+    .privacy-section ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .privacy-section strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .privacy-callout {
+      background: var(--peach);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .privacy-callout p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--ink-80);
+      font-weight: 500;
+    }
+
+    .privacy-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--ink-5);
+    }
+
+    .privacy-data-table thead {
+      background: var(--ink);
+    }
+
+    .privacy-data-table th {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 14px 20px;
+      text-align: left;
+    }
+
+    .privacy-data-table td {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--ink-70);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--ink-5);
+      line-height: 1.6;
+    }
+
+    .privacy-data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .privacy-data-table tbody tr:nth-child(even) {
+      background: rgba(253, 241, 238, 0.3);
+    }
+
+    .privacy-contact-card {
+      background: var(--ink);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      color: var(--white);
+      margin-top: 24px;
+    }
+
+    .privacy-contact-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .privacy-contact-card p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .privacy-contact-card a.privacy-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s var(--ease-out);
+      box-shadow: 0 6px 20px var(--coral-20);
+    }
+
+    .privacy-contact-card a.privacy-email-link:hover {
+      background: #d93d1e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--coral-20);
+    }
+
+    .privacy-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--coral);
+      margin-bottom: 32px;
+      transition: all 0.2s var(--ease-out);
+    }
+
+    .privacy-back-link:hover {
+      gap: 12px;
+      color: #d93d1e;
+    }
+
+    .privacy-toc {
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      border: 1px solid var(--ink-5);
+    }
+
+    .privacy-toc h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .privacy-toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .privacy-toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 6px;
+      break-inside: avoid;
+    }
+
+    .privacy-toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-70);
+      padding: 6px 0;
+      transition: color 0.2s var(--ease-out);
+      font-weight: 500;
+    }
+
+    .privacy-toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--coral);
+      min-width: 20px;
+    }
+
+    .privacy-toc ol li a:hover {
+      color: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .privacy-hero { padding: 110px 20px 40px; }
+      .privacy-hero h1 { font-size: 2.2rem; }
+      .privacy-content { padding: 0 20px 80px; }
+      .privacy-data-table th,
+      .privacy-data-table td { padding: 10px 14px; font-size: 0.82rem; }
+      .privacy-contact-card { padding: 28px 24px; }
+      .privacy-toc { padding: 22px 24px; }
+      .privacy-toc ol { columns: 1; }
+      .privacy-section-header h2 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+        <span class="nav-logo-icon"></span>
+      </a>
+
+      <div class="nav-center" id="navCenter">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Ressources
+            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Solutions</div>
+              <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide CX Shopify</span>
+                  <span class="nav-dropdown-link-desc">Gérer le support sur Shopify</span>
+                </span>
+              </a>
+              <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Stratégie CX</span>
+                  <span class="nav-dropdown-link-desc">Construire un plan CX</span>
+                </span>
+              </a>
+              <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Automatisation WISMO</span>
+                  <span class="nav-dropdown-link-desc">Éliminer les tickets de suivi de commande</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Ressources</div>
+              <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Réduire les coûts</span>
+                  <span class="nav-dropdown-link-desc">7 tactiques éprouvées</span>
+                </span>
+              </a>
+              <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Modèles de réponses</span>
+                  <span class="nav-dropdown-link-desc">Modèles gratuits à copier-coller</span>
+                </span>
+              </a>
+              <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Guide des métriques CX</span>
+                  <span class="nav-dropdown-link-desc">6 métriques essentielles</span>
+                </span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Blog</div>
+              <a href="blog/index.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text">
+                  <span class="nav-dropdown-link-title">Tous les articles</span>
+                  <span class="nav-dropdown-link-desc">Derniers articles et guides CX</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Slide-out Nav -->
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#benefits">Pourquoi nous</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Tarifs</a>
+        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Ressources
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-dropdown-items">
+          <a href="solutions/shopify-customer-service.html">Guide CX Shopify</a>
+          <a href="solutions/ecommerce-cx-strategy.html">Stratégie CX</a>
+          <a href="solutions/wismo-automation.html">Automatisation WISMO</a>
+          <a href="resources/reduce-support-costs.html">Réduire les coûts</a>
+          <a href="resources/customer-service-templates.html">Modèles de réponses</a>
+          <a href="resources/cx-metrics-guide.html">Guide des métriques CX</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Réserver un audit CX gratuit</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="privacy-hero">
+    <a href="index.html" class="privacy-back-link">← Retour à l'accueil</a>
+    <h1>Conditions Générales <span class="accent-text">de Vente</span></h1>
+    <p class="privacy-effective">Date d'entrée en vigueur : 1 août 2026</p>
+  </section>
+
+
+  <!-- ==================== CONTENT ==================== -->
+  <div class="privacy-content">
+
+    <!-- Table of Contents -->
+    <nav class="privacy-toc" aria-label="Table des matières">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#objet">Objet et champ d'application</a></li>
+        <li><a href="#definitions">Définitions</a></li>
+        <li><a href="#acceptation">Acceptation des CGV</a></li>
+        <li><a href="#description-services">Description des Services</a></li>
+        <li><a href="#essai-gratuit">Essai gratuit</a></li>
+        <li><a href="#inscription">Inscription et compte Client</a></li>
+        <li><a href="#tarifs">Tarifs et facturation</a></li>
+        <li><a href="#duree-resiliation">Durée et résiliation</a></li>
+        <li><a href="#obligations-prestataire">Obligations du Prestataire</a></li>
+        <li><a href="#obligations-client">Obligations du Client</a></li>
+        <li><a href="#propriete-intellectuelle-cgv">Propriété intellectuelle</a></li>
+        <li><a href="#donnees-personnelles-cgv">Données personnelles</a></li>
+        <li><a href="#confidentialite">Confidentialité</a></li>
+        <li><a href="#garanties-responsabilite">Garanties et responsabilité</a></li>
+        <li><a href="#force-majeure">Force majeure</a></li>
+        <li><a href="#modification-cgv">Modification des CGV</a></li>
+        <li><a href="#droit-applicable-cgv">Droit applicable et juridiction compétente</a></li>
+        <li><a href="#dispositions-diverses">Dispositions diverses</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Objet -->
+    <div class="privacy-section" id="objet">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📋</div>
+        <h2>1. Objet et champ d'application</h2>
+      </div>
+      <p>
+        Les présentes Conditions Générales de Vente (« CGV ») ont pour objet de définir les modalités et conditions dans lesquelles <strong>Optimise Inbox</strong>, exploitant la marque commerciale <strong>AgoraCrew</strong> (le « Prestataire »), fournit à ses clients professionnels (le « Client ») un accès à sa plateforme de support client propulsée par l'intelligence artificielle, avec renfort humain supervisé, destinée aux marchands e-commerce (les « Services »).
+      </p>
+      <p>
+        Les présentes CGV s'appliquent, sans restriction ni réserve, à l'ensemble des Services fournis par le Prestataire à tout Client professionnel en ayant fait la demande via le Site, l'application Shopify AgoraCrew, ou tout autre canal de souscription mis à disposition par le Prestataire.
+      </p>
+      <p>
+        Les présentes CGV sont conclues exclusivement entre professionnels au sens du Code de commerce. Elles ne s'adressent pas aux consommateurs au sens du Code de la consommation.
+      </p>
+    </div>
+
+    <!-- 2. Définitions -->
+    <div class="privacy-section" id="definitions">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔤</div>
+        <h2>2. Définitions</h2>
+      </div>
+      <ul>
+        <li><strong>« Services »</strong> : l'ensemble des fonctionnalités proposées par la plateforme AgoraCrew, incluant notamment le traitement automatisé des demandes de support client par intelligence artificielle, la résolution des demandes de suivi de commande (« WISMO »), la récupération de paniers abandonnés, et l'escalade vers un agent humain lorsque nécessaire.</li>
+        <li><strong>« Client »</strong> : toute personne morale ou entrepreneur individuel, agissant à des fins professionnelles, souscrivant aux Services.</li>
+        <li><strong>« Compte »</strong> : l'espace personnel du Client, accessible via le tableau de bord AgoraCrew, lui permettant de configurer et de suivre l'utilisation des Services.</li>
+        <li><strong>« Ticket »</strong> : toute demande de support individuelle traitée par les Services, qu'elle soit résolue par intelligence artificielle ou transmise à un agent humain.</li>
+        <li><strong>« Boutique »</strong> : la boutique en ligne (notamment Shopify) du Client sur laquelle les Services sont déployés.</li>
+      </ul>
+    </div>
+
+    <!-- 3. Acceptation -->
+    <div class="privacy-section" id="acceptation">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">✅</div>
+        <h2>3. Acceptation des CGV</h2>
+      </div>
+      <p>
+        La souscription aux Services, notamment via l'installation de l'application AgoraCrew depuis la Shopify App Store ou via toute autre modalité d'inscription proposée par le Prestataire, emporte acceptation pleine et entière des présentes CGV par le Client, sans réserve ni restriction.
+      </p>
+      <p>
+        Le Client reconnaît avoir pris connaissance des présentes CGV préalablement à la souscription et déclare avoir la capacité juridique et professionnelle nécessaire pour contracter au nom de la personne morale qu'il représente.
+      </p>
+    </div>
+
+    <!-- 4. Description des Services -->
+    <div class="privacy-section" id="description-services">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🤖</div>
+        <h2>4. Description des Services</h2>
+      </div>
+      <p>
+        Le Prestataire propose une plateforme de support client combinant :
+      </p>
+      <ul>
+        <li>Un agent conversationnel propulsé par l'intelligence artificielle, traitant automatiquement les demandes de support courantes (statut de commande, suivi de livraison, questions produit, politique de retour) ;</li>
+        <li>Un mécanisme d'escalade automatique vers une équipe de support humain pour les demandes ne pouvant être traitées de manière satisfaisante par l'intelligence artificielle ;</li>
+        <li>Des fonctionnalités de récupération de paniers abandonnés et de réengagement client ;</li>
+        <li>Une intégration avec la Boutique du Client et, le cas échéant, avec ses outils de support existants (Zendesk, Gorgias, ou solution native AgoraCrew).</li>
+      </ul>
+      <p>
+        Le Prestataire se réserve le droit de faire évoluer les fonctionnalités des Services, d'ajouter, de modifier ou de retirer des fonctionnalités, sous réserve d'en informer le Client par tout moyen approprié (tableau de bord, e-mail) lorsque cette évolution est susceptible d'affecter substantiellement l'usage qu'il en fait.
+      </p>
+    </div>
+
+    <!-- 5. Essai gratuit -->
+    <div class="privacy-section" id="essai-gratuit">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🎁</div>
+        <h2>5. Essai gratuit</h2>
+      </div>
+      <p>
+        Le Prestataire propose une période d'essai gratuite de <strong>5 jours</strong> à compter de l'installation des Services, permettant au Client d'évaluer les fonctionnalités de la plateforme sans engagement.
+      </p>
+      <p>
+        À l'issue de la période d'essai, et sauf résiliation par le Client avant son terme, l'abonnement se poursuit automatiquement selon la formule tarifaire choisie par le Client lors de la souscription, conformément à l'article 7 des présentes CGV.
+      </p>
+    </div>
+
+    <!-- 6. Inscription -->
+    <div class="privacy-section" id="inscription">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📝</div>
+        <h2>6. Inscription et compte Client</h2>
+      </div>
+      <p>
+        L'accès aux Services nécessite la création d'un Compte, associé à la Boutique du Client. Le Client s'engage à fournir des informations exactes, complètes et à jour lors de son inscription, et à les maintenir à jour tout au long de la relation contractuelle.
+      </p>
+      <p>
+        Le Client est seul responsable de la confidentialité de ses identifiants de connexion et de toute activité réalisée depuis son Compte. Il s'engage à informer sans délai le Prestataire de toute utilisation non autorisée de son Compte.
+      </p>
+    </div>
+
+    <!-- 7. Tarifs -->
+    <div class="privacy-section" id="tarifs">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">💳</div>
+        <h2>7. Tarifs et facturation</h2>
+      </div>
+      <p>
+        Les Services sont proposés selon plusieurs formules d'abonnement mensuel à tarif fixe, incluant un volume de Tickets traités inclus dans le forfait. Le détail des formules et de leurs tarifs respectifs est disponible et à jour sur la page <a href="index.html#pricing">Tarifs</a> du Site.
+      </p>
+      <p>
+        Tout Ticket traité au-delà du volume inclus dans la formule souscrite est facturé au tarif de dépassement en vigueur, indiqué sur la page Tarifs et dans le tableau de bord du Client, sans palier ni pénalité de dépassement.
+      </p>
+      <div class="privacy-callout">
+        <p>
+          💰 L'ensemble des paiements est traité par l'intermédiaire de la plateforme de facturation Shopify (Shopify Billing) et apparaît directement sur la facture Shopify du Client. Le Prestataire ne collecte ni ne stocke aucune donnée de paiement (numéro de carte bancaire ou équivalent).
+        </p>
+      </div>
+      <p>
+        Les tarifs sont exprimés hors taxes et sont susceptibles d'évoluer. Toute modification tarifaire fera l'objet d'une information préalable au Client, avec un délai de prévenance raisonnable, et ne s'appliquera qu'au cycle de facturation suivant.
+      </p>
+    </div>
+
+    <!-- 8. Durée et résiliation -->
+    <div class="privacy-section" id="duree-resiliation">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">⏳</div>
+        <h2>8. Durée et résiliation</h2>
+      </div>
+      <p>
+        L'abonnement aux Services est conclu pour une durée indéterminée, avec une facturation à cycle mensuel. Le Client peut résilier son abonnement à tout moment, sans préavis ni pénalité, directement depuis son tableau de bord ou son interface d'administration Shopify.
+      </p>
+      <p>
+        La résiliation prend effet à la fin du cycle de facturation en cours ; aucun remboursement au prorata n'est effectué pour la période déjà entamée, sauf disposition contraire prévue par le Prestataire.
+      </p>
+      <p>
+        Le Prestataire se réserve le droit de suspendre ou de résilier l'accès aux Services, après mise en demeure restée sans effet, en cas de manquement grave du Client à ses obligations au titre des présentes CGV, notamment en cas de non-paiement ou d'utilisation abusive des Services.
+      </p>
+    </div>
+
+    <!-- 9. Obligations du Prestataire -->
+    <div class="privacy-section" id="obligations-prestataire">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🤝</div>
+        <h2>9. Obligations du Prestataire</h2>
+      </div>
+      <p>
+        Le Prestataire s'engage à fournir les Services avec diligence et selon les règles de l'art, et à mettre en œuvre les moyens raisonnables pour assurer leur disponibilité, sans toutefois être tenu à une obligation de résultat quant à la continuité absolue du service, sous réserve des opérations de maintenance et des cas de force majeure visés à l'article 15.
+      </p>
+      <p>
+        Le Prestataire s'engage à traiter les données du Client et de ses clients finaux conformément à sa <a href="privacy-policy.html">Politique de confidentialité</a> et à la réglementation applicable en matière de protection des données personnelles.
+      </p>
+    </div>
+
+    <!-- 10. Obligations du Client -->
+    <div class="privacy-section" id="obligations-client">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📌</div>
+        <h2>10. Obligations du Client</h2>
+      </div>
+      <ul>
+        <li>Utiliser les Services conformément à leur destination et à la réglementation applicable ;</li>
+        <li>Fournir au Prestataire les informations nécessaires au bon fonctionnement des Services (accès à la Boutique, configuration des intégrations) ;</li>
+        <li>S'assurer de disposer d'une base légale appropriée pour le partage des données de ses clients finaux avec le Prestataire, conformément au RGPD ;</li>
+        <li>Régler les sommes dues au titre des Services aux échéances convenues ;</li>
+        <li>Ne pas détourner les Services de leur finalité, notamment à des fins illicites, frauduleuses ou contraires à l'ordre public.</li>
+      </ul>
+    </div>
+
+    <!-- 11. Propriété intellectuelle -->
+    <div class="privacy-section" id="propriete-intellectuelle-cgv">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">⚖️</div>
+        <h2>11. Propriété intellectuelle</h2>
+      </div>
+      <p>
+        Le Prestataire demeure titulaire de l'ensemble des droits de propriété intellectuelle afférents aux Services, à la plateforme AgoraCrew, à ses développements techniques et à sa documentation. La souscription aux Services confère au Client un droit d'utilisation personnel, non exclusif et non cessible, limité à la durée de l'abonnement et à la finalité des Services.
+      </p>
+      <p>
+        Le Client conserve l'ensemble des droits sur les données, contenus et éléments qui lui appartiennent (catalogue produits, marque, contenus de sa Boutique) et concède au Prestataire, pour la durée de l'abonnement, le droit d'utiliser ces éléments dans la seule mesure nécessaire à la fourniture des Services.
+      </p>
+    </div>
+
+    <!-- 12. Données personnelles -->
+    <div class="privacy-section" id="donnees-personnelles-cgv">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🔒</div>
+        <h2>12. Données personnelles</h2>
+      </div>
+      <p>
+        Dans le cadre de la fourniture des Services, le Prestataire est susceptible d'agir en qualité de sous-traitant, au sens du RGPD, pour le compte du Client lorsque celui-ci lui confie le traitement de données personnelles de ses clients finaux. Les modalités de ce traitement, les garanties apportées et les droits des personnes concernées sont détaillés dans notre <a href="privacy-policy.html">Politique de confidentialité</a>, qui fait partie intégrante des présentes CGV.
+      </p>
+    </div>
+
+    <!-- 13. Confidentialité -->
+    <div class="privacy-section" id="confidentialite">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🤐</div>
+        <h2>13. Confidentialité</h2>
+      </div>
+      <p>
+        Chaque partie s'engage à conserver strictement confidentielles les informations non publiques de nature commerciale, technique ou financière dont elle aurait connaissance à l'occasion de l'exécution des présentes CGV, et à ne les utiliser qu'aux fins de l'exécution du contrat. Cette obligation perdure pendant une durée de trois (3) ans à compter de la cessation de la relation contractuelle.
+      </p>
+    </div>
+
+    <!-- 14. Garanties et responsabilité -->
+    <div class="privacy-section" id="garanties-responsabilite">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🛡️</div>
+        <h2>14. Garanties et responsabilité</h2>
+      </div>
+      <p>
+        Les Services sont fournis « en l'état ». Le Prestataire ne garantit pas que les Services répondront spécifiquement aux besoins particuliers du Client, ni que les réponses générées par l'intelligence artificielle seront exemptes de toute erreur, sous réserve des dispositifs de contrôle et d'escalade humaine mis en œuvre par le Prestataire.
+      </p>
+      <p>
+        La responsabilité du Prestataire ne pourra être engagée qu'en cas de faute prouvée, et sera, dans toute la mesure permise par la loi applicable, limitée aux dommages directs et prévisibles. En tout état de cause, la responsabilité totale du Prestataire au titre des présentes CGV, tous préjudices confondus, ne pourra excéder le montant des sommes effectivement versées par le Client au Prestataire au titre des Services au cours des douze (12) mois précédant le fait générateur du dommage.
+      </p>
+      <p>
+        Le Prestataire ne pourra en aucun cas être tenu responsable des dommages indirects, tels que perte de chiffre d'affaires, perte de clientèle, perte de données ou atteinte à l'image, résultant de l'utilisation ou de l'impossibilité d'utiliser les Services.
+      </p>
+    </div>
+
+    <!-- 15. Force majeure -->
+    <div class="privacy-section" id="force-majeure">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">🌪️</div>
+        <h2>15. Force majeure</h2>
+      </div>
+      <p>
+        Aucune des parties ne pourra être tenue responsable de l'inexécution ou du retard dans l'exécution de l'une quelconque de ses obligations au titre des présentes CGV qui résulterait d'un cas de force majeure, tel que défini par l'article 1218 du Code civil et la jurisprudence des tribunaux français, incluant notamment les défaillances des fournisseurs d'infrastructure technique tiers (hébergement, fournisseurs d'intelligence artificielle, Shopify) échappant au contrôle raisonnable du Prestataire.
+      </p>
+    </div>
+
+    <!-- 16. Modification des CGV -->
+    <div class="privacy-section" id="modification-cgv">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📝</div>
+        <h2>16. Modification des CGV</h2>
+      </div>
+      <p>
+        Le Prestataire se réserve le droit de modifier les présentes CGV à tout moment, notamment pour tenir compte des évolutions réglementaires, techniques ou commerciales. Les CGV modifiées seront communiquées au Client par tout moyen approprié (publication sur le Site, notification dans le tableau de bord, ou e-mail) et entreront en vigueur pour les nouveaux Clients dès leur publication, et pour les Clients existants après un délai de prévenance raisonnable.
+      </p>
+      <p>
+        La poursuite de l'utilisation des Services après l'entrée en vigueur des CGV modifiées vaut acceptation de celles-ci par le Client.
+      </p>
+    </div>
+
+    <!-- 17. Droit applicable -->
+    <div class="privacy-section" id="droit-applicable-cgv">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📜</div>
+        <h2>17. Droit applicable et juridiction compétente</h2>
+      </div>
+      <p>
+        Les présentes CGV sont soumises au droit français. Toute contestation ou tout litige relatif à leur validité, leur interprétation ou leur exécution, qui n'aurait pu être résolu à l'amiable entre les parties, sera soumis à la compétence exclusive des tribunaux compétents, sous réserve des règles impératives de compétence territoriale applicables entre professionnels.
+      </p>
+    </div>
+
+    <!-- 18. Dispositions diverses -->
+    <div class="privacy-section" id="dispositions-diverses">
+      <div class="privacy-section-header">
+        <div class="privacy-section-icon">📚</div>
+        <h2>18. Dispositions diverses</h2>
+      </div>
+      <p>
+        <strong>Intégralité de l'accord.</strong> Les présentes CGV, ainsi que la Politique de confidentialité et les Mentions légales qui y sont référencées, constituent l'intégralité de l'accord entre les parties et se substituent à tout accord antérieur relatif au même objet.
+      </p>
+      <p>
+        <strong>Non-renonciation.</strong> Le fait pour l'une des parties de ne pas se prévaloir d'un manquement de l'autre partie à l'une de ses obligations ne saurait être interprété pour l'avenir comme une renonciation à l'obligation en cause.
+      </p>
+      <p>
+        <strong>Divisibilité.</strong> Si une ou plusieurs stipulations des présentes CGV étaient tenues pour non valides ou déclarées comme telles en application d'une loi, d'un règlement ou à la suite d'une décision définitive d'une juridiction compétente, les autres stipulations garderaient toute leur force et leur portée.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="privacy-section">
+      <div class="privacy-contact-card">
+        <h3>Une question sur ces conditions ?</h3>
+        <p>
+          Notre équipe est disponible pour répondre à toute question relative aux présentes Conditions Générales de Vente, à la facturation ou à votre abonnement.
+        </p>
+        <a href="mailto:anne@agoracrew.com" class="privacy-email-link">
+          ✉️ anne@agoracrew.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+            <span class="nav-logo-icon"></span>
+          </a>
+          <p>
+            Des chatbots propulsés par l'IA et des agents humains supervisés de manière professionnelle, méticuleusement adaptés aux marques e-commerce. De 749 $/mois pour l'IA à 12 $/h offshore — évoluez sans crainte grâce à notre expertise CRM.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="index.html#services">Lion AI — Forfait pilote</a>
+          <a href="index.html#services">Nearshore — Hongrie</a>
+          <a href="index.html#services">Offshore — Philippines</a>
+          <a href="index.html#services">Forfait Scale</a>
+          <a href="index.html#quality-assurance">Assurance qualité</a>
+        </div>
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <a href="index.html#benefits">Pourquoi nous</a>
+          <a href="index.html#how-it-works">Comment ça marche</a>
+          <a href="index.html#pricing">Tarifs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h4>Nous contacter</h4>
+          <a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
+          <a href="index.html#contact">Réserver un audit CX gratuit</a>
+          <a href="https://maps.google.com/?q=Budapest,+Hungary" target="_blank" rel="noopener" class="footer-minimap">
+            <img src="../minimap.png" alt="AgoraCrew — Budapest, Hongrie" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AgoraCrew. Tous droits réservés.</span>
+        <span class="footer-tax-id">Numéro fiscal (Adószám) : HU92198362</span>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Politique de confidentialité</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+        });
+      });
+    }
+  </script>
+
+  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
