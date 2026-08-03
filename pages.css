@@ -1,5 +1,5 @@
 /* ============================================
-   AGORACREW — Inner Page Styles
+   AGORACREW — Inner Page Styles (Neo-Brutalist)
    Solutions, Resources, and Blog page components.
    Extends the base design system in styles.css.
    ============================================ */
@@ -8,22 +8,20 @@
 .page-hero {
   position: relative;
   padding: 140px 24px 80px;
-  max-width: var(--max-w);
-  margin: 0 auto;
+  background: var(--yellow);
   text-align: center;
   overflow: visible;
 }
 
-/* These pages are articles, not landing pages — the hero is a masthead.
-   A single hairline closes it off; no ambient blur circles. */
+/* Bottom border instead of hairline */
 .page-hero::after {
   content: '';
   position: absolute;
-  left: 24px;
-  right: 24px;
+  left: 0;
+  right: 0;
   bottom: 0;
-  height: 1px;
-  background: var(--ink-5);
+  height: 2px;
+  background: var(--black);
 }
 
 .page-hero > * {
@@ -36,40 +34,46 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--coral);
+  color: var(--black);
   margin-bottom: 28px;
+  background: var(--white);
+  border: var(--border);
+  padding: 6px 16px;
+  border-radius: var(--radius);
 }
 
 .page-hero-badge::before {
   content: '';
   width: 28px;
-  height: 1px;
-  background: var(--coral);
+  height: 2px;
+  background: var(--black);
 }
 
 .page-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+  letter-spacing: -0.04em;
+  color: var(--black);
   margin-bottom: 24px;
 }
 
 .page-hero h1 .accent-text {
-  font-style: italic;
-  color: var(--coral);
+  -webkit-text-stroke: 2px var(--black);
+  -webkit-text-fill-color: transparent;
   display: block;
 }
 
 .page-hero-subtitle {
+  font-family: var(--font-body);
   font-size: 1.125rem;
-  color: var(--ink-50);
+  color: rgba(0,0,0,0.6);
   max-width: 42rem;
   margin: 0 auto 24px;
   line-height: 1.8;
@@ -80,20 +84,21 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-heading);
   font-size: 0.82rem;
-  color: var(--ink-50);
+  color: rgba(0,0,0,0.45);
   margin-bottom: 24px;
 }
 
 .breadcrumb a {
-  color: var(--coral);
-  font-weight: 600;
-  transition: color 0.2s;
+  color: var(--black);
+  font-weight: 700;
+  transition: opacity 0.2s;
 }
 
-.breadcrumb a:hover { color: #d93d1e; }
+.breadcrumb a:hover { opacity: 0.6; }
 
-.breadcrumb .sep { color: var(--ink-30); }
+.breadcrumb .sep { color: rgba(0,0,0,0.3); }
 
 /* --- Page Content Container --- */
 .page-content {
@@ -113,10 +118,9 @@
   margin-bottom: 64px;
 }
 
-/* Names what the section is for. These guides aren't a sequence, so they
-   get a label rather than a counter. */
 .content-section-eyebrow {
   display: block;
+  font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -126,25 +130,26 @@
 }
 
 .content-section h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--black);
   margin-bottom: 16px;
 }
 
 .content-section h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--black);
   margin-bottom: 12px;
   margin-top: 32px;
 }
 
 .content-section p {
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -158,6 +163,7 @@
 }
 
 .content-section li {
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -167,7 +173,7 @@
 
 .content-section ol li { list-style: decimal; }
 
-.content-section strong { color: var(--ink); font-weight: 700; }
+.content-section strong { color: var(--black); font-weight: 700; }
 
 /* --- Info Cards Grid --- */
 .info-cards {
@@ -177,50 +183,51 @@
   margin: 32px 0;
 }
 
-/* Static content, so no hover lift — on these pages a card that moves under
-   the pointer is a card you can click, and none of these are. */
 .info-card {
   background: var(--white);
-  border: 1px solid var(--ink-5);
-  border-radius: var(--radius-md);
+  border: var(--border);
+  border-radius: var(--radius);
   padding: 30px 28px;
+  box-shadow: var(--shadow-sm);
 }
 
 .info-card h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--black);
   margin-bottom: 10px;
 }
 
 .info-card p {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--ink-50);
   line-height: 1.75;
 }
 
-.info-card--peach { background: var(--peach); border-color: transparent; }
-
-.info-card--dark { background: var(--ink); border-color: transparent; }
+.info-card--peach { background: var(--yellow); }
+.info-card--dark { background: var(--charcoal); }
 .info-card--dark h3 { color: rgba(255, 255, 255, 0.9); }
 .info-card--dark p  { color: rgba(255, 255, 255, 0.5); }
 
 /* --- Callout / Tip Box --- */
 .callout {
   padding: 22px 26px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   margin: 32px 0;
-  border-left: 3px solid var(--callout-accent);
+  border: var(--border);
+  border-left: 4px solid var(--callout-accent);
+  box-shadow: var(--shadow-sm);
 }
 
-.callout--tip     { --callout-accent: var(--coral); background: var(--peach); }
-.callout--info    { --callout-accent: #4A7BF7;      background: #EEF4FF; }
-.callout--warning { --callout-accent: #E5A100;      background: #FFF8E6; }
+.callout--tip     { --callout-accent: var(--yellow); background: var(--yellow); }
+.callout--info    { --callout-accent: #4A7BF7;       background: #EEF4FF; }
+.callout--warning { --callout-accent: #E5A100;       background: #FFF8E6; }
 
-/* The label carries the callout's job, so it doubles as the marker. */
 .callout-content strong {
   display: block;
+  font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -229,7 +236,10 @@
   margin-bottom: 8px;
 }
 
+.callout--tip .callout-content strong { color: var(--black); }
+
 .callout-content p {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--ink-70);
   line-height: 1.75;
@@ -247,20 +257,23 @@
 .stat-item {
   text-align: center;
   padding: 28px 20px;
-  background: var(--peach);
-  border-radius: var(--radius-md);
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-value {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 2.5rem;
-  font-weight: 400;
-  color: var(--coral);
+  font-weight: 800;
+  color: var(--black);
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .stat-label {
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--ink-50);
   font-weight: 500;
@@ -270,50 +283,53 @@
 .template-category { margin-bottom: 48px; }
 
 .template-category-header {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 800;
+  color: var(--black);
   margin-bottom: 24px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--ink-5);
+  border-bottom: var(--border);
 }
 
 .template-block {
   background: var(--white);
-  border: 1px solid var(--ink-5);
-  border-radius: var(--radius-sm);
+  border: var(--border);
+  border-radius: var(--radius);
   margin-bottom: 20px;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: box-shadow 0.2s;
 }
 
-.template-block:hover { border-color: var(--ink-10); }
+.template-block:hover { box-shadow: var(--shadow-sm); }
 
 .template-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: rgba(45, 59, 66, 0.03);
-  border-bottom: 1px solid var(--ink-5);
+  background: rgba(23, 30, 25, 0.04);
+  border-bottom: var(--border);
 }
 
 .template-title {
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--black);
 }
 
 .template-tag {
+  font-family: var(--font-heading);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--coral);
-  background: var(--peach);
+  color: var(--black);
+  background: var(--yellow);
   padding: 4px 10px;
-  border-radius: 9999px;
+  border: var(--border);
+  border-radius: var(--radius);
 }
 
 .template-body {
@@ -321,6 +337,7 @@
 }
 
 .template-body p {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -329,44 +346,50 @@
 }
 
 /* --- Metric Card --- */
-/* A metric card is a block of reading, not a control — it doesn't react to
-   the pointer. The coral edge marks it as a definition instead. */
 .metric-card {
   background: var(--white);
-  border: 1px solid var(--ink-5);
-  border-left: 3px solid var(--coral);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border: var(--border);
+  border-left: 4px solid var(--yellow);
+  border-radius: var(--radius);
   padding: 36px 32px;
   margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
 }
 
 .metric-card-header {
   margin-bottom: 20px;
 }
 
-/* The shorthand each metric is actually called in the trade. */
 .metric-card-tag {
+  font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: var(--coral);
+  color: var(--black);
+  background: var(--yellow);
+  display: inline-block;
+  padding: 2px 10px;
+  border: var(--border);
+  border-radius: var(--radius);
   margin-bottom: 6px;
 }
 
 .metric-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 800;
+  color: var(--black);
 }
 
 .metric-card-subtitle {
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--ink-50);
   margin-top: 4px;
 }
 
 .metric-card-body p {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -378,11 +401,13 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: var(--peach);
-  border-radius: 9999px;
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink);
+  font-weight: 700;
+  color: var(--black);
   margin-top: 8px;
 }
 
@@ -391,14 +416,15 @@
   width: 100%;
   border-collapse: collapse;
   margin: 32px 0;
-  border-radius: var(--radius-sm);
+  border: var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--ink-5);
 }
 
 .data-table th {
-  background: var(--ink);
+  background: var(--charcoal);
   color: var(--white);
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -408,16 +434,17 @@
 }
 
 .data-table td {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--ink-70);
   padding: 14px 20px;
-  border-bottom: 1px solid var(--ink-5);
+  border-bottom: 1px solid var(--ink-10);
   line-height: 1.6;
 }
 
 .data-table tbody tr:last-child td { border-bottom: none; }
-.data-table tbody tr:nth-child(even) { background: rgba(253, 241, 238, 0.3); }
-.data-table td strong { color: var(--ink); }
+.data-table tbody tr:nth-child(even) { background: rgba(255, 225, 124, 0.12); }
+.data-table td strong { color: var(--black); }
 
 /* --- Numbered Guide Steps --- */
 .guide-steps { counter-reset: guide-step; }
@@ -436,25 +463,28 @@
   top: 2px;
   width: 40px;
   height: 40px;
-  background: var(--peach);
-  color: var(--coral);
-  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--black);
+  border: var(--border);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
 }
 
 .guide-step h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--black);
   margin-bottom: 12px;
 }
 
 .guide-step p {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -463,6 +493,7 @@
 
 .guide-step ul { padding-left: 20px; margin-bottom: 12px; }
 .guide-step li {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--ink-70);
   line-height: 1.85;
@@ -478,7 +509,7 @@
   align-items: flex-start;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid var(--ink-5);
+  border-bottom: 1px solid var(--ink-10);
 }
 
 .checklist-item:last-child { border-bottom: none; }
@@ -489,11 +520,12 @@
   justify-content: center;
   width: 22px;
   height: 22px;
-  background: var(--peach);
-  border-radius: 50%;
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: var(--radius);
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--coral);
+  color: var(--black);
 }
 
 .checklist-check svg {
@@ -502,44 +534,47 @@
 }
 
 .checklist-item p {
+  font-family: var(--font-body);
   font-size: 0.92rem;
   color: var(--ink-70);
   line-height: 1.7;
   margin: 0;
 }
 
-.checklist-item strong { color: var(--ink); }
+.checklist-item strong { color: var(--black); }
 
 /* --- Section Divider --- */
 .section-divider {
-  height: 1px;
-  background: var(--ink-5);
+  height: 2px;
+  background: var(--black);
   margin: 48px 0;
   border: none;
 }
 
 /* --- Page CTA Section --- */
 .page-cta-section {
-  background: var(--ink);
+  background: var(--charcoal);
   padding: 80px 24px;
   text-align: center;
+  border-top: var(--border);
 }
 
 .page-cta-section h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 400;
+  font-weight: 800;
   color: var(--white);
   line-height: 1.15;
   margin-bottom: 16px;
 }
 
 .page-cta-section h2 .accent-text {
-  font-style: italic;
-  color: var(--coral);
+  -webkit-text-stroke: 2px var(--yellow);
+  -webkit-text-fill-color: transparent;
 }
 
 .page-cta-section p {
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.5);
   max-width: 36rem;
@@ -551,20 +586,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--coral);
-  color: var(--white);
+  font-family: var(--font-heading);
+  background: var(--yellow);
+  color: var(--black);
   padding: 16px 36px;
-  border-radius: var(--radius-pill);
+  border: var(--border);
+  border-radius: var(--radius);
   font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s var(--ease-out);
-  box-shadow: 0 6px 20px rgba(239, 70, 35, 0.3);
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .cta-button:hover {
-  background: #d93d1e;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(239, 70, 35, 0.35);
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0px 0px var(--black);
+}
+
+.cta-button:active {
+  transform: translate(8px, 8px);
+  box-shadow: none;
 }
 
 .page-cta-badges {
@@ -582,15 +623,16 @@
   gap: 6px;
   padding: 6px 14px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.5);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* ============================================
-   BLOG STYLES
+   BLOG STYLES (Neo-Brutalist)
    ============================================ */
 
 /* Blog Index */
@@ -603,21 +645,22 @@
 }
 
 .blog-hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+  letter-spacing: -0.04em;
+  color: var(--black);
   margin-bottom: 16px;
 }
 
 .blog-hero h1 .accent-text {
-  font-style: italic;
-  color: var(--coral);
+  -webkit-text-stroke: 2px var(--black);
+  -webkit-text-fill-color: transparent;
 }
 
 .blog-hero p {
+  font-family: var(--font-body);
   font-size: 1.125rem;
   color: var(--ink-50);
   max-width: 36rem;
@@ -639,37 +682,37 @@
 .blog-card {
   position: relative;
   background: var(--white);
-  border: 1px solid var(--ink-5);
-  border-radius: var(--radius-md);
+  border: var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.3s var(--ease-out);
+  transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-sm);
 }
 
-/* An index of links shouldn't jump off the page on hover the way a feature
-   tile does — it underscores itself instead. */
 .blog-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: var(--coral);
+  height: 3px;
+  background: var(--yellow);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s var(--ease-out);
 }
 
-.blog-card:hover,
-.blog-card:focus-visible { border-color: var(--ink-10); }
+.blog-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--black);
+}
 
-.blog-card:hover::before,
-.blog-card:focus-visible::before { transform: scaleX(1); }
+.blog-card:hover::before { transform: scaleX(1); }
 
 .blog-card:focus-visible {
-  outline: 2px solid var(--coral);
+  outline: 2px solid var(--black);
   outline-offset: 3px;
 }
 
@@ -681,24 +724,26 @@
 }
 
 .blog-card-date {
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   color: var(--ink-30);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 12px;
 }
 
 .blog-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 700;
+  color: var(--black);
   line-height: 1.3;
   margin-bottom: 12px;
 }
 
 .blog-card-excerpt {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--ink-50);
   line-height: 1.7;
@@ -709,9 +754,10 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--coral);
+  font-weight: 700;
+  color: var(--black);
   margin-top: 16px;
   transition: gap 0.2s var(--ease-out);
 }
@@ -719,8 +765,6 @@
 .blog-card:hover .blog-card-link,
 .blog-card:focus-visible .blog-card-link { gap: 10px; }
 
-/* Section heads for the blog index — separates written articles from the
-   evergreen guides. */
 .blog-section-head {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -731,47 +775,49 @@
 }
 
 .blog-section-head h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 800;
+  color: var(--black);
 }
 
 .blog-section-head p {
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--ink-50);
 }
 
-/* Blog Post — the masthead sits on the same measure and left edge as the
-   article body, so the page reads as one column of writing. */
+/* Blog Post */
 .blog-post-header {
   position: relative;
   padding: 140px 24px 40px;
   max-width: 720px;
   margin: 0 auto;
-  border-bottom: 1px solid var(--ink-5);
+  border-bottom: var(--border);
 }
 
 .blog-post-meta {
+  font-family: var(--font-heading);
   font-size: 0.82rem;
   color: var(--ink-30);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 16px;
 }
 
 .blog-post-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  letter-spacing: -0.03em;
+  color: var(--black);
   margin-bottom: 16px;
 }
 
 .blog-post-description {
+  font-family: var(--font-body);
   font-size: 1.1rem;
   color: var(--ink-50);
   line-height: 1.8;
@@ -785,23 +831,24 @@
 }
 
 .blog-post-content h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 800;
+  color: var(--black);
   margin: 40px 0 16px;
   line-height: 1.25;
 }
 
 .blog-post-content h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--black);
   margin: 32px 0 12px;
 }
 
 .blog-post-content p {
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--ink-70);
   line-height: 1.9;
@@ -812,6 +859,7 @@
 .blog-post-content ol { padding-left: 24px; margin-bottom: 20px; }
 
 .blog-post-content li {
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--ink-70);
   line-height: 1.9;
@@ -822,53 +870,58 @@
 .blog-post-content ol li { list-style: decimal; }
 
 .blog-post-content blockquote {
-  border-left: 4px solid var(--coral);
+  border-left: 4px solid var(--yellow);
   padding: 16px 24px;
   margin: 24px 0;
-  background: var(--peach);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--yellow);
+  border: var(--border);
+  border-left: 4px solid var(--black);
+  border-radius: var(--radius);
 }
 
 .blog-post-content blockquote p {
-  color: var(--ink);
+  color: var(--black);
   font-style: italic;
   margin: 0;
 }
 
 .blog-post-content code {
-  background: var(--ink-5);
+  background: rgba(23, 30, 25, 0.08);
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: var(--radius);
   font-size: 0.9em;
 }
 
 .blog-post-content pre {
-  background: var(--ink);
+  background: var(--charcoal);
   color: rgba(255, 255, 255, 0.85);
   padding: 24px;
-  border-radius: var(--radius-sm);
+  border: var(--border);
+  border-radius: var(--radius);
   overflow-x: auto;
   margin: 24px 0;
 }
 
 .blog-post-content pre code { background: none; padding: 0; color: inherit; }
-.blog-post-content strong { color: var(--ink); font-weight: 700; }
+.blog-post-content strong { color: var(--black); font-weight: 700; }
 
 .blog-post-content a {
-  color: var(--coral);
-  font-weight: 500;
+  color: var(--black);
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-color: var(--yellow);
+  text-decoration-thickness: 2px;
 }
 
-.blog-post-content a:hover { color: #d93d1e; }
+.blog-post-content a:hover { text-decoration-color: var(--black); }
 
-.blog-post-content img { border-radius: var(--radius-sm); margin: 24px 0; }
+.blog-post-content img { border: var(--border); border-radius: var(--radius); margin: 24px 0; }
 
 .blog-post-content hr {
   border: none;
-  height: 1px;
-  background: var(--ink-5);
+  height: 2px;
+  background: var(--black);
   margin: 40px 0;
 }
 
@@ -876,9 +929,10 @@
 .blog-empty {
   grid-column: 1 / -1;
   padding: 40px 28px;
-  border: 1px dashed var(--ink-10);
-  border-radius: var(--radius-md);
+  border: 2px dashed var(--ink-30);
+  border-radius: var(--radius);
   color: var(--ink-50);
+  font-family: var(--font-body);
   font-size: 0.95rem;
 }
 
@@ -886,6 +940,7 @@
   text-align: center;
   padding: 60px 24px;
   color: var(--ink-30);
+  font-family: var(--font-body);
   font-size: 0.9rem;
 }
 
@@ -893,14 +948,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-heading);
   font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--coral);
+  font-weight: 700;
+  color: var(--black);
   margin-bottom: 24px;
   transition: gap 0.2s var(--ease-out);
 }
 
-.blog-back-link:hover { gap: 12px; color: #d93d1e; }
+.blog-back-link:hover { gap: 12px; }
 
 /* ============================================
    RESPONSIVE — INNER PAGES
@@ -914,7 +970,7 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .page-hero::after { left: 20px; right: 20px; }
+  .page-hero::after { left: 0; right: 0; }
 
   .info-cards { grid-template-columns: 1fr; }
   .blog-section-head { flex-direction: column; gap: 4px; padding-top: 32px; }

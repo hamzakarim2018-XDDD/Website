@@ -93,7 +93,7 @@
       '<nav class="navbar" id="navbar">' +
         '<div class="container">' +
           '<a href="' + localizeHref(base + '/index.html') + '" class="nav-logo" aria-label="AgoraCrew">' +
-            '<span class="nav-logo-icon"></span>' +
+            '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />' +
           '</a>' +
 
           '<div class="nav-center" id="navCenter">' +
@@ -189,7 +189,7 @@
             /* Brand Column */
             '<div class="footer-brand">' +
               '<a href="' + localizeHref(base + '/index.html') + '" class="nav-logo" aria-label="AgoraCrew">' +
-                '<span class="nav-logo-icon"></span>' +
+                '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />' +
               '</a>' +
               '<p>' + footer.tagline + '</p>' +
             '</div>' +

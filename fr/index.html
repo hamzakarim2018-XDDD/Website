@@ -15,47 +15,47 @@
   <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/index.html" />
 
   <!-- PERF: Preconnect to Google Fonts domains — eliminates DNS+TLS latency -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- PERF: Google Fonts loaded as <link> instead of CSS @import to avoid chained blocking waterfall -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
 
   <!-- PERF: Critical above-the-fold CSS inlined to enable first paint without waiting for styles.css -->
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #ffffff; color: #2D3B42; line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Satoshi', 'Cabinet Grotesk', sans-serif; background-color: #ffffff; color: #171e19; line-height: 1.6; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background 0.4s cubic-bezier(0.16,1,0.3,1); border-bottom: 1px solid transparent; }
-    .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-logo { display: flex; align-items: center; gap: 8px; }
-    .nav-logo-icon { width: 64px; height: 48px; background-image: url('../logo-new-orange.png'); background-repeat: no-repeat; background-size: 137px 79px; background-position: -37px 0; flex-shrink: 0; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #ffe17c; border-bottom: 2px solid #171e19; }
+    .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; width: 100%; height: 72px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.3rem; }
+    .nav-logo-img { height: 3.3rem; width: auto; object-fit: contain; filter: brightness(0); }
     .nav-center { display: flex; align-items: center; gap: 36px; }
-    .nav-center a { font-size: 0.85rem; color: rgba(45,59,66,0.8); font-weight: 600; }
-    .nav-right { display: flex; align-items: center; gap: 16px; }
-    .nav-cta { background: #EF4623; color: #fff !important; padding: 10px 22px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-    .nav-cta-secondary { font-size: 0.85rem; color: rgba(45,59,66,0.7); font-weight: 600; }
+    .nav-center a { font-family: 'Cabinet Grotesk', sans-serif; font-size: 0.85rem; color: #171e19; font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-cta { font-family: 'Cabinet Grotesk', sans-serif; background: #171e19; color: #fff !important; padding: 10px 20px; border: 2px solid #171e19; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; box-shadow: 4px 4px 0px 0px #171e19; }
+    .nav-cta-secondary { font-family: 'Cabinet Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700; opacity: 0.7; }
     .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 1001; cursor: pointer; border: none; background: none; }
-    .mobile-menu-btn span { width: 22px; height: 2px; background: #2D3B42; border-radius: 2px; }
+    .mobile-menu-btn span { width: 22px; height: 2px; background: #171e19; border-radius: 0; }
     .nav-links { display: none; }
-    .hero { position: relative; padding: 140px 24px 80px; max-width: 1280px; margin: 0 auto; text-align: center; overflow: visible; }
+    .hero { position: relative; padding: 160px 24px 80px; background: #ffe17c; text-align: center; overflow: visible; }
     .hero > * { position: relative; z-index: 1; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #FDF1EE; border-radius: 9999px; font-size: 0.85rem; font-weight: 500; color: #2D3B42; margin-bottom: 32px; }
-    .hero-badge .dot { width: 6px; height: 6px; background: #EF4623; border-radius: 50%; }
-    .hero-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(3rem, 9vw, 8rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; color: #2D3B42; }
-    .hero-title .accent-text { font-style: italic; color: #EF4623; display: block; }
-    .hero-subtitle { font-size: 1.125rem; color: rgba(45,59,66,0.7); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #fff; border: 2px solid #171e19; border-radius: 4px; font-size: 0.85rem; font-weight: 700; color: #171e19; margin-bottom: 32px; }
+    .hero-badge .dot { width: 6px; height: 6px; background: #171e19; border-radius: 50%; }
+    .hero-title { font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(3rem, 9vw, 7rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 24px; color: #171e19; }
+    .hero-title .accent-text { display: block; -webkit-text-stroke: 2.5px #171e19; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-size: 1.1rem; color: rgba(0,0,0,0.65); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
     .hero-cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-    .hero-cta { display: inline-flex; align-items: center; background: #EF4623; color: #fff; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; background: transparent; color: #2D3B42; padding: 16px 36px; border-radius: 30px; font-size: 1rem; font-weight: 600; border: 2px solid rgba(45,59,66,0.1); }
-    .hero-trial-note { font-size: 0.85rem; color: rgba(45,59,66,0.5); margin-bottom: 48px; }
+    .hero-cta { display: inline-flex; align-items: center; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; padding: 16px 36px; background: #171e19; color: #fff; border: 2px solid #171e19; border-radius: 4px; font-size: 1rem; box-shadow: 8px 8px 0px 0px #171e19; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; padding: 16px 36px; background: #fff; color: #171e19; border: 2px solid #171e19; border-radius: 4px; font-size: 1rem; box-shadow: 4px 4px 0px 0px #171e19; }
+    .hero-trial-note { font-size: 0.85rem; color: rgba(0,0,0,0.45); margin-top: 16px; margin-bottom: 48px; }
+    .hero-trial-note strong { color: rgba(0,0,0,0.7); }
     .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: translateY(0) rotate(0deg); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) {
       .nav-center { display: none; } .nav-right { display: none; } .mobile-menu-btn { display: flex; }
-      .hero { padding: 110px 20px 48px; }
+      .hero { padding: 130px 20px 60px; }
       .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
       .hero-cta-group { flex-direction: column; gap: 12px; }
       .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
