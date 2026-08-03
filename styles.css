@@ -15,10 +15,13 @@
   --sage: #b7c6c2;
   --white: #ffffff;
 
-  /* Backward-compatible aliases for pages that reference old names */
+  /* Backward-compatible aliases for pages that reference old names.
+     --coral is used for BACKGROUNDS (buttons, badges, dots) — keep as yellow.
+     Text accent colors should use var(--black) directly.
+     --peach is used for LIGHT BACKGROUNDS — a faint warm tint. */
   --coral: #ffe17c;
   --ink: #171e19;
-  --peach: #ffe17c;
+  --peach: #fef9e7;
 
   /* Opacity variants */
   --ink-90: rgba(23, 30, 25, 0.9);
@@ -283,6 +286,15 @@ ul, ol { list-style: none; }
   transition: all 0.2s;
 }
 .nav-lang-switch:hover { background: var(--black); color: var(--yellow); }
+
+.nav-lang-switch-mobile {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 8px;
+  padding: 8px 0;
+}
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
@@ -620,9 +632,9 @@ ul, ol { list-style: none; }
 }
 
 .hero-title .accent-text {
-  font-style: italic;
-  color: var(--coral);
   display: block;
+  -webkit-text-stroke: 2.5px var(--black);
+  -webkit-text-fill-color: transparent;
 }
 
 /* Hero Subtitle */
@@ -897,7 +909,7 @@ ul, ol { list-style: none; }
   margin: 0 auto 12px;
 }
 
-.test-success-icon svg { color: var(--coral); }
+.test-success-icon svg { color: var(--black); }
 
 .test-success-text {
   text-align: center;
@@ -947,7 +959,7 @@ ul, ol { list-style: none; }
   flex-shrink: 0;
 }
 
-.deploy-check svg { width: 12px; height: 12px; color: var(--coral); }
+.deploy-check svg { width: 12px; height: 12px; color: var(--black); }
 
 .deploy-btn {
   width: 100%;
@@ -1110,8 +1122,8 @@ ul, ol { list-style: none; }
 }
 
 .section-title .accent-text {
-  font-style: italic;
-  color: var(--coral);
+  -webkit-text-stroke: 2px var(--black);
+  -webkit-text-fill-color: transparent;
 }
 
 .section-subtitle {
@@ -1379,7 +1391,7 @@ ul, ol { list-style: none; }
 
 .ai-plan-content h3 em {
   font-style: italic;
-  color: var(--coral);
+  color: var(--black);
 }
 
 .ai-plan-subtitle {
@@ -1411,7 +1423,7 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--coral);
+  color: var(--black);
 }
 
 .ai-plan-pricing-side {
@@ -1429,7 +1441,7 @@ ul, ol { list-style: none; }
   font-family: var(--font-serif);
   font-size: 3.5rem;
   font-weight: 400;
-  color: var(--coral);
+  color: var(--black);
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -1716,7 +1728,7 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--coral);
+  color: var(--black);
 }
 
 .feature-check--note { color: var(--ink-30); }
@@ -1936,7 +1948,7 @@ ul, ol { list-style: none; }
   gap: 8px;
   padding: 16px 36px;
   background: var(--white);
-  color: var(--coral);
+  color: var(--black);
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
@@ -2181,7 +2193,7 @@ ul, ol { list-style: none; }
   margin-bottom: 16px;
   border-radius: 50%;
   background: var(--peach);
-  color: var(--coral);
+  color: var(--black);
 }
 
 .form-success h4 {
@@ -2550,7 +2562,7 @@ ul, ol { list-style: none; }
   gap: 2px;
   font-family: var(--font-sans);
   font-weight: 700;
-  color: var(--coral);
+  color: var(--black);
 }
 
 .roi-field-value input {
@@ -2559,7 +2571,7 @@ ul, ol { list-style: none; }
   background: transparent;
   font: inherit;
   font-weight: 700;
-  color: var(--coral);
+  color: var(--black);
   text-align: right;
   padding: 0;
 }
@@ -2624,7 +2636,7 @@ ul, ol { list-style: none; }
 .roi-savings-amount {
   font-family: var(--font-serif);
   font-size: 2.25rem;
-  color: var(--coral);
+  color: var(--black);
   line-height: 1.1;
 }
 
@@ -2695,7 +2707,7 @@ ul, ol { list-style: none; }
 .roi-stat-figure {
   font-family: var(--font-serif);
   font-size: 2.25rem;
-  color: var(--coral);
+  color: var(--black);
   line-height: 1.1;
 }
 
@@ -2738,7 +2750,7 @@ ul, ol { list-style: none; }
   font-size: 0.9rem;
 }
 .lang-banner a {
-  color: var(--coral);
+  color: var(--black);
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
