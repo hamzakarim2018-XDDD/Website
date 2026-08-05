@@ -214,7 +214,7 @@
             /* Contact Column */
             '<div class="footer-col footer-col--contact">' +
               '<h4>' + footer.contactCol + '</h4>' +
-              '<a href="mailto:anne@agoracrew.com">anne@agoracrew.com</a>' +
+              '<a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>' +
               '<a href="tel:+36300841533">+36 30 084 1533</a>' +
               '<a href="' + localizeHref(base + '/index.html') + '#contact">' + footer.bookAudit + '</a>' +
             '</div>' +
