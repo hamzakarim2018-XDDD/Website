@@ -1,276 +1,490 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>AgoraCrew — Agents IA pour le Support Client E-commerce | Dès 99 €/mois</title>
-  <meta name="description" content="AgoraCrew déploie des agents IA formés pour gérer votre support client e-commerce, résoudre instantanément les demandes de suivi de commande et récupérer les paniers abandonnés — à partir de 99 €/mois, tout compris. Renfort humain inclus. Essai gratuit de 5 jours." />
-  <meta name="keywords" content="support client e-commerce, agent IA support, résolution suivi de commande, récupération panier abandonné, support Shopify, Gorgias IA, support à forfait fixe" />
-  <meta property="og:title" content="AgoraCrew — Votre chargé de support à 2 000 €/mois, remplacé pour 99 €." />
-  <meta property="og:description" content="Des agents IA formés gèrent votre boîte de support 24h/24 et 7j/7 — suivi de commande, questions fréquentes, récupération de paniers. Avec renfort humain. Forfait fixe, sans surprise. Essai gratuit." />
+  <meta name="theme-color" content="#ffe17c" />
+  <title>AgoraCrew — Ingénierie Logicielle Sur Mesure & Intégrations d'Entreprise</title>
+  <meta name="description" content="AgoraCrew conçoit des solutions logicielles sur mesure haute performance, des intégrations d'entreprise, de l'automatisation B2B et de l'infrastructure e-commerce avancée. Des pipelines CRM complexes à la synchronisation de données en temps réel — nous livrons des systèmes de production." />
+  <meta name="keywords" content="développement logiciel sur mesure, intégrations d'entreprise, applications Shopify, intégrations HubSpot, synchronisation QuickBooks, automatisation IA, logiciel B2B, infrastructure e-commerce" />
+  <meta property="og:title" content="AgoraCrew — Studio d'Ingénierie Logicielle Sur Mesure" />
+  <meta property="og:description" content="Nous concevons des logiciels sur mesure haute performance, des intégrations d'entreprise et de l'automatisation alimentée par l'IA. De HubSpot à Shopify — des systèmes de production, livrés." />
   <meta property="og:type" content="website" />
   <link rel="alternate" hreflang="en" href="https://agoracrew.com/index.html" />
   <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/index.html" />
   <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/index.html" />
 
-  <!-- PERF: Preconnect to Google Fonts domains — eliminates DNS+TLS latency -->
+  <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
 
-  <!-- PERF: Google Fonts loaded as <link> instead of CSS @import to avoid chained blocking waterfall -->
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
-  <!-- PERF: Critical above-the-fold CSS inlined to enable first paint without waiting for styles.css -->
   <style>
+    /* ===== RESET & TOKENS ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { font-family: 'Satoshi', 'Cabinet Grotesk', sans-serif; background-color: #ffffff; color: #171e19; line-height: 1.6; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --yellow: #ffe17c;
+      --charcoal: #171e19;
+      --sage: #b7c6c2;
+      --white: #ffffff;
+      --black: #000000;
+      --dark-gray: #272727;
+      --light-gray: #f4f4f5;
+
+      --shadow-sm: 4px 4px 0px 0px var(--black);
+      --shadow-lg: 8px 8px 0px 0px var(--black);
+      --shadow-xl: 12px 12px 0px 0px var(--black);
+
+      --border: 2px solid var(--black);
+      --radius: 0.75rem;
+
+      --font-heading: 'Cabinet Grotesk', sans-serif;
+      --font-body: 'Satoshi', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #ffe17c; border-bottom: 2px solid #171e19; }
-    .navbar .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; width: 100%; height: 72px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 1.3rem; }
-    .nav-logo-img { height: 3.3rem; width: auto; object-fit: contain; filter: brightness(0); }
-    .nav-center { display: flex; align-items: center; gap: 36px; }
-    .nav-center a { font-family: 'Cabinet Grotesk', sans-serif; font-size: 0.85rem; color: #171e19; font-weight: 700; }
+    ul { list-style: none; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .section-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+
+    .dot-bg { position: relative; }
+    .dot-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, var(--black) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .dot-bg > * { position: relative; z-index: 1; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .section-label .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      border: var(--border);
+      display: inline-block;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+    .section-title .accent-text {
+      -webkit-text-stroke: 2px var(--black);
+      -webkit-text-fill-color: transparent;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      max-width: 42rem;
+      margin: 0 auto 48px;
+      opacity: 0.7;
+      line-height: 1.7;
+    }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border: var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-primary:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px var(--black); }
+    .btn-primary:active { transform: translate(8px, 8px); box-shadow: none; }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--black);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover { transform: translate(4px, 4px); box-shadow: none; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 5rem;
+      background: var(--yellow);
+      border-bottom: var(--border);
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .navbar.scrolled { background: var(--yellow); box-shadow: 0 4px 0 0 rgba(0,0,0,0.08); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 72px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; }
+    .nav-logo-img { height: 3.3rem; width: auto; object-fit: contain; filter: brightness(0); transition: filter 0.2s; }
+    .footer-brand .nav-logo-img { filter: brightness(0) invert(1); }
+    .nav-center { display: flex; align-items: center; gap: 32px; }
+    .nav-center a { font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; color: var(--black); transition: opacity 0.2s; }
+    .nav-center a:hover { opacity: 0.6; }
     .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-cta { font-family: 'Cabinet Grotesk', sans-serif; background: #171e19; color: #fff !important; padding: 10px 20px; border: 2px solid #171e19; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; box-shadow: 4px 4px 0px 0px #171e19; }
-    .nav-cta-secondary { font-family: 'Cabinet Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700; opacity: 0.7; }
-    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 1001; cursor: pointer; border: none; background: none; }
-    .mobile-menu-btn span { width: 22px; height: 2px; background: #171e19; border-radius: 0; }
-    .nav-links { display: none; }
-    .hero { position: relative; padding: 160px 24px 80px; background: #ffe17c; text-align: center; overflow: visible; }
+    .nav-cta { padding: 10px 20px !important; font-size: 0.85rem !important; }
+    .nav-lang-switch { font-family: var(--font-heading); font-weight: 700; font-size: 0.8rem; opacity: 0.5; border: 1.5px solid rgba(0,0,0,0.2); border-radius: 6px; padding: 4px 8px; transition: opacity 0.2s; }
+    .nav-lang-switch:hover { opacity: 1; }
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 4px; border: none; background: none; cursor: pointer; z-index: 1001; }
+    .mobile-menu-btn span { width: 22px; height: 2.5px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
+    .nav-links { display: none; position: fixed; top: 0; right: -100%; width: 80%; max-width: 360px; height: 100vh; background: var(--yellow); border-left: var(--border); padding: 100px 24px 24px; flex-direction: column; gap: 8px; transition: right 0.35s cubic-bezier(0.16,1,0.3,1); z-index: 999; overflow-y: auto; }
+    .nav-links.active { right: 0; }
+    .nav-links a { font-family: var(--font-body); font-weight: 700; font-size: 1.05rem; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .nav-links .nav-cta { margin-top: 12px; text-align: center; padding: 14px 20px !important; font-size: 0.95rem !important; }
+    .nav-links .nav-lang-switch-mobile { font-size: 0.85rem; opacity: 0.5; text-align: center; margin-top: 8px; }
+
+    /* ===== HERO ===== */
+    .hero { position: relative; padding: 160px 24px 80px; background: var(--yellow); text-align: center; overflow: visible; }
     .hero > * { position: relative; z-index: 1; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: #fff; border: 2px solid #171e19; border-radius: 4px; font-size: 0.85rem; font-weight: 700; color: #171e19; margin-bottom: 32px; }
-    .hero-badge .dot { width: 6px; height: 6px; background: #171e19; border-radius: 50%; }
-    .hero-title { font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(3rem, 9vw, 7rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 24px; color: #171e19; }
-    .hero-title .accent-text { display: block; -webkit-text-stroke: 2.5px #171e19; -webkit-text-fill-color: transparent; }
-    .hero-subtitle { font-size: 1.1rem; color: rgba(0,0,0,0.65); margin-bottom: 36px; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: var(--white); border: var(--border); border-radius: 100px; font-size: 0.85rem; font-weight: 700; margin-bottom: 32px; }
+    .hero-badge .dot { width: 8px; height: 8px; background: #28c840; border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .hero-title { font-size: clamp(3rem, 9vw, 7rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 24px; color: var(--black); }
+    .hero-title .accent-text { display: block; -webkit-text-stroke: 2.5px var(--black); -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-size: 1.1rem; color: rgba(0,0,0,0.65); max-width: 42rem; margin: 0 auto 36px; line-height: 1.8; }
     .hero-cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-    .hero-cta { display: inline-flex; align-items: center; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; padding: 16px 36px; background: #171e19; color: #fff; border: 2px solid #171e19; border-radius: 4px; font-size: 1rem; box-shadow: 8px 8px 0px 0px #171e19; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; padding: 16px 36px; background: #fff; color: #171e19; border: 2px solid #171e19; border-radius: 4px; font-size: 1rem; box-shadow: 4px 4px 0px 0px #171e19; }
-    .hero-trial-note { font-size: 0.85rem; color: rgba(0,0,0,0.45); margin-top: 16px; margin-bottom: 48px; }
-    .hero-trial-note strong { color: rgba(0,0,0,0.7); }
+    .hero-cta { display: inline-flex; align-items: center; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; padding: 16px 36px; background: var(--black); color: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-lg); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .hero-cta:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px var(--black); }
+    .hero-cta:active { transform: translate(8px, 8px); box-shadow: none; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; padding: 16px 36px; background: var(--white); color: var(--black); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .hero-cta-secondary:hover { transform: translate(4px, 4px); box-shadow: none; }
     .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ===== PLATFORMS ===== */
+    .platforms { background: var(--charcoal); border-bottom: var(--border); padding: 24px 0; overflow: hidden; }
+    .platforms-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .platforms-label { font-family: var(--font-heading); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--sage); opacity: 0.4; }
+    .platform-logos-wrapper { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
+    .platform-logos { display: flex; align-items: center; gap: 40px; width: max-content; animation: scroll-logos 35s linear infinite; }
+    .platform-logo { display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+    .platform-logo img { width: 22px; height: 22px; border-radius: 4px; opacity: 0.85; }
+    .platform-logo span { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; color: var(--sage); opacity: 0.75; }
+    @keyframes scroll-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ===== SERVICES ===== */
+    .services { padding: 100px 0; background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 48px; }
+    .service-card { background: var(--light-gray); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 2.5rem; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-icon { width: 56px; height: 56px; background: var(--yellow); border: var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+    .service-card p { font-size: 0.95rem; opacity: 0.65; line-height: 1.7; }
+
+    /* ===== PRODUCTS ===== */
+    .products { padding: 100px 0; background: var(--charcoal); color: var(--white); }
+    .products .section-label .dot { background: var(--sage); }
+    .products .section-title { color: var(--white); }
+    .products .section-title .accent-text { -webkit-text-stroke-color: var(--yellow); -webkit-text-fill-color: transparent; }
+    .products .section-subtitle { color: rgba(255,255,255,0.5); }
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 48px; }
+    .product-card { background: var(--dark-gray); border: 2px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .product-card::before { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--yellow), var(--sage)); border-radius: var(--radius) var(--radius) 0 0; }
+    .product-card:hover { transform: translateY(-4px); border-color: rgba(255,225,124,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+    .product-badge { display: inline-block; padding: 4px 14px; background: rgba(255,225,124,0.12); color: var(--yellow); border: 1px solid rgba(255,225,124,0.25); border-radius: 100px; font-family: var(--font-heading); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem; }
+    .product-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--white); }
+    .product-card p { font-size: 0.95rem; opacity: 0.6; line-height: 1.7; margin-bottom: 1.5rem; }
+    .product-tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem; }
+    .tech-pill { padding: 4px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; font-family: var(--font-heading); font-weight: 600; font-size: 0.75rem; color: var(--sage); letter-spacing: 0.02em; }
+    .product-cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .product-cta { display: inline-flex; align-items: center; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; padding: 10px 20px; background: var(--yellow); color: var(--black); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .product-cta:hover { transform: translate(4px, 4px); box-shadow: none; }
+    .product-cta--secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.2); box-shadow: none; }
+    .product-cta--secondary:hover { background: rgba(255,255,255,0.05); transform: none; }
+    .coming-soon-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.2); border-radius: 100px; font-family: var(--font-heading); font-weight: 700; font-size: 0.8rem; color: var(--sage); letter-spacing: 0.04em; text-transform: uppercase; }
+    .coming-soon-badge .dot { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: pulse-dot 2s infinite; }
+
+    /* ===== HOW WE WORK ===== */
+    .how-we-work { padding: 100px 0; background: var(--yellow); border-top: var(--border); border-bottom: var(--border); }
+    .steps-grid { margin-top: 48px; }
+    .steps-grid--three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+    .steps-grid--three::before { content: ''; position: absolute; top: 3rem; left: 15%; right: 15%; height: 3px; background: rgba(0,0,0,0.1); z-index: 0; }
+    .step-card { text-align: center; position: relative; z-index: 1; }
+    .step-number { width: 6rem; height: 6rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; background: var(--yellow); border: 4px solid; }
+    .step-card:nth-child(1) .step-number, .step-card:nth-child(2) .step-number, .step-card:nth-child(3) .step-number { border-color: var(--charcoal); color: var(--charcoal); background: var(--white); }
+    .step-title { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .step-text { font-size: 0.95rem; opacity: 0.55; line-height: 1.6; max-width: 280px; margin: 0 auto; }
+
+    /* ===== CONTACT ===== */
+    .contact { padding: 100px 0; background: var(--white); }
+    .contact-grid { margin-top: 48px; }
+    .contact-grid--single { max-width: 640px; margin-left: auto; margin-right: auto; }
+    .form-side { background: var(--light-gray); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 2.5rem; }
+    .form-side h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .form-side > p { font-size: 0.9rem; opacity: 0.6; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; padding: 12px 14px; border: var(--border); border-radius: 0.5rem; background: var(--white); outline: none; transition: box-shadow 0.2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { box-shadow: var(--shadow-sm); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-group select { cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .form-submit { width: 100%; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; padding: 14px; background: var(--black); color: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-lg); cursor: pointer; transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .form-submit:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px var(--black); }
+    .form-submit:active { transform: translate(8px, 8px); box-shadow: none; }
+    .form-privacy { font-size: 0.8rem; text-align: center; opacity: 0.4; margin-top: 12px; }
+    .form-success { display: none; text-align: center; padding: 2rem 0; }
+    .form-success.show { display: block; }
+    .form-success .success-icon { width: 3rem; height: 3rem; background: #bbf7d0; border: var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .form-success h4 { font-size: 1.2rem; margin-bottom: 8px; }
+    .form-success p { font-size: 0.9rem; opacity: 0.6; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--charcoal); color: var(--white); padding: 60px 0 24px; border-top: var(--border); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 48px; }
+    .footer-brand .nav-logo { color: var(--white); margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.85rem; opacity: 0.5; line-height: 1.7; }
+    .footer-col h4 { font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.9rem; opacity: 0.6; padding: 4px 0; transition: opacity 0.2s; }
+    .footer-col a:hover { opacity: 1; }
+    .footer-bottom { border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom span { font-size: 0.8rem; opacity: 0.35; }
+    .footer-tax-id { font-size: 0.75rem !important; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.8rem; opacity: 0.4; transition: opacity 0.2s; }
+    .footer-bottom-links a:hover { opacity: 0.8; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+
+    /* ===== LANGUAGE BANNER ===== */
+    .lang-banner { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--charcoal); color: var(--white); border: var(--border); border-radius: var(--radius); padding: 12px 20px; display: flex; align-items: center; gap: 12px; font-size: 0.85rem; z-index: 9999; box-shadow: var(--shadow-lg); }
+    .lang-banner a { color: var(--yellow); font-weight: 700; text-decoration: underline; }
+    .lang-banner button { background: none; border: none; color: var(--white); opacity: 0.5; cursor: pointer; font-size: 1rem; padding: 0 4px; }
+    .lang-banner button:hover { opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr; }
+      .steps-grid--three { grid-template-columns: 1fr; gap: 2rem; }
+      .steps-grid--three::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
-      .nav-center { display: none; } .nav-right { display: none; } .mobile-menu-btn { display: flex; }
+      .nav-center { display: none; }
+      .nav-right { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .nav-links { display: flex; right: -100%; }
       .hero { padding: 130px 20px 60px; }
       .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
-      .hero-cta-group { flex-direction: column; gap: 12px; }
+      .hero-cta-group { flex-direction: column; }
       .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
-
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="../styles.css" />
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
 
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-
-  <!-- RB2B Visitor Identification -->
-  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
 </head>
 <body>
 
   <!-- ==================== NAVIGATION ==================== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+      <a href="#" class="nav-logo" aria-label="AgoraCrew">
         <img src="../logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />
       </a>
 
       <div class="nav-center" id="navCenter">
-        <a href="#problem">Le calcul</a>
-        <a href="#how-it-works">Comment ça marche</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="../fr/tools/cx-audit/index.html">Auditez ma boutique</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-            Ressources
-            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="nav-dropdown-menu">
-            <div class="nav-dropdown-col">
-              <div class="nav-dropdown-col-title">Solutions</div>
-              <a href="../fr/solutions/shopify-customer-service.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Guide CX Shopify</span>
-                  <span class="nav-dropdown-link-desc">Gérer le support sur Shopify</span>
-                </span>
-              </a>
-              <a href="../fr/solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Stratégie CX</span>
-                  <span class="nav-dropdown-link-desc">Construire un plan CX</span>
-                </span>
-              </a>
-              <a href="../fr/solutions/wismo-automation.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Automatisation du suivi de commande</span>
-                  <span class="nav-dropdown-link-desc">Éliminer les tickets « où est ma commande »</span>
-                </span>
-              </a>
-            </div>
-            <div class="nav-dropdown-col">
-              <div class="nav-dropdown-col-title">Ressources</div>
-              <a href="../fr/resources/reduce-support-costs.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Réduire les coûts</span>
-                  <span class="nav-dropdown-link-desc">7 tactiques éprouvées</span>
-                </span>
-              </a>
-              <a href="../fr/resources/customer-service-templates.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Modèles de réponses</span>
-                  <span class="nav-dropdown-link-desc">Modèles gratuits à copier-coller</span>
-                </span>
-              </a>
-              <a href="../fr/resources/cx-metrics-guide.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Guide des métriques CX</span>
-                  <span class="nav-dropdown-link-desc">6 métriques essentielles</span>
-                </span>
-              </a>
-            </div>
-            <div class="nav-dropdown-col">
-              <div class="nav-dropdown-col-title">Blog</div>
-              <a href="../fr/blog/index.html" class="nav-dropdown-link">
-                <span class="nav-dropdown-link-text">
-                  <span class="nav-dropdown-link-title">Tous les articles</span>
-                  <span class="nav-dropdown-link-desc">Derniers articles et guides CX</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
+        <a href="#services">Services</a>
+        <a href="#products">Produits</a>
+        <a href="#how-we-work">Notre Processus</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="nav-right">
-        <a href="#contact" class="nav-cta-secondary">Réserver un audit CX</a>
-        <a href="#contact" class="nav-cta">Essai gratuit</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Discuter de votre projet</a>
         <a href="../index.html" class="nav-lang-switch" aria-label="Switch to English">EN</a>
       </div>
 
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Mobile Slide-out Nav -->
       <div class="nav-links" id="navLinks">
-        <a href="#problem">Le calcul</a>
-        <a href="#how-it-works">Comment ça marche</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="../fr/tools/cx-audit/index.html">Auditez ma boutique</a>
-        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-          Ressources
-          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="mobile-dropdown-items">
-          <a href="../fr/solutions/shopify-customer-service.html">Guide CX Shopify</a>
-          <a href="../fr/solutions/ecommerce-cx-strategy.html">Stratégie CX</a>
-          <a href="../fr/solutions/wismo-automation.html">Automatisation du suivi de commande</a>
-          <a href="../fr/resources/reduce-support-costs.html">Réduire les coûts</a>
-          <a href="../fr/resources/customer-service-templates.html">Modèles de réponses</a>
-          <a href="../fr/resources/cx-metrics-guide.html">Guide des métriques CX</a>
-          <a href="../fr/blog/index.html">Blog</a>
-        </div>
+        <a href="#services">Services</a>
+        <a href="#products">Produits</a>
+        <a href="#how-we-work">Notre Processus</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-cta">Essai gratuit</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Discuter de votre projet</a>
         <a href="../index.html" class="nav-lang-switch-mobile" aria-label="Switch to English">EN — View in English</a>
       </div>
     </div>
   </nav>
 
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero" id="hero">
+  <!-- ==================== HERO ==================== -->
+  <section class="hero dot-bg" id="hero">
 
-    <!-- Pill Badge -->
     <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
-      <span class="dot"></span> Agents IA pour le support e-commerce
+      <span class="dot"></span> Ingénierie Logicielle Sur Mesure
     </div>
 
-    <!-- Main Heading -->
     <h1 class="hero-title animate-fade-up" style="opacity:0; animation-delay: 0.25s;">
-      Confiez votre boîte mail.<br/>
-      <span class="accent-text">Développez votre marque.</span>
+      Nous concevons le logiciel<br/>
+      <span class="accent-text">qui fait tourner votre business.</span>
     </h1>
 
-    <!-- Subheading -->
     <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
-      Pour moins de 100 €/mois, vous ne répondrez plus jamais manuellement à un e-mail « Où est ma commande ? ». Des agents IA formés traitent votre boîte de support et votre chat en continu, en allant chercher en temps réel les données de commande et de suivi dans votre boutique — et vous pouvez ajouter un agent humain dès qu'un ticket en a besoin.
+      AgoraCrew est un studio d'ingénierie logicielle spécialisé dans les intégrations d'entreprise, l'infrastructure e-commerce et l'automatisation alimentée par l'IA. Des pipelines CRM complexes à la synchronisation de données en temps réel — nous livrons des systèmes de production.
     </p>
 
-    <!-- CTA Buttons -->
     <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
-      <a href="#contact" class="hero-cta">Démarrer mon essai gratuit</a>
-      <a href="#pricing" class="hero-cta-secondary">Voir les tarifs ↓</a>
+      <a href="#contact" class="hero-cta">Demander une solution sur mesure</a>
+      <a href="#products" class="hero-cta-secondary">Voir nos produits ↓</a>
     </div>
-
-    <!-- Microcopy -->
-    <p class="hero-trial-note animate-fade-up" style="opacity:0; animation-delay: 0.55s;">
-      Profitez de <strong>60 tickets résolus par l'IA</strong> ou de <strong>5 jours</strong> gratuits — selon la première limite atteinte. <strong>Sans engagement</strong>, résiliable à tout moment.
-    </p>
 
   </section>
 
 
-  <!-- ==================== PLATFORMS ==================== -->
+  <!-- ==================== TECH PARTNERS ==================== -->
   <section class="platforms" id="platforms">
     <div class="container">
       <div class="platforms-inner">
-        <div class="platforms-row">
-          <p>Compatible avec vos outils actuels</p>
+        <span class="platforms-label">Partenaires</span>
+        <div class="platform-logos-wrapper">
           <div class="platform-logos">
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Gorgias</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
               <span>Shopify</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Klaviyo</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.hubspot.com&size=64" alt="HubSpot" width="22" height="22" loading="lazy" />
+              <span>HubSpot</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quickbooks.intuit.com&size=64" alt="QuickBooks" width="22" height="22" loading="lazy" />
+              <span>QuickBooks</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.salesforce.com&size=64" alt="Salesforce" width="22" height="22" loading="lazy" />
+              <span>Salesforce</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://aws.amazon.com&size=64" alt="AWS" width="22" height="22" loading="lazy" />
+              <span>AWS</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://stripe.com&size=64" alt="Stripe" width="22" height="22" loading="lazy" />
+              <span>Stripe</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
               <span>Zendesk</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Intercom</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
+              <span>Gorgias</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Freshdesk</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.mongodb.com&size=64" alt="MongoDB" width="22" height="22" loading="lazy" />
+              <span>MongoDB</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>ShipStation</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nodejs.org&size=64" alt="Node.js" width="22" height="22" loading="lazy" />
+              <span>Node.js</span>
+            </div>
+            <!-- Duplicate set for seamless marquee -->
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
+              <span>Shopify</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>ShipBob</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.hubspot.com&size=64" alt="HubSpot" width="22" height="22" loading="lazy" />
+              <span>HubSpot</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Recharge</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quickbooks.intuit.com&size=64" alt="QuickBooks" width="22" height="22" loading="lazy" />
+              <span>QuickBooks</span>
             </div>
             <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" class="brand-logo" width="24" height="24" loading="lazy" decoding="async" />
-              <span>Loop</span>
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.salesforce.com&size=64" alt="Salesforce" width="22" height="22" loading="lazy" />
+              <span>Salesforce</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://aws.amazon.com&size=64" alt="AWS" width="22" height="22" loading="lazy" />
+              <span>AWS</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://stripe.com&size=64" alt="Stripe" width="22" height="22" loading="lazy" />
+              <span>Stripe</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
+              <span>Zendesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
+              <span>Gorgias</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.mongodb.com&size=64" alt="MongoDB" width="22" height="22" loading="lazy" />
+              <span>MongoDB</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nodejs.org&size=64" alt="Node.js" width="22" height="22" loading="lazy" />
+              <span>Node.js</span>
             </div>
           </div>
         </div>
@@ -279,75 +493,99 @@
   </section>
 
 
-  <!-- ==================== ROI CALCULATOR ==================== -->
-  <section class="benefits" id="problem">
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services" id="services">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot"></span> Le calcul</span>
-        <h2 class="section-title">Découvrez ce que votre boîte mail<br/><span class="accent-text">vous coûte réellement.</span></h2>
+        <span class="section-label"><span class="dot"></span> Ce que nous construisons</span>
+        <h2 class="section-title">Des solutions d'ingénierie pour<br/><span class="accent-text">des problèmes complexes.</span></h2>
         <p class="section-subtitle mx-auto">
-          La plupart des boutiques paient trop cher leur support et perdent quand même des ventes à cause de réponses trop lentes. Faites le calcul vous-même.
+          Nous concevons, construisons et maintenons des systèmes logiciels de production qui résolvent de vrais problèmes métier — pas des templates génériques.
         </p>
       </div>
 
-      <div class="roi-grid">
-        <div class="roi-calc-card reveal">
-          <h3 class="roi-calc-heading">Vos chiffres</h3>
-
-          <div class="roi-field">
-            <div class="roi-field-label">
-              <span>Tickets de support par mois</span>
-              <span class="roi-field-value"><input type="number" id="roiVolumeNumber" value="800" min="100" max="6000" step="50" aria-label="Tickets de support par mois" /></span>
-            </div>
-            <input type="range" class="roi-slider" id="roiVolumeSlider" min="100" max="6000" step="50" value="800" aria-label="Tickets de support par mois" />
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
+          <h3>Développement Logiciel Sur Mesure</h3>
+          <p>Développement d'applications de bout en bout, de l'architecture au déploiement. APIs, tableaux de bord, outils internes et plateformes client — conçus pour l'échelle.</p>
+        </div>
 
-          <div class="roi-field">
-            <div class="roi-field-label">
-              <span>Coût actuel par ticket</span>
-              <span class="roi-field-value">€<input type="number" id="roiCostNumber" value="4.50" min="1" max="15" step="0.5" aria-label="Coût actuel par ticket en euros" /></span>
-            </div>
-            <input type="range" class="roi-slider" id="roiCostSlider" min="1" max="15" step="0.5" value="4.5" aria-label="Coût actuel par ticket en euros" />
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><line x1="6" y1="12" x2="18" y2="12"/><path d="M12 5v2"/><path d="M12 17v2"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M19 5l-2 2"/><path d="M5 19l2-2"/></svg>
           </div>
+          <h3>Intégrations d'Entreprise</h3>
+          <p>Synchronisation profonde entre CRM, ERP et stacks e-commerce. HubSpot, QuickBooks, Shopify, Salesforce et au-delà — mapping de données en temps réel avec workflows stateful.</p>
+        </div>
 
-          <div class="roi-divider"></div>
-
-          <div id="roiOutput" aria-live="polite">
-            <div class="roi-output-row"><span>Votre coût actuel</span><strong id="roiCurrentCost">3 600 €</strong></div>
-            <div class="roi-output-row"><span>AgoraCrew (<span id="roiPlanName">Growth</span>)</span><strong id="roiPlanFee">249 €</strong></div>
-
-            <div class="roi-savings-block" id="roiSavingsBlock">
-              <div class="roi-savings-amount"><span id="roiSavingsAmount">3 351 €/mois</span></div>
-              <p class="roi-savings-subline" id="roiSavingsSubline">(93 % de moins &middot; 40 212 €/an)</p>
-            </div>
-            <p class="roi-neutral-message" id="roiNeutralMessage" hidden>AgoraCrew s'adapte à votre volume de tickets &mdash; aucun palier surprise.</p>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
+          <h3>Infrastructure E-Commerce</h3>
+          <p>Applications Shopify custom, automatisation de la logistique, systèmes d'inventaire et outils opérationnels pour les marchands à haut volume. Nous construisons le backend dont votre boutique dépend.</p>
+        </div>
 
-          <div class="roi-cta-group">
-            <a href="#contact" class="roi-cta-primary">Démarrer mon essai gratuit</a>
-            <a href="#pricing" class="roi-cta-secondary">Voir tous les tarifs</a>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/><path d="M8 6a4 4 0 0 0 3.25 3.93"/><circle cx="12" cy="14" r="4"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+          </div>
+          <h3>IA &amp; Automatisation</h3>
+          <p>Workflows intelligents, copilotes alimentés par l'IA et systèmes backend automatisés qui réduisent le travail manuel et font évoluer vos opérations. Claude, GPT et modèles custom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="products" id="products">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Nos Produits</span>
+        <h2 class="section-title">Des outils internes,<br/><span class="accent-text">conçus par nous.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Nous ne faisons pas que parler d'ingénierie. Ce sont des produits en production que notre équipe a conçus, construits et maintient — la preuve de ce que nous pouvons construire pour vous.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <span class="product-badge">Application Shopify</span>
+          <h3>Order Exceptions Copilot</h3>
+          <p>
+            Un digest opérationnel quotidien intelligent pour les marchands Shopify qui agrège les retards de fulfillment, les décalages d'inventaire et les problèmes de validation d'adresse en une liste priorisée unique. Détectez les problèmes avant vos clients.
+          </p>
+          <div class="product-tech-stack">
+            <span class="tech-pill">Shopify</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">IA</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+          <div class="product-cta-group">
+            <a href="#contact" class="product-cta">En savoir plus</a>
+            <a href="#contact" class="product-cta product-cta--secondary">Voir sur le Shopify App Store →</a>
           </div>
         </div>
 
-        <div class="roi-stats-stack reveal reveal-delay-1">
-          <h3 class="roi-stats-heading">Les boutiques avec chat en direct constatent généralement :</h3>
-
-          <div class="roi-stat">
-            <div class="roi-stat-figure">~20 % de hausse</div>
-            <p class="roi-stat-text">L'ajout d'un chat en direct augmente le taux de conversion global du site.</p>
-            <p class="roi-stat-source">Source : Forrester (données agrégées du secteur)</p>
+        <div class="product-card reveal reveal-delay-1">
+          <span class="product-badge">Plateforme IA E-Commerce</span>
+          <h3>Agent IA de Support &amp; Moteur de Croissance</h3>
+          <p>
+            Un agent IA intelligent pour les marques e-commerce qui gère le chat et l'email 24h/24 et 7j/7 — résolvant instantanément les demandes de suivi de commande avec les données Shopify en temps réel, parlant la voix de votre marque en 50+ langues. Outils de croissance intégrés pour récupérer les paniers abandonnés, déclencher des campagnes de réactivation et envoyer des rappels de réapprovisionnement.
+          </p>
+          <div class="product-tech-stack">
+            <span class="tech-pill">Shopify</span>
+            <span class="tech-pill">Gorgias</span>
+            <span class="tech-pill">Zendesk</span>
+            <span class="tech-pill">Claude AI</span>
+            <span class="tech-pill">50+ Langues</span>
           </div>
-
-          <div class="roi-stat">
-            <div class="roi-stat-figure">10 à 15 % du CA</div>
-            <p class="roi-stat-text">Part du chiffre d'affaires que les marques e-commerce attribuent aux interactions par chat en direct.</p>
-            <p class="roi-stat-source">Source : Forrester</p>
-          </div>
-
-          <div class="roi-stat">
-            <div class="roi-stat-figure">79 % des entreprises</div>
-            <p class="roi-stat-text">Affirment que le chat en direct a amélioré les ventes, le chiffre d'affaires et la fidélité client.</p>
-            <p class="roi-stat-source">Source : Kayako</p>
+          <div class="product-cta-group">
+            <a href="#contact" class="product-cta">Demander une démo</a>
           </div>
         </div>
       </div>
@@ -355,477 +593,86 @@
   </section>
 
 
-  <!-- ==================== HOW IT WORKS (COMPACT) ==================== -->
-  <section class="how-it-works" id="how-it-works">
+  <!-- ==================== HOW WE WORK ==================== -->
+  <section class="how-we-work dot-bg" id="how-we-work">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot"></span> Comment ça marche</span>
-        <h2 class="section-title">Opérationnel en <span class="accent-text">moins de 24 heures.</span></h2>
-        <p class="section-subtitle mx-auto">
-          Trois étapes, et la plus longue consiste à lire vos pages de politique. La plupart des boutiques répondent à leur premier ticket dès le lendemain matin.
+        <span class="section-label"><span class="dot" style="background: var(--black);"></span> Notre Processus</span>
+        <h2 class="section-title">De la découverte à la<br/><span class="accent-text">production.</span></h2>
+        <p class="section-subtitle mx-auto" style="opacity: 0.6;">
+          Chaque engagement commence par la compréhension de vos systèmes et se termine par un logiciel de production sur lequel votre équipe peut compter.
         </p>
       </div>
 
       <div class="steps-grid steps-grid--three">
         <div class="step-card reveal">
           <div class="step-number">01</div>
-          <h3 class="step-title">Connectez votre boutique</h3>
-          <p class="step-text">Nous nous branchons sur votre boutique Shopify et votre helpdesk — Gorgias, Zendesk, ou en solution autonome.</p>
+          <h3 class="step-title">Découverte &amp; Cadrage</h3>
+          <p class="step-text">Nous cartographions vos systèmes existants, définissons les points d'intégration, identifions les cas limites et architecturons la solution avec vous.</p>
         </div>
         <div class="step-card reveal reveal-delay-1">
           <div class="step-number">02</div>
-          <h3 class="step-title">Nous apprenons votre marque</h3>
-          <p class="step-text">Votre agent IA est formé sur le ton de votre marque, votre catalogue produits, votre FAQ et vos politiques de support.</p>
+          <h3 class="step-title">Construction &amp; Itération</h3>
+          <p class="step-text">Sprints agiles avec démos hebdomadaires. Vous voyez du logiciel fonctionnel, pas des présentations. Code reviews, tests et CI/CD dès le premier jour.</p>
         </div>
         <div class="step-card reveal reveal-delay-2">
           <div class="step-number">03</div>
-          <h3 class="step-title">Passez en direct</h3>
-          <p class="step-text">L'IA traite les tickets 24h/24 et 7j/7. Les humains interviennent sur les cas complexes. Vous suivez tout depuis votre tableau de bord.</p>
+          <h3 class="step-title">Lancement &amp; Support</h3>
+          <p class="step-text">Nous déployons, monitorons et maintenons. Vos systèmes tournent en production — nous les gardons opérationnels, mis à jour et performants.</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ==================== PRICING ==================== -->
-  <section class="pricing-services" id="pricing">
-    <div class="section-container">
-      <div class="text-center">
-        <span class="section-label"><span class="dot"></span> Tarification simple</span>
-        <h2 class="section-title">Un forfait fixe.<br/><span class="accent-text">Aucune surprise.</span></h2>
-        <p class="section-subtitle mx-auto">
-          Chaque forfait inclut un support IA 24h/24 et 7j/7, une résolution instantanée des demandes de suivi de commande, et un renfort humain supervisé. Choisissez le volume adapté à votre boutique.
-        </p>
-      </div>
-
-      <!-- ===== AI SUBSCRIPTION TIERS ===== -->
-      <div class="pricing-cards" style="margin-top: 56px;">
-
-        <!-- STARTER -->
-        <div class="price-card reveal" id="plan-starter">
-          <div class="price-card-header">
-            <div class="price-card-label">Starter</div>
-            <div class="price-card-amount">
-              <span class="price-currency">€</span>
-              <span class="price-value">99</span>
-              <span class="price-period">/ mois</span>
-            </div>
-            <p class="price-card-sub">500 tickets inclus. Pour les boutiques qui découvrent le support IA.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Support par chat IA 24h/24, 7j/7</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Réponses instantanées aux demandes de suivi de commande</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Autonome ou compatible avec tout helpdesk</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Formation au ton de votre marque</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Plus de 50 langues</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Rapports de performance hebdomadaires</span>
-            </li>
-
-          </ul>
-          <a href="#contact" class="price-card-cta" id="cta-starter">Démarrer mon essai gratuit</a>
-        </div>
-
-        <!-- GROWTH (Most Popular) -->
-        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-growth">
-          <div class="price-card-badge">Le plus populaire</div>
-          <div class="price-card-header">
-            <div class="price-card-label">Growth</div>
-            <div class="price-card-amount">
-              <span class="price-currency">€</span>
-              <span class="price-value">249</span>
-              <span class="price-period">/ mois</span>
-            </div>
-            <p class="price-card-sub">1 500 tickets inclus. Support IA + outils de récupération de chiffre d'affaires.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Tout Starter, plus :</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Récupération proactive de paniers</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Campagnes de réactivation client</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Rappels de réapprovisionnement</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Fil des ventes générées par conversation</span>
-            </li>
-
-          </ul>
-          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-growth">Démarrer mon essai gratuit</a>
-        </div>
-
-        <!-- SCALE -->
-        <div class="price-card reveal reveal-delay-2" id="plan-scale">
-          <div class="price-card-header">
-            <div class="price-card-label">Scale</div>
-            <div class="price-card-amount">
-              <span class="price-currency">€</span>
-              <span class="price-value">599</span>
-              <span class="price-period">/ mois</span>
-            </div>
-            <p class="price-card-sub">4 000 tickets inclus. IA tout compris avec gestion de compte dédiée.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Tout Growth, plus :</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Chargé de compte dédié</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Support prioritaire</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Intégrations sur mesure</span>
-            </li>
-
-            <li class="price-card-feature price-card-feature--note">
-              <span class="feature-check feature-check--note">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </span>
-              <span>Dépassement : 0,20 € par ticket supplémentaire</span>
-            </li>
-          </ul>
-          <a href="#contact" class="price-card-cta" id="cta-scale">Démarrer mon essai gratuit</a>
-        </div>
-
-      </div>
-
-      <!-- Overage Callout -->
-      <div class="overage-callout reveal">
-        <p>
-          <strong>Aucune mauvaise surprise en cas de croissance.</strong> Vous dépassez vos tickets inclus ? Pas de palier, pas de pénalité. Seulement 0,20 € par ticket supplémentaire. Vos coûts restent prévisibles, même quand votre volume de commandes explose.
-        </p>
-      </div>
-
-      <!-- ===== HUMAN AGENT TEAMS ===== -->
-      <div class="human-pricing-header text-center reveal">
-        <span class="section-label"><span class="dot"></span> Équipes d'agents humains</span>
-        <h3 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Besoin d'agents humains dédiés ?</h3>
-        <p class="section-subtitle mx-auto">
-          Pour les demandes complexes, les comptes VIP ou une gestion CRM complète — ajoutez des agents humains supervisés à votre dispositif.
-        </p>
-      </div>
-
-      <div class="pricing-cards">
-
-        <!-- CARD 1 — Nearshore (Hungary) -->
-        <div class="price-card reveal" id="plan-nearshore">
-          <div class="price-card-header">
-            <div class="price-card-label">Nearshore — Hongrie</div>
-            <div class="price-card-amount">
-              <span class="price-currency">€</span>
-              <span class="price-value">19</span>
-              <span class="price-period">/ heure</span>
-            </div>
-            <p class="price-card-sub">Locuteurs natifs anglais ou français pour une gestion CRM et de compte de haut niveau, en temps réel.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Locuteurs natifs anglais ou français</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Gestion CRM et de compte en temps réel</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Supervision professionnelle qualité</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Sans engagement, résiliable chaque mois</span>
-            </li>
-            <li class="price-card-feature price-card-feature--note">
-              <span class="feature-check feature-check--note">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </span>
-              <span>Frais de recrutement uniques : 369 €</span>
-            </li>
-          </ul>
-          <a href="#contact" class="price-card-cta" id="cta-nearshore">Réserver un audit CX gratuit</a>
-        </div>
-
-        <!-- CARD 2 — Offshore (Philippines) -->
-        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-offshore">
-          <div class="price-card-badge">Meilleur rapport qualité-prix</div>
-          <div class="price-card-header">
-            <div class="price-card-label">Offshore — Philippines</div>
-            <div class="price-card-amount">
-              <span class="price-currency">€</span>
-              <span class="price-value">12</span>
-              <span class="price-period">/ heure</span>
-            </div>
-            <p class="price-card-sub">La meilleure solution pour le chat à fort volume, la gestion de tickets et un support CRM e-commerce évolutif.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Chat et gestion de tickets à fort volume</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Support CRM e-commerce évolutif</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Supervision professionnelle qualité</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Sans engagement, résiliable chaque mois</span>
-            </li>
-            <li class="price-card-feature price-card-feature--note">
-              <span class="feature-check feature-check--note">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </span>
-              <span>Frais de recrutement uniques : 369 €</span>
-            </li>
-          </ul>
-          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-offshore">Réserver un audit CX gratuit</a>
-        </div>
-
-        <!-- CARD 3 — Scale / Custom -->
-        <div class="price-card reveal reveal-delay-2" id="plan-human-scale">
-          <div class="price-card-header">
-            <div class="price-card-label">Équipe sur mesure</div>
-            <div class="price-card-amount">
-              <span class="price-value price-value--custom">Sur devis</span>
-            </div>
-            <p class="price-card-sub">Combinez agents nearshore &amp; offshore pour composer l'équipe idéale des marques à fort volume.</p>
-          </div>
-          <div class="price-card-divider"></div>
-          <ul class="price-card-features">
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Combinez agents HU &amp; PH selon vos besoins</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Pour les équipes de 5 agents et plus</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Chargé de compte dédié</span>
-            </li>
-            <li class="price-card-feature">
-              <span class="feature-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>Supervision professionnelle qualité</span>
-            </li>
-            <li class="price-card-feature price-card-feature--note">
-              <span class="feature-check feature-check--note">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </span>
-              <span>Frais de recrutement sur devis</span>
-            </li>
-          </ul>
-          <a href="#contact" class="price-card-cta" id="cta-human-scale">Réserver un audit CX gratuit</a>
-        </div>
-
-      </div>
-
-      <!-- Trial Guarantee -->
-      <div class="pricing-trial-guarantee reveal">
-        <p><strong>Garantie sans risque :</strong> profitez de vos <strong>60 premiers tickets</strong> ou de <strong>5 jours</strong> entièrement gratuits (selon la première limite atteinte) — avec toutes les fonctionnalités du forfait Growth incluses. Sans engagement. Aucune carte bancaire requise.</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ==================== TRIAL CTA BANNER ==================== -->
-  <section class="trial-banner">
-    <div class="container">
-      <div class="trial-banner-inner reveal">
-        <h2>Arrêtez de payer 2 000 €/mois<br/>pour répondre à des e-mails.</h2>
-        <p>
-          Pour moins de 100 €/mois, votre agent IA gère la boîte de réception pendant que vous développez votre marque. Démarrez gratuitement. Aucune carte bancaire requise.
-        </p>
-        <div class="trial-badge-row">
-          <span class="trial-badge">5 jours gratuits / 60 tickets</span>
-          <span class="trial-badge">Aucune carte bancaire requise</span>
-          <span class="trial-badge">Aucun engagement contractuel</span>
-          <span class="trial-badge">Renfort humain inclus</span>
-        </div>
-        <a href="#contact" class="btn-primary">
-          <span>Démarrer mon essai gratuit →</span>
-        </a>
-        <div class="trial-trust-bar">Approuvé par des marques e-commerce dans le monde entier</div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==================== CONTACT / SCHEDULE ==================== -->
+  <!-- ==================== CONTACT ==================== -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="text-center">
         <span class="section-label"><span class="dot"></span> Commencer</span>
-        <h2 class="section-title">Entrons en <span class="accent-text">contact</span></h2>
+        <h2 class="section-title">Construisons votre<br/><span class="accent-text">infrastructure sur mesure.</span></h2>
         <p class="section-subtitle mx-auto">
-          Remplissez le formulaire ci-dessous et votre agent IA sera prêt sous 24 heures.
+          Que vous ayez besoin d'intégrations CRM complexes, d'outils Shopify/e-commerce custom ou de systèmes backend automatisés — décrivez-nous votre projet.
         </p>
       </div>
 
       <div class="contact-grid contact-grid--single">
-        <!-- Contact Form Side -->
         <div class="form-side reveal">
-          <h3>Envoyez-nous un message</h3>
-          <p>Vous préférez écrire ? Remplissez le formulaire, nous répondons sous 4 heures ouvrées.</p>
+          <h3>Décrivez votre projet</h3>
+          <p>Remplissez le formulaire ci-dessous et nous vous répondrons sous un jour ouvré avec une proposition de cadrage.</p>
 
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgojjvrv" method="POST">
-            <!-- Formspree config -->
             <input type="text" name="_gotcha" style="display:none" />
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">Prénom *</label>
-                <input type="text" id="firstName" name="first_name" placeholder="Julie" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Nom *</label>
-                <input type="text" id="lastName" name="last_name" placeholder="Dupont" required />
-              </div>
+            <div class="form-group">
+              <label for="name">Nom *</label>
+              <input type="text" id="name" name="name" placeholder="Marie Dupont" required />
             </div>
 
             <div class="form-group">
-              <label for="email">E-mail professionnel *</label>
-              <input type="email" id="email" name="email" placeholder="julie@votremarque.com" required />
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="marie@votreentreprise.com" required />
             </div>
 
             <div class="form-group">
-              <label for="company">Entreprise / Nom de marque</label>
-              <input type="text" id="company" name="company" placeholder="Votre Marque" />
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="website">Site web (facultatif)</label>
-                <input type="url" id="website" name="website" placeholder="https://votremarque.com" />
-              </div>
-              <div class="form-group">
-                <label for="volume">Volume mensuel de tickets (facultatif)</label>
-                <select id="volume" name="ticket_volume">
-                  <option value="" disabled selected>Choisir une fourchette</option>
-                  <option value="0-500">0 – 500</option>
-                  <option value="500-1500">500 – 1 500</option>
-                  <option value="1500-4000">1 500 – 4 000</option>
-                  <option value="4000-10000">4 000 – 10 000</option>
-                  <option value="10000+">10 000+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="tier">Forfait qui vous intéresse (facultatif)</label>
-              <select id="tier" name="interested_tier">
-                <option value="" disabled selected>Choisir un forfait</option>
-                <option value="Starter - $99/mo (500 tickets)">Starter — 99 €/mois (500 tickets)</option>
-                <option value="Growth - $249/mo (1500 tickets)">Growth — 249 €/mois (1 500 tickets)</option>
-                <option value="Scale - $599/mo (4000 tickets)">Scale — 599 €/mois (4 000 tickets)</option>
-                <option value="Nearshore (Hungary) - $19/hr">Agents humains — Nearshore (19 €/h)</option>
-                <option value="Offshore (Philippines) - $12/hr">Agents humains — Offshore (12 €/h)</option>
-                <option value="Not sure yet">Pas encore sûr — aidez-moi à choisir</option>
+              <label for="project-type">Type de projet</label>
+              <select id="project-type" name="project-type">
+                <option value="" disabled selected>Sélectionnez une catégorie...</option>
+                <option value="custom-software">Développement logiciel sur mesure</option>
+                <option value="enterprise-integration">Intégration d'entreprise (CRM/ERP)</option>
+                <option value="ecommerce">E-Commerce / Application Shopify</option>
+                <option value="ai-automation">IA & Automatisation</option>
+                <option value="other">Autre</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="message">Parlez-nous de vos besoins (facultatif)</label>
-              <textarea id="message" name="message" placeholder="Quels sont vos plus grands défis en matière de support ? Quels canaux utilisez-vous actuellement ? Des objectifs spécifiques ?"></textarea>
+              <label for="message">Parlez-nous de votre projet</label>
+              <textarea id="message" name="message" placeholder="Quels systèmes avez-vous besoin de connecter ? Quel problème cherchez-vous à résoudre ? Avez-vous une infrastructure existante ?"></textarea>
             </div>
 
             <button type="submit" class="form-submit" id="submitBtn">
-              Commencer →
+              Demander une solution sur mesure →
             </button>
 
             <p class="form-privacy">
@@ -837,8 +684,8 @@
             <div class="success-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h4>Message envoyé !</h4>
-            <p>Merci de nous avoir contactés. Nous revenons vers vous sous 4 heures ouvrées pour configurer votre agent IA.</p>
+            <h4>Demande reçue !</h4>
+            <p>Merci de nous avoir contactés. Nous examinerons les détails de votre projet et vous répondrons sous un jour ouvré avec une proposition de cadrage.</p>
           </div>
         </div>
       </div>
@@ -851,49 +698,48 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="AgoraCrew">
+          <a href="#" class="nav-logo" aria-label="AgoraCrew">
             <img src="../logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />
           </a>
           <p>
-            Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 €/mois — résolution des demandes de suivi de commande, récupération de paniers, et support 24h/24 et 7j/7 qui s'adapte à votre boutique.
+            Studio d'ingénierie logicielle sur mesure spécialisé dans les intégrations d'entreprise, l'infrastructure e-commerce et l'automatisation alimentée par l'IA. Nous livrons des systèmes de production performants.
           </p>
         </div>
         <div class="footer-col">
-          <h4>Forfaits IA</h4>
-          <a href="#pricing">Starter — 99 €/mois</a>
-          <a href="#pricing">Growth — 249 €/mois</a>
-          <a href="#pricing">Scale — 599 €/mois</a>
+          <h4>Services</h4>
+          <a href="#services">Logiciel sur mesure</a>
+          <a href="#services">Intégrations d'entreprise</a>
+          <a href="#services">Infrastructure e-commerce</a>
+          <a href="#services">IA &amp; Automatisation</a>
         </div>
         <div class="footer-col">
-          <h4>Agents humains</h4>
-          <a href="#pricing">Nearshore — Hongrie</a>
-          <a href="#pricing">Offshore — Philippines</a>
-          <a href="#pricing">Équipe sur mesure</a>
+          <h4>Produits</h4>
+          <a href="#products">Order Exceptions Copilot</a>
+          <a href="#products">Agent IA Support &amp; Croissance</a>
+          <a href="../blog/index.html">Blog</a>
         </div>
         <div class="footer-col footer-col--contact">
           <h4>Nous contacter</h4>
           <a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>
           <a href="tel:+36300841533">+36 30 084 1533</a>
-          <a href="#contact">Réserver un audit CX gratuit</a>
+          <a href="#contact">Discuter de votre projet</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 AgoraCrew. Tous droits réservés.</span>
         <span class="footer-tax-id">Numéro fiscal (Adószám) : HU92198362</span>
         <div class="footer-bottom-links">
-          <a href="../fr/privacy-policy.html">Politique de confidentialité</a>
-          <a href="../fr/mentions-legales.html">Mentions légales</a>
-          <a href="../fr/cgv.html">CGV</a>
+          <a href="privacy-policy.html">Politique de confidentialité</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="cgv.html">CGV</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- PERF: defer allows HTML parsing to complete before script execution -->
-  <script src="../roi-calc.js" defer></script>
   <script src="../script.js" defer></script>
 
-  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <!-- AgoraCrew AI chat widget — live demo of our engineering -->
   <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
 </body>
 </html>

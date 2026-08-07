@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffe17c" />
+  <title>AgoraCrew — AI Customer Support Agents for E-Commerce | From $99/mo</title>
+  <meta name="description" content="AgoraCrew deploys trained AI agents to handle e-commerce customer support, resolve WISMO tickets instantly, and recover abandoned carts — from $99/mo flat. Human backup included. Try free for 14 days." />
+  <meta name="keywords" content="e-commerce customer service, AI support agent, WISMO resolution, abandoned cart recovery, Shopify support, Gorgias AI, flat-fee support" />
+  <meta property="og:title" content="AgoraCrew — Your $2,000/mo Support Rep, Replaced for $99." />
+  <meta property="og:description" content="Trained AI agents handle your support inbox 24/7 — WISMO, common questions, cart recovery. With human backup. Flat monthly fee, no surprises. Try free." />
+  <meta property="og:type" content="website" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/index.html" />
+
+  <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <style>
+    /* ===== RESET & TOKENS ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --yellow: #ffe17c;
+      --charcoal: #171e19;
+      --sage: #b7c6c2;
+      --white: #ffffff;
+      --black: #000000;
+      --dark-gray: #272727;
+      --light-gray: #f4f4f5;
+
+      --shadow-sm: 4px 4px 0px 0px var(--black);
+      --shadow-lg: 8px 8px 0px 0px var(--black);
+      --shadow-xl: 12px 12px 0px 0px var(--black);
+
+      --border: 2px solid var(--black);
+      --radius: 0.75rem;
+
+      --font-heading: 'Cabinet Grotesk', sans-serif;
+      --font-body: 'Satoshi', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-center { text-align: center; }
+
+    /* Dot pattern for yellow backgrounds */
+    .dot-bg { position: relative; }
+    .dot-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, var(--black) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .dot-bg > * { position: relative; z-index: 1; }
+
+    /* Section labels */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .section-label .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      border: var(--border);
+      display: inline-block;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+    .section-title .accent-text {
+      -webkit-text-stroke: 2px var(--black);
+      -webkit-text-fill-color: transparent;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      max-width: 42rem;
+      margin: 0 auto 48px;
+      opacity: 0.7;
+      line-height: 1.7;
+    }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border: var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-primary:hover {
+      transform: translate(4px, 4px);
+      box-shadow: 4px 4px 0px 0px var(--black);
+    }
+    .btn-primary:active {
+      transform: translate(8px, 8px);
+      box-shadow: none;
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--black);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover {
+      transform: translate(4px, 4px);
+      box-shadow: none;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 5rem;
+      background: var(--yellow);
+      border-bottom: var(--border);
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .navbar.scrolled {
+      background: var(--yellow);
+      box-shadow: 0 4px 0 0 rgba(0,0,0,0.08);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+    .nav-logo-img {
+      height: 3.3rem;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0);
+      transition: filter 0.2s;
+    }
+    .footer-brand .nav-logo-img {
+      filter: brightness(0) invert(1);
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-center a {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--black);
+      transition: opacity 0.2s;
+    }
+    .nav-center a:hover { opacity: 0.6; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-cta-secondary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-cta-secondary:hover { opacity: 1; }
+    .nav-cta {
+      padding: 10px 20px !important;
+      font-size: 0.85rem !important;
+    }
+    .nav-lang-switch {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      border: 1.5px solid rgba(0,0,0,0.2);
+      border-radius: 6px;
+      padding: 4px 8px;
+      transition: opacity 0.2s;
+    }
+    .nav-lang-switch:hover { opacity: 1; }
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .mobile-menu-btn span {
+      width: 22px;
+      height: 2.5px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile Nav */
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 360px;
+      height: 100vh;
+      background: var(--yellow);
+      border-left: var(--border);
+      padding: 100px 24px 24px;
+      flex-direction: column;
+      gap: 8px;
+      transition: right 0.35s cubic-bezier(0.16,1,0.3,1);
+      z-index: 999;
+      overflow-y: auto;
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .nav-links .nav-cta {
+      margin-top: 12px;
+      text-align: center;
+      padding: 14px 20px !important;
+      font-size: 0.95rem !important;
+    }
+    .nav-links .nav-lang-switch-mobile {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 160px 24px 80px;
+      background: var(--yellow);
+      text-align: center;
+      overflow: visible;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--white);
+      border: var(--border);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #28c840;
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero-title {
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+    .hero-title .accent-text {
+      display: block;
+      -webkit-text-stroke: 2.5px var(--black);
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(0,0,0,0.65);
+      max-width: 42rem;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-cta { /* alias for primary CTA */
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      background: var(--black);
+      color: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .hero-cta:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px var(--black); }
+    .hero-cta:active { transform: translate(8px, 8px); box-shadow: none; }
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      background: var(--white);
+      color: var(--black);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .hero-cta-secondary:hover { transform: translate(4px, 4px); box-shadow: none; }
+    .hero-trial-note {
+      font-size: 0.85rem;
+      color: rgba(0,0,0,0.45);
+      margin-top: 16px;
+      margin-bottom: 48px;
+    }
+    .hero-trial-note strong { color: rgba(0,0,0,0.7); }
+
+    .animate-fade-up {
+      animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== PLATFORMS / PARTNERS ===== */
+    .platforms {
+      background: var(--charcoal);
+      border-bottom: var(--border);
+      padding: 24px 0;
+      overflow: hidden;
+    }
+    .platforms-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .platforms-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--sage);
+      opacity: 0.4;
+    }
+    .platform-logos-wrapper {
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .platform-logos {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: max-content;
+      animation: scroll-logos 35s linear infinite;
+    }
+    .platform-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .platform-logo img {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      filter: grayscale(1) brightness(1.8);
+      opacity: 0.6;
+    }
+    .platform-logo span {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--sage);
+      opacity: 0.6;
+    }
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ===== ROI / THE MATH ===== */
+    .benefits {
+      padding: 80px 0;
+      background: var(--white);
+    }
+    .roi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 48px;
+    }
+    .roi-calc-card {
+      background: var(--yellow);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem;
+    }
+    .roi-calc-heading {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .roi-field {
+      margin-bottom: 1.25rem;
+    }
+    .roi-field-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .roi-field-value {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .roi-field-value input {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+      width: 70px;
+      text-align: right;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid var(--black);
+      outline: none;
+    }
+    .roi-slider {
+      width: 100%;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(0,0,0,0.15);
+      border-radius: 3px;
+      outline: none;
+    }
+    .roi-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: var(--black);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid var(--white);
+    }
+    .roi-divider {
+      height: 2px;
+      background: var(--black);
+      opacity: 0.15;
+      margin: 1.5rem 0;
+    }
+    .roi-output-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .roi-output-row strong {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .roi-savings-block {
+      background: var(--black);
+      color: var(--yellow);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      text-align: center;
+      margin: 1.25rem 0;
+    }
+    .roi-savings-amount {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 2rem;
+    }
+    .roi-savings-subline {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      color: var(--white);
+      margin-top: 4px;
+    }
+    .roi-neutral-message {
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0.6;
+      padding: 1rem 0;
+    }
+    .roi-cta-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    .roi-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 20px;
+      background: var(--black);
+      color: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .roi-cta-primary:hover { transform: translate(4px, 4px); box-shadow: none; }
+    .roi-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 20px;
+      background: var(--white);
+      color: var(--black);
+      border: var(--border);
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+    .roi-cta-secondary:hover { background: var(--light-gray); }
+
+    /* ROI Stats */
+    .roi-stats-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .roi-stats-heading {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .roi-stat {
+      background: var(--light-gray);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .roi-stat-figure {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .roi-stat-text { font-size: 0.9rem; opacity: 0.7; }
+    .roi-stat-source { font-size: 0.75rem; opacity: 0.4; margin-top: 4px; }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      padding: 80px 0;
+      background: var(--charcoal);
+      color: var(--white);
+    }
+    .how-it-works .section-label .dot { background: var(--sage); }
+    .how-it-works .section-title { color: var(--white); }
+    .how-it-works .section-title .accent-text {
+      -webkit-text-stroke-color: var(--yellow);
+      -webkit-text-fill-color: transparent;
+    }
+    .how-it-works .section-subtitle { color: rgba(255,255,255,0.5); }
+
+    .steps-grid { margin-top: 48px; }
+    .steps-grid--three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+    .steps-grid--three::before {
+      content: '';
+      position: absolute;
+      top: 3rem;
+      left: 15%;
+      right: 15%;
+      height: 3px;
+      background: var(--dark-gray);
+      z-index: 0;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-number {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: var(--charcoal);
+      border: 4px solid;
+    }
+    .step-card:nth-child(1) .step-number { border-color: var(--sage); color: var(--sage); }
+    .step-card:nth-child(2) .step-number { border-color: var(--yellow); color: var(--yellow); }
+    .step-card:nth-child(3) .step-number { border-color: var(--white); color: var(--white); }
+    .step-title { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .step-text { font-size: 0.95rem; opacity: 0.55; line-height: 1.6; max-width: 280px; margin: 0 auto; }
+
+    /* ===== PRICING ===== */
+    .pricing-services {
+      padding: 80px 0;
+      background: var(--yellow);
+      border-top: var(--border);
+      border-bottom: var(--border);
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 48px;
+    }
+    .price-card {
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .price-card--featured {
+      background: var(--charcoal);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .price-card-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--yellow);
+      color: var(--black);
+      border: var(--border);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .price-card-header { margin-bottom: 0; }
+    .price-card-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .price-card-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+    .price-currency { font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; }
+    .price-value { font-family: var(--font-heading); font-weight: 800; font-size: 3rem; line-height: 1; }
+    .price-value--custom { font-size: 2rem; }
+    .price-period { font-size: 0.9rem; opacity: 0.5; margin-left: 4px; }
+    .price-card-sub { font-size: 0.85rem; opacity: 0.6; line-height: 1.5; margin-bottom: 1.25rem; }
+    .price-card-divider { height: 2px; background: currentColor; opacity: 0.1; margin-bottom: 1.25rem; }
+    .price-card-features { display: flex; flex-direction: column; gap: 0.6rem; flex: 1; margin-bottom: 1.5rem; }
+    .price-card-feature { display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; line-height: 1.4; }
+    .feature-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #bbf7d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .price-card--featured .feature-check { background: rgba(187,247,208,0.15); }
+    .feature-check svg { width: 12px; height: 12px; }
+    .price-card--featured .feature-check svg { stroke: #4ade80; }
+    .feature-check--note { background: rgba(0,0,0,0.06); }
+    .price-card--featured .feature-check--note { background: rgba(255,255,255,0.08); }
+    .price-card-feature--note { opacity: 0.5; font-size: 0.8rem; }
+    .price-card-cta {
+      display: block;
+      text-align: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px;
+      border: var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--black);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .price-card-cta:hover { transform: translate(4px, 4px); box-shadow: none; }
+    .price-card-cta--primary { background: var(--yellow); color: var(--black); }
+
+    .overage-callout {
+      background: var(--white);
+      border: 2px dashed var(--black);
+      border-radius: var(--radius);
+      padding: 1.25rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .human-pricing-header { margin-top: 64px; }
+    .human-pricing-header .section-label .dot { background: var(--black); }
+    .pricing-trial-guarantee {
+      background: var(--black);
+      color: var(--yellow);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .pricing-trial-guarantee strong { color: var(--white); }
+
+    /* ===== CONTACT FORM ===== */
+    .contact {
+      padding: 80px 0;
+      background: var(--white);
+    }
+    .contact-grid {
+      margin-top: 48px;
+    }
+    .contact-grid--single {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .form-side {
+      background: var(--light-gray);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem;
+    }
+    .form-side h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .form-side > p { font-size: 0.9rem; opacity: 0.6; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 12px 14px;
+      border: var(--border);
+      border-radius: 0.5rem;
+      background: var(--white);
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { box-shadow: var(--shadow-sm); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-submit {
+      width: 100%;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      background: var(--black);
+      color: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .form-submit:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px 0px var(--black); }
+    .form-submit:active { transform: translate(8px, 8px); box-shadow: none; }
+    .form-privacy { font-size: 0.8rem; text-align: center; opacity: 0.4; margin-top: 12px; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .form-success.show { display: block; }
+    .form-success .success-icon {
+      width: 3rem;
+      height: 3rem;
+      background: #bbf7d0;
+      border: var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .form-success h4 { font-size: 1.2rem; margin-bottom: 8px; }
+    .form-success p { font-size: 0.9rem; opacity: 0.6; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 60px 0 24px;
+      border-top: var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { color: var(--white); margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.85rem; opacity: 0.5; line-height: 1.7; }
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.4;
+      margin-bottom: 1rem;
+    }
+    .footer-col a { display: block; font-size: 0.9rem; opacity: 0.6; padding: 4px 0; transition: opacity 0.2s; }
+    .footer-col a:hover { opacity: 1; }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom span { font-size: 0.8rem; opacity: 0.35; }
+    .footer-tax-id { font-size: 0.75rem !important; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.8rem; opacity: 0.4; transition: opacity 0.2s; }
+    .footer-bottom-links a:hover { opacity: 0.8; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+
+    /* ===== LANGUAGE BANNER ===== */
+    .lang-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--charcoal);
+      color: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      z-index: 9999;
+      box-shadow: var(--shadow-lg);
+    }
+    .lang-banner a { color: var(--yellow); font-weight: 700; text-decoration: underline; }
+    .lang-banner button {
+      background: none;
+      border: none;
+      color: var(--white);
+      opacity: 0.5;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0 4px;
+    }
+    .lang-banner button:hover { opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .roi-grid { grid-template-columns: 1fr; }
+      .steps-grid--three { grid-template-columns: 1fr; gap: 2rem; }
+      .steps-grid--three::before { display: none; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-center { display: none; }
+      .nav-right { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: flex;
+        right: -100%;
+      }
+      .hero { padding: 130px 20px 60px; }
+      .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .hero-cta-group { flex-direction: column; }
+      .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
+      .roi-cta-group { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ===== NAV DROPDOWN (Desktop) ===== */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--charcoal);
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+      background: none;
+      border: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-dropdown-trigger::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--charcoal);
+      transition: width 0.3s;
+    }
+    .nav-dropdown-trigger:hover::after,
+    .nav-dropdown:hover .nav-dropdown-trigger::after { width: 100%; }
+    .nav-dropdown-arrow {
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+      opacity: 0.5;
+      transition: transform 0.3s;
+    }
+    .nav-dropdown:hover .nav-dropdown-arrow {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 20px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 560px;
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 28px 32px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.3s;
+      z-index: 1001;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -24px;
+      left: 0;
+      right: 0;
+      height: 24px;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .nav-dropdown-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-30);
+      padding: 0 12px 8px;
+      margin-bottom: 4px;
+      border-bottom: 2px solid var(--ink-10);
+    }
+    .nav-dropdown-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .nav-dropdown-link:hover {
+      background: var(--yellow);
+    }
+    .nav-dropdown-link-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-dropdown-link-title {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.3;
+    }
+    .nav-dropdown-link-desc {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: var(--ink-50);
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    /* ===== MOBILE DROPDOWN ACCORDION ===== */
+    .mobile-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 10px 0;
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      color: var(--charcoal);
+      cursor: pointer;
+      background: none;
+    }
+    .mobile-dropdown-toggle svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      opacity: 0.4;
+      transition: transform 0.3s;
+    }
+    .mobile-dropdown-toggle.open svg {
+      transform: rotate(180deg);
+    }
+    .mobile-dropdown-items {
+      display: none;
+      flex-direction: column;
+      padding: 4px 0 8px 16px;
+    }
+    .mobile-dropdown-items.open {
+      display: flex;
+    }
+    .mobile-dropdown-items a {
+      font-family: var(--font-body) !important;
+      font-size: 0.88rem !important;
+      font-weight: 500 !important;
+      padding: 8px 0 !important;
+      border-bottom: 1px solid rgba(0,0,0,0.04) !important;
+      color: rgba(0,0,0,0.5) !important;
+    }
+    .mobile-dropdown-items a:last-child {
+      border-bottom: none !important;
+    }
+    .mobile-dropdown-items a:hover {
+      color: var(--charcoal) !important;
+    }
+  </style>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJKKDOM");</script>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="AgoraCrew">
+        <img src="logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />
+      </a>
+
+      <div class="nav-center" id="navCenter">
+        <a href="#problem">The Math</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="tools/cx-audit/index.html">Free Store Grader</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Learn
+            <svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Solutions</div>
+              <a href="solutions/shopify-customer-service.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Shopify CX Guide</span><span class="nav-dropdown-link-desc">Manage support on Shopify</span></span>
+              </a>
+              <a href="solutions/ecommerce-cx-strategy.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Strategy</span><span class="nav-dropdown-link-desc">Build a CX playbook</span></span>
+              </a>
+              <a href="solutions/wismo-automation.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">WISMO Automation</span><span class="nav-dropdown-link-desc">Eliminate order tracking tickets</span></span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Resources</div>
+              <a href="resources/reduce-support-costs.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Cut Support Costs</span><span class="nav-dropdown-link-desc">7 proven cost-saving tactics</span></span>
+              </a>
+              <a href="resources/customer-service-templates.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">Response Templates</span><span class="nav-dropdown-link-desc">Free copy-paste templates</span></span>
+              </a>
+              <a href="resources/cx-metrics-guide.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">CX Metrics Guide</span><span class="nav-dropdown-link-desc">6 metrics that matter</span></span>
+              </a>
+            </div>
+            <div class="nav-dropdown-col">
+              <div class="nav-dropdown-col-title">Blog</div>
+              <a href="blog/index.html" class="nav-dropdown-link">
+                <span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">All Articles</span><span class="nav-dropdown-link-desc">Latest CX insights &amp; guides</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="#contact" class="nav-cta-secondary">Book a CX Audit</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Start My Free Trial</a>
+        <a href="fr/index.html" class="nav-lang-switch" aria-label="Switch to French">FR</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile Slide-out Nav -->
+      <div class="nav-links" id="navLinks">
+        <a href="#problem">The Math</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="tools/cx-audit/index.html">Free Store Grader</a>
+        <button class="mobile-dropdown-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Learn
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-dropdown-items">
+          <a href="solutions/shopify-customer-service.html">Shopify CX Guide</a>
+          <a href="solutions/ecommerce-cx-strategy.html">CX Strategy</a>
+          <a href="solutions/wismo-automation.html">WISMO Automation</a>
+          <a href="resources/reduce-support-costs.html">Cut Support Costs</a>
+          <a href="resources/customer-service-templates.html">Response Templates</a>
+          <a href="resources/cx-metrics-guide.html">CX Metrics Guide</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Start My Free Trial</a>
+        <a href="fr/index.html" class="nav-lang-switch-mobile" aria-label="Switch to French">FR — Voir en français</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero dot-bg" id="hero">
+
+    <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
+      <span class="dot"></span> AI Agents for E-Commerce Support
+    </div>
+
+    <h1 class="hero-title animate-fade-up" style="opacity:0; animation-delay: 0.25s;">
+      Every Fast-Growing Store Runs AI Support Now.<br/>
+      <span class="accent-text">Does Yours?</span>
+    </h1>
+
+    <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
+      For less than $100/mo, you never have to manually answer a "Where is my order?" email again. Trained AI agents work your support inbox or chat around the clock, pulling live order and tracking data from your store, and you can add human agents whenever a ticket needs one.
+    </p>
+
+    <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
+      <a href="#contact" class="hero-cta">Start My Free Trial</a>
+      <a href="#pricing" class="hero-cta-secondary">See Pricing ↓</a>
+    </div>
+
+    <p class="hero-trial-note animate-fade-up" style="opacity:0; animation-delay: 0.55s;">
+      Start with <strong>100 AI-resolved tickets</strong> or <strong>14 days</strong> free — whichever comes first. <strong>No commitment</strong>, cancel anytime.
+    </p>
+
+  </section>
+
+
+  <!-- ==================== PLATFORMS ==================== -->
+  <section class="platforms" id="platforms">
+    <div class="container">
+      <div class="platforms-inner">
+        <span class="platforms-label">Official Partners</span>
+        <div class="platform-logos-wrapper">
+          <div class="platform-logos">
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
+              <span>Gorgias</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
+              <span>Shopify</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" width="22" height="22" loading="lazy" />
+              <span>Klaviyo</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
+              <span>Zendesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" width="22" height="22" loading="lazy" />
+              <span>Intercom</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" width="22" height="22" loading="lazy" />
+              <span>Freshdesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" width="22" height="22" loading="lazy" />
+              <span>ShipStation</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" width="22" height="22" loading="lazy" />
+              <span>ShipBob</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" width="22" height="22" loading="lazy" />
+              <span>Recharge</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" width="22" height="22" loading="lazy" />
+              <span>Loop</span>
+            </div>
+            <!-- Duplicate set for seamless marquee -->
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
+              <span>Gorgias</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
+              <span>Shopify</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.klaviyo.com&size=64" alt="Klaviyo" width="22" height="22" loading="lazy" />
+              <span>Klaviyo</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
+              <span>Zendesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.intercom.com&size=64" alt="Intercom" width="22" height="22" loading="lazy" />
+              <span>Intercom</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.freshdesk.com&size=64" alt="Freshdesk" width="22" height="22" loading="lazy" />
+              <span>Freshdesk</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipstation.com&size=64" alt="ShipStation" width="22" height="22" loading="lazy" />
+              <span>ShipStation</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shipbob.com&size=64" alt="ShipBob" width="22" height="22" loading="lazy" />
+              <span>ShipBob</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rechargepayments.com&size=64" alt="Recharge" width="22" height="22" loading="lazy" />
+              <span>Recharge</span>
+            </div>
+            <div class="platform-logo">
+              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.loopreturns.com&size=64" alt="Loop Returns" width="22" height="22" loading="lazy" />
+              <span>Loop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ROI CALCULATOR ==================== -->
+  <section class="benefits" id="problem">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> The Math</span>
+        <h2 class="section-title">See What Your Inbox Is<br/><span class="accent-text">Really Costing You.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Most stores overpay for support and still lose sales to slow response times. Run your own numbers.
+        </p>
+      </div>
+
+      <div class="roi-grid">
+        <div class="roi-calc-card reveal">
+          <h3 class="roi-calc-heading">Your Numbers</h3>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Monthly support tickets</span>
+              <span class="roi-field-value"><input type="number" id="roiVolumeNumber" value="800" min="100" max="6000" step="50" aria-label="Monthly support tickets" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiVolumeSlider" min="100" max="6000" step="50" value="800" aria-label="Monthly support tickets" />
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-label">
+              <span>Cost per ticket today</span>
+              <span class="roi-field-value">$<input type="number" id="roiCostNumber" value="4.50" min="1" max="15" step="0.5" aria-label="Cost per ticket today in dollars" /></span>
+            </div>
+            <input type="range" class="roi-slider" id="roiCostSlider" min="1" max="15" step="0.5" value="4.5" aria-label="Cost per ticket today in dollars" />
+          </div>
+
+          <div class="roi-divider"></div>
+
+          <div id="roiOutput" aria-live="polite">
+            <div class="roi-output-row"><span>Your cost today</span><strong id="roiCurrentCost">$3,600</strong></div>
+            <div class="roi-output-row"><span>AgoraCrew (<span id="roiPlanName">Growth</span>)</span><strong id="roiPlanFee">$249</strong></div>
+
+            <div class="roi-savings-block" id="roiSavingsBlock">
+              <div class="roi-savings-amount"><span id="roiSavingsAmount">$3,351/mo</span></div>
+              <p class="roi-savings-subline" id="roiSavingsSubline">(93% less &middot; $40,212/yr)</p>
+            </div>
+            <p class="roi-neutral-message" id="roiNeutralMessage" hidden>AgoraCrew scales with your ticket volume &mdash; no surprise cliffs.</p>
+          </div>
+
+          <div class="roi-cta-group">
+            <a href="#contact" class="roi-cta-primary">Start My Free Trial</a>
+            <a href="#pricing" class="roi-cta-secondary">See Full Pricing</a>
+          </div>
+        </div>
+
+        <div class="roi-stats-stack reveal reveal-delay-1">
+          <h3 class="roi-stats-heading">Stores That Have Live Chat Typically See:</h3>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">~20% lift</div>
+            <p class="roi-stat-text">Adding live chat lifts overall site conversion.</p>
+            <p class="roi-stat-source">Source: Forrester (industry-aggregated data)</p>
+          </div>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">10&ndash;15% of revenue</div>
+            <p class="roi-stat-text">What e-commerce brands attribute to live chat interactions.</p>
+            <p class="roi-stat-source">Source: Forrester</p>
+          </div>
+
+          <div class="roi-stat">
+            <div class="roi-stat-figure">79% of businesses</div>
+            <p class="roi-stat-text">Say live chat improved sales, revenue, and customer loyalty.</p>
+            <p class="roi-stat-source">Source: Kayako</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== HOW IT WORKS (COMPACT) ==================== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> How It Works</span>
+        <h2 class="section-title">Live in <span class="accent-text">Under 24 Hours.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Three steps, and the longest one is us reading your policy pages. Most stores are answering their first ticket the next morning.
+        </p>
+      </div>
+
+      <div class="steps-grid steps-grid--three">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Connect Your Store</h3>
+          <p class="step-text">We plug into your Shopify store and helpdesk — Gorgias, Zendesk, or standalone.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <h3 class="step-title">We Learn Your Brand</h3>
+          <p class="step-text">Your AI agent is trained on your brand voice, product catalog, FAQs, and support policies.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Go Live</h3>
+          <p class="step-text">AI handles tickets 24/7. Humans step in for complex issues. You monitor everything from your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="pricing-services dot-bg" id="pricing">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot" style="background: var(--black);"></span> Simple Pricing</span>
+        <h2 class="section-title">One Flat Fee.<br/><span class="accent-text">No Surprises.</span></h2>
+        <p class="section-subtitle mx-auto" style="opacity: 0.6;">
+          Every plan includes 24/7 AI support, instant WISMO resolution, and supervised human backup. Pick the volume that fits your store.
+        </p>
+      </div>
+
+      <!-- ===== AI SUBSCRIPTION TIERS ===== -->
+      <div class="pricing-cards" style="margin-top: 56px;">
+
+        <!-- STARTER -->
+        <div class="price-card reveal" id="plan-starter">
+          <div class="price-card-header">
+            <div class="price-card-label">Starter</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">99</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <p class="price-card-sub">500 tickets included. For stores just getting started with AI support.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>24/7 AI Chat Support</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Instant "Where Is My Order?" Answers</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Standalone or Plugs Into Any Helpdesk</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Brand Voice Training</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>50+ Languages</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Weekly Performance Reports</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-starter">Start My Free Trial</a>
+        </div>
+
+        <!-- GROWTH (Most Popular) -->
+        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-growth">
+          <div class="price-card-badge">Most Popular</div>
+          <div class="price-card-header">
+            <div class="price-card-label">Growth</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">249</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <p class="price-card-sub">1,500 tickets included. AI support + revenue recovery tools.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Everything in Starter, plus:</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Proactive Cart Recovery</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Win-Back Campaigns</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Replenishment Reminders</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Conversational Wins Feed</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-growth">Start My Free Trial</a>
+        </div>
+
+        <!-- SCALE -->
+        <div class="price-card reveal reveal-delay-2" id="plan-scale">
+          <div class="price-card-header">
+            <div class="price-card-label">Scale</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">599</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <p class="price-card-sub">4,000 tickets included. Full-service AI with dedicated account management.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Everything in Growth, plus:</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Dedicated Account Manager</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Priority Support</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Custom Integrations</span></li>
+            <li class="price-card-feature price-card-feature--note"><span class="feature-check feature-check--note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span>Overage: $0.20 per extra ticket</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-scale">Start My Free Trial</a>
+        </div>
+
+      </div>
+
+      <!-- Overage Callout -->
+      <div class="overage-callout reveal">
+        <p><strong>No surprises when you grow.</strong> Go over your included tickets? No cliff, no penalty. Just $0.20 per extra ticket. Your costs stay predictable even when your order volume spikes.</p>
+      </div>
+
+      <!-- ===== HUMAN AGENT TEAMS ===== -->
+      <div class="human-pricing-header text-center reveal">
+        <span class="section-label"><span class="dot"></span> Human Agent Teams</span>
+        <h3 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Need Dedicated Human Agents?</h3>
+        <p class="section-subtitle mx-auto" style="opacity: 0.6;">
+          For complex queries, VIP accounts, or full-service CRM management — add supervised human agents to your stack.
+        </p>
+      </div>
+
+      <div class="pricing-cards">
+
+        <!-- Nearshore — Hungary -->
+        <div class="price-card reveal" id="plan-nearshore">
+          <div class="price-card-header">
+            <div class="price-card-label">Nearshore — Hungary</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">19</span>
+              <span class="price-period">/ Hour</span>
+            </div>
+            <p class="price-card-sub">Native English or French speakers for high-level, real-time CRM and account management.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Native English or French Speakers</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Real-Time CRM &amp; Account Management</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Professionally Supervised for Quality</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Month-to-Month — No Lock-In</span></li>
+            <li class="price-card-feature price-card-feature--note"><span class="feature-check feature-check--note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span>One-Time $369 Staffing Fee</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-nearshore">Book a free CX Audit</a>
+        </div>
+
+        <!-- Offshore — Philippines -->
+        <div class="price-card price-card--featured reveal reveal-delay-1" id="plan-offshore">
+          <div class="price-card-badge">Best Value</div>
+          <div class="price-card-header">
+            <div class="price-card-label">Offshore — Philippines</div>
+            <div class="price-card-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value">12</span>
+              <span class="price-period">/ Hour</span>
+            </div>
+            <p class="price-card-sub">The best solution for high-volume chat, ticketing, and scalable e-commerce CRM support.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>High-Volume Chat &amp; Ticketing</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Scalable E-Commerce CRM Support</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Professionally Supervised for Quality</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Month-to-Month — No Lock-In</span></li>
+            <li class="price-card-feature price-card-feature--note"><span class="feature-check feature-check--note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span>One-Time $369 Staffing Fee</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta price-card-cta--primary" id="cta-offshore">Book a free CX Audit</a>
+        </div>
+
+        <!-- Custom Team -->
+        <div class="price-card reveal reveal-delay-2" id="plan-human-scale">
+          <div class="price-card-header">
+            <div class="price-card-label">Custom Team</div>
+            <div class="price-card-amount">
+              <span class="price-value price-value--custom">Custom</span>
+            </div>
+            <p class="price-card-sub">Mix nearshore &amp; offshore agents to build the perfect team for high-volume brands.</p>
+          </div>
+          <div class="price-card-divider"></div>
+          <ul class="price-card-features">
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Blend HU &amp; PH Agents to Fit Your Needs</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>For Teams of 5+ Agents</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Dedicated Account Manager</span></li>
+            <li class="price-card-feature"><span class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Professionally Supervised for Quality</span></li>
+            <li class="price-card-feature price-card-feature--note"><span class="feature-check feature-check--note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span>One-Time Custom Staffing Fee</span></li>
+          </ul>
+          <a href="#contact" class="price-card-cta" id="cta-human-scale">Book a free CX Audit</a>
+        </div>
+
+      </div>
+
+      <!-- Trial Guarantee -->
+      <div class="pricing-trial-guarantee reveal">
+        <p><strong>Zero-Risk Guarantee:</strong> Start with your first <strong>100 tickets</strong> or <strong>14 days</strong> completely free (whichever comes first) — including all Growth-tier features. No commitment. No credit card required.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT / SCHEDULE ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Get Started</span>
+        <h2 class="section-title">Get In <span class="accent-text">Touch</span></h2>
+        <p class="section-subtitle mx-auto">
+          Fill out the form below and we'll have your AI agent ready within 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-grid contact-grid--single">
+        <!-- Contact Form Side -->
+        <div class="form-side reveal">
+          <h3>Send Us a Message</h3>
+          <p>Prefer to write? Fill out the form and we'll respond within 4 business hours.</p>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgojjvrv" method="POST">
+            <!-- Formspree config -->
+            <input type="text" name="_gotcha" style="display:none" />
+
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="jane@yourbrand.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Needs (Optional)</label>
+              <textarea id="message" name="message" placeholder="What are your biggest support challenges? What channels are you currently using? Any specific goals?"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">
+              Get Started →
+            </button>
+
+            <p class="form-privacy">
+              Your information is secure. We'll never share your data with third parties.
+            </p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Message Sent!</h4>
+            <p>Thanks for reaching out. We'll be in touch within 4 business hours to get your AI agent set up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" aria-label="AgoraCrew">
+            <img src="logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />
+          </a>
+          <p>
+            Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>AI Plans</h4>
+          <a href="#pricing">Starter — $99/mo</a>
+          <a href="#pricing">Growth — $249/mo</a>
+          <a href="#pricing">Scale — $599/mo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Human Agents</h4>
+          <a href="#pricing">Nearshore — Hungary</a>
+          <a href="#pricing">Offshore — Philippines</a>
+          <a href="#pricing">Custom Team</a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <h4>Get In Touch</h4>
+          <a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>
+          <a href="tel:+36300841533">+36 30 084 1533</a>
+          <a href="#contact">Book a free CX Audit</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AgoraCrew. All rights reserved.</span>
+        <span class="footer-tax-id">Tax ID (Adószám): HU92198362</span>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PERF: defer allows HTML parsing to complete before script execution -->
+  <script src="roi-calc.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <!-- AgoraCrew AI chat widget — live demo of the product itself -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

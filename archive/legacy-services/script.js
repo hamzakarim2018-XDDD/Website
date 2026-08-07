@@ -1,6 +1,5 @@
 /* ============================================
-   AGORACREW — Interactive Scripts
-   Custom Software Engineering Studio
+   AGORACREW — Red Sun Interactive Scripts
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -131,6 +130,79 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================
+  // ROI CALCULATOR
+  // ============================
+  const roiVolumeSlider = document.getElementById('roiVolumeSlider');
+  const roiVolumeNumber = document.getElementById('roiVolumeNumber');
+  const roiCostSlider = document.getElementById('roiCostSlider');
+  const roiCostNumber = document.getElementById('roiCostNumber');
+  const roiCurrentCost = document.getElementById('roiCurrentCost');
+  const roiPlanName = document.getElementById('roiPlanName');
+  const roiPlanFee = document.getElementById('roiPlanFee');
+  const roiSavingsAmount = document.getElementById('roiSavingsAmount');
+  const roiSavingsSubline = document.getElementById('roiSavingsSubline');
+  const roiSavingsBlock = document.getElementById('roiSavingsBlock');
+  const roiNeutralMessage = document.getElementById('roiNeutralMessage');
+
+  if (roiVolumeSlider) {
+    // Same document.documentElement.lang detection used elsewhere on this
+    // site (see the language banner below) — French pages show EUR with
+    // French grouping/punctuation, English pages keep USD.
+    const roiIsFrench = document.documentElement.lang === 'fr';
+    const roiCurrencyFormatter = new Intl.NumberFormat(roiIsFrench ? 'fr-FR' : 'en-US', {
+      style: 'currency',
+      currency: roiIsFrench ? 'EUR' : 'USD',
+      maximumFractionDigits: 0
+    });
+
+    const updateROI = () => {
+      let volume = parseInt(roiVolumeNumber.value, 10);
+      let cost = parseFloat(roiCostNumber.value);
+
+      if (isNaN(volume) || volume < 100) volume = 100;
+      if (volume > 6000) volume = 6000;
+      if (isNaN(cost) || cost < 1) cost = 1;
+      if (cost > 15) cost = 15;
+
+      roiVolumeSlider.value = volume;
+      roiVolumeNumber.value = volume;
+      roiCostSlider.value = cost;
+      roiCostNumber.value = cost.toFixed(2);
+
+      const result = computeROI(volume, cost);
+
+      roiCurrentCost.textContent = roiCurrencyFormatter.format(result.currentCost);
+      roiPlanName.textContent = result.plan;
+      roiPlanFee.textContent = roiCurrencyFormatter.format(result.fee);
+
+      if (result.savings > 0) {
+        roiSavingsBlock.hidden = false;
+        roiNeutralMessage.hidden = true;
+        roiSavingsAmount.textContent = roiCurrencyFormatter.format(result.savings) + (roiIsFrench ? '/mois' : '/mo');
+        roiSavingsSubline.textContent = roiIsFrench
+          ? '(' + result.savingsPercent + ' % de moins · ' + roiCurrencyFormatter.format(result.annualSavings) + '/an)'
+          : '(' + result.savingsPercent + '% less · ' + roiCurrencyFormatter.format(result.annualSavings) + '/yr)';
+      } else {
+        roiSavingsBlock.hidden = true;
+        roiNeutralMessage.hidden = false;
+      }
+    };
+
+    roiVolumeSlider.addEventListener('input', () => {
+      roiVolumeNumber.value = roiVolumeSlider.value;
+      updateROI();
+    });
+    roiVolumeNumber.addEventListener('input', updateROI);
+    roiCostSlider.addEventListener('input', () => {
+      roiCostNumber.value = parseFloat(roiCostSlider.value).toFixed(2);
+      updateROI();
+    });
+    roiCostNumber.addEventListener('input', updateROI);
+
+    updateROI();
+  }
+
+  // ============================
   // LANGUAGE BANNER
   // ============================
   // Suggests switching language based on browser locale; never
@@ -167,7 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const otherLangPath = suggestFrench
       ? window.location.pathname.replace(/^(\/)?/, '$1fr/')
       : window.location.pathname.replace('/fr/', '/');
-    // Preserve the query string so the language switch lands on the same content
+    // Preserve the query string (e.g. ?slug=... on blog post pages) so the
+    // language switch lands on the same content instead of a bare index.
     switchLink.href = otherLangPath + window.location.search;
     switchLink.textContent = suggestFrench ? 'Voir en français' : 'View in English';
     switchLink.addEventListener('click', () => setCookie(COOKIE_NAME, suggestFrench ? 'fr' : 'en'));

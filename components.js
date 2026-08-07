@@ -36,31 +36,15 @@
 
   var NAV_STRINGS = {
     en: {
-      math: 'The Math', howItWorks: 'How It Works', pricing: 'Pricing',
-      grader: 'Free Store Grader', learn: 'Learn', contact: 'Contact',
-      bookAudit: 'Book a CX Audit', startTrial: 'Start Free Trial',
-      solutionsCol: 'Solutions', resourcesCol: 'Resources', blogCol: 'Blog',
-      shopifyGuideTitle: 'Shopify CX Guide', shopifyGuideDesc: 'Manage support on Shopify',
-      cxStrategyTitle: 'CX Strategy', cxStrategyDesc: 'Build a CX playbook',
-      wismoTitle: 'WISMO Automation', wismoDesc: 'Eliminate order tracking tickets',
-      costsTitle: 'Cut Support Costs', costsDesc: '7 proven cost-saving tactics',
-      templatesTitle: 'Response Templates', templatesDesc: 'Free copy-paste templates',
-      metricsTitle: 'CX Metrics Guide', metricsDesc: '6 metrics that matter',
-      allArticlesTitle: 'All Articles', allArticlesDesc: 'Latest CX insights & guides',
+      services: 'Services', products: 'Products',
+      howWeWork: 'How We Work', contact: 'Contact',
+      discussProject: 'Discuss Your Project',
       switcherLabel: 'FR'
     },
     fr: {
-      math: 'Le Calcul', howItWorks: 'Comment ça marche', pricing: 'Tarifs',
-      grader: 'Auditez ma boutique', learn: 'Ressources', contact: 'Contact',
-      bookAudit: 'Réserver un audit CX', startTrial: 'Essai gratuit',
-      solutionsCol: 'Solutions', resourcesCol: 'Ressources', blogCol: 'Blog',
-      shopifyGuideTitle: 'Guide CX Shopify', shopifyGuideDesc: 'Gérer le support sur Shopify',
-      cxStrategyTitle: 'Stratégie CX', cxStrategyDesc: 'Construire un plan CX',
-      wismoTitle: 'Automatisation WISMO', wismoDesc: 'Éliminer les tickets de suivi de commande',
-      costsTitle: 'Réduire les coûts', costsDesc: '7 tactiques éprouvées',
-      templatesTitle: 'Modèles de réponses', templatesDesc: 'Modèles gratuits à copier-coller',
-      metricsTitle: 'Guide des métriques CX', metricsDesc: '6 métriques essentielles',
-      allArticlesTitle: 'Tous les articles', allArticlesDesc: 'Derniers articles et guides CX',
+      services: 'Services', products: 'Produits',
+      howWeWork: 'Notre Processus', contact: 'Contact',
+      discussProject: 'Discuter de votre projet',
       switcherLabel: 'EN'
     }
   };
@@ -68,19 +52,23 @@
 
   var FOOTER_STRINGS = {
     en: {
-      tagline: 'Trained AI agents with supervised human backup for e-commerce brands. Flat monthly plans from $99/mo — WISMO resolution, cart recovery, and 24/7 support that scales with your store.',
-      solutionsCol: 'Solutions', resourcesCol: 'Resources', contactCol: 'Get In Touch',
-      shopifyService: 'Shopify Customer Service', cxStrategy: 'E-Commerce CX Strategy', wismo: 'WISMO Automation',
-      reduceCosts: 'Reduce Support Costs', templates: 'Response Templates', metrics: 'CX Metrics Guide', blog: 'Blog',
-      bookAudit: 'Book a free CX Audit', privacy: 'Privacy Policy', terms: 'Terms of Service',
+      tagline: 'Custom software engineering studio specializing in enterprise integrations, e-commerce infrastructure, and AI-powered automation. We ship production-grade systems that scale.',
+      servicesCol: 'Services', productsCol: 'Products', contactCol: 'Get In Touch',
+      customSoftware: 'Custom Software', integrations: 'Enterprise Integrations',
+      ecommerce: 'E-Commerce Infrastructure', aiAutomation: 'AI & Automation',
+      productCopilot: 'Order Exceptions Copilot', productAiAgent: 'AI Support & Growth Agent',
+      blog: 'Blog', discussProject: 'Discuss Your Project',
+      privacy: 'Privacy Policy', terms: 'Terms of Service',
       copyright: '© 2026 AgoraCrew. All rights reserved.', taxId: 'Tax ID (Adószám): HU92198362'
     },
     fr: {
-      tagline: 'Des agents IA formés, avec renfort humain supervisé, pour les marques e-commerce. Forfaits mensuels fixes dès 99 €/mois — résolution des demandes de suivi de commande, récupération de paniers abandonnés, et support 24h/24 et 7j/7 qui s\'adapte à votre boutique.',
-      solutionsCol: 'Solutions', resourcesCol: 'Ressources', contactCol: 'Nous contacter',
-      shopifyService: 'Service client Shopify', cxStrategy: 'Stratégie CX e-commerce', wismo: 'Automatisation WISMO',
-      reduceCosts: 'Réduire les coûts de support', templates: 'Modèles de réponses', metrics: 'Guide des métriques CX', blog: 'Blog',
-      bookAudit: 'Réserver un audit CX gratuit', privacy: 'Politique de confidentialité', terms: 'CGV', mentionsLegales: 'Mentions légales',
+      tagline: 'Studio d\'ingénierie logicielle sur mesure spécialisé dans les intégrations d\'entreprise, l\'infrastructure e-commerce, et l\'automatisation alimentée par l\'IA. Nous livrons des systèmes de production performants.',
+      servicesCol: 'Services', productsCol: 'Produits', contactCol: 'Nous contacter',
+      customSoftware: 'Logiciel sur mesure', integrations: 'Intégrations d\'entreprise',
+      ecommerce: 'Infrastructure e-commerce', aiAutomation: 'IA & Automatisation',
+      productCopilot: 'Order Exceptions Copilot', productAiAgent: 'Agent IA Support & Croissance',
+      blog: 'Blog', discussProject: 'Discuter de votre projet',
+      privacy: 'Politique de confidentialité', terms: 'CGV', mentionsLegales: 'Mentions légales',
       copyright: '© 2026 AgoraCrew. Tous droits réservés.', taxId: 'Numéro fiscal (Adószám) : HU92198362'
     }
   };
@@ -97,54 +85,14 @@
           '</a>' +
 
           '<div class="nav-center" id="navCenter">' +
-            '<a href="' + localizeHref(base + '/index.html') + '#problem">' + nav.math + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#how-it-works">' + nav.howItWorks + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#pricing">' + nav.pricing + '</a>' +
-            '<a href="' + localizeHref(base + '/tools/cx-audit/index.html') + '">' + nav.grader + '</a>' +
-            '<div class="nav-dropdown">' +
-              '<button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">' +
-                nav.learn +
-                '<svg class="nav-dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-              '</button>' +
-              '<div class="nav-dropdown-menu">' +
-                '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">' + nav.solutionsCol + '</div>' +
-                  '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.shopifyGuideTitle + '</span><span class="nav-dropdown-link-desc">' + nav.shopifyGuideDesc + '</span></span>' +
-                  '</a>' +
-                  '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.cxStrategyTitle + '</span><span class="nav-dropdown-link-desc">' + nav.cxStrategyDesc + '</span></span>' +
-                  '</a>' +
-                  '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.wismoTitle + '</span><span class="nav-dropdown-link-desc">' + nav.wismoDesc + '</span></span>' +
-                  '</a>' +
-                '</div>' +
-                '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">' + nav.resourcesCol + '</div>' +
-                  '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.costsTitle + '</span><span class="nav-dropdown-link-desc">' + nav.costsDesc + '</span></span>' +
-                  '</a>' +
-                  '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.templatesTitle + '</span><span class="nav-dropdown-link-desc">' + nav.templatesDesc + '</span></span>' +
-                  '</a>' +
-                  '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.metricsTitle + '</span><span class="nav-dropdown-link-desc">' + nav.metricsDesc + '</span></span>' +
-                  '</a>' +
-                '</div>' +
-                '<div class="nav-dropdown-col">' +
-                  '<div class="nav-dropdown-col-title">' + nav.blogCol + '</div>' +
-                  '<a href="' + localizeHref(base + '/blog/index.html') + '" class="nav-dropdown-link">' +
-                    '<span class="nav-dropdown-link-text"><span class="nav-dropdown-link-title">' + nav.allArticlesTitle + '</span><span class="nav-dropdown-link-desc">' + nav.allArticlesDesc + '</span></span>' +
-                  '</a>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#services">' + nav.services + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#products">' + nav.products + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#how-we-work">' + nav.howWeWork + '</a>' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact">' + nav.contact + '</a>' +
           '</div>' +
 
           '<div class="nav-right">' +
-            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta-secondary">' + nav.bookAudit + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="btn btn-primary nav-cta">' + nav.discussProject + '</a>' +
             '<a href="' + otherLangUrl() + '" class="nav-lang-switch" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
           '</div>' +
 
@@ -153,25 +101,11 @@
           '</button>' +
 
           '<div class="nav-links" id="navLinks">' +
-            '<a href="' + localizeHref(base + '/index.html') + '#problem">' + nav.math + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#how-it-works">' + nav.howItWorks + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#pricing">' + nav.pricing + '</a>' +
-            '<a href="' + localizeHref(base + '/tools/cx-audit/index.html') + '">' + nav.grader + '</a>' +
-            '<button class="mobile-dropdown-toggle" onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\')">' +
-              nav.learn +
-              '<svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-            '</button>' +
-            '<div class="mobile-dropdown-items">' +
-              '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '">' + nav.shopifyGuideTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '">' + nav.cxStrategyTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '">' + nav.wismoTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '">' + nav.costsTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '">' + nav.templatesTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '">' + nav.metricsTitle + '</a>' +
-              '<a href="' + localizeHref(base + '/blog/index.html') + '">' + nav.blogCol + '</a>' +
-            '</div>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#services">' + nav.services + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#products">' + nav.products + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#how-we-work">' + nav.howWeWork + '</a>' +
             '<a href="' + localizeHref(base + '/index.html') + '#contact">' + nav.contact + '</a>' +
-            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="nav-cta">' + nav.startTrial + '</a>' +
+            '<a href="' + localizeHref(base + '/index.html') + '#contact" class="btn btn-primary nav-cta">' + nav.discussProject + '</a>' +
             '<a href="' + otherLangUrl() + '" class="nav-lang-switch-mobile" aria-label="' + (locale === 'fr' ? 'Switch to English' : 'Passer en français') + '">' + nav.switcherLabel + '</a>' +
           '</div>' +
         '</div>' +
@@ -194,20 +128,20 @@
               '<p>' + footer.tagline + '</p>' +
             '</div>' +
 
-            /* Solutions Column */
+            /* Services Column */
             '<div class="footer-col">' +
-              '<h4>' + footer.solutionsCol + '</h4>' +
-              '<a href="' + localizeHref(base + '/solutions/shopify-customer-service.html') + '">' + footer.shopifyService + '</a>' +
-              '<a href="' + localizeHref(base + '/solutions/ecommerce-cx-strategy.html') + '">' + footer.cxStrategy + '</a>' +
-              '<a href="' + localizeHref(base + '/solutions/wismo-automation.html') + '">' + footer.wismo + '</a>' +
+              '<h4>' + footer.servicesCol + '</h4>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#services">' + footer.customSoftware + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#services">' + footer.integrations + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#services">' + footer.ecommerce + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#services">' + footer.aiAutomation + '</a>' +
             '</div>' +
 
-            /* Resources Column */
+            /* Products Column */
             '<div class="footer-col">' +
-              '<h4>' + footer.resourcesCol + '</h4>' +
-              '<a href="' + localizeHref(base + '/resources/reduce-support-costs.html') + '">' + footer.reduceCosts + '</a>' +
-              '<a href="' + localizeHref(base + '/resources/customer-service-templates.html') + '">' + footer.templates + '</a>' +
-              '<a href="' + localizeHref(base + '/resources/cx-metrics-guide.html') + '">' + footer.metrics + '</a>' +
+              '<h4>' + footer.productsCol + '</h4>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#products">' + footer.productCopilot + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#products">' + footer.productAiAgent + '</a>' +
               '<a href="' + localizeHref(base + '/blog/index.html') + '">' + footer.blog + '</a>' +
             '</div>' +
 
@@ -216,7 +150,7 @@
               '<h4>' + footer.contactCol + '</h4>' +
               '<a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>' +
               '<a href="tel:+36300841533">+36 30 084 1533</a>' +
-              '<a href="' + localizeHref(base + '/index.html') + '#contact">' + footer.bookAudit + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#contact">' + footer.discussProject + '</a>' +
             '</div>' +
 
           '</div>' +
