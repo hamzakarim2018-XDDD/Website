@@ -19,6 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // ============================
+  // STICKY BOTTOM CTA BAR
+  // ============================
+  const stickyCta = document.getElementById('stickyCta');
+  const stickyCtaDismiss = document.getElementById('stickyCtaDismiss');
+
+  if (stickyCta) {
+    const isDismissed = sessionStorage.getItem('agoracrew_sticky_dismissed');
+
+    if (!isDismissed) {
+      window.addEventListener('scroll', () => {
+        const heroSection = document.getElementById('hero');
+        if (heroSection) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          if (window.scrollY > heroBottom - 200) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      }, { passive: true });
+    }
+
+    if (stickyCtaDismiss) {
+      stickyCtaDismiss.addEventListener('click', () => {
+        stickyCta.classList.add('dismissed');
+        sessionStorage.setItem('agoracrew_sticky_dismissed', '1');
+      });
+    }
+  }
+
+  // ============================
   // MOBILE MENU
   // ============================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');

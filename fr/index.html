@@ -291,6 +291,41 @@
     .footer-bottom-links a { font-size: 0.8rem; opacity: 0.4; transition: opacity 0.2s; }
     .footer-bottom-links a:hover { opacity: 0.8; }
 
+    /* ===== APP FEATURES SECTION ===== */
+    .app-features { padding: 100px 0; background: var(--white); border-bottom: var(--border); }
+    .app-features .section-title { color: var(--black); }
+    .app-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 48px; }
+    .app-feature-card { background: var(--light-gray); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 2.25rem; text-align: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .app-feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .app-feature-icon { width: 64px; height: 64px; background: var(--yellow); border: var(--border); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 1.75rem; }
+    .app-feature-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .app-feature-card p { font-size: 0.9rem; opacity: 0.6; line-height: 1.7; }
+    .app-how-it-works { margin-top: 64px; background: var(--charcoal); border: var(--border); border-radius: var(--radius); padding: 2.5rem; color: var(--white); }
+    .app-how-it-works h3 { font-size: 1.3rem; margin-bottom: 1.5rem; text-align: center; }
+    .app-flow-steps { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+    .app-flow-step { display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
+    .app-flow-step .step-num { width: 24px; height: 24px; background: var(--yellow); color: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; flex-shrink: 0; }
+    .app-flow-arrow { font-size: 1.2rem; opacity: 0.3; padding: 0 8px; color: var(--white); }
+    .app-features-cta-group { text-align: center; margin-top: 48px; }
+    .app-features-cta-group .hero-cta { font-size: 1.05rem; }
+    .app-features-cta-group .trust-line { margin-top: 12px; }
+    .trust-line { font-size: 0.85rem; opacity: 0.5; font-weight: 600; margin-top: 16px; }
+    .product-badge--live { background: rgba(40,200,64,0.12); color: #28c840; border-color: rgba(40,200,64,0.3); display: inline-flex; align-items: center; gap: 6px; }
+    .product-badge--live .live-dot { width: 6px; height: 6px; background: #28c840; border-radius: 50%; animation: pulse-dot 2s infinite; }
+    .product-pricing { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: rgba(255,225,124,0.08); border: 1px solid rgba(255,225,124,0.15); border-radius: var(--radius); margin-bottom: 1.5rem; font-family: var(--font-heading); }
+    .product-pricing .price { font-size: 1.25rem; font-weight: 800; color: var(--yellow); }
+    .product-pricing .price-detail { font-size: 0.8rem; font-weight: 600; color: var(--sage); opacity: 0.7; }
+
+    /* ===== STICKY BOTTOM CTA BAR ===== */
+    .sticky-cta-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--charcoal); border-top: var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .sticky-cta-bar.visible { transform: translateY(0); }
+    .sticky-cta-bar.dismissed { transform: translateY(100%) !important; }
+    .sticky-cta-text { color: var(--white); font-size: 0.85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sticky-cta-btn { display: inline-flex; align-items: center; padding: 8px 20px; background: var(--yellow); color: var(--black); border: var(--border); border-radius: var(--radius); font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; white-space: nowrap; box-shadow: var(--shadow-sm); transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .sticky-cta-btn:hover { transform: translate(2px, 2px); box-shadow: none; }
+    .sticky-cta-dismiss { background: none; border: none; color: var(--white); opacity: 0.4; cursor: pointer; font-size: 1.1rem; padding: 0 4px; transition: opacity 0.2s; }
+    .sticky-cta-dismiss:hover { opacity: 1; }
+
     /* ===== SCROLL REVEAL ===== */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -308,9 +343,13 @@
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: 1fr; }
       .products-grid { grid-template-columns: 1fr; }
+      .app-features-grid { grid-template-columns: 1fr; }
       .steps-grid--three { grid-template-columns: 1fr; gap: 2rem; }
       .steps-grid--three::before { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .app-flow-steps { gap: 4px; }
+      .app-flow-step { font-size: 0.78rem; padding: 10px 14px; }
+      .app-flow-arrow { padding: 0 4px; font-size: 1rem; }
     }
     @media (max-width: 900px) {
       .products-grid { grid-template-columns: 1fr; }
@@ -326,6 +365,10 @@
       .hero-cta, .hero-cta-secondary { width: 100%; justify-content: center; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .sticky-cta-text { display: none; }
+      .sticky-cta-bar { justify-content: center; }
+      .app-flow-steps { flex-direction: column; gap: 8px; }
+      .app-flow-arrow { transform: rotate(90deg); padding: 0; }
     }
   </style>
 
@@ -345,14 +388,14 @@
       </a>
 
       <div class="nav-center" id="navCenter">
+        <a href="#app-features">Notre App</a>
         <a href="#services">Services</a>
         <a href="#products">Produits</a>
-        <a href="#how-we-work">Notre Processus</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="nav-right">
-        <a href="#contact" class="btn btn-primary nav-cta">Discuter de votre projet</a>
+        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Essayer notre app Shopify</a>
         <a href="../index.html" class="nav-lang-switch" aria-label="Switch to English">EN</a>
       </div>
 
@@ -363,11 +406,11 @@
       </button>
 
       <div class="nav-links" id="navLinks">
+        <a href="#app-features">Notre App</a>
         <a href="#services">Services</a>
         <a href="#products">Produits</a>
-        <a href="#how-we-work">Notre Processus</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-primary nav-cta">Discuter de votre projet</a>
+        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Essayer notre app Shopify</a>
         <a href="../index.html" class="nav-lang-switch-mobile" aria-label="Switch to English">EN — View in English</a>
       </div>
     </div>
@@ -378,22 +421,24 @@
   <section class="hero dot-bg" id="hero">
 
     <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
-      <span class="dot"></span> Ingénierie Logicielle Sur Mesure
+      <span class="dot"></span> Disponible sur le Shopify App Store
     </div>
 
     <h1 class="hero-title animate-fade-up" style="opacity:0; animation-delay: 0.25s;">
-      Nous concevons le logiciel<br/>
-      <span class="accent-text">qui fait tourner votre business.</span>
+      Stoppez les problèmes<br/>
+      <span class="accent-text">avant qu'ils ne vous coûtent.</span>
     </h1>
 
     <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
-      AgoraCrew est un studio d'ingénierie logicielle spécialisé dans les intégrations d'entreprise, l'infrastructure e-commerce et l'automatisation alimentée par l'IA. Des pipelines CRM complexes à la synchronisation de données en temps réel — nous livrons des systèmes de production.
+      Retards de fulfillment, décalages d'inventaire, adresses non livrables — des problèmes qui rongent silencieusement vos marges et déclenchent des clients mécontents. Order Issue Alerts scanne chaque commande et vous livre un digest quotidien prioritisé, directement dans Shopify Admin. Zéro vérification manuelle. Zéro surprise.
     </p>
 
     <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
-      <a href="#contact" class="hero-cta">Demander une solution sur mesure</a>
-      <a href="#products" class="hero-cta-secondary">Voir nos produits ↓</a>
+      <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Installer gratuitement sur Shopify →</a>
+      <a href="#app-features" class="hero-cta-secondary">Découvrir comment ça marche ↓</a>
     </div>
+
+    <p class="trust-line animate-fade-up" style="opacity:0; animation-delay: 0.6s;">Essai gratuit 30 jours · Aucune carte requise · Compatible avec tous les plans Shopify</p>
 
   </section>
 
@@ -493,6 +538,76 @@
   </section>
 
 
+  <!-- ==================== APP FEATURES SHOWCASE ==================== -->
+  <section class="app-features" id="app-features">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Order Issue Alerts</span>
+        <h2 class="section-title">Un digest quotidien.<br/><span class="accent-text">Zéro problème oublié.</span></h2>
+        <p class="section-subtitle mx-auto">
+          Votre boutique traite des centaines de commandes. Les problèmes se cachent dans le bruit — jusqu'à ce qu'un client se plaigne. Order Issue Alerts fait remonter ce qui est vraiment cassé, chaque matin, dans une liste prioritisée.
+        </p>
+      </div>
+
+      <div class="app-features-grid">
+        <div class="app-feature-card reveal">
+          <div class="app-feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Retards de fulfillment</h3>
+          <p>Détecte les commandes bloquées au-delà de leur date d'expédition prévue — avant que les clients ne le remarquent.</p>
+        </div>
+
+        <div class="app-feature-card reveal reveal-delay-1">
+          <div class="app-feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Décalages d'inventaire</h3>
+          <p>Détecte automatiquement les écarts entre votre stock réel et les données Shopify — sans audit manuel.</p>
+        </div>
+
+        <div class="app-feature-card reveal reveal-delay-2">
+          <div class="app-feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Problèmes d'adresse</h3>
+          <p>Fait remonter les adresses non livrables ou signalées qui causeraient des échecs de livraison et des retours coûteux.</p>
+        </div>
+      </div>
+
+      <div class="app-how-it-works reveal">
+        <h3>Comment ça marche</h3>
+        <div class="app-flow-steps">
+          <div class="app-flow-step">
+            <span class="step-num">1</span>
+            Installation en 30 secondes
+          </div>
+          <span class="app-flow-arrow">→</span>
+          <div class="app-flow-step">
+            <span class="step-num">2</span>
+            On scanne vos commandes chaque jour
+          </div>
+          <span class="app-flow-arrow">→</span>
+          <div class="app-flow-step">
+            <span class="step-num">3</span>
+            Recevez un digest prioritisé
+          </div>
+          <span class="app-flow-arrow">→</span>
+          <div class="app-flow-step">
+            <span class="step-num">4</span>
+            Marquez résolu — ça ne reviendra pas
+          </div>
+        </div>
+      </div>
+
+      <div class="app-features-cta-group reveal">
+        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Démarrer votre essai gratuit →</a>
+        <p class="trust-line">Essai gratuit 30 jours · À partir de 39$/mois · Résiliable à tout moment</p>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ==================== SERVICES ==================== -->
   <section class="services" id="services">
     <div class="section-container">
@@ -546,7 +661,7 @@
     <div class="section-container">
       <div class="text-center">
         <span class="section-label"><span class="dot"></span> Nos Produits</span>
-        <h2 class="section-title">Des outils internes,<br/><span class="accent-text">conçus par nous.</span></h2>
+        <h2 class="section-title">En production &amp; éprouvés<br/><span class="accent-text">au combat.</span></h2>
         <p class="section-subtitle mx-auto">
           Nous ne faisons pas que parler d'ingénierie. Ce sont des produits en production que notre équipe a conçus, construits et maintient — la preuve de ce que nous pouvons construire pour vous.
         </p>
@@ -554,11 +669,15 @@
 
       <div class="products-grid">
         <div class="product-card reveal">
-          <span class="product-badge">Application Shopify</span>
-          <h3>Order Exceptions Copilot</h3>
+          <span class="product-badge product-badge--live"><span class="live-dot"></span> Disponible sur Shopify</span>
+          <h3>Order Issue Alerts</h3>
           <p>
-            Un digest opérationnel quotidien intelligent pour les marchands Shopify qui agrège les retards de fulfillment, les décalages d'inventaire et les problèmes de validation d'adresse en une liste priorisée unique. Détectez les problèmes avant vos clients.
+            Un digest opérationnel quotidien intelligent pour les marchands Shopify qui agrège les retards de fulfillment, les décalages d'inventaire et les problèmes de validation d'adresse en une liste prioritisée unique. Détectez les problèmes avant vos clients.
           </p>
+          <div class="product-pricing">
+            <span class="price">39$/mois</span>
+            <span class="price-detail">Essai gratuit 30 jours · Sans carte</span>
+          </div>
           <div class="product-tech-stack">
             <span class="tech-pill">Shopify</span>
             <span class="tech-pill">Node.js</span>
@@ -566,8 +685,8 @@
             <span class="tech-pill">REST API</span>
           </div>
           <div class="product-cta-group">
-            <a href="#contact" class="product-cta">En savoir plus</a>
-            <a href="#contact" class="product-cta product-cta--secondary">Voir sur le Shopify App Store →</a>
+            <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="product-cta">Installer gratuitement sur Shopify →</a>
+            <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="product-cta product-cta--secondary">Voir sur le Shopify App Store →</a>
           </div>
         </div>
 
@@ -714,7 +833,7 @@
         </div>
         <div class="footer-col">
           <h4>Produits</h4>
-          <a href="#products">Order Exceptions Copilot</a>
+          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener">Order Issue Alerts</a>
           <a href="#products">Agent IA Support &amp; Croissance</a>
           <a href="../blog/index.html">Blog</a>
         </div>
@@ -736,6 +855,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==================== STICKY BOTTOM CTA BAR ==================== -->
+  <div class="sticky-cta-bar" id="stickyCta">
+    <span class="sticky-cta-text">🔥 Order Issue Alerts est disponible — détectez les problèmes de fulfillment avant vos clients.</span>
+    <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="sticky-cta-btn">Installer gratuitement →</a>
+    <button class="sticky-cta-dismiss" id="stickyCtaDismiss" aria-label="Fermer">✕</button>
+  </div>
 
   <script src="../script.js" defer></script>
 
