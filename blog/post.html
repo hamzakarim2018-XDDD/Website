@@ -39,8 +39,13 @@
     <div class="blog-loading">Loading post...</div>
   </article>
 
-  <!-- ==================== CTA ==================== -->
-  <section class="page-cta-section">
+  <!-- ==================== CTA ====================
+       Two variants share this template: the default is the CX/Shopify pitch;
+       posts with `product: arbridge` in their frontmatter get the ARBridge
+       pitch instead (toggled by blog.js after the post loads), since a
+       QuickBooks/HubSpot reader landing on "chasing abandoned carts" would be
+       the wrong product entirely. -->
+  <section id="page-cta-cx" class="page-cta-section">
     <h2>Or Hand It To <span class="accent-text">Someone Else</span></h2>
     <p>
       AgoraCrew's AI agents run the practices we write about on live stores — answering order-status questions, covering nights and weekends, and chasing abandoned carts.
@@ -50,6 +55,19 @@
       <span class="page-cta-badge">5 days free</span>
       <span class="page-cta-badge">No credit card</span>
       <span class="page-cta-badge">No lock-in</span>
+    </div>
+  </section>
+
+  <section id="page-cta-arbridge" class="page-cta-section" style="display: none;">
+    <h2>See <span class="accent-text">ARBridge for QuickBooks</span> In Action</h2>
+    <p>
+      ARBridge is a read-only sync from QuickBooks Desktop into HubSpot — AR aging, credit status, and payment history on every Company and Contact record, without ever giving anyone write access to your books.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Request Access →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">Read-only sync</span>
+      <span class="page-cta-badge">Live on HubSpot</span>
+      <span class="page-cta-badge">Free setup</span>
     </div>
   </section>
 

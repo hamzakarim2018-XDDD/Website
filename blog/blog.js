@@ -206,6 +206,19 @@
           postMetaEl.textContent = formatDate(meta.date);
         }
 
+        // Swap the end-of-post CTA for posts about a specific product, so a
+        // reader who came in on a QuickBooks/HubSpot search term doesn't land
+        // on a Shopify-abandoned-cart pitch. Only post.html defines these
+        // two sections; fr/blog/post.html doesn't yet, hence the null checks.
+        if (meta.product) {
+          var ctaDefault = document.getElementById('page-cta-cx');
+          var ctaProduct = document.getElementById('page-cta-' + meta.product);
+          if (ctaProduct) {
+            if (ctaDefault) ctaDefault.style.display = 'none';
+            ctaProduct.style.display = '';
+          }
+        }
+
         // Render markdown
         if (typeof marked !== 'undefined') {
           postContentEl.innerHTML = marked.parse(parsed.content);
