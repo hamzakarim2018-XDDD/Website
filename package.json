@@ -1,0 +1,26 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "agoracrew.com - static marketing site, built with a small Node build step for the blog only.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:blog": "node blog/build-blog.js && node blog/build-blog.js --lang=fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzakarim2018-XDDD/Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hamzakarim2018-XDDD/Website/issues"
+  },
+  "homepage": "https://github.com/hamzakarim2018-XDDD/Website#readme",
+  "dependencies": {
+    "marked": "18.0.9"
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>QuickBooks Web Connector Explained — AgoraCrew Blog</title>
+  <meta name="description" content="A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained" />
+  <meta property="og:title" content="QuickBooks Web Connector Explained" />
+  <meta property="og:description" content="A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"QuickBooks Web Connector Explained","description":"A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session.","datePublished":"2026-08-13","dateModified":"2026-08-13","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"QuickBooks Web Connector Explained","item":"https://agoracrew.com/blog/post.html?slug=quickbooks-web-connector-explained"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">August 13, 2026</div>
+    <h1 class="blog-post-title">QuickBooks Web Connector Explained</h1>
+    <p class="blog-post-description">A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>If you run QuickBooks Desktop and an integration provider has ever told you to &quot;install the Web Connector,&quot; you&#39;ve probably wondered what that actually is and why it exists at all. This is the plain-English version — what it is, why it&#39;s built the way it is, and what actually happens during a sync.</p>
+<h2>What the Web Connector Is</h2>
+<p>The <strong>QuickBooks Web Connector (QBWC)</strong> is a small Windows application Intuit ships to let outside software exchange data with a QuickBooks Desktop company file. It&#39;s been part of QuickBooks Desktop for years, and it&#39;s typically already installed — most integrations just need it enabled and pointed at the right service.</p>
+<p>The key thing to understand: <strong>the Web Connector, not the outside service, initiates every sync.</strong> QuickBooks Desktop has no listening server waiting for the internet to reach in — that would be a significant security exposure for software sitting on a company&#39;s accounting data. Instead, the Web Connector runs on the same computer as QuickBooks, and on a schedule (or on demand), it reaches <em>out</em> to whatever service it&#39;s configured for and asks, &quot;anything for me to do?&quot;</p>
+<h2>The .qwc File: How a Connection Gets Configured</h2>
+<p>Every Web Connector integration starts with a <strong><code>.qwc</code> file</strong> — a small XML file that tells the Web Connector three things:</p>
+<ol>
+<li>The <strong>URL</strong> of the service it should talk to (a SOAP endpoint)</li>
+<li>A generated <strong>username</strong> for that connection</li>
+<li>An <strong>application ID/name</strong> so QuickBooks can show the user what&#39;s asking for access</li>
+</ol>
+<p>You get this file from the integration provider (typically as a download at the end of a setup wizard), then double-click it. QuickBooks Desktop registers the connection, asks you to set a password for that username, and — critically — <strong>asks you to explicitly approve the level of access</strong> the connection gets before anything syncs.</p>
+<h2>What Happens During a Sync Session</h2>
+<p>Once configured, here&#39;s the actual sequence when the Web Connector runs:</p>
+<ol>
+<li><strong>Authenticate.</strong> The Web Connector calls the service&#39;s <code>authenticate()</code> method with the username/password you set. The service returns a session ticket.</li>
+<li><strong>Ask what to do.</strong> The Web Connector asks the service for the next qbXML request to run.</li>
+<li><strong>Send the request into QuickBooks.</strong> The Web Connector passes that request to your open QuickBooks Desktop application, which executes it against the live company file.</li>
+<li><strong>Return the response.</strong> Whatever QuickBooks returns gets sent back to the service.</li>
+<li><strong>Repeat</strong> until the service has nothing further to request, then the session closes.</li>
+</ol>
+<p>The requests themselves are written in <strong>qbXML</strong> — an XML dialect specific to QuickBooks Desktop, with distinct message types for different operations. <code>CustomerQueryRq</code> reads customer records. <code>InvoiceQueryRq</code> reads invoices. <code>ReceivePaymentQueryRq</code> reads payments. There are equivalent <code>*AddRq</code> and <code>*ModRq</code> messages for <em>writing</em> data — which is exactly the distinction that matters most if you&#39;re evaluating who gets to touch your books.</p>
+<h2>The One Question Worth Asking Every QuickBooks Integration: Read or Write?</h2>
+<p>Because the Web Connector protocol supports both reading and writing, <strong>not every integration that uses it behaves the same way</strong> — and QuickBooks itself doesn&#39;t restrict this for you by default. Two integrations can both say &quot;we use the Web Connector&quot; while one only ever sends <code>Query</code> messages and the other sends <code>Add</code>/<code>Mod</code> messages that create or change records in your file.</p>
+<p>This is worth checking explicitly with any vendor before you approve a <code>.qwc</code> file, because the honest answer is usually buried in a support doc, not the marketing page. <strong>ARBridge for QuickBooks</strong> was built specifically for the &quot;read-only&quot; side of that line: it only issues <code>Query</code>-type qbXML requests — structurally, not just by policy — so there&#39;s no code path that could write back into your company file even if something went wrong upstream. It pulls customers, invoices, and payments out into HubSpot and computes AR aging and credit-status there, without ever sending QuickBooks anything to act on. See <a href="post.html?slug=how-to-connect-quickbooks-to-hubspot">how that fits into the bigger picture of connecting QuickBooks to HubSpot</a> if that&#39;s the specific problem you&#39;re solving.</p>
+<h2>Common Web Connector Questions</h2>
+<p><strong>Does the Web Connector need QuickBooks open to run?</strong>
+Yes — QuickBooks Desktop needs to be running (and, depending on configuration, a specific user logged in) for the Web Connector to execute requests against the company file.</p>
+<p><strong>Does this work with QuickBooks Online?</strong>
+No. QuickBooks Online uses a completely different, cloud-based API — the Web Connector is a QuickBooks <em>Desktop</em>-only mechanism. See our <a href="post.html?slug=quickbooks-desktop-vs-online-hubspot-integration">Desktop vs. Online comparison</a> if you&#39;re not sure which one you&#39;re running.</p>
+<p><strong>Is it safe to approve a .qwc file?</strong>
+The Web Connector itself is an official Intuit component, and QuickBooks shows you an explicit access-level prompt before anything syncs — but that prompt only limits access, it doesn&#39;t tell you whether a given service actually uses that access to read or to write. That&#39;s on you to verify with the vendor.</p>
+<p><strong>Why does the sync run on a schedule instead of instantly?</strong>
+Because QuickBooks Desktop has to be the one to initiate contact (see above), most integrations poll on an interval — commonly every few minutes to every hour — rather than syncing the instant something changes, the way a cloud-to-cloud integration might.</p>
+<p>If you&#39;re evaluating a QuickBooks Desktop integration and it can&#39;t clearly answer &quot;does this only read, or can it also write,&quot; that&#39;s worth treating as a real gap in the vendor&#39;s own understanding of their product — not just an FAQ they haven&#39;t gotten to yet.</p>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>See <span class="accent-text">ARBridge for QuickBooks</span> In Action</h2>
+    <p>
+      ARBridge is a read-only sync from QuickBooks Desktop into HubSpot — AR aging, credit status, and payment history on every Company and Contact record, without ever giving anyone write access to your books.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Request Access →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">Read-only sync</span>
+      <span class="page-cta-badge">Live on HubSpot</span>
+      <span class="page-cta-badge">Free setup</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

@@ -1,2 +1,5 @@
 # local git worktrees (scratch, used for isolated feature work)
 .worktrees/
+
+# npm deps for the blog build step (package-lock.json IS committed for reproducibility)
+node_modules/

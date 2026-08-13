@@ -3,8 +3,90 @@
     {
       "source": "/archive/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "accounts-receivable-aging-in-hubspot"
+        }
+      ],
+      "destination": "/blog/rendered-accounts-receivable-aging-in-hubspot.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "how-to-connect-quickbooks-to-hubspot"
+        }
+      ],
+      "destination": "/blog/rendered-how-to-connect-quickbooks-to-hubspot.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quickbooks-desktop-vs-online-hubspot-integration"
+        }
+      ],
+      "destination": "/blog/rendered-quickbooks-desktop-vs-online-hubspot-integration.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quickbooks-web-connector-explained"
+        }
+      ],
+      "destination": "/blog/rendered-quickbooks-web-connector-explained.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sales-team-customer-credit-status-hubspot"
+        }
+      ],
+      "destination": "/blog/rendered-sales-team-customer-credit-status-hubspot.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "when-to-outsource-shopify-support"
+        }
+      ],
+      "destination": "/blog/rendered-when-to-outsource-shopify-support.html"
+    },
+    {
+      "source": "/fr/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "when-to-outsource-shopify-support"
+        }
+      ],
+      "destination": "/fr/blog/rendered-when-to-outsource-shopify-support.html"
     }
   ]
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>See AR Aging Inside HubSpot Without Asking Accounting — AgoraCrew Blog</title>
+  <meta name="description" content="A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot" />
+  <meta property="og:title" content="See AR Aging Inside HubSpot Without Asking Accounting" />
+  <meta property="og:description" content="A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"See AR Aging Inside HubSpot Without Asking Accounting","description":"A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in.","datePublished":"2026-08-13","dateModified":"2026-08-13","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"See AR Aging Inside HubSpot Without Asking Accounting","item":"https://agoracrew.com/blog/post.html?slug=accounts-receivable-aging-in-hubspot"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">August 13, 2026</div>
+    <h1 class="blog-post-title">See AR Aging Inside HubSpot Without Asking Accounting</h1>
+    <p class="blog-post-description">A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>Here&#39;s a pattern that shows up in almost every B2B company selling on invoice terms: <strong>finance knows exactly who owes what and how late it is. Sales has no idea.</strong> Not because anyone&#39;s hiding it — because it lives in QuickBooks, sales lives in HubSpot, and nobody&#39;s connected the two.</p>
+<p>The result is predictable. A rep pitches an upsell to an account that&#39;s 74 days past due. A renewal call happens with no idea the last three invoices bounced to collections. None of this is a sales-skill problem. It&#39;s a data-location problem.</p>
+<p>Here&#39;s how to actually fix it.</p>
+<h2>Step 1: Confirm What &quot;Aging&quot; Should Mean for Your Business</h2>
+<p>Before connecting anything, get specific about what a &quot;current,&quot; &quot;watch,&quot; and &quot;hold&quot; customer looks like for <em>your</em> payment terms — this isn&#39;t universal. A company on Net 30 terms and a company on Net 90 terms should not use the same day thresholds to flag risk.</p>
+<p>A reasonable starting point most teams adjust from:</p>
+<ul>
+<li><strong>Current:</strong> paying within terms, no aged balance of concern</li>
+<li><strong>Watch:</strong> an invoice has crossed into aging territory (a common default is 60 days past due) — worth sales knowing about, not yet a hard stop</li>
+<li><strong>Hold:</strong> an invoice is seriously overdue (a common default is 90 days past due) — the point where most companies want a conversation before extending more credit</li>
+</ul>
+<p>These are exactly the two thresholds you&#39;ll be asked to set if you use a tool like ARBridge for this — a &quot;watch&quot; day count and a &quot;hold&quot; day count, configurable per business rather than hardcoded.</p>
+<h2>Step 2: Decide What &quot;In HubSpot&quot; Actually Means</h2>
+<p>There are two very different ways an integration can put AR data &quot;in HubSpot,&quot; and the difference matters a lot for whether sales will actually use it:</p>
+<p><strong>Option A — a report sales has to go look at.</strong> Some setups build a dashboard or a separate report that shows AR data, but it&#39;s disconnected from the Company/Contact record itself. This technically satisfies &quot;the data is in HubSpot,&quot; but in practice, reps don&#39;t go check a separate report before every call — the whole point was to remove that extra step.</p>
+<p><strong>Option B — properties directly on the Company and Contact record.</strong> The alternative is having AR aging, a credit-status flag, and last-payment data sit as fields directly on the record the rep is already looking at — the same screen they open for every call, deal, or renewal. This is the difference between &quot;the data technically exists in HubSpot&quot; and &quot;the rep actually sees it.&quot;</p>
+<p>Option B is the one worth insisting on. If a vendor&#39;s integration only offers Option A, you&#39;re paying for a sync and still getting the same behavior gap you started with.</p>
+<h2>Step 3: Get the Underlying Data Synced Correctly</h2>
+<p>This is the part that actually requires an integration, and it depends heavily on which QuickBooks you run — see our <a href="post.html?slug=quickbooks-desktop-vs-online-hubspot-integration">Desktop vs. Online breakdown</a> if you&#39;re not certain. At minimum, you need three data types flowing from QuickBooks into HubSpot, kept current:</p>
+<ul>
+<li><strong>Customers</strong> → mapped to Companies (and Contacts, for the people at each account)</li>
+<li><strong>Invoices</strong> → with amount, due date, and balance remaining</li>
+<li><strong>Payments</strong> → so a paid invoice actually clears from the aging calculation, not just accumulates</li>
+</ul>
+<p>A sync that only handles one or two of these (invoices without payments, for example) will actively mislead sales — an invoice that was paid yesterday but hasn&#39;t had its payment synced looks identical to one that&#39;s genuinely overdue.</p>
+<h2>Step 4: Compute Aging and Credit-Status, Don&#39;t Just Mirror Raw Numbers</h2>
+<p>Raw invoice and payment data isn&#39;t the finish line — a rep shouldn&#39;t have to do date math in their head before a call. The useful version derives, from the thresholds you set in Step 1:</p>
+<ul>
+<li>Days past due per customer</li>
+<li>A simple status label (current / watch / hold) sales can scan in a second</li>
+<li>Total outstanding balance, ideally normalized to your home currency if you invoice internationally</li>
+</ul>
+<p>This is the part that turns &quot;we sync data&quot; into &quot;sales can see credit risk without asking accounting&quot; — which was the actual goal from the start.</p>
+<h2>What This Looks Like End to End</h2>
+<p>This is precisely what <strong><a href="../index.html#products">ARBridge for QuickBooks</a></strong> was built to do for QuickBooks Desktop users: it connects through the standard <a href="post.html?slug=quickbooks-web-connector-explained">QuickBooks Web Connector</a>, pulls customers, invoices, and payments in read-only mode, and writes AR aging, credit-status, and revenue metrics directly onto the HubSpot Company and Contact records your sales team already has open — with a synced timestamp on every record, so reps can trust the number wasn&#39;t computed from a stale export. Setup runs through a five-step wizard (connect HubSpot, confirm a few things about how your business invoices, then install a small connector file) and requires no changes to how your team uses QuickBooks day to day.</p>
+<p>If you&#39;re evaluating this as one option among several, <a href="post.html?slug=how-to-connect-quickbooks-to-hubspot">our full guide to connecting QuickBooks to HubSpot</a> walks through the other paths — Zapier, iPaaS platforms, and manual exports — and where each one actually fits.</p>
+<h2>The Real Payoff</h2>
+<p>The goal isn&#39;t &quot;AR data exists in two systems now.&quot; It&#39;s a rep opening a Company record before a call and immediately knowing, without asking anyone, whether this account is a safe upsell conversation or one that needs finance looped in first. That&#39;s a small UI detail with a real revenue consequence — badly-timed upsells to at-risk accounts are one of the more avoidable ways B2B teams lose money.</p>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>See <span class="accent-text">ARBridge for QuickBooks</span> In Action</h2>
+    <p>
+      ARBridge is a read-only sync from QuickBooks Desktop into HubSpot — AR aging, credit status, and payment history on every Company and Contact record, without ever giving anyone write access to your books.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Request Access →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">Read-only sync</span>
+      <span class="page-cta-badge">Live on HubSpot</span>
+      <span class="page-cta-badge">Free setup</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
