@@ -368,6 +368,12 @@ const enPostsFile = path.join(__dirname, 'posts.json');
 const frPostsFile = path.join(__dirname, 'posts.fr.json');
 const rewrites = [];
 
+// IMPORTANT: /blog/post.html and /fr/blog/post.html must NOT exist as real
+// files on disk (they're named post-shell.html instead). Vercel resolves an
+// exact static-file match before it ever evaluates rewrites, so if the
+// shell lived at the literal source path, every one of these rules below
+// would silently never fire - confirmed live (X-Vercel-Id showed the new
+// deploy, but the old generic shell kept serving) before catching this.
 if (fs.existsSync(enPostsFile)) {
   JSON.parse(fs.readFileSync(enPostsFile, 'utf-8')).forEach(p => {
     rewrites.push({
@@ -376,6 +382,10 @@ if (fs.existsSync(enPostsFile)) {
       destination: `/blog/rendered-${p.slug}.html`
     });
   });
+  // Catch-all: any slug not covered above (or no slug at all) falls back to
+  // the client-rendered shell, same behavior as before this build step
+  // existed. Must come after the specific rules above - first match wins.
+  rewrites.push({ source: '/blog/post.html', destination: '/blog/post-shell.html' });
 }
 if (fs.existsSync(frPostsFile)) {
   JSON.parse(fs.readFileSync(frPostsFile, 'utf-8')).forEach(p => {
@@ -385,6 +395,7 @@ if (fs.existsSync(frPostsFile)) {
       destination: `/fr/blog/rendered-${p.slug}.html`
     });
   });
+  rewrites.push({ source: '/fr/blog/post.html', destination: '/fr/blog/post-shell.html' });
 }
 
 vercelConfig.rewrites = rewrites;

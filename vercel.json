@@ -78,6 +78,10 @@
       "destination": "/blog/rendered-when-to-outsource-shopify-support.html"
     },
     {
+      "source": "/blog/post.html",
+      "destination": "/blog/post-shell.html"
+    },
+    {
       "source": "/fr/blog/post.html",
       "has": [
         {
@@ -87,6 +91,10 @@
         }
       ],
       "destination": "/fr/blog/rendered-when-to-outsource-shopify-support.html"
+    },
+    {
+      "source": "/fr/blog/post.html",
+      "destination": "/fr/blog/post-shell.html"
     }
   ]
 }
