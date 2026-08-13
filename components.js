@@ -56,7 +56,7 @@
       servicesCol: 'Services', productsCol: 'Products', contactCol: 'Get In Touch',
       customSoftware: 'Custom Software', integrations: 'Enterprise Integrations',
       ecommerce: 'E-Commerce Infrastructure', aiAutomation: 'AI & Automation',
-      productCopilot: 'Order Exceptions Copilot', productAiAgent: 'AI Support & Growth Agent',
+      productCopilot: 'Order Issue Alerts', productArbridge: 'ARBridge for QuickBooks', productAiAgent: 'AI Support & Growth Agent',
       blog: 'Blog', discussProject: 'Discuss Your Project',
       privacy: 'Privacy Policy', terms: 'Terms of Service',
       copyright: '© 2026 AgoraCrew. All rights reserved.', taxId: 'Tax ID (Adószám): HU92198362'
@@ -66,7 +66,7 @@
       servicesCol: 'Services', productsCol: 'Produits', contactCol: 'Nous contacter',
       customSoftware: 'Logiciel sur mesure', integrations: 'Intégrations d\'entreprise',
       ecommerce: 'Infrastructure e-commerce', aiAutomation: 'IA & Automatisation',
-      productCopilot: 'Order Exceptions Copilot', productAiAgent: 'Agent IA Support & Croissance',
+      productCopilot: 'Order Issue Alerts', productArbridge: 'ARBridge for QuickBooks', productAiAgent: 'Agent IA Support & Croissance',
       blog: 'Blog', discussProject: 'Discuter de votre projet',
       privacy: 'Politique de confidentialité', terms: 'CGV', mentionsLegales: 'Mentions légales',
       copyright: '© 2026 AgoraCrew. Tous droits réservés.', taxId: 'Numéro fiscal (Adószám) : HU92198362'
@@ -141,6 +141,7 @@
             '<div class="footer-col">' +
               '<h4>' + footer.productsCol + '</h4>' +
               '<a href="' + localizeHref(base + '/index.html') + '#products">' + footer.productCopilot + '</a>' +
+              '<a href="' + localizeHref(base + '/index.html') + '#products">' + footer.productArbridge + '</a>' +
               '<a href="' + localizeHref(base + '/index.html') + '#products">' + footer.productAiAgent + '</a>' +
               '<a href="' + localizeHref(base + '/blog/index.html') + '">' + footer.blog + '</a>' +
             '</div>' +
@@ -161,14 +162,16 @@
             '<span class="footer-tax-id">' + footer.taxId + '</span>' +
             '<div class="footer-bottom-links">' +
               '<a href="' + localizeHref(base + '/privacy-policy.html') + '">' + footer.privacy + '</a>' +
-              // Mentions légales/CGV are French-only pages (no English
-              // counterpart exists), so only render real links — and the
-              // extra mentions-légales link at all — on the French tree.
-              // English keeps its pre-existing '#' placeholder unchanged.
+              // Mentions légales is a French-only page (no English
+              // counterpart exists), so it only renders on the French tree.
+              // Terms of Service now has a real English page
+              // (terms-of-service.html, covering ARBridge for QuickBooks
+              // and Order Issue Alerts) — the French tree still points at
+              // cgv.html, its own general Conditions Générales de Vente.
               (locale === 'fr'
                 ? '<a href="' + base + '/fr/mentions-legales.html">' + footer.mentionsLegales + '</a>' +
                   '<a href="' + base + '/fr/cgv.html">' + footer.terms + '</a>'
-                : '<a href="#">' + footer.terms + '</a>') +
+                : '<a href="' + base + '/terms-of-service.html">' + footer.terms + '</a>') +
             '</div>' +
           '</div>' +
 

@@ -521,7 +521,7 @@
     .products .section-subtitle { color: rgba(255,255,255,0.5); }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 48px;
     }
@@ -1238,7 +1238,7 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: 1fr; }
-      .products-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
       .app-features-layout { grid-template-columns: 1fr; gap: 48px; }
       .steps-grid--three { grid-template-columns: 1fr; gap: 2rem; }
       .steps-grid--three::before { display: none; }
@@ -1651,8 +1651,27 @@
           </div>
         </div>
 
-        <!-- Product 2: AI Support & Growth Agent -->
+        <!-- Product 2: ARBridge for QuickBooks -->
         <div class="product-card reveal reveal-delay-1">
+          <span class="product-badge product-badge--live"><span class="live-dot"></span> Live on HubSpot</span>
+          <h3>ARBridge for QuickBooks</h3>
+          <p>
+            A read-only bridge between QuickBooks Desktop and HubSpot for B2B teams selling on invoice terms. ARBridge syncs customers, invoices, and payments into HubSpot and computes AR aging, credit-status, and revenue metrics automatically — so sales never finds out a customer is 74 days past due from a forwarded email.
+          </p>
+
+          <div class="product-tech-stack">
+            <span class="tech-pill">HubSpot</span>
+            <span class="tech-pill">QuickBooks Desktop</span>
+            <span class="tech-pill">.NET</span>
+            <span class="tech-pill">Read-Only Sync</span>
+          </div>
+          <div class="product-cta-group">
+            <a href="#contact" class="product-cta">Request Access →</a>
+          </div>
+        </div>
+
+        <!-- Product 3: AI Support & Growth Agent -->
+        <div class="product-card reveal reveal-delay-2">
           <span class="product-badge">E-Commerce AI Platform</span>
           <h3>AI Support Agent &amp; Growth Engine</h3>
           <p>
