@@ -830,56 +830,214 @@
     /* ===== APP FEATURES SECTION ===== */
     .app-features {
       padding: 100px 0;
-      background: var(--white);
+      background: var(--charcoal);
+      color: var(--white);
       border-bottom: var(--border);
+      overflow: hidden;
     }
-    .app-features .section-title { color: var(--black); }
-    .app-features-grid {
+    .app-features .section-label { color: var(--white); }
+    .app-features .section-label .dot { background: #e87040; border-color: #e87040; }
+    .app-features .section-title { color: var(--white); }
+    .app-features .section-title .accent-text {
+      -webkit-text-stroke-color: var(--white);
+    }
+    .app-features .section-subtitle { color: rgba(255,255,255,0.5); }
+
+    .app-features-layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
       margin-top: 48px;
     }
-    .app-feature-card {
-      background: var(--light-gray);
-      border: var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      padding: 2.25rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .app-features-text-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-    .app-feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+    .app-features-text-col .section-label {
+      color: #e87040;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
     }
-    .app-feature-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--yellow);
-      border: var(--border);
-      border-radius: 16px;
+    .app-features-text-col h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .app-features-text-col h2 em {
+      font-style: normal;
+      opacity: 0.5;
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+    .app-features-separator {
+      width: 60px;
+      height: 4px;
+      background: #e87040;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .app-features-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .app-feature-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .app-feature-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .app-feature-bullet .bullet-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      background: #e87040;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .app-feature-bullet strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+    .app-feature-bullet span {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .app-features-screenshot-col {
+      position: relative;
+    }
+    .app-screenshot-frame {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+      overflow: hidden;
+      padding: 0;
+    }
+    .app-screenshot-toolbar {
+      background: #f5f5f5;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      font-size: 1.75rem;
+      gap: 8px;
+      border-bottom: 1px solid #e5e5e5;
     }
-    .app-feature-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+    .app-screenshot-toolbar .dot-r { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+    .app-screenshot-toolbar .dot-y { width: 10px; height: 10px; border-radius: 50%; background: #febc2e; }
+    .app-screenshot-toolbar .dot-g { width: 10px; height: 10px; border-radius: 50%; background: #28c840; }
+    .app-screenshot-content {
+      padding: 24px;
+      color: var(--black);
     }
-    .app-feature-card p {
-      font-size: 0.9rem;
-      opacity: 0.6;
-      line-height: 1.7;
+    .app-screenshot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .app-screenshot-header h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .app-screenshot-header .refresh-btn {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: var(--white);
+      font-weight: 600;
+      color: #666;
+    }
+    .app-screenshot-severity-tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .severity-tag {
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+    }
+    .severity-tag--high { background: #fee2e2; color: #dc2626; }
+    .severity-tag--medium { background: #fef3c7; color: #d97706; }
+    .severity-tag--low { background: #dbeafe; color: #2563eb; }
+
+    .app-screenshot-issue {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .issue-info { flex: 1; }
+    .issue-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .issue-bar {
+      height: 6px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      max-width: 200px;
+    }
+    .issue-bar--low { background: #3b82f6; width: 40%; }
+    .issue-bar--high { background: #dc2626; width: 70%; }
+    .issue-bar--medium { background: #f59e0b; width: 55%; }
+    .issue-severity-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .issue-severity-label--low { background: #dbeafe; color: #2563eb; }
+    .issue-severity-label--high { background: #fee2e2; color: #dc2626; }
+    .issue-severity-label--medium { background: #fef3c7; color: #d97706; }
+    .issue-desc {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .issue-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .issue-action-btn {
+      padding: 5px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: var(--white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #444;
+      white-space: nowrap;
     }
 
     /* How it works mini-flow */
     .app-how-it-works {
       margin-top: 64px;
-      background: var(--charcoal);
-      border: var(--border);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       padding: 2.5rem;
       color: var(--white);
@@ -912,8 +1070,8 @@
     .app-flow-step .step-num {
       width: 24px;
       height: 24px;
-      background: var(--yellow);
-      color: var(--black);
+      background: #e87040;
+      color: var(--white);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -934,9 +1092,156 @@
     }
     .app-features-cta-group .hero-cta {
       font-size: 1.05rem;
+      background: #e87040;
+      border-color: #e87040;
+      color: var(--white);
+    }
+    .app-features-cta-group .hero-cta:hover {
+      background: #d05e30;
     }
     .app-features-cta-group .trust-line {
       margin-top: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== PRICING SECTION ===== */
+    .pricing {
+      padding: 100px 0;
+      background: var(--white);
+      border-bottom: var(--border);
+    }
+    .pricing .section-title { color: var(--black); }
+    .pricing .section-subtitle { color: rgba(0,0,0,0.5); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pricing-card--featured {
+      border-color: var(--black);
+      box-shadow: var(--shadow-sm);
+    }
+    .pricing-card--featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-tier-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--black);
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+    .pricing-card--featured .pricing-tier-name { color: #28c840; opacity: 1; }
+    .pricing-price {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: var(--black);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .pricing-price .price-period {
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.5;
+    }
+    .pricing-annual {
+      font-size: 0.8rem;
+      color: #28c840;
+      font-weight: 600;
+      margin-bottom: 16px;
+      min-height: 20px;
+    }
+    .pricing-trial {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--light-gray);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    .pricing-features li {
+      font-size: 0.85rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: #28c840;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 20px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: var(--border);
+      border-radius: var(--radius);
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: var(--white);
+      color: var(--black);
+    }
+    .pricing-cta:hover {
+      transform: translate(2px, 2px);
+      box-shadow: none;
+    }
+    .pricing-card--featured .pricing-cta {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .pricing-footnote {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      opacity: 0.4;
+      line-height: 1.6;
+    }
+    .pricing-footnote a {
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     /* Hero trust line */
@@ -1095,7 +1400,8 @@
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: 1fr; }
       .products-grid { grid-template-columns: 1fr; }
-      .app-features-grid { grid-template-columns: 1fr; }
+      .app-features-layout { grid-template-columns: 1fr; gap: 48px; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid--three { grid-template-columns: 1fr; gap: 2rem; }
       .steps-grid--three::before { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1124,6 +1430,9 @@
       .sticky-cta-bar { justify-content: center; }
       .app-flow-steps { flex-direction: column; gap: 8px; }
       .app-flow-arrow { transform: rotate(90deg); padding: 0; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .app-features-layout { grid-template-columns: 1fr; }
+      .issue-actions { flex-direction: column; gap: 4px; }
     }
   </style>
 
@@ -1144,6 +1453,7 @@
 
       <div class="nav-center" id="navCenter">
         <a href="#app-features">Our App</a>
+        <a href="#pricing">Pricing</a>
         <a href="#services">Services</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
@@ -1163,6 +1473,7 @@
       <!-- Mobile Slide-out Nav -->
       <div class="nav-links" id="navLinks">
         <a href="#app-features">Our App</a>
+        <a href="#pricing">Pricing</a>
         <a href="#services">Services</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
@@ -1186,15 +1497,15 @@
     </h1>
 
     <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
-      Fulfillment delays, inventory mismatches, undeliverable addresses — problems that silently eat your margins and trigger angry customers. Order Issue Alerts scans every order and delivers one prioritized daily digest, right inside Shopify Admin. No manual checking. No surprises.
+      Fulfillment delays, inventory mismatches, undeliverable addresses — problems that silently eat your margins and trigger angry customers. Order Issue Alerts scans every order and delivers one prioritized daily digest, right inside Shopify Admin. No manual checking. No surprises. Free plan available.
     </p>
 
     <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
-      <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Install Free on Shopify →</a>
+      <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Start Free on Shopify →</a>
       <a href="#app-features" class="hero-cta-secondary">See How It Works ↓</a>
     </div>
 
-    <p class="trust-line animate-fade-up" style="opacity:0; animation-delay: 0.6s;">30-day free trial · No credit card required · Works with any Shopify plan</p>
+    <p class="trust-line animate-fade-up" style="opacity:0; animation-delay: 0.6s;">Free plan available · 30-day free trial on paid plans · No credit card required</p>
 
   </section>
 
@@ -1297,37 +1608,97 @@
   <!-- ==================== APP FEATURES SHOWCASE ==================== -->
   <section class="app-features" id="app-features">
     <div class="section-container">
-      <div class="text-center">
-        <span class="section-label"><span class="dot"></span> Order Issue Alerts</span>
-        <h2 class="section-title">One Daily Digest.<br/><span class="accent-text">Zero Missed Issues.</span></h2>
-        <p class="section-subtitle mx-auto">
-          Your store processes hundreds of orders. Problems hide in the noise — until a customer complains. Order Issue Alerts surfaces what's actually broken, every morning, in one prioritized list.
-        </p>
-      </div>
 
-      <div class="app-features-grid">
-        <div class="app-feature-card reveal">
-          <div class="app-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="app-features-layout">
+        <!-- Left Column: Text & Bullets -->
+        <div class="app-features-text-col reveal">
+          <span class="section-label">INSIDE SHOPIFY ADMIN</span>
+          <h2>Catch order problems<br/>before your customers do.</h2>
+          <div class="app-features-separator"></div>
+          <p class="app-features-sub">Issues appear the moment they happen. Nothing to configure.</p>
+
+          <div class="app-feature-bullets">
+            <div class="app-feature-bullet">
+              <span class="bullet-dot"></span>
+              <div><strong>Fulfillment delays</strong> <span>before they ask where it is</span></div>
+            </div>
+            <div class="app-feature-bullet">
+              <span class="bullet-dot"></span>
+              <div><strong>Oversold inventory</strong> <span>across every location</span></div>
+            </div>
+            <div class="app-feature-bullet">
+              <span class="bullet-dot"></span>
+              <div><strong>Bad addresses</strong> <span>before you pay to ship</span></div>
+            </div>
+            <div class="app-feature-bullet">
+              <span class="bullet-dot"></span>
+              <div><strong>Export to CSV</strong> <span>any digest, one click</span></div>
+            </div>
           </div>
-          <h3>Fulfillment Delays</h3>
-          <p>Flags orders stuck past their expected ship date — before customers notice or file a complaint.</p>
         </div>
 
-        <div class="app-feature-card reveal reveal-delay-1">
-          <div class="app-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <h3>Inventory Mismatches</h3>
-          <p>Catches discrepancies between your actual stock and Shopify's records automatically — no manual audits.</p>
-        </div>
+        <!-- Right Column: App Screenshot -->
+        <div class="app-features-screenshot-col reveal reveal-delay-1">
+          <div class="app-screenshot-frame">
+            <div class="app-screenshot-toolbar">
+              <span class="dot-r"></span>
+              <span class="dot-y"></span>
+              <span class="dot-g"></span>
+            </div>
+            <div class="app-screenshot-content">
+              <div class="app-screenshot-header">
+                <h4>USD 45,829.10 at risk across 8 orders</h4>
+                <span class="refresh-btn">Refresh</span>
+              </div>
+              <div class="app-screenshot-severity-tags">
+                <span class="severity-tag severity-tag--high">1 high</span>
+                <span class="severity-tag severity-tag--medium">6 medium</span>
+                <span class="severity-tag severity-tag--low">1 low</span>
+              </div>
 
-        <div class="app-feature-card reveal reveal-delay-2">
-          <div class="app-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <!-- Issue: Fulfillment -->
+              <div class="app-screenshot-issue">
+                <div class="issue-info">
+                  <p class="issue-category">Fulfillment</p>
+                  <span class="issue-severity-label issue-severity-label--low">Low</span>
+                  <div class="issue-bar issue-bar--low"></div>
+                  <p class="issue-desc">Order #1003 (USD 3,499.75) has been unfulfilled for 2 days.</p>
+                </div>
+                <div class="issue-actions">
+                  <span class="issue-action-btn">Take me there</span>
+                  <span class="issue-action-btn">Mark resolved</span>
+                </div>
+              </div>
+
+              <!-- Issue: Inventory -->
+              <div class="app-screenshot-issue">
+                <div class="issue-info">
+                  <p class="issue-category">Inventory</p>
+                  <span class="issue-severity-label issue-severity-label--high">High</span>
+                  <div class="issue-bar issue-bar--high"></div>
+                  <p class="issue-desc">Order #1004 (USD 30,000.00) — short 50 unit(s) of The Collection Snowboard: Hydrogen at Shop location.</p>
+                </div>
+                <div class="issue-actions">
+                  <span class="issue-action-btn">Take me there</span>
+                  <span class="issue-action-btn">Mark resolved</span>
+                </div>
+              </div>
+
+              <!-- Issue: Address -->
+              <div class="app-screenshot-issue">
+                <div class="issue-info">
+                  <p class="issue-category">Address</p>
+                  <span class="issue-severity-label issue-severity-label--medium">Medium</span>
+                  <div class="issue-bar issue-bar--medium"></div>
+                  <p class="issue-desc">Order #1005 (USD 749.95)'s shipping address could not be verified.</p>
+                </div>
+                <div class="issue-actions">
+                  <span class="issue-action-btn">Take me there</span>
+                  <span class="issue-action-btn">Mark resolved</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3>Address Issues</h3>
-          <p>Surfaces undeliverable or flagged addresses that would cause failed deliveries and costly returns.</p>
         </div>
       </div>
 
@@ -1357,9 +1728,85 @@
       </div>
 
       <div class="app-features-cta-group reveal">
-        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Start Your Free Trial →</a>
-        <p class="trust-line">30-day free trial · Starting at $39/mo · Cancel anytime</p>
+        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Start Free on Shopify →</a>
+        <p class="trust-line">Free plan available · 30-day free trial on paid plans · Cancel anytime</p>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="pricing" id="pricing">
+    <div class="section-container">
+      <div class="text-center">
+        <span class="section-label"><span class="dot"></span> Pricing</span>
+        <h2 class="section-title">Choose the plan that<br/><span class="accent-text">best fits your business.</span></h2>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="pricing-card reveal">
+          <div class="pricing-tier-name">Free</div>
+          <div class="pricing-price">Free</div>
+          <div class="pricing-annual">&nbsp;</div>
+          <ul class="pricing-features">
+            <li>Basic order issue detection</li>
+            <li>Fulfillment delay alerts</li>
+            <li>Limited daily digest</li>
+          </ul>
+          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="pricing-cta">Get Started →</a>
+        </div>
+
+        <!-- Starter -->
+        <div class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-tier-name">Starter</div>
+          <div class="pricing-price">$49 <span class="price-period">/ month</span></div>
+          <div class="pricing-annual">or $490/year and save 17%</div>
+          <span class="pricing-trial">30-day free trial</span>
+          <ul class="pricing-features">
+            <li>Everything in Free</li>
+            <li>Full prioritized digest</li>
+            <li>Inventory mismatch alerts</li>
+            <li>Address verification</li>
+          </ul>
+          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="pricing-cta">Start Free Trial →</a>
+        </div>
+
+        <!-- Scale -->
+        <div class="pricing-card pricing-card--featured reveal reveal-delay-2">
+          <div class="pricing-tier-name">Scale</div>
+          <div class="pricing-price">$199 <span class="price-period">/ month</span></div>
+          <div class="pricing-annual">or $1,990/year and save 17%</div>
+          <span class="pricing-trial">30-day free trial</span>
+          <ul class="pricing-features">
+            <li>Everything in Starter</li>
+            <li>CSV export</li>
+            <li>Multi-location inventory</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="pricing-cta">Start Free Trial →</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-tier-name">Enterprise</div>
+          <div class="pricing-price">$499 <span class="price-period">/ month</span></div>
+          <div class="pricing-annual">or $4,990/year and save 17%</div>
+          <span class="pricing-trial">30-day free trial</span>
+          <ul class="pricing-features">
+            <li>Everything in Scale</li>
+            <li>Dedicated account manager</li>
+            <li>Custom integrations</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="pricing-cta">Start Free Trial →</a>
+        </div>
+      </div>
+
+      <p class="pricing-footnote">
+        All charges are billed in USD. Recurring and usage-based charges are billed every 30 days.
+        <br/><a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener">See all pricing options</a>
+      </p>
     </div>
   </section>
 
@@ -1432,8 +1879,8 @@
             An intelligent daily operational digest for Shopify merchants that aggregates fulfillment delays, inventory mismatches, and address validation issues into a single prioritized list. Know what's broken before your customers do.
           </p>
           <div class="product-pricing">
-            <span class="price">$39/mo</span>
-            <span class="price-detail">30-day free trial · No card needed</span>
+            <span class="price">Free — $499/mo</span>
+            <span class="price-detail">Free plan available · 30-day trial on paid plans</span>
           </div>
           <div class="product-tech-stack">
             <span class="tech-pill">Shopify</span>
