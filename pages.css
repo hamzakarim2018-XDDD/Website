@@ -850,7 +850,7 @@
 .blog-post-content p {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--ink-70);
+  color: var(--black);
   line-height: 1.9;
   margin-bottom: 20px;
 }
@@ -861,7 +861,7 @@
 .blog-post-content li {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--ink-70);
+  color: var(--black);
   line-height: 1.9;
   margin-bottom: 8px;
   list-style: disc;
