@@ -1,7 +1,7 @@
 ---
-title: "How to Connect QuickBooks to HubSpot: The Complete 2026 Guide"
+title: "How to Connect QuickBooks to HubSpot (2026 Guide)"
 date: "2026-08-13"
-description: "Every real way to connect QuickBooks to HubSpot in 2026 — native limitations, Zapier/Make, iPaaS tools, and purpose-built syncs — with the tradeoffs each one hides."
+description: "Every real way to connect QuickBooks to HubSpot in 2026 — Zapier/Make, iPaaS platforms, and purpose-built syncs — plus the tradeoffs each one hides."
 product: "arbridge"
 ---
 

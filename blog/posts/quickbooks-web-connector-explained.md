@@ -1,7 +1,7 @@
 ---
-title: "QuickBooks Web Connector Explained: What It Is and How It Works"
+title: "QuickBooks Web Connector Explained"
 date: "2026-08-13"
-description: "A plain-English explanation of the QuickBooks Web Connector — the piece of software behind every QuickBooks Desktop integration, including how qbXML, .qwc files, and sync sessions actually work."
+description: "A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session."
 product: "arbridge"
 ---
 

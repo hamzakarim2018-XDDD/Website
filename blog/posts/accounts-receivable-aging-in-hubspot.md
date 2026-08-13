@@ -1,5 +1,5 @@
 ---
-title: "How to See Accounts Receivable Aging Inside HubSpot (Without Asking Accounting)"
+title: "See AR Aging Inside HubSpot Without Asking Accounting"
 date: "2026-08-13"
 description: "A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in."
 product: "arbridge"

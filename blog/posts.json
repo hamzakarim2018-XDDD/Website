@@ -1,31 +1,31 @@
 [
   {
     "slug": "accounts-receivable-aging-in-hubspot",
-    "title": "How to See Accounts Receivable Aging Inside HubSpot (Without Asking Accounting)",
+    "title": "See AR Aging Inside HubSpot Without Asking Accounting",
     "date": "2026-08-13",
     "description": "A step-by-step look at getting AR aging and customer credit-status out of QuickBooks and onto the HubSpot records your sales team already lives in."
   },
   {
     "slug": "how-to-connect-quickbooks-to-hubspot",
-    "title": "How to Connect QuickBooks to HubSpot: The Complete 2026 Guide",
+    "title": "How to Connect QuickBooks to HubSpot (2026 Guide)",
     "date": "2026-08-13",
-    "description": "Every real way to connect QuickBooks to HubSpot in 2026 — native limitations, Zapier/Make, iPaaS tools, and purpose-built syncs — with the tradeoffs each one hides."
+    "description": "Every real way to connect QuickBooks to HubSpot in 2026 — Zapier/Make, iPaaS platforms, and purpose-built syncs — plus the tradeoffs each one hides."
   },
   {
     "slug": "quickbooks-desktop-vs-online-hubspot-integration",
-    "title": "QuickBooks Desktop vs. Online: Which One Actually Syncs With HubSpot?",
+    "title": "QuickBooks Desktop vs. Online: Which Syncs With HubSpot?",
     "date": "2026-08-13",
-    "description": "QuickBooks Desktop and QuickBooks Online support completely different HubSpot integration paths. Here's how to tell which one you're running and what that means for your sync options."
+    "description": "Desktop and Online QuickBooks support completely different HubSpot integration paths. Here's how to tell which one you run and what it means for your options."
   },
   {
     "slug": "quickbooks-web-connector-explained",
-    "title": "QuickBooks Web Connector Explained: What It Is and How It Works",
+    "title": "QuickBooks Web Connector Explained",
     "date": "2026-08-13",
-    "description": "A plain-English explanation of the QuickBooks Web Connector — the piece of software behind every QuickBooks Desktop integration, including how qbXML, .qwc files, and sync sessions actually work."
+    "description": "A plain-English explanation of the QuickBooks Web Connector — what it is, how qbXML and .qwc files work, and what happens during a sync session."
   },
   {
     "slug": "sales-team-customer-credit-status-hubspot",
-    "title": "Why Your Sales Team Keeps Selling to Customers Who Owe You Money",
+    "title": "Why Sales Keeps Selling to Customers Who Owe You Money",
     "date": "2026-08-13",
     "description": "A common, avoidable failure mode for B2B companies on invoice terms — and the specific data gap between QuickBooks and HubSpot that causes it."
   },

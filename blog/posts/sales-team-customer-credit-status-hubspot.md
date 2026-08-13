@@ -1,5 +1,5 @@
 ---
-title: "Why Your Sales Team Keeps Selling to Customers Who Owe You Money"
+title: "Why Sales Keeps Selling to Customers Who Owe You Money"
 date: "2026-08-13"
 description: "A common, avoidable failure mode for B2B companies on invoice terms — and the specific data gap between QuickBooks and HubSpot that causes it."
 product: "arbridge"

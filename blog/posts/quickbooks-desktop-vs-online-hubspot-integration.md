@@ -1,7 +1,7 @@
 ---
-title: "QuickBooks Desktop vs. Online: Which One Actually Syncs With HubSpot?"
+title: "QuickBooks Desktop vs. Online: Which Syncs With HubSpot?"
 date: "2026-08-13"
-description: "QuickBooks Desktop and QuickBooks Online support completely different HubSpot integration paths. Here's how to tell which one you're running and what that means for your sync options."
+description: "Desktop and Online QuickBooks support completely different HubSpot integration paths. Here's how to tell which one you run and what it means for your options."
 product: "arbridge"
 ---
 
