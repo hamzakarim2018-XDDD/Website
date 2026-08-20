@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>ARBridge Installation Manual | Connect QuickBooks Desktop to HubSpot | AgoraCrew</title>
+  <meta name="description" content="Step-by-step manual for installing ARBridge for QuickBooks: the five prerequisites, the setup wizard, switching on the HubSpot AR card, and what every Web Connector error code actually means." />
+  <link rel="canonical" href="https://agoracrew.com/docs/arbridge-installation.html" />
+  <meta property="og:title" content="ARBridge Installation Manual" />
+  <meta property="og:description" content="Connect QuickBooks Desktop to HubSpot in about ten minutes, plus what to do when the Web Connector throws an error code." />
+  <meta property="og:type" content="article" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/docs/arbridge-installation.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/docs/arbridge-installation.html" />
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <style>
+    /* Manual-specific components. Everything below draws on the site palette
+       (--ink, --yellow, --sage, --peach) rather than introducing new brand colour.
+       The two semantic tones exist only for warnings and error codes, which must not
+       read as the brand accent. */
+    .manual { --warn-bg: #fdf6e3; --warn-edge: #b98900; --stop-bg: #fbeeea; --stop-edge: #8f3a2a; }
+
+    .manual .req { list-style: none; padding: 0; margin: 28px 0; }
+    .manual .req li {
+      display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+      padding: 18px 0; border-top: 1px solid var(--ink-10); align-items: start;
+    }
+    .manual .req li:last-child { border-bottom: 1px solid var(--ink-10); }
+    .manual .req .tick {
+      width: 17px; height: 17px; margin-top: 4px; border-radius: 3px;
+      border: 2px solid var(--ink); background: var(--yellow);
+    }
+    .manual .req b { display: block; margin-bottom: 4px; }
+    .manual .req span.why { color: var(--ink-70); font-size: 0.94rem; }
+
+    .manual .step { border-top: 2px solid var(--ink); padding-top: 22px; margin-top: 44px; }
+    .manual .step-no {
+      display: inline-block; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; background: var(--yellow); color: var(--ink);
+      padding: 4px 10px; border-radius: 3px; margin-bottom: 12px;
+    }
+
+    .manual .note {
+      border-left: 4px solid var(--sage); background: var(--peach);
+      padding: 18px 22px; margin: 24px 0; border-radius: 0 6px 6px 0;
+    }
+    .manual .note.warn { border-left-color: var(--warn-edge); background: var(--warn-bg); }
+    .manual .note.stop { border-left-color: var(--stop-edge); background: var(--stop-bg); }
+    .manual .note p:last-child { margin-bottom: 0; }
+    .manual .note b.lede { display: block; margin-bottom: 6px; }
+
+    .manual .tablewrap { overflow-x: auto; margin: 26px 0; border: 1px solid var(--ink-10); border-radius: 8px; }
+    .manual table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.95rem; }
+    .manual th, .manual td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--ink-10); vertical-align: top; }
+    .manual th { font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-70); background: var(--peach); white-space: nowrap; }
+    .manual tbody tr:last-child td { border-bottom: none; }
+    .manual .code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 600; color: var(--stop-edge); white-space: nowrap; }
+    .manual kbd {
+      font-family: inherit; font-weight: 600; background: var(--ink-5);
+      border: 1px solid var(--ink-10); border-radius: 4px; padding: 1px 6px; white-space: nowrap;
+    }
+    .manual .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em; background: var(--ink-5); padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <section class="page-hero">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">→</span>
+      <span>ARBridge for QuickBooks</span>
+    </div>
+    <div class="page-hero-badge">Installation manual</div>
+    <h1>Connecting QuickBooks Desktop <span class="accent-text">to HubSpot</span></h1>
+    <p class="page-hero-subtitle">
+      About ten minutes, provided the five things in the next section are already true on your computer. Often one of them isn't, which is why they come first rather than as a footnote.
+    </p>
+  </section>
+
+  <div class="page-content manual">
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Before you start</span>
+      <h2>Five things to check</h2>
+      <p>Every item here has broken a real installation. Checking them now takes a minute. Diagnosing them later, from a Web Connector error code, takes considerably longer.</p>
+
+      <ul class="req">
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>QuickBooks Desktop for Windows: Pro, Premier or Enterprise</b>
+            <span class="why">QuickBooks Online and QuickBooks for Mac can't connect this way. The Web Connector doesn't exist for them, so there's no version of this that works.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>QuickBooks Web Connector installed on that same computer</b>
+            <span class="why">It ships with most QuickBooks Desktop installations. Look in the Windows Start menu for "QuickBooks Web Connector". If it isn't there, install it from Intuit first; otherwise the file you download in step 5 has nothing to open it with.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>You're at the computer where QuickBooks itself runs</b>
+            <span class="why">The Web Connector needs direct access to the company file. If your file lives on an office server that staff reach over Remote Desktop, do this inside that Remote Desktop session. Being able to open the file from your own desk in multi-user mode isn't the same thing, and this catches people out regularly.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>You can open the company file as the QuickBooks Admin user</b>
+            <span class="why">Only Admin can approve a new connected application. Sign in with a limited-access login and QuickBooks rejects the whole registration, not just the first sync.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>That computer can reach the internet through whatever firewall it sits behind</b>
+            <span class="why">Before it will add an application, the Web Connector quietly loads our address itself to check it's reachable, then reports anything it can't load as a certificate problem. So a corporate proxy your laptop isn't behind will fail the install for reasons that have nothing to do with QuickBooks, and the error won't say so.</span>
+          </span>
+        </li>
+      </ul>
+
+      <p>You'll also need a HubSpot account you can approve app installations in, and ten uninterrupted minutes.</p>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">The wizard</span>
+      <h2>Setting it up</h2>
+
+      <div class="step">
+        <span class="step-no">Step 1</span>
+        <h3>Your details</h3>
+        <p>Open your setup link and fill in your business name and email. Two other fields matter more than they look:</p>
+        <p><b>The currency your HubSpot account uses.</b> This defaults to USD. Change it only if you know your HubSpot portal is set to something else. Get it wrong and invoices will fail to sync until it's corrected.</p>
+        <p><b>The terms checkbox.</b> The form won't submit without it.</p>
+        <div class="note stop">
+          <b class="lede">Treat your setup link like a password.</b>
+          <p>The URL contains a long unique ID, and that ID is the only thing protecting the flow. Anyone holding the link can reach your download page and your Web Connector password. Don't paste it into a shared Slack channel or a support ticket. If you lose it, "Already started? Get your link" at the bottom of the setup page will email it back to you.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 2</span>
+        <h3>Connect HubSpot</h3>
+        <p>Click <kbd>Connect HubSpot</kbd>. HubSpot takes over from there: you sign in, choose which account to install into, and review the permissions. When you land back on the wizard it will say Connected.</p>
+        <div class="note warn">
+          <b class="lede">You'll see a warning screen, and it's expected.</b>
+          <p>HubSpot shows ARBridge as an unverified app and asks you to accept the risk before continuing. There's currently no way around this. HubSpot only awards the verified badge to apps that have been listed on their Marketplace for six months with 60+ installs, so it's a statement about how long the app has been on their marketplace, not about its security.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 3</span>
+        <h3>Three quick questions</h3>
+        <p>You'll be asked whether you use class or location tracking, whether you bill retainage, and whether you use progress invoicing. Answer honestly. None of the three changes what syncs today; they tell us what to build next, and the page says as much.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 4</span>
+        <h3>The pre-flight checklist</h3>
+        <p>The same five items from the top of this page, as tick boxes you can't skip. We can't inspect your computer from our side, so we ask instead.</p>
+        <p>Please don't tick them out of habit. If items 3 or 4 aren't actually true, stop and sort that out first. It's the difference between a ten-minute install and an afternoon.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 5</span>
+        <h3>Connect QuickBooks</h3>
+        <p>This is the step installations actually fail on, so take it slowly.</p>
+        <p><b>Download your connector file.</b> The button gives you <span class="path">middleman.qwc</span>, a small configuration file telling the Web Connector where to call and who you are.</p>
+        <p><b>Note your Web Connector password.</b> The page shows a generated username and password, hidden behind a "Show password" toggle. QuickBooks asks for the password the first time you add the file. Write it down, though you can always come back to this page for it.</p>
+        <p><b>Add the file in QuickBooks:</b></p>
+        <ol>
+          <li>Open QuickBooks Desktop and the company file you want to sync, signed in as Admin.</li>
+          <li>Go to <kbd>File → App Management → Update Web Services</kbd>. On older versions this lives at <kbd>File → Utilities → Add/Remove…</kbd></li>
+          <li>Select the <span class="path">middleman.qwc</span> file you downloaded.</li>
+          <li>When prompted, enter the password from the download page.</li>
+        </ol>
+
+        <div class="note warn">
+          <b class="lede">Two dialogs that look alarming and aren't</b>
+          <p><b>"Allow access even when QuickBooks is not running?"</b> Say yes if you want the sync to run unattended. This is the option you want.</p>
+          <p><b>"This application requests read and write access."</b> Here's the honest explanation. The connector file declares itself as not read-only because the Web Connector itself writes a small tracking marker into your company file whenever any application registers. That write is Intuit's, not ours, and it happens for every integration. We tried declaring strictly read-only; QuickBooks rejected the registration outright with error <span class="code">QBWC1080</span>. So the declaration widens what QuickBooks would permit. It doesn't widen what the software does. Every message ARBridge sends is a query, and there's no code in it that writes to your books.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">First run</span>
+      <h2>Starting the sync</h2>
+      <p>In the Web Connector, tick the box next to ARBridge and click <kbd>Update Selected</kbd>.</p>
+      <p>The confirmation page refreshes itself every 15 seconds, so leave it open on a second screen. It changes from "Almost there" to "You're all set" with real counts, something like <i>147 customers and 892 invoices synced</i>.</p>
+      <p>That first run reads your history and is the heaviest one you'll do. On a large company file, start it outside business hours. After that the Web Connector keeps everything current on its own every 15 minutes.</p>
+      <div class="note warn">
+        <b class="lede">Tick Auto-Run, or this only ever happens once.</b>
+        <p>Set <kbd>Auto-Run</kbd> in the Web Connector with an interval of 15 minutes. Without it the sync runs only when somebody clicks Update Selected, which means it stops silently the moment that window closes and your HubSpot data quietly goes stale.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Don't skip this</span>
+      <h2>Switching the data on in HubSpot</h2>
+
+      <div class="note stop">
+        <b class="lede">Read this before you conclude the sync isn't working.</b>
+        <p>HubSpot never puts an app's card or properties onto a record page by itself. That's true of every marketplace app. Until a Super Admin switches them on, once, your records look precisely as they did before you installed anything, and a working sync is indistinguishable from a broken one. More installs get reported as failures for this reason than for every genuine fault combined.</p>
+      </div>
+
+      <h3>Switch on the AR card</h3>
+      <p>In HubSpot, go to <kbd>Settings → Integrations → Connected apps → ARBridge for QuickBooks → App cards → QuickBooks AR Summary → Manage locations</kbd>, tick the company views, and save.</p>
+      <p>Every synced company now carries a QuickBooks AR panel on its record: total outstanding, the ageing breakdown, credit status, last payment, and the two revenue figures. This is the step that makes the product visibly exist.</p>
+
+      <h3>Add the AR fields to the record view</h3>
+      <p>Open any company record, choose <kbd>Customise the middle column</kbd>, and add the fields your team needs (<span class="path">ar_total</span>, <span class="path">ar_current</span>, the ageing buckets, <span class="path">credit_status</span>).</p>
+      <p>Worth doing both. The card shows everything at a glance, but only the properties can be filtered, sorted, and built into lists and workflows.</p>
+
+      <h3>If you already had companies in HubSpot</h3>
+      <p>Some QuickBooks customers may be held for a matching decision rather than guessed at, and they'll appear on your status page with a link to a review screen. Where there's one obvious candidate, a single "Link all" button handles them together.</p>
+      <p>Ignoring it is safe. After seven days those customers are added as new records and the sync carries on regardless.</p>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Troubleshooting</span>
+      <h2>What the error codes actually mean</h2>
+      <p>The Web Connector's codes aren't self-explanatory, and two of them are actively misleading. Here's what each one usually is in practice.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Code</th><th>What it usually means</th><th>What to do</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="code">QBWC1080<br />QBWC1039</td>
+              <td>QuickBooks refused the registration. Nearly always because the company file wasn't open as <b>Admin</b>, or it was in multi-user mode when the application was first added.</td>
+              <td>Close the file, reopen it in single-user mode signed in as Admin, and add the <span class="path">.qwc</span> again.</td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1048<br />QBWC1051</td>
+              <td>Reported as a certificate error, though it usually isn't one. Before registering, the Web Connector runs a plain reachability check against our address and reports anything it can't load this way.</td>
+              <td>Check that <i>that computer</i> can open our site in a browser. A corporate firewall or proxy is the usual culprit.</td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1073</td>
+              <td>"The host names for the service and support URLs do not match." A configuration problem on our side, not yours.</td>
+              <td>Send us the error. Please don't edit the <span class="path">.qwc</span> file by hand.</td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1013</td>
+              <td>"Could not start QuickBooks." The Web Connector can't reach the company file, usually because it's closed, has moved, or the machine went to sleep.</td>
+              <td>Open QuickBooks with the right company file and run Update Selected again.</td>
+            </tr>
+            <tr>
+              <td class="code">Auth failed</td>
+              <td>Wrong Web Connector password.</td>
+              <td>Go back to your download page, which always shows the current password, and re-enter it.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>If it stops working later</h3>
+      <p>Check your status page first. It shows the last successful sync and anything currently failing, which answers most questions on its own. Then check the Web Connector on the QuickBooks machine: if its last result isn't "Sync complete", the problem is on that computer, and it's usually a sleeping machine or a company file that moved.</p>
+      <p>We'll also email you if a connection goes 72 hours without a successful sync. One email per episode, not one an hour, and it clears itself once syncing resumes.</p>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Stopping</span>
+      <h2>Pausing or removing ARBridge</h2>
+      <p>Two levels, and they do different things.</p>
+      <p><b>Pause the sync.</b> In the Web Connector, untick Auto-Run or remove the application. Nothing further is read from QuickBooks.</p>
+      <p><b>Disconnect properly.</b> From your status page. This stops the sync and purges the stored QuickBooks password and HubSpot token. Records already written to HubSpot stay exactly where they are, because that data is yours.</p>
+      <p>To clear those records too: every company ARBridge created carries a property called <span class="path">qb_customer_id_v2</span>. Filter your Companies list on "<span class="path">qb_customer_id_v2</span> is known", select all, delete. Disconnect first, or the next sync will simply put them back.</p>
+      <div class="note">
+        <b class="lede">One-way, by design.</b>
+        <p>Nothing you or your team does in HubSpot is ever written back to QuickBooks. Your books can't be altered by this integration, and that's a deliberate limit rather than a feature waiting to be added.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
