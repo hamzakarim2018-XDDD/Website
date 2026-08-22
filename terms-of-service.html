@@ -364,7 +364,7 @@
   <section class="privacy-hero">
     <a href="index.html" class="privacy-back-link">← Back to Home</a>
     <h1>Terms <span class="accent-text">of Service</span></h1>
-    <p class="privacy-effective">Effective Date: August 13, 2026 &nbsp;·&nbsp; Last Updated: August 13, 2026</p>
+    <p class="privacy-effective">Effective Date: August 13, 2026 &nbsp;·&nbsp; Last Updated: August 22, 2026</p>
   </section>
 
 
@@ -404,15 +404,15 @@
         <h2>1. Introduction, Scope &amp; Definitions</h2>
       </div>
       <p>
-        These Terms of Service ("Terms") govern access to and use of the marketplace applications operated by <strong>AgoraCrew</strong> (operating under Optimise Inbox, hereinafter "we", "us", or "our"): <strong>ARBridge for QuickBooks</strong>, distributed via the HubSpot Marketplace, and <strong>Order Issue Alerts</strong>, distributed via the Shopify App Store (each an "App", together the "Services"). These Terms are distinct from, and supplement, any general engagement terms covering our custom software engineering or consulting services.
+        These Terms of Service ("Terms") govern access to and use of the marketplace applications operated by <strong>AgoraCrew</strong> (hereinafter "we", "us", or "our"): <strong>ARBridge for QuickBooks</strong>, distributed via the HubSpot Marketplace, <strong>ARBridge QuickBooks Enterprise</strong>, distributed via the monday.com marketplace, and <strong>Order Issue Alerts</strong>, distributed via the Shopify App Store (each an "App", together the "Services"). These Terms are distinct from, and supplement, any general engagement terms covering our custom software engineering or consulting services.
       </p>
       <p>
         Key terms used throughout this document:
       </p>
       <ul>
-        <li><strong>"Customer"</strong> — the business that installs an App into its own HubSpot account or Shopify store.</li>
-        <li><strong>"Connected Platform"</strong> — the third-party system(s) a given App reads data from or writes data into on the Customer's behalf: QuickBooks Desktop and HubSpot for ARBridge; Shopify for Order Issue Alerts.</li>
-        <li><strong>"End Customer"</strong> — an individual whose data appears within a Customer's own QuickBooks, HubSpot, or Shopify account (e.g., a Customer's own client or shopper).</li>
+        <li><strong>"Customer"</strong> — the business that installs an App into its own HubSpot account, monday.com account, or Shopify store.</li>
+        <li><strong>"Connected Platform"</strong> — the third-party system(s) a given App reads data from or writes data into on the Customer's behalf: QuickBooks Desktop and HubSpot for ARBridge for QuickBooks; QuickBooks Desktop Enterprise and monday.com for ARBridge QuickBooks Enterprise; Shopify for Order Issue Alerts.</li>
+        <li><strong>"End Customer"</strong> — an individual whose data appears within a Customer's own QuickBooks, HubSpot, monday.com, or Shopify account (e.g., a Customer's own client or shopper).</li>
       </ul>
       <p>
         These Terms are entered into between professional/business entities and are not directed at consumers acting outside a trade, business, or profession.
@@ -427,10 +427,10 @@
         <h2>2. Acceptance of These Terms</h2>
       </div>
       <p>
-        Installing an App from the HubSpot Marketplace or the Shopify App Store, authorizing the associated OAuth connection, or otherwise using an App constitutes full acceptance of these Terms by the Customer. If you are accepting on behalf of a business, you represent that you have the authority to bind that business.
+        Installing an App from the HubSpot Marketplace, the monday.com marketplace, or the Shopify App Store, authorizing the associated OAuth connection, or otherwise using an App constitutes full acceptance of these Terms by the Customer. If you are accepting on behalf of a business, you represent that you have the authority to bind that business.
       </p>
       <p>
-        Each App also operates within, and is subject to, the terms of its respective marketplace: the <strong>HubSpot Marketplace Provider Agreement</strong> and applicable HubSpot platform policies for ARBridge for QuickBooks, and the <strong>Shopify Partner Program Agreement</strong> and applicable Shopify Acceptable Use Policy for Order Issue Alerts. Where these Terms and the applicable marketplace's own end-user terms conflict on a matter the marketplace platform itself controls (e.g., billing mechanics processed through that platform), the marketplace's terms govern for that matter.
+        Each App also operates within, and is subject to, the terms of its respective marketplace: the <strong>HubSpot Marketplace Provider Agreement</strong> and applicable HubSpot platform policies for ARBridge for QuickBooks; the <strong>monday.com Marketplace Terms of Service</strong> and applicable monday.com platform policies for ARBridge QuickBooks Enterprise; and the <strong>Shopify Partner Program Agreement</strong> and applicable Shopify Acceptable Use Policy for Order Issue Alerts. Where these Terms and the applicable marketplace's own end-user terms conflict on a matter the marketplace platform itself controls (e.g., billing mechanics processed through that platform), the marketplace's terms govern for that matter.
       </p>
     </div>
 
@@ -442,7 +442,7 @@
         <h2>3. The Services</h2>
       </div>
       <p>
-        We operate two distinct marketplace applications, described below. Full detail on what data each App accesses and how it is processed is set out in our <a href="privacy-policy.html">Privacy Policy</a>, which forms part of these Terms by reference.
+        We operate three distinct marketplace applications, described below. Full detail on what data each App accesses and how it is processed is set out in our <a href="privacy-policy.html">Privacy Policy</a>, which forms part of these Terms by reference.
       </p>
 
       <h3>3.1 ARBridge for QuickBooks</h3>
@@ -472,7 +472,38 @@
         </tbody>
       </table>
 
-      <h3>3.2 Order Issue Alerts</h3>
+      <h3>3.2 ARBridge QuickBooks Enterprise</h3>
+      <p>
+        ARBridge QuickBooks Enterprise is a monday.com marketplace app. For each Customer who installs it, it reads Customer, Job, Invoice, Estimate, Sales Order, and Item records from that Customer's own QuickBooks Desktop Enterprise company file — via QuickBooks Web Connector, using the qbXML protocol — and creates and updates items on that same Customer's own monday.com boards, according to a field mapping the Customer configures. It does not aggregate or share data across different Customers.
+      </p>
+      <table class="privacy-data-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>How ARBridge QuickBooks Enterprise Works</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Direction</strong></td>
+            <td>One-way: QuickBooks Desktop → monday.com only</td>
+          </tr>
+          <tr>
+            <td><strong>QuickBooks access</strong></td>
+            <td>Read-only, structurally enforced — the App only ever issues qbXML "Query" requests; there is no code path capable of adding, modifying, or deleting anything in a Customer's QuickBooks file</td>
+          </tr>
+          <tr>
+            <td><strong>What syncs to monday.com</strong></td>
+            <td>Board items representing Customers and Jobs — preserving the QuickBooks customer:job hierarchy — together with Invoices, Estimates, Sales Orders, and Items. Column values are populated from the QuickBooks fields the Customer maps onto them, and invoice balances update as payments are recorded in QuickBooks</td>
+          </tr>
+          <tr>
+            <td><strong>monday.com access</strong></td>
+            <td>OAuth only, limited to identifying the account and the authorizing user, listing workspaces, reading boards and their columns so QuickBooks fields can be mapped onto them, and creating and updating items on the boards the Customer selects</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3.3 Order Issue Alerts</h3>
       <p>
         Order Issue Alerts is a Shopify App Store app, embedded in Shopify Admin. For each Customer who installs it, it reads that Customer's own Shopify store data — orders, fulfillments, inventory, and locations — via Shopify's GraphQL Admin API, and produces a nightly AI-summarized digest that surfaces fulfillment delays, inventory mismatches, address-validation issues, and stalled third-party-fulfillment orders in one prioritized list inside Shopify Admin.
       </p>
@@ -501,7 +532,7 @@
 
       <div class="privacy-callout">
         <p>
-          🚧 We may add, modify, or retire features of either App from time to time. Where a change would materially reduce functionality a Customer relies on, we will provide notice through the App's dashboard, the relevant marketplace listing, or direct communication where practicable.
+          🚧 We may add, modify, or retire features of any App from time to time. Where a change would materially reduce functionality a Customer relies on, we will provide notice through the App's dashboard, the relevant marketplace listing, or direct communication where practicable.
         </p>
       </div>
     </div>
@@ -515,6 +546,9 @@
       </div>
       <p>
         <strong>ARBridge for QuickBooks</strong> is offered with a free trial period requiring a valid payment method at signup; ARBridge does not offer an indefinite free tier. A separate partner/reseller pricing arrangement is available for bookkeeping and accounting firms managing multiple QuickBooks files on behalf of their own clients.
+      </p>
+      <p>
+        <strong>ARBridge QuickBooks Enterprise</strong> is subscribed to and billed through monday.com's own monetization system, and any trial is provisioned and administered by monday.com under the plan selected there. Separately, and before any subscription exists, a newly installed account is given a limited grace period during which the App is fully functional, so that a Customer can complete QuickBooks Web Connector setup and see data reach their boards before choosing a plan.
       </p>
       <p>
         <strong>Order Issue Alerts</strong> is offered with a free trial period at installation, provisioned and administered through Shopify's own Billing API. From time to time we may run a time-limited promotional offer (e.g., an extended trial for early installs); eligibility for any such promotion is determined at the time of installation and is not retroactive.
@@ -532,11 +566,11 @@
         <h2>5. Account, Installation &amp; Marketplace Requirements</h2>
       </div>
       <p>
-        Using either App requires the Customer to authorize an OAuth connection to the relevant Connected Platform (HubSpot for ARBridge; Shopify for Order Issue Alerts), and, for ARBridge, to also configure a QuickBooks Web Connector connection to their own QuickBooks Desktop company file. The Customer is responsible for:
+        Using an App requires the Customer to authorize an OAuth connection to the relevant Connected Platform (HubSpot for ARBridge for QuickBooks; monday.com for ARBridge QuickBooks Enterprise; Shopify for Order Issue Alerts), and, for both ARBridge products, to also configure a QuickBooks Web Connector connection to their own QuickBooks Desktop company file. The Customer is responsible for:
       </p>
       <ul>
         <li>Providing accurate account and billing information, and keeping it current;</li>
-        <li>Maintaining the security of its own HubSpot, Shopify, and QuickBooks credentials — we never see or store a Customer's actual HubSpot or Shopify login credentials, only the OAuth tokens each platform issues us;</li>
+        <li>Maintaining the security of its own HubSpot, monday.com, Shopify, and QuickBooks credentials — we never see or store a Customer's actual HubSpot, monday.com, or Shopify login credentials, only the OAuth tokens each platform issues us;</li>
         <li>Ensuring it has the necessary rights and permissions within its own organization to connect these systems and to share the data described in Section 3 and our Privacy Policy;</li>
         <li>Promptly notifying us of any suspected unauthorized use of its account or connections.</li>
       </ul>
@@ -565,6 +599,10 @@
             <td>Billed directly by AgoraCrew through a third-party payment processor; we do not store full payment card numbers ourselves</td>
           </tr>
           <tr>
+            <td><strong>ARBridge QuickBooks Enterprise</strong></td>
+            <td>Billed through monday.com's native monetization and charged to the Customer's monday.com account; AgoraCrew never collects or stores payment card details for this App</td>
+          </tr>
+          <tr>
             <td><strong>Order Issue Alerts</strong></td>
             <td>Billed through Shopify's native Billing API and charged to the Customer's Shopify account/invoice; AgoraCrew never collects or stores payment card details for this App</td>
           </tr>
@@ -583,14 +621,14 @@
         <h2>7. Term, Cancellation &amp; Uninstallation</h2>
       </div>
       <p>
-        Each subscription runs on a rolling billing cycle and continues until cancelled. A Customer may cancel at any time — for Order Issue Alerts, by uninstalling the app from Shopify Admin or cancelling via Shopify's billing controls; for ARBridge, by cancelling through the ARBridge billing dashboard or disconnecting the app from HubSpot. Cancellation takes effect at the end of the then-current billing cycle unless stated otherwise at checkout; we do not provide prorated refunds for the unused portion of a billing cycle except where required by law.
+        Each subscription runs on a rolling billing cycle and continues until cancelled. A Customer may cancel at any time — for Order Issue Alerts, by uninstalling the app from Shopify Admin or cancelling via Shopify's billing controls; for ARBridge QuickBooks Enterprise, through monday.com's own subscription controls or by uninstalling the app from the monday.com account; for ARBridge for QuickBooks, by cancelling through the ARBridge billing dashboard or disconnecting the app from HubSpot. Cancellation takes effect at the end of the then-current billing cycle unless stated otherwise at checkout; we do not provide prorated refunds for the unused portion of a billing cycle except where required by law.
       </p>
       <p>
-        We may suspend or terminate access to an App if a Customer materially breaches these Terms (including non-payment) and does not cure the breach within a reasonable period after notice, or where required to comply with a marketplace platform's own policies (HubSpot's or Shopify's).
+        We may suspend or terminate access to an App if a Customer materially breaches these Terms (including non-payment) and does not cure the breach within a reasonable period after notice, or where required to comply with a marketplace platform's own policies (HubSpot's, monday.com's, or Shopify's).
       </p>
       <div class="privacy-callout">
         <p>
-          🗓️ What happens to your data on disconnect or uninstall is described in Section 7 ("Data Retention &amp; Deletion") of our <a href="privacy-policy.html">Privacy Policy</a> — including the honest current gap around ARBridge's stored connection credentials not yet being auto-purged on disconnect.
+          🗓️ What happens to your data on disconnect or uninstall is described in Section 7 ("Data Retention &amp; Deletion") of our <a href="privacy-policy.html">Privacy Policy</a> — including the honest current gap around ARBridge for QuickBooks' stored connection credentials not yet being auto-purged on disconnect. ARBridge QuickBooks Enterprise does not share that gap: deauthorizing or uninstalling it starts a deletion clock, and that Customer's synced QuickBooks data and stored credentials are erased within ten days unless the App is reconnected first.
         </p>
       </div>
     </div>
@@ -603,10 +641,10 @@
         <h2>8. Data, Privacy &amp; Security</h2>
       </div>
       <p>
-        Our collection, processing, storage, and deletion of data through both Apps — including the specific data categories synced, subprocessors used, retention periods, and GDPR-related rights — is governed by our <a href="privacy-policy.html">Privacy Policy</a>, incorporated into these Terms by reference. In the event of a conflict between these Terms and the Privacy Policy on a data-handling question, the Privacy Policy governs.
+        Our collection, processing, storage, and deletion of data through the Apps — including the specific data categories synced, subprocessors used, retention periods, and GDPR-related rights — is governed by our <a href="privacy-policy.html">Privacy Policy</a>, incorporated into these Terms by reference. In the event of a conflict between these Terms and the Privacy Policy on a data-handling question, the Privacy Policy governs.
       </p>
       <p>
-        Both Apps use encryption for credentials and tokens at rest (AES-256) and for data in transit (TLS). Where we act as a data processor on a Customer's behalf, the Customer remains the data controller responsible for having a lawful basis to share End Customer data with us.
+        The Apps use encryption for credentials and tokens at rest (AES-256) and for data in transit (TLS). In ARBridge QuickBooks Enterprise, personal data synced from QuickBooks — customer and contact names, email addresses, billing addresses, and free-text notes — is additionally encrypted at the column level with AES-256-GCM before it is written to our database. Where we act as a data processor on a Customer's behalf, the Customer remains the data controller responsible for having a lawful basis to share End Customer data with us.
       </p>
     </div>
 
@@ -624,7 +662,7 @@
         <li>Use the Services for any unlawful, fraudulent, or unauthorized purpose;</li>
         <li>Attempt to circumvent the read-only design of ARBridge's QuickBooks connection or otherwise attempt to make it write to QuickBooks;</li>
         <li>Attempt to reverse-engineer, decompile, or gain unauthorized access to either App's underlying systems;</li>
-        <li>Use either App in a way that violates the applicable HubSpot or Shopify platform policies;</li>
+        <li>Use an App in a way that violates the applicable HubSpot, monday.com, or Shopify platform policies;</li>
         <li>Resell, sublicense, or provide third-party access to the Services outside of a Customer's own organization, except under an explicit reseller/partner arrangement we have agreed to in writing.</li>
       </ul>
     </div>
@@ -640,7 +678,7 @@
         We retain all right, title, and interest in and to each App, including its software, design, and documentation. Subject to these Terms and payment of applicable fees, we grant the Customer a limited, non-exclusive, non-transferable right to use the Services for its own internal business purposes for the duration of its subscription.
       </p>
       <p>
-        The Customer retains all rights to its own business data — including the data synced from its QuickBooks or Shopify account — and grants us only the rights necessary to provide the Services as described in Section 3 and our Privacy Policy.
+        The Customer retains all rights to its own business data — including the data synced from its QuickBooks, monday.com, or Shopify account — and grants us only the rights necessary to provide the Services as described in Section 3 and our Privacy Policy.
       </p>
     </div>
 
@@ -685,7 +723,7 @@
         <h2>13. Third-Party Platforms</h2>
       </div>
       <p>
-        Both Apps depend on third-party platforms we do not control — HubSpot, Shopify, QuickBooks Desktop/QuickBooks Web Connector, and our underlying cloud-hosting and AI-model infrastructure. We are not responsible for outages, API changes, or data unavailable to us because of a failure, policy change, or limitation of one of these third-party platforms. Where such a platform materially changes its API, policies, or availability in a way that affects an App, we will make reasonable efforts to adapt or notify affected Customers.
+        The Apps depend on third-party platforms we do not control — HubSpot, monday.com, Shopify, QuickBooks Desktop/QuickBooks Web Connector, and our underlying cloud-hosting and AI-model infrastructure. We are not responsible for outages, API changes, or data unavailable to us because of a failure, policy change, or limitation of one of these third-party platforms. Where such a platform materially changes its API, policies, or availability in a way that affects an App, we will make reasonable efforts to adapt or notify affected Customers.
       </p>
     </div>
 
@@ -697,7 +735,7 @@
         <h2>14. Force Majeure</h2>
       </div>
       <p>
-        Neither party will be liable for delay or failure to perform an obligation under these Terms to the extent caused by circumstances beyond its reasonable control, including outages or failures of third-party infrastructure providers (hosting, AI model providers, HubSpot, Shopify, or Intuit/QuickBooks).
+        Neither party will be liable for delay or failure to perform an obligation under these Terms to the extent caused by circumstances beyond its reasonable control, including outages or failures of third-party infrastructure providers (hosting, AI model providers, HubSpot, monday.com, Shopify, or Intuit/QuickBooks).
       </p>
     </div>
 
@@ -721,7 +759,7 @@
         <h2>16. Changes to These Terms</h2>
       </div>
       <p>
-        We may update these Terms from time to time, including to reflect changes in either App's functionality, applicable law, or marketplace platform requirements. When we make a material change, we will update the "Last Updated" date at the top of this page and, where practicable, notify affected Customers through the relevant App's dashboard or by email.
+        We may update these Terms from time to time, including to reflect changes in an App's functionality, applicable law, or marketplace platform requirements. When we make a material change, we will update the "Last Updated" date at the top of this page and, where practicable, notify affected Customers through the relevant App's dashboard or by email.
       </p>
       <p>
         Continued use of an App after updated Terms take effect constitutes acceptance of those Terms.
