@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>How to set up ARBridge QuickBooks Enterprise for monday.com | AgoraCrew</title>
+  <meta name="description" content="Step-by-step setup for ARBridge QuickBooks Enterprise: the six things to check first, connecting monday.com, installing the QuickBooks Web Connector, choosing your boards, and what every Web Connector error code actually means." />
+  <link rel="canonical" href="https://agoracrew.com/docs/arbridge-monday-setup.html" />
+  <meta property="og:title" content="Setting up ARBridge QuickBooks Enterprise" />
+  <meta property="og:description" content="Connect QuickBooks Desktop Enterprise to your monday.com boards, plus what to do when the Web Connector throws an error code." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <style>
+    /* Manual-specific components, shared with the ARBridge installation manual. Everything draws on
+       the site palette (--ink, --yellow, --sage, --peach) rather than introducing new brand colour.
+       The two semantic tones exist only for warnings and error codes, which must not read as the
+       brand accent. */
+    .manual { --warn-bg: #fdf6e3; --warn-edge: #b98900; --stop-bg: #fbeeea; --stop-edge: #8f3a2a; }
+
+    /* This page carries no site navigation, so the hero does not need to clear a fixed navbar.
+       monday.com's review asks that a how-to-use page be "cleaned to prevent navigating to other
+       pages on the website", and it is embedded in an iframe inside monday where a header would be
+       a dead end anyway. */
+    .page-hero { padding-top: 64px; }
+
+    .manual .req { list-style: none; padding: 0; margin: 28px 0; }
+    .manual .req li {
+      display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+      padding: 18px 0; border-top: 1px solid var(--ink-10); align-items: start;
+    }
+    .manual .req li:last-child { border-bottom: 1px solid var(--ink-10); }
+    .manual .req .tick {
+      width: 17px; height: 17px; margin-top: 4px; border-radius: 3px;
+      border: 2px solid var(--ink); background: var(--yellow);
+    }
+    .manual .req b { display: block; margin-bottom: 4px; }
+    .manual .req span.why { color: var(--ink-70); font-size: 0.94rem; }
+
+    .manual .step { border-top: 2px solid var(--ink); padding-top: 22px; margin-top: 44px; }
+    .manual .step-no {
+      display: inline-block; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; background: var(--yellow); color: var(--ink);
+      padding: 4px 10px; border-radius: 3px; margin-bottom: 12px;
+    }
+
+    .manual .note {
+      border-left: 4px solid var(--sage); background: var(--peach);
+      padding: 18px 22px; margin: 24px 0; border-radius: 0 6px 6px 0;
+    }
+    .manual .note.warn { border-left-color: var(--warn-edge); background: var(--warn-bg); }
+    .manual .note.stop { border-left-color: var(--stop-edge); background: var(--stop-bg); }
+    .manual .note p:last-child { margin-bottom: 0; }
+    .manual .note b.lede { display: block; margin-bottom: 6px; }
+
+    .manual .tablewrap { overflow-x: auto; margin: 26px 0; border: 1px solid var(--ink-10); border-radius: 8px; }
+    .manual table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.95rem; }
+    .manual th, .manual td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--ink-10); vertical-align: top; }
+    .manual th { font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-70); background: var(--peach); white-space: nowrap; }
+    .manual tbody tr:last-child td { border-bottom: none; }
+    .manual .code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 600; color: var(--stop-edge); white-space: nowrap; }
+    .manual kbd {
+      font-family: inherit; font-weight: 600; background: var(--ink-5);
+      border: 1px solid var(--ink-10); border-radius: 4px; padding: 1px 6px; white-space: nowrap;
+    }
+    .manual .path { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em; background: var(--ink-5); padding: 2px 6px; border-radius: 4px; }
+
+    /* The support line stands in for the footer this page deliberately does not have. */
+    .manual .tailpiece {
+      margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--ink);
+      color: var(--ink-70); font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero">
+    <div class="page-hero-badge">Setup guide</div>
+    <h1>Connecting QuickBooks Desktop <span class="accent-text">to monday.com</span></h1>
+    <p class="page-hero-subtitle">
+      Around twenty minutes, provided the six things in the next section are already true. Often one of them isn't, which is why they come first rather than as a footnote.
+    </p>
+  </section>
+
+  <div class="page-content manual">
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Read this first</span>
+      <h2>This is not a two-click integration, and we'd rather say so now</h2>
+      <p>QuickBooks Desktop has no API in the cloud. There is nothing for us to sign into on your behalf, because your company file sits on a Windows computer in your office and never leaves it. So the connection runs the other way round: a small Intuit program called the <b>QuickBooks Web Connector</b> runs on that computer, and it calls us on a schedule.</p>
+      <p>That means part of this setup happens inside monday.com, and part of it happens at the Windows machine where QuickBooks lives. They are usually not the same computer. Nearly every setup that goes wrong goes wrong because somebody got to step three on a laptop in a different building.</p>
+      <div class="note">
+        <b class="lede">Nothing is ever written back into QuickBooks.</b>
+        <p>Every message this app sends to QuickBooks is a query. There is no code in it capable of adding, changing or deleting anything in your books — that isn't a setting you could switch on by accident, the capability doesn't exist. Data moves one way: QuickBooks to monday.com.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Before you start</span>
+      <h2>Six things to check</h2>
+      <p>Every item here has broken a real setup. Checking them now takes a minute. Diagnosing them later, from a Web Connector error code, takes considerably longer.</p>
+
+      <ul class="req">
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>QuickBooks Desktop for Windows: Enterprise, Premier or Pro</b>
+            <span class="why">QuickBooks Online and QuickBooks for Mac can't connect this way — the Web Connector doesn't exist for them, so there's no version of this that works. Enterprise is what this app is built and tested against; Premier and Pro use the identical connector and behave the same, with smaller list limits.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>QuickBooks Web Connector installed on that same computer</b>
+            <span class="why">It ships with most QuickBooks Desktop installations. Look in the Windows Start menu for "QuickBooks Web Connector". If it isn't there, install it from Intuit first; otherwise the file you download in step 3 has nothing to open it with.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>You're at the computer where QuickBooks itself runs</b>
+            <span class="why">The Web Connector needs direct access to the company file. If your file lives on an office server that staff reach over Remote Desktop, do this inside that Remote Desktop session. Being able to open the file from your own desk in multi-user mode isn't the same thing, and this catches people out regularly.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>You can open the company file as the QuickBooks Admin user</b>
+            <span class="why">Only Admin can approve a new connected application. Sign in with a limited-access login and QuickBooks rejects the whole registration, not just the first sync.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>That computer can reach the internet through whatever firewall it sits behind</b>
+            <span class="why">Before it will add an application, the Web Connector quietly loads our address itself to check it's reachable, then reports anything it can't load as a certificate problem. So a corporate proxy that machine isn't behind will fail the setup for reasons that have nothing to do with QuickBooks, and the error won't say so.</span>
+          </span>
+        </li>
+        <li>
+          <span class="tick"></span>
+          <span>
+            <b>You're an admin on the monday.com account</b>
+            <span class="why">Installing an app and granting it access to boards are both admin actions. If you open the app as a viewer or a guest, it will tell you so plainly rather than letting you get halfway and fail — but you'll still need an admin to finish.</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Setting it up</span>
+      <h2>The five steps</h2>
+
+      <div class="step">
+        <span class="step-no">Step 1</span>
+        <h3>Open the app in monday.com</h3>
+        <p>After installing from the monday.com marketplace, open the app from your account's app area. The first screen explains the three stages of setup before asking you for anything, and it names the one that surprises people: step two happens on the QuickBooks computer.</p>
+        <p>Give your company file a name if you like — <span class="path">Company name</span> is optional and only exists so that a second company file, later, is distinguishable from the first.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 2</span>
+        <h3>Connect monday</h3>
+        <p>Click <kbd>Connect monday</kbd>. A new tab opens with monday's own consent screen, listing what the app is asking for: read your account and the user connecting, list workspaces, read boards and their columns, and create and update items.</p>
+        <p>It opens in a new tab because monday refuses to render its own consent screen inside another app's frame. When you've approved it, come back to the first tab and click <kbd>I have finished — refresh</kbd>. There's no signal that tells the app you're done, so it asks rather than spinning forever.</p>
+        <div class="note">
+          <b class="lede">Why it asks to write to your boards.</b>
+          <p>Creating and updating board items <i>is</i> the product — that's the permission doing the work. It reads boards and columns so you can map QuickBooks fields onto columns that already exist, and so that an invoice that's already on a board gets updated instead of added a second time.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 3</span>
+        <h3>Get the setup file and password</h3>
+        <p>Click <kbd>Get the setup file and password</kbd>. You'll see a generated user name and password, and a <kbd>Download the setup file</kbd> button that gives you a file named <span class="path">quickbooks-monday-….qwc</span> — a small configuration file telling the Web Connector where to call and who you are.</p>
+        <div class="note warn">
+          <b class="lede">Two things about this screen that will cost you time if you miss them.</b>
+          <p><b>The password is shown exactly once.</b> Copy it somewhere before you close the panel. If you lose it, come back and generate a new one — that's normal and costs nothing except retyping it in the Web Connector.</p>
+          <p><b>The download link is valid for two minutes.</b> If you're doing this on a different computer from the QuickBooks machine, get to that machine first, then click download.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 4</span>
+        <h3>Add it in QuickBooks</h3>
+        <p>This is the step setups actually fail on, so take it slowly. Everything here happens on the Windows computer where the company file lives.</p>
+        <ol>
+          <li>Open QuickBooks Desktop and the company file you want to sync, signed in as <b>Admin</b>.</li>
+          <li>Go to <kbd>File → App Management → Update Web Services</kbd>. On older versions this lives at <kbd>File → Utilities → Add/Remove…</kbd></li>
+          <li>In the Web Connector, choose <kbd>Add an Application</kbd> and pick the <span class="path">.qwc</span> file you downloaded.</li>
+          <li>When prompted, enter the password from step 3.</li>
+        </ol>
+
+        <div class="note stop">
+          <b class="lede">The authorisation prompt, and the answer that matters</b>
+          <p>QuickBooks will ask how this application may access the company file. Choose <b>"Yes, always allow access even if QuickBooks is not running."</b></p>
+          <p>This is the single most important click in the whole setup. Any other answer works fine for as long as QuickBooks stays open, and then fails with <span class="code">QBWC1013</span> the moment somebody closes it at six o'clock. Your boards quietly stop updating overnight, and the numbers on screen still look like today's. Nothing warns you.</p>
+          <p>QuickBooks will also ask about access to personal data — customer names, addresses, invoice detail. Accept it, or customers and invoices arrive with the identifying fields empty.</p>
+        </div>
+
+        <div class="note warn">
+          <b class="lede">"This application requests read and write access." Here's the honest explanation.</b>
+          <p>The connector file declares itself as not read-only, because the Web Connector writes a small tracking marker into your company file whenever any application registers. That write is Intuit's, not ours, and it happens for every integration. We tried declaring strictly read-only; QuickBooks rejected the registration outright with error <span class="code">QBWC1080</span>.</p>
+          <p>So the declaration widens what QuickBooks would <i>permit</i>. It does not widen what the software <i>does</i>. Every message this app sends is a query, and there is no code in it that writes to your books.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-no">Step 5</span>
+        <h3>The first sync</h3>
+        <p>In the Web Connector, tick the box beside <b>QuickBooks Desktop for monday.com</b> and click <kbd>Update Selected</kbd>.</p>
+        <p>The first run reads your history and is by far the heaviest one you'll do. On a large Enterprise file it can take a while, and the Web Connector's progress bar is the honest picture of where it is. Start it outside business hours if your file is big. After that it keeps everything current on its own.</p>
+        <div class="note warn">
+          <b class="lede">Tick Auto-Run, or this only ever happens once.</b>
+          <p>Set <kbd>Auto-Run</kbd> in the Web Connector with an interval of 15 minutes. Without it the sync runs only when somebody clicks Update Selected, which means it stops silently the moment that window closes and your boards quietly go stale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Back in monday</span>
+      <h2>Choosing your boards</h2>
+      <p>Once QuickBooks has sent its first batch, the app's screen shows <b>What goes onto your boards</b> — a row for each kind of record: customers and jobs, invoices, estimates, sales orders and items.</p>
+      <p>For each one you can point it at a board you already have, or let the app build the board for you with columns that already match. Building it for you is the faster path and the one to take unless you have an existing board the rest of your team already works in.</p>
+      <p><b>Mappings are checked before they're saved.</b> A column that doesn't exist, or one of the wrong type for the field you've pointed at it, is rejected then and there — rather than silently failing on every sync for the next three weeks.</p>
+      <p><b>You can pause a record type</b> without losing which columns it fills. Useful if you want invoices flowing today and estimates later.</p>
+      <div class="note">
+        <b class="lede">Your customer:job hierarchy comes across.</b>
+        <p>QuickBooks structures jobs underneath customers — <span class="path">Prentice, Adelaide:Guest Villa</span>. That structure is carried onto the board, so you can see not just who owes you but which job the money is against. For construction and manufacturing teams this is usually the reason for installing it at all.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Troubleshooting</span>
+      <h2>What the error codes actually mean</h2>
+      <p>The Web Connector's codes aren't self-explanatory, and two of them are actively misleading. Here's what each one usually is in practice.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Code</th><th>What it usually means</th><th>What to do</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="code">QBWC1013</td>
+              <td>"Could not start QuickBooks." Either the company file is closed and the application was never granted unattended access, or the file has moved, or the machine went to sleep. If this appears every evening and clears every morning, it is the authorisation answer from step 4.</td>
+              <td>Remove the application from the Web Connector, add the <span class="path">.qwc</span> again, and this time choose <b>"Yes, always allow access even if QuickBooks is not running."</b></td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1080<br />QBWC1039</td>
+              <td>QuickBooks refused the registration. Nearly always because the company file wasn't open as <b>Admin</b>, or it was in multi-user mode when the application was first added.</td>
+              <td>Close the file, reopen it in single-user mode signed in as Admin, and add the <span class="path">.qwc</span> again.</td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1048<br />QBWC1051</td>
+              <td>Reported as a certificate error, though it almost never is one. Before registering, the Web Connector runs a plain reachability check against our address and reports anything it can't load this way.</td>
+              <td>Check that <i>that computer</i> can open our address in a browser. A corporate firewall or proxy is the usual culprit.</td>
+            </tr>
+            <tr>
+              <td class="code">QBWC1073</td>
+              <td>"The host names for the service and support URLs do not match." A configuration problem on our side, not yours.</td>
+              <td>Send us the error. Please don't edit the <span class="path">.qwc</span> file by hand.</td>
+            </tr>
+            <tr>
+              <td class="code">Auth failed</td>
+              <td>Wrong Web Connector password, or a password that was regenerated in monday after this application was added.</td>
+              <td>Generate a new password in the app and retype it in the Web Connector. The two only have to match each other.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Nothing is arriving on a board</h3>
+      <p>Work down this list, in order — it's roughly the order of how often each turns out to be the answer.</p>
+      <ol>
+        <li><b>Has QuickBooks run at all?</b> On the QuickBooks computer, the Web Connector's last result should say the sync completed. If it doesn't, the problem is on that machine and the table above covers it.</li>
+        <li><b>Is that record type pointed at a board?</b> A row with no board has nowhere to put anything.</li>
+        <li><b>Is it paused?</b> The row says so.</li>
+        <li><b>Is it included in your plan?</b> The row says that too, with a link to change plan. Nothing is lost while a record type is outside your plan — it stays staged, and it goes out on the next sync after you upgrade.</li>
+        <li><b>Try <kbd>Sync now</kbd>.</b> It isn't rate-limited, so it's a safe thing to press when you're unsure.</li>
+      </ol>
+
+      <h3>If you run QuickBooks in a hosted environment</h3>
+      <p>Hosted QuickBooks — Rightworks and similar — runs your company file on somebody else's Windows server that you reach over Remote Desktop. The Web Connector runs there too, which means it only runs while that Remote Desktop session is alive. Close the session and syncing stops until you sign back in.</p>
+      <p>It works, but it isn't unattended in the way a local install is. Tell us if this is your setup and we'll go through the options with you.</p>
+
+      <h3>Multi-user mode</h3>
+      <p>Add the application in single-user mode. Once it's registered, multi-user mode is fine for ordinary use — it's the first registration that QuickBooks refuses.</p>
+    </div>
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Stopping</span>
+      <h2>Pausing or removing the app</h2>
+      <p>Three levels, and they do different things.</p>
+      <p><b>Pause a record type.</b> In the app, on that row. Everything else carries on. Nothing is forgotten — the board and the column mapping are still there when you resume.</p>
+      <p><b>Stop reading from QuickBooks.</b> In the Web Connector, untick Auto-Run or remove the application. Nothing further is read from your company file.</p>
+      <p><b>Uninstall the app from monday.com.</b> This stops the sync completely and starts a deletion clock. If you don't reconnect, everything we hold for that connection — the staged QuickBooks records, your encrypted Web Connector credentials, your monday tokens, the board mappings and the sync history — is permanently erased within ten days.</p>
+      <div class="note">
+        <b class="lede">Deletion is deferred on purpose, not out of reluctance.</b>
+        <p>Uninstalling and reinstalling is a normal way to try to fix something. If we erased everything the instant you uninstalled, that troubleshooting step would destroy your entire setup, with no way back. So the clock starts, and reconnecting stops it.</p>
+        <p>Items already created on your boards stay exactly where they are. That data lives in your monday account and it's yours — deleting it, if you want it gone, is done from the boards themselves.</p>
+      </div>
+    </div>
+
+    <p class="tailpiece">
+      Stuck on a step, or seeing something this page doesn't cover? Email <a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a> and tell us which step and what the Web Connector said. The Web Connector keeps its own log, and its location is shown in the Web Connector window — sending us the last few lines of it usually answers the question in one reply rather than four.
+    </p>
+
+  </div>
+
+</body>
+</html>

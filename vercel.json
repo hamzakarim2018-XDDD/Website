@@ -16,6 +16,10 @@
       "destination": "/docs/arbridge-installation.html"
     },
     {
+      "source": "/monday-setup",
+      "destination": "/docs/arbridge-monday-setup.html"
+    },
+    {
       "source": "/blog/post.html",
       "has": [
         {
