@@ -487,22 +487,22 @@
             <td>Computed from the synced QuickBooks data and written to the HubSpot Company record to give the customer visibility into their own receivables</td>
           </tr>
           <tr>
-            <td><strong>Customer &amp; Job Identity</strong> (via ARBridge QuickBooks Enterprise)</td>
+            <td><strong>Customer &amp; Job Identity</strong> (via XSync for QuickBooks Desktop)</td>
             <td>Customer and job name, including the QuickBooks customer:job hierarchy; billing contact name and email; billing address</td>
             <td>Create and update the corresponding items on that same customer's own monday.com boards</td>
           </tr>
           <tr>
-            <td><strong>Transaction &amp; Item Data</strong> (via ARBridge QuickBooks Enterprise)</td>
+            <td><strong>Transaction &amp; Item Data</strong> (via XSync for QuickBooks Desktop)</td>
             <td>Invoice, estimate and sales order amounts, dates, status and balances; item names, descriptions and prices; free-text memos</td>
             <td>Create and update board items reflecting the customer's QuickBooks activity, and keep balances current as payments are recorded against them in QuickBooks</td>
           </tr>
           <tr>
-            <td><strong>Derived AR Metrics</strong> (via ARBridge QuickBooks Enterprise)</td>
+            <td><strong>Derived AR Metrics</strong> (via XSync for QuickBooks Desktop)</td>
             <td>Credit-status flag (Good/Watch/Hold), AR aging, lifetime revenue and trailing-12-month revenue, computed from the synced QuickBooks data</td>
             <td>Offered as mappable board columns, so a customer can see a receivables picture beside the work on their own boards. Written only into that same customer's own monday.com account, and only for the columns they choose to map</td>
           </tr>
           <tr>
-            <td><strong>monday.com Account Identity</strong> (via ARBridge QuickBooks Enterprise)</td>
+            <td><strong>monday.com Account Identity</strong> (via XSync for QuickBooks Desktop)</td>
             <td>monday.com account identifier and name; identifier and name of the user who authorised the connection</td>
             <td>Identify which monday.com account an installation belongs to, keep each customer's data separated from every other customer's, and record who connected a QuickBooks company file</td>
           </tr>
@@ -523,7 +523,7 @@
 
       <div class="privacy-callout">
         <p>
-          🔒 <strong>ARBridge QuickBooks Enterprise — architecture note:</strong> ARBridge QuickBooks Enterprise is a monday.com marketplace app. For each customer who installs it, it reads Customer, Job, Invoice, Estimate, Sales Order and Item records from that customer's own QuickBooks Desktop Enterprise company file via QuickBooks Web Connector (using the qbXML protocol) and creates and updates items on that same customer's own monday.com boards, according to a field mapping that customer configures. Data is never aggregated or shared across customers, and is never sold or used for any purpose beyond this sync. Like its HubSpot counterpart, it only ever issues read-only qbXML "Query" requests — there is no code path in the product capable of adding, modifying, or deleting anything in a customer's QuickBooks file; this is not a configuration setting, the write capability does not exist in the code. Credentials are encrypted at rest with AES-256-GCM under a versioned key ring: a QuickBooks Web Connector username/password pair generated for that one connection, and a monday.com OAuth refresh token, which is rotated on every use. The app never sees or stores a customer's actual monday.com login credentials — access is via OAuth only. All data in transit uses TLS. One consequence worth stating plainly: QuickBooks sends whole record types, so records of a type a customer has not enabled or whose plan does not yet include it are still read and held in staging, encrypted, rather than being discarded. They are not sent anywhere. This is what allows an upgrade or an un-pause to take effect on the next sync instead of requiring a fresh read of the customer's entire history, and that staged data is erased on the same ten-day clock as everything else.
+          🔒 <strong>XSync for QuickBooks Desktop — architecture note:</strong> XSync for QuickBooks Desktop is a monday.com marketplace app. For each customer who installs it, it reads Customer, Job, Invoice, Estimate, Sales Order and Item records from that customer's own QuickBooks Desktop Enterprise company file via QuickBooks Web Connector (using the qbXML protocol) and creates and updates items on that same customer's own monday.com boards, according to a field mapping that customer configures. Data is never aggregated or shared across customers, and is never sold or used for any purpose beyond this sync. Like its HubSpot counterpart, it only ever issues read-only qbXML "Query" requests — there is no code path in the product capable of adding, modifying, or deleting anything in a customer's QuickBooks file; this is not a configuration setting, the write capability does not exist in the code. Credentials are encrypted at rest with AES-256-GCM under a versioned key ring: a QuickBooks Web Connector username/password pair generated for that one connection, and a monday.com OAuth refresh token, which is rotated on every use. The app never sees or stores a customer's actual monday.com login credentials — access is via OAuth only. All data in transit uses TLS. One consequence worth stating plainly: QuickBooks sends whole record types, so records of a type a customer has not enabled or whose plan does not yet include it are still read and held in staging, encrypted, rather than being discarded. They are not sent anywhere. This is what allows an upgrade or an un-pause to take effect on the next sync instead of requiring a fresh read of the customer's entire history, and that staged data is erased on the same ten-day clock as everything else.
         </p>
       </div>
     </div>
@@ -618,12 +618,12 @@
             <td>Customer, Invoice, and Payment records — query only; ARBridge has no code path capable of creating, modifying, or deleting QuickBooks data</td>
           </tr>
           <tr>
-            <td><strong>monday.com API</strong> (ARBridge QuickBooks Enterprise)</td>
+            <td><strong>monday.com API</strong> (XSync for QuickBooks Desktop)</td>
             <td>Create and update board items within a single customer's own monday.com account, and read their boards and columns so QuickBooks fields can be mapped onto them</td>
             <td>Customer and job identity, invoice, estimate, sales order and item records, and derived AR metrics (credit status, aging, lifetime and trailing-12-month revenue) — written only into that same customer's own monday.com account via OAuth. Nothing is ever written back into QuickBooks.</td>
           </tr>
           <tr>
-            <td><strong>monday.com</strong> (identity and billing)</td>
+            <td><strong>monday.com</strong> (identity and billing &mdash; XSync for QuickBooks Desktop)</td>
             <td>Identify which monday.com account and user an installation belongs to, and administer the subscription through monday.com's own billing</td>
             <td>monday.com account identifier and name, and the identifier and name of the user who authorised the connection. Payment details are handled entirely by monday.com and never reach us.</td>
           </tr>
@@ -675,8 +675,8 @@
         <li><strong>ARBridge for QuickBooks — synced HubSpot data:</strong> Data ARBridge has synced into a customer's own HubSpot account (Companies, Contacts, Invoice records, and derived AR fields) is <strong>not</strong> deleted or retracted by ARBridge when the customer disconnects or uninstalls the app. It remains ordinary CRM data under that customer's own control, since it resides in an account they own.</li>
         <li><strong>ARBridge for QuickBooks — connection credentials &amp; sync logs:</strong> As of the date of this policy, ARBridge's backend does <strong>not yet</strong> automatically purge a disconnected connection's stored encrypted credentials (QuickBooks Web Connector password, HubSpot OAuth refresh token) or historical sync logs. This is a known gap that we are tracking for a future fix; customers who want this data deleted manually can contact us at the email address in Section 13.</li>
         <li><strong>ARBridge for QuickBooks — GDPR erasure requests:</strong> When HubSpot notifies ARBridge of a <code>contact.privacyDeletion</code> event (an end-customer of our customer exercising their GDPR right to be forgotten), ARBridge permanently purges that contact's personal data (email address and name) from its own database and durably prevents QuickBooks from re-populating that same data on a future sync.</li>
-        <li><strong>ARBridge QuickBooks Enterprise — synced monday.com data:</strong> Items the app has created on a customer's own monday.com boards are not deleted or retracted when that customer disconnects or uninstalls it. They remain ordinary board data under the customer's own control, since they reside in an account they own.</li>
-        <li><strong>ARBridge QuickBooks Enterprise — staged QuickBooks data, credentials &amp; sync logs:</strong> When monday.com tells us a customer has uninstalled the app or revoked its authorisation, a deletion clock starts. Unless the app is reconnected, everything held for that connection — the staged QuickBooks records, the encrypted QuickBooks Web Connector credentials, the monday.com tokens, the board mappings and the sync history — is permanently erased within ten days, and in practice within seven. Deletion is deferred rather than immediate because uninstalling and reinstalling is a normal way to troubleshoot a problem, and an instant purge would destroy a customer's entire setup during their own attempt to fix it. Reconnecting stops the clock.</li>
+        <li><strong>XSync for QuickBooks Desktop — synced monday.com data:</strong> Items the app has created on a customer's own monday.com boards are not deleted or retracted when that customer disconnects or uninstalls it. They remain ordinary board data under the customer's own control, since they reside in an account they own.</li>
+        <li><strong>XSync for QuickBooks Desktop — staged QuickBooks data, credentials &amp; sync logs:</strong> When monday.com tells us a customer has uninstalled the app or revoked its authorisation, a deletion clock starts. Unless the app is reconnected, everything held for that connection — the staged QuickBooks records, the encrypted QuickBooks Web Connector credentials, the monday.com tokens, the board mappings and the sync history — is permanently erased within ten days, and in practice within seven. Deletion is deferred rather than immediate because uninstalling and reinstalling is a normal way to troubleshoot a problem, and an instant purge would destroy a customer's entire setup during their own attempt to fix it. Reconnecting stops the clock.</li>
       </ul>
     </div>
 
