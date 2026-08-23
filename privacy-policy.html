@@ -416,7 +416,7 @@
       <div class="privacy-callout">
         <p>
           📧 <strong>Data Protection Contact:</strong> karim@agoracrew.com<br />
-          📍 <strong>Registered Address:</strong> Budapest, Hungary
+          📍 <strong>Registered Address:</strong> Budapest, Hungary<br />🏷️ <strong>Legal entity:</strong> Karim Hamza, sole trader (<em>egyéni vállalkozó</em>) registered in Hungary, trading as AgoraCrew — registration number 62541190, tax number HU92198362
         </p>
       </div>
     </div>
@@ -497,6 +497,11 @@
             <td>Create and update board items reflecting the customer's QuickBooks activity, and keep balances current as payments are recorded against them in QuickBooks</td>
           </tr>
           <tr>
+            <td><strong>Derived AR Metrics</strong> (via ARBridge QuickBooks Enterprise)</td>
+            <td>Credit-status flag (Good/Watch/Hold), AR aging, lifetime revenue and trailing-12-month revenue, computed from the synced QuickBooks data</td>
+            <td>Offered as mappable board columns, so a customer can see a receivables picture beside the work on their own boards. Written only into that same customer's own monday.com account, and only for the columns they choose to map</td>
+          </tr>
+          <tr>
             <td><strong>monday.com Account Identity</strong> (via ARBridge QuickBooks Enterprise)</td>
             <td>monday.com account identifier and name; identifier and name of the user who authorised the connection</td>
             <td>Identify which monday.com account an installation belongs to, keep each customer's data separated from every other customer's, and record who connected a QuickBooks company file</td>
@@ -518,7 +523,7 @@
 
       <div class="privacy-callout">
         <p>
-          🔒 <strong>ARBridge QuickBooks Enterprise — architecture note:</strong> ARBridge QuickBooks Enterprise is a monday.com marketplace app. For each customer who installs it, it reads Customer, Job, Invoice, Estimate, Sales Order and Item records from that customer's own QuickBooks Desktop Enterprise company file via QuickBooks Web Connector (using the qbXML protocol) and creates and updates items on that same customer's own monday.com boards, according to a field mapping that customer configures. Data is never aggregated or shared across customers, and is never sold or used for any purpose beyond this sync. Like its HubSpot counterpart, it only ever issues read-only qbXML "Query" requests — there is no code path in the product capable of adding, modifying, or deleting anything in a customer's QuickBooks file; this is not a configuration setting, the write capability does not exist in the code. Credentials are encrypted at rest with AES-256-GCM under a versioned key ring: a QuickBooks Web Connector username/password pair generated for that one connection, and a monday.com OAuth refresh token, which is rotated on every use. The app never sees or stores a customer's actual monday.com login credentials — access is via OAuth only. All data in transit uses TLS.
+          🔒 <strong>ARBridge QuickBooks Enterprise — architecture note:</strong> ARBridge QuickBooks Enterprise is a monday.com marketplace app. For each customer who installs it, it reads Customer, Job, Invoice, Estimate, Sales Order and Item records from that customer's own QuickBooks Desktop Enterprise company file via QuickBooks Web Connector (using the qbXML protocol) and creates and updates items on that same customer's own monday.com boards, according to a field mapping that customer configures. Data is never aggregated or shared across customers, and is never sold or used for any purpose beyond this sync. Like its HubSpot counterpart, it only ever issues read-only qbXML "Query" requests — there is no code path in the product capable of adding, modifying, or deleting anything in a customer's QuickBooks file; this is not a configuration setting, the write capability does not exist in the code. Credentials are encrypted at rest with AES-256-GCM under a versioned key ring: a QuickBooks Web Connector username/password pair generated for that one connection, and a monday.com OAuth refresh token, which is rotated on every use. The app never sees or stores a customer's actual monday.com login credentials — access is via OAuth only. All data in transit uses TLS. One consequence worth stating plainly: QuickBooks sends whole record types, so records of a type a customer has not enabled or whose plan does not yet include it are still read and held in staging, encrypted, rather than being discarded. They are not sent anywhere. This is what allows an upgrade or an un-pause to take effect on the next sync instead of requiring a fresh read of the customer's entire history, and that staged data is erased on the same ten-day clock as everything else.
         </p>
       </div>
     </div>
@@ -615,7 +620,7 @@
           <tr>
             <td><strong>monday.com API</strong> (ARBridge QuickBooks Enterprise)</td>
             <td>Create and update board items within a single customer's own monday.com account, and read their boards and columns so QuickBooks fields can be mapped onto them</td>
-            <td>Customer and job identity, invoice, estimate, sales order and item records, and derived AR metrics (balance, aging, credit status) &mdash; written only into that same customer's own monday.com account via OAuth. Nothing is ever written back into QuickBooks.</td>
+            <td>Customer and job identity, invoice, estimate, sales order and item records, and derived AR metrics (credit status, aging, lifetime and trailing-12-month revenue) — written only into that same customer's own monday.com account via OAuth. Nothing is ever written back into QuickBooks.</td>
           </tr>
           <tr>
             <td><strong>monday.com</strong> (identity and billing)</td>
@@ -623,9 +628,14 @@
             <td>monday.com account identifier and name, and the identifier and name of the user who authorised the connection. Payment details are handled entirely by monday.com and never reach us.</td>
           </tr>
           <tr>
-            <td><strong>Cloud Hosting Provider</strong></td>
-            <td>Application hosting and infrastructure</td>
+            <td><strong>Render</strong> (application hosting)</td>
+            <td>Host the ARBridge applications, their background jobs, and their managed PostgreSQL databases, in the EU</td>
             <td>Encrypted data at rest and in transit</td>
+          </tr>
+          <tr>
+            <td><strong>Fontshare</strong> (<code>api.fontshare.com</code>)</td>
+            <td>Serve the typefaces used on agoracrew.com and on our product documentation pages</td>
+            <td>No personal data is sent. As with any externally hosted font, the visitor's browser discloses its IP address and user agent to the font host when it requests the file</td>
           </tr>
           <tr>
             <td><strong>Formspree</strong></td>
