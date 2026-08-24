@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — XSync for QuickBooks Desktop | AgoraCrew</title>
+  <meta name="description" content="XSync for QuickBooks Desktop costs $199 a month, or $1,990 a year. One plan, everything included, 14-day free trial. Billed through monday.com." />
+  <link rel="canonical" href="https://agoracrew.com/pricing-xsync.html" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/pricing-xsync.html" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/pricing-xsync.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    /* ============================================
+       PRICING — XSync for QuickBooks Desktop
+       Reuses the legal pages' hero and content
+       classes so the site reads as one system.
+       ============================================ */
+
+    .privacy-hero {
+      position: relative;
+      padding: 140px 24px 60px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+    }
+
+    .privacy-hero::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 0;
+      height: 1px;
+      background: var(--ink-5);
+    }
+
+    .privacy-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+
+    .privacy-hero .lede {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--ink-70);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .privacy-back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+      color: var(--ink-50);
+      text-decoration: none;
+    }
+
+    .privacy-back-link:hover { color: var(--ink); }
+
+    .pricing-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ---- The card ---- */
+
+    .plan {
+      border: 1px solid var(--ink-10);
+      border-radius: 20px;
+      padding: 48px 40px;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 780px) {
+      .plan { grid-template-columns: 1fr; gap: 32px; padding: 36px 24px; }
+    }
+
+    .plan-name {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-50);
+      margin: 0 0 12px;
+    }
+
+    .plan-price {
+      font-family: var(--font-heading);
+      font-size: 3.4rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .plan-price span {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink-50);
+      letter-spacing: 0;
+    }
+
+    .plan-annual {
+      margin: 16px 0 0;
+      font-size: 1rem;
+      color: var(--ink-70);
+      line-height: 1.6;
+    }
+
+    .plan-annual b { color: var(--ink); }
+
+    .plan-trial {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--coral-20);
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .plan-cta {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 15px 28px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+
+    .plan-cta:hover { transform: translateY(-1px); }
+
+    .plan-billing {
+      margin: 16px 0 0;
+      font-size: 0.88rem;
+      color: var(--ink-50);
+      line-height: 1.6;
+    }
+
+    /* ---- Included list ---- */
+
+    .included h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin: 0 0 20px;
+      color: var(--ink);
+    }
+
+    .included ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .included li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 14px;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--ink-80);
+    }
+
+    .included li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* ---- Prose sections ---- */
+
+    .note {
+      margin-top: 64px;
+    }
+
+    .note h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+
+    .note p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: var(--ink-80);
+      margin: 0 0 16px;
+      max-width: 720px;
+    }
+
+    .note p b { color: var(--ink); }
+
+    .qa {
+      margin-top: 56px;
+      border-top: 1px solid var(--ink-10);
+      padding-top: 40px;
+    }
+
+    .qa dl { margin: 0; }
+
+    .qa dt {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin: 28px 0 8px;
+    }
+
+    .qa dt:first-child { margin-top: 0; }
+
+    .qa dd {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-70);
+      max-width: 720px;
+    }
+
+    .qa a { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION (injected by components.js) ==================== -->
+  <div id="navbar-root"></div>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="privacy-hero">
+    <a href="index.html" class="privacy-back-link">← Back to Home</a>
+    <h1>One plan. <span class="accent-text">Everything in it.</span></h1>
+    <p class="lede">
+      XSync puts your QuickBooks Desktop data on your monday.com boards and keeps it there.
+      There is one price, and it includes the whole product.
+    </p>
+  </section>
+
+
+  <!-- ==================== PLAN ==================== -->
+  <div class="pricing-wrap">
+
+    <div class="plan">
+      <div>
+        <p class="plan-name">XSync for QuickBooks Desktop</p>
+        <p class="plan-price">$199<span> / month</span></p>
+        <p class="plan-annual">
+          Or <b>$1,990 a year</b> — two months off if you pay annually.
+        </p>
+
+        <span class="plan-trial">14 days free. No card up front.</span>
+
+        <a class="plan-cta" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935">
+          Install from monday.com
+        </a>
+
+        <p class="plan-billing">
+          Billing runs through monday.com, on the same invoice as the rest of your account.
+          Cancel from your monday admin settings whenever you like.
+        </p>
+      </div>
+
+      <div class="included">
+        <h3>What you get</h3>
+        <ul>
+          <li>Invoices, customers and jobs, estimates, sales orders and items — all of it</li>
+          <li>As many QuickBooks company files as you need</li>
+          <li>Boards refresh automatically as things change in QuickBooks</li>
+          <li>Your full customer:job hierarchy, so you can see which job the money belongs to</li>
+          <li>Every amount carries its own currency</li>
+          <li>You decide which QuickBooks fields land in which columns</li>
+          <li>Ask monday Sidekick about your receivables and stock, and get real numbers back</li>
+          <li>Setup done with you on a call, and a person to email afterwards</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== WHY ONE PLAN ==================== -->
+    <section class="note">
+      <h2>Why there is only one plan</h2>
+      <p>
+        We tried writing three. Every version came down to hiding things that cost us nothing to
+        give you. Your estimates and sales orders are already being read out of QuickBooks — a
+        cheaper tier would have meant paying us to keep them off your screen.
+      </p>
+      <p>
+        It also made the thing harder to explain. Nobody enjoys working out which tier holds the
+        feature they need, and we did not want to spend our support time answering
+        <b>"why is this row greyed out?"</b> So there is one price and you get all of it.
+      </p>
+    </section>
+
+    <!-- ==================== SETUP ==================== -->
+    <section class="note">
+      <h2>About setup</h2>
+      <p>
+        QuickBooks Desktop has no cloud API. It talks to us through the QuickBooks Web Connector,
+        which runs on the Windows machine where your company file lives. That part is fiddly, so we
+        do it with you on a call rather than sending you a PDF and hoping.
+      </p>
+      <p>
+        Most people are syncing within half an hour. <b>There is no setup fee.</b>
+      </p>
+      <p>
+        One thing worth being clear about: <b>we never write anything back into QuickBooks.</b>
+        Every request we make is a read. Your accounting file stays exactly as your bookkeeper
+        left it.
+      </p>
+    </section>
+
+    <!-- ==================== QUESTIONS ==================== -->
+    <section class="qa">
+      <dl>
+        <dt>Does this work with QuickBooks Online?</dt>
+        <dd>
+          No. XSync is built for QuickBooks Desktop and Enterprise. If you are on QuickBooks Online,
+          the marketplace already has integrations that will serve you better.
+        </dd>
+
+        <dt>What happens when the trial ends?</dt>
+        <dd>
+          Your boards stop receiving new data until you subscribe. Nothing already on them is
+          deleted, and nothing in QuickBooks is touched.
+        </dd>
+
+        <dt>Can I connect more than one company file?</dt>
+        <dd>
+          Yes, as many as you want, at no extra cost. Each one syncs to its own boards and is kept
+          separate from the others.
+        </dd>
+
+        <dt>Do you charge per user or per board?</dt>
+        <dd>
+          No. One price for the account, however many people use monday.com and however many boards
+          you point us at.
+        </dd>
+
+        <dt>Where is my data held?</dt>
+        <dd>
+          On servers in Frankfurt, encrypted at rest. The detail is in our
+          <a href="privacy-policy.html">privacy policy</a>.
+        </dd>
+
+        <dt>How do I cancel?</dt>
+        <dd>
+          From your monday.com admin settings, the same way you manage any other app. You are not
+          locked into a term, and you do not need to email us for permission.
+        </dd>
+      </dl>
+    </section>
+
+  </div>
+
+
+  <!-- ==================== FOOTER (injected by components.js) ==================== -->
+  <div id="footer-root"></div>
+
+  <script src="components.js" data-base="." data-locale="en"></script>
+
+  <!-- AgoraCrew AI chat widget -->
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>
