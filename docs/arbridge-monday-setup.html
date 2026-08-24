@@ -220,7 +220,7 @@
         </ol>
         <p>Then open the app from your account's apps area. The first screen explains the three stages of setup before asking you for anything, and it names the one that surprises people: step four happens on the QuickBooks computer, not this one.</p>
                 <figure class="shot">
-          <img src="img/xsync/01-connect.png" alt="The app settings screen showing the three setup stages" loading="lazy">
+          <img src="/docs/img/xsync/01-connect.png" alt="The app settings screen showing the three setup stages" loading="lazy">
           <figcaption>The first screen. The three stages are shown before you are asked for anything, and stage two is the one that happens on your QuickBooks computer.</figcaption>
         </figure>
         <p>Give your company file a name if you like — <span class="path">Company name</span> is optional, and exists so that a second company file added later is distinguishable from the first.</p>
@@ -232,7 +232,7 @@
         <p>Click <kbd>Connect monday</kbd>. A new tab opens with monday's own consent screen, listing what the app is asking for: read your account and the user connecting, list workspaces, read boards and their columns, and create and update items.</p>
         <p>It opens in a new tab because monday refuses to render its own consent screen inside another app's frame. When you've approved it, come back to the first tab and click <kbd>I have finished — refresh</kbd>. There's no signal that tells the app you're done, so it asks rather than spinning forever.</p>
                 <figure class="shot">
-          <img src="img/xsync/02-authorize.png" alt="monday's consent screen listing the five permissions" loading="lazy">
+          <img src="/docs/img/xsync/02-authorize.png" alt="monday's consent screen listing the five permissions" loading="lazy">
           <figcaption>monday's own consent screen. Four of the five permissions are read-only; the one that modifies board data is the product doing its job.</figcaption>
         </figure>
         <div class="note">
@@ -246,7 +246,7 @@
         <h3>Get the setup file and password</h3>
         <p>Click <kbd>Get the setup file and password</kbd>. You'll see a generated user name and password, and a <kbd>Download the setup file</kbd> button that gives you a file named <span class="path">quickbooks-monday-….qwc</span> — a small configuration file telling the Web Connector where to call and who you are.</p>
                 <figure class="shot redacted">
-          <img src="img/xsync/03-credentials.png" alt="The generated user name and password, with the four Web Connector steps" loading="lazy">
+          <img src="/docs/img/xsync/03-credentials.png" alt="The generated user name and password, with the four Web Connector steps" loading="lazy">
           <figcaption>The setup file and its password, with the four steps to follow on the QuickBooks computer. The password is shown once.</figcaption>
         </figure>
         <div class="note warn">
@@ -267,12 +267,12 @@
           <li>When prompted, enter the password from step 3.</li>
         </ol>
         <figure class="shot">
-          <img src="img/xsync/04-authorize-service.png" alt="The Authorize New Web Service dialog in QuickBooks" loading="lazy">
+          <img src="/docs/img/xsync/04-authorize-service.png" alt="The Authorize New Web Service dialog in QuickBooks" loading="lazy">
           <figcaption>QuickBooks confirms who is asking. Check the service host reads <b>qbmonday.agoracrew.com</b> before clicking OK.</figcaption>
         </figure>
 
         <figure class="shot">
-          <img src="img/xsync/05-permission.png" alt="The QuickBooks Application permission dialog" loading="lazy">
+          <img src="/docs/img/xsync/05-permission.png" alt="The QuickBooks Application permission dialog" loading="lazy">
           <figcaption>The single most important click in the setup: <b>"Yes, always allow access, even when my QuickBooks isn't running."</b> Any other answer works until somebody closes QuickBooks.</figcaption>
         </figure>
         <div class="note stop">
@@ -295,7 +295,7 @@
         <p>In the Web Connector, tick the box beside <b>XSync for QuickBooks Desktop</b> and click <kbd>Update Selected</kbd>.</p>
         <p>The first run reads your history and is by far the heaviest one you'll do. On a large Enterprise file it can take a while, and the Web Connector's progress bar is the honest picture of where it is. Start it outside business hours if your file is big. After that it keeps everything current on its own.</p>
         <figure class="shot">
-          <img src="img/xsync/06-syncing.png" alt="The Web Connector showing a completed run" loading="lazy">
+          <img src="/docs/img/xsync/06-syncing.png" alt="The Web Connector showing a completed run" loading="lazy">
           <figcaption>A finished run: <b>Last result: Sync complete</b>, both bars at 100%, and the next run already scheduled. This is what a healthy connector looks like.</figcaption>
         </figure>
         <div class="note warn">
@@ -310,14 +310,14 @@
       <h2>Choosing your boards</h2>
       <p>Once QuickBooks has sent its first batch, the app's screen shows <b>What goes onto your boards</b> — a row for each kind of record: customers and jobs, invoices, estimates, sales orders and items.</p>
       <figure class="shot">
-        <img src="img/xsync/07-createboards.png" alt="The app showing each record type waiting for a board" loading="lazy">
+        <img src="/docs/img/xsync/07-createboards.png" alt="The app showing each record type waiting for a board" loading="lazy">
         <figcaption>After the first sync, everything QuickBooks sent is waiting: <b>115 ready, waiting for a board</b>. Nothing appears anywhere until you say where it goes.</figcaption>
       </figure>
       <p>For each one you can point it at a board you already have, or let the app build the board for you with columns that already match. Building it for you is the faster path and the one to take unless you have an existing board the rest of your team already works in.</p>
       <p><b>Mappings are checked before they're saved.</b> A column that doesn't exist, or one of the wrong type for the field you've pointed at it, is rejected then and there — rather than silently failing on every sync for the next three weeks.</p>
       <p><b>You can pause a record type</b> without losing which columns it fills. Useful if you want invoices flowing today and estimates later.</p>
       <figure class="shot">
-        <img src="img/xsync/08-boards-on.png" alt="The five record types switched on, with boards up to date" loading="lazy">
+        <img src="/docs/img/xsync/08-boards-on.png" alt="The five record types switched on, with boards up to date" loading="lazy">
         <figcaption>Switched on and running. Each row says where its records went, and the app confirms when the boards match QuickBooks.</figcaption>
       </figure>
       <div class="note">
@@ -336,13 +336,13 @@
       <h3>Your QuickBooks records, as monday boards</h3>
       <p>The app builds a board per record type and fills it. They are ordinary monday boards: filter them, group them, add columns of your own, build dashboards and automations on them. Anything you add is yours and is left alone by the sync.</p>
       <figure class="shot">
-        <img src="img/xsync/09-workspace.png" alt="The monday workspace listing the QuickBooks boards" loading="lazy">
+        <img src="/docs/img/xsync/09-workspace.png" alt="The monday workspace listing the QuickBooks boards" loading="lazy">
         <figcaption>Customers, invoices, estimates, sales orders and items, each on its own board in your workspace.</figcaption>
       </figure>
 
       <p>Invoices arrive with their totals, dates, balance still due and whether they are open or paid — so the question "what has actually been paid" is answerable without opening QuickBooks.</p>
       <figure class="shot">
-        <img src="img/xsync/10-invoices.png" alt="The invoices board showing totals, balances and paid or open status" loading="lazy">
+        <img src="/docs/img/xsync/10-invoices.png" alt="The invoices board showing totals, balances and paid or open status" loading="lazy">
         <figcaption>Balances update themselves as payments land in QuickBooks. Nobody re-keys anything.</figcaption>
       </figure>
 
@@ -350,7 +350,7 @@
       <h3>What a customer owes, on their row</h3>
       <p>Open any customer or invoice row and choose the <b>QuickBooks receivables</b> tab. It shows what that customer owes, aged into the standard buckets, with their credit status, how old the oldest unpaid invoice is, and when they last paid.</p>
       <figure class="shot">
-        <img src="img/xsync/11-card.png" alt="The receivables panel open on a customer row" loading="lazy">
+        <img src="/docs/img/xsync/11-card.png" alt="The receivables panel open on a customer row" loading="lazy">
         <figcaption>The same figures your aged debtors report would give you, on the row you were already looking at. Every panel says when the data was last read from QuickBooks.</figcaption>
       </figure>
 
