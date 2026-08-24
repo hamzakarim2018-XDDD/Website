@@ -128,6 +128,17 @@
       letter-spacing: 0.04em;
     }
 
+
+    /* monday's own install button. Their partnership review asks for it by name,
+       and it is their artwork - so it is used as supplied rather than restyled.
+       Only the surrounding spacing is ours. */
+    .monday-install {
+      display: inline-block;
+      margin-top: 26px;
+      line-height: 0;
+    }
+
+    .monday-install img { height: 32px; width: auto; display: block; }
   </style>
 </head>
 <body>
@@ -218,6 +229,12 @@
           <li>Click <kbd>Install</kbd>, and choose the monday.com account you want it installed into. If you belong to more than one account, check this carefully — the app's data belongs to the account you pick, and moving it later means setting it up again.</li>
           <li>Review the permissions monday shows you and approve them. Step 2 below explains what each one is for.</li>
         </ol>
+        <p>Or install it straight from here:</p>
+        <a class="monday-install" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">
+          <img alt="Add to monday.com" height="32"
+               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/Tal/4b5d9548-0598-436e-a5b6-9bc5f29ee1d9_Group12441.png">
+        </a>
+
         <p>Then open the app from your account's apps area. The first screen explains the three stages of setup before asking you for anything, and it names the one that surprises people: step four happens on the QuickBooks computer, not this one.</p>
                 <figure class="shot">
           <img src="/docs/img/xsync/01-connect.png" alt="The app settings screen showing the three setup stages" loading="lazy">

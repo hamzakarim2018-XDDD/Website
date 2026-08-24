@@ -138,20 +138,6 @@
       color: var(--ink);
     }
 
-    .plan-cta {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 15px 28px;
-      border-radius: 999px;
-      background: var(--ink);
-      color: var(--white);
-      font-size: 1rem;
-      text-decoration: none;
-      transition: transform 0.15s ease;
-    }
-
-    .plan-cta:hover { transform: translateY(-1px); }
-
     .plan-billing {
       margin: 16px 0 0;
       font-size: 0.88rem;
@@ -242,6 +228,17 @@
     }
 
     .qa a { color: var(--ink); }
+
+    /* monday's own install button. Their partnership review asks for it by name,
+       and it is their artwork - so it is used as supplied rather than restyled.
+       Only the surrounding spacing is ours. */
+    .monday-install {
+      display: inline-block;
+      margin-top: 26px;
+      line-height: 0;
+    }
+
+    .monday-install img { height: 32px; width: auto; display: block; }
   </style>
 </head>
 <body>
@@ -274,8 +271,9 @@
 
         <span class="plan-trial">14 days free. No card up front.</span>
 
-        <a class="plan-cta" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935">
-          Install from monday.com
+        <a class="monday-install" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">
+          <img alt="Add to monday.com" height="32"
+               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/Tal/4b5d9548-0598-436e-a5b6-9bc5f29ee1d9_Group12441.png">
         </a>
 
         <p class="plan-billing">
