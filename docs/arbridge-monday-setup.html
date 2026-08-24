@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
-  <title>XSync for QuickBooks Desktop — monday.com setup guide | AgoraCrew</title>
-  <meta name="description" content="Step-by-step setup for XSync for QuickBooks Desktop: the six things to check first, connecting monday.com, installing the QuickBooks Web Connector, choosing your boards, and what every Web Connector error code actually means." />
+  <title>How to install and use XSync for QuickBooks Desktop — AgoraCrew</title>
+  <meta name="description" content="Step-by-step guide to installing XSync for QuickBooks Desktop on monday.com, connecting the QuickBooks Web Connector, and using the boards, the receivables panel and the Sidekick skills once it is running." />
   <link rel="canonical" href="https://agoracrew.com/monday-setup" />
   <meta property="og:title" content="Setting up XSync for QuickBooks Desktop" />
   <meta property="og:description" content="Connect QuickBooks Desktop Enterprise to your monday.com boards, plus what to do when the Web Connector throws an error code." />
@@ -76,13 +76,65 @@
       margin-top: 56px; padding-top: 28px; border-top: 2px solid var(--ink);
       color: var(--ink-70); font-size: 0.95rem;
     }
+
+    /* ============================================
+       SCREENSHOTS
+       Added 2026-08-24. monday's documentation
+       review asks for first-time-use instructions,
+       and a page describing a Windows install with
+       no pictures of it does not meet that.
+       ============================================ */
+
+    figure.shot {
+      margin: 26px 0 10px;
+    }
+
+    figure.shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--ink-10);
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(23, 30, 25, 0.10);
+      background: #fff;
+    }
+
+    figure.shot figcaption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--ink-50);
+    }
+
+    /* The credentials screen really does show a password, so the bar below covers
+       it. The one in the picture was rotated away long ago, but a guide that
+       displays a credential teaches the wrong habit. */
+    figure.shot.redacted { position: relative; }
+
+    figure.shot.redacted::after {
+      content: 'user name and password hidden';
+      position: absolute;
+      left: 14%;
+      right: 13%;
+      top: 60%;
+      height: 11%;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
   </style>
 </head>
 <body>
 
   <section class="page-hero">
     <div class="page-hero-badge">Setup guide</div>
-    <h1>Connecting QuickBooks Desktop <span class="accent-text">to monday.com</span></h1>
+    <h1>Installing and using <span class="accent-text">XSync for QuickBooks Desktop</span></h1>
     <p class="page-hero-subtitle">
       Around twenty minutes, provided the six things in the next section are already true. Often one of them isn't, which is why they come first rather than as a footnote.
     </p>
@@ -167,6 +219,10 @@
           <li>Review the permissions monday shows you and approve them. Step 2 below explains what each one is for.</li>
         </ol>
         <p>Then open the app from your account's apps area. The first screen explains the three stages of setup before asking you for anything, and it names the one that surprises people: step four happens on the QuickBooks computer, not this one.</p>
+                <figure class="shot">
+          <img src="img/xsync/01-connect.png" alt="The app settings screen showing the three setup stages" loading="lazy">
+          <figcaption>The first screen. The three stages are shown before you are asked for anything, and stage two is the one that happens on your QuickBooks computer.</figcaption>
+        </figure>
         <p>Give your company file a name if you like — <span class="path">Company name</span> is optional, and exists so that a second company file added later is distinguishable from the first.</p>
       </div>
 
@@ -175,6 +231,10 @@
         <h3>Connect monday</h3>
         <p>Click <kbd>Connect monday</kbd>. A new tab opens with monday's own consent screen, listing what the app is asking for: read your account and the user connecting, list workspaces, read boards and their columns, and create and update items.</p>
         <p>It opens in a new tab because monday refuses to render its own consent screen inside another app's frame. When you've approved it, come back to the first tab and click <kbd>I have finished — refresh</kbd>. There's no signal that tells the app you're done, so it asks rather than spinning forever.</p>
+                <figure class="shot">
+          <img src="img/xsync/02-authorize.png" alt="monday's consent screen listing the five permissions" loading="lazy">
+          <figcaption>monday's own consent screen. Four of the five permissions are read-only; the one that modifies board data is the product doing its job.</figcaption>
+        </figure>
         <div class="note">
           <b class="lede">Why it asks to write to your boards.</b>
           <p>Creating and updating board items <i>is</i> the product — that's the permission doing the work. It reads boards and columns so you can map QuickBooks fields onto columns that already exist, and so that an invoice that's already on a board gets updated instead of added a second time.</p>
@@ -185,6 +245,10 @@
         <span class="step-no">Step 3</span>
         <h3>Get the setup file and password</h3>
         <p>Click <kbd>Get the setup file and password</kbd>. You'll see a generated user name and password, and a <kbd>Download the setup file</kbd> button that gives you a file named <span class="path">quickbooks-monday-….qwc</span> — a small configuration file telling the Web Connector where to call and who you are.</p>
+                <figure class="shot redacted">
+          <img src="img/xsync/03-credentials.png" alt="The generated user name and password, with the four Web Connector steps" loading="lazy">
+          <figcaption>The setup file and its password, with the four steps to follow on the QuickBooks computer. The password is shown once.</figcaption>
+        </figure>
         <div class="note warn">
           <b class="lede">Two things about this screen that will cost you time if you miss them.</b>
           <p><b>The password is shown exactly once.</b> Copy it somewhere before you close the panel. If you lose it, come back and generate a new one — that's normal and costs nothing except retyping it in the Web Connector.</p>
@@ -202,7 +266,15 @@
           <li>In the Web Connector, choose <kbd>Add an Application</kbd> and pick the <span class="path">.qwc</span> file you downloaded.</li>
           <li>When prompted, enter the password from step 3.</li>
         </ol>
+        <figure class="shot">
+          <img src="img/xsync/04-authorize-service.png" alt="The Authorize New Web Service dialog in QuickBooks" loading="lazy">
+          <figcaption>QuickBooks confirms who is asking. Check the service host reads <b>qbmonday.agoracrew.com</b> before clicking OK.</figcaption>
+        </figure>
 
+        <figure class="shot">
+          <img src="img/xsync/05-permission.png" alt="The QuickBooks Application permission dialog" loading="lazy">
+          <figcaption>The single most important click in the setup: <b>"Yes, always allow access, even when my QuickBooks isn't running."</b> Any other answer works until somebody closes QuickBooks.</figcaption>
+        </figure>
         <div class="note stop">
           <b class="lede">The authorisation prompt, and the answer that matters</b>
           <p>QuickBooks will ask how this application may access the company file. Choose <b>"Yes, always allow access even if QuickBooks is not running."</b></p>
@@ -222,6 +294,10 @@
         <h3>The first sync</h3>
         <p>In the Web Connector, tick the box beside <b>XSync for QuickBooks Desktop</b> and click <kbd>Update Selected</kbd>.</p>
         <p>The first run reads your history and is by far the heaviest one you'll do. On a large Enterprise file it can take a while, and the Web Connector's progress bar is the honest picture of where it is. Start it outside business hours if your file is big. After that it keeps everything current on its own.</p>
+        <figure class="shot">
+          <img src="img/xsync/06-syncing.png" alt="The Web Connector showing a completed run" loading="lazy">
+          <figcaption>A finished run: <b>Last result: Sync complete</b>, both bars at 100%, and the next run already scheduled. This is what a healthy connector looks like.</figcaption>
+        </figure>
         <div class="note warn">
           <b class="lede">Tick Auto-Run, or this only ever happens once.</b>
           <p>Set <kbd>Auto-Run</kbd> in the Web Connector with an interval of 15 minutes. Without it the sync runs only when somebody clicks Update Selected, which means it stops silently the moment that window closes and your boards quietly go stale.</p>
@@ -233,12 +309,69 @@
       <span class="content-section-eyebrow">Back in monday</span>
       <h2>Choosing your boards</h2>
       <p>Once QuickBooks has sent its first batch, the app's screen shows <b>What goes onto your boards</b> — a row for each kind of record: customers and jobs, invoices, estimates, sales orders and items.</p>
+      <figure class="shot">
+        <img src="img/xsync/07-createboards.png" alt="The app showing each record type waiting for a board" loading="lazy">
+        <figcaption>After the first sync, everything QuickBooks sent is waiting: <b>115 ready, waiting for a board</b>. Nothing appears anywhere until you say where it goes.</figcaption>
+      </figure>
       <p>For each one you can point it at a board you already have, or let the app build the board for you with columns that already match. Building it for you is the faster path and the one to take unless you have an existing board the rest of your team already works in.</p>
       <p><b>Mappings are checked before they're saved.</b> A column that doesn't exist, or one of the wrong type for the field you've pointed at it, is rejected then and there — rather than silently failing on every sync for the next three weeks.</p>
       <p><b>You can pause a record type</b> without losing which columns it fills. Useful if you want invoices flowing today and estimates later.</p>
+      <figure class="shot">
+        <img src="img/xsync/08-boards-on.png" alt="The five record types switched on, with boards up to date" loading="lazy">
+        <figcaption>Switched on and running. Each row says where its records went, and the app confirms when the boards match QuickBooks.</figcaption>
+      </figure>
       <div class="note">
         <b class="lede">Your customer:job hierarchy comes across.</b>
         <p>QuickBooks structures jobs underneath customers — <span class="path">Prentice, Adelaide:Guest Villa</span>. That structure is carried onto the board, so you can see not just who owes you but which job the money is against. For construction and manufacturing teams this is usually the reason for installing it at all.</p>
+      </div>
+    </div>
+
+
+    <div class="content-section">
+      <span class="content-section-eyebrow">Using it</span>
+      <h2>What you do with it once it is running</h2>
+
+      <p>After setup there is nothing to operate. QuickBooks checks in on its own every fifteen minutes and the boards keep themselves current. What follows is what the app is actually for.</p>
+
+      <h3>Your QuickBooks records, as monday boards</h3>
+      <p>The app builds a board per record type and fills it. They are ordinary monday boards: filter them, group them, add columns of your own, build dashboards and automations on them. Anything you add is yours and is left alone by the sync.</p>
+      <figure class="shot">
+        <img src="img/xsync/09-workspace.png" alt="The monday workspace listing the QuickBooks boards" loading="lazy">
+        <figcaption>Customers, invoices, estimates, sales orders and items, each on its own board in your workspace.</figcaption>
+      </figure>
+
+      <p>Invoices arrive with their totals, dates, balance still due and whether they are open or paid — so the question "what has actually been paid" is answerable without opening QuickBooks.</p>
+      <figure class="shot">
+        <img src="img/xsync/10-invoices.png" alt="The invoices board showing totals, balances and paid or open status" loading="lazy">
+        <figcaption>Balances update themselves as payments land in QuickBooks. Nobody re-keys anything.</figcaption>
+      </figure>
+
+
+      <h3>What a customer owes, on their row</h3>
+      <p>Open any customer or invoice row and choose the <b>QuickBooks receivables</b> tab. It shows what that customer owes, aged into the standard buckets, with their credit status, how old the oldest unpaid invoice is, and when they last paid.</p>
+      <figure class="shot">
+        <img src="img/xsync/11-card.png" alt="The receivables panel open on a customer row" loading="lazy">
+        <figcaption>The same figures your aged debtors report would give you, on the row you were already looking at. Every panel says when the data was last read from QuickBooks.</figcaption>
+      </figure>
+
+      <div class="note">
+        <b class="lede">Add the panel once per board.</b>
+        <p>Open any row, click the <b>+</b> beside the Updates and Files tabs, and pick <b>QuickBooks receivables</b>. It then stays on every row of that board. This is monday's design for item views, not a step we invented.</p>
+      </div>
+
+      <h3>Asking about your numbers in plain English</h3>
+      <p>The app adds skills to monday Sidekick, so you can ask questions instead of reading a board: what a customer owes, who is overdue, what stock is left, what the inventory is worth, or whether the sync is healthy. The answers come from your own synced QuickBooks figures, and each one says when it was last read.</p>
+      <div class="note">
+        <b class="lede">Nothing of yours is sent to a language model by us.</b>
+        <p>The app returns numbers; monday's assistant turns them into a sentence. There is no third-party AI in the path between your company file and your boards.</p>
+      </div>
+
+      <h3>When you want it now rather than in fifteen minutes</h3>
+      <p><kbd>Sync now</kbd> in the app's settings pushes whatever is waiting immediately. If nothing has changed in QuickBooks since the last run it will tell you so, rather than pretending to work.</p>
+
+      <div class="note">
+        <b class="lede">Nothing is ever written back to QuickBooks.</b>
+        <p>Editing a row on a monday board changes the board, not your company file. Every message the app sends to QuickBooks is a query. Your accounting file stays exactly as your bookkeeper left it.</p>
       </div>
     </div>
 
