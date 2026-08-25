@@ -1273,6 +1273,14 @@
       .app-features-layout { grid-template-columns: 1fr; }
       .issue-actions { flex-direction: column; gap: 4px; }
     }
+
+    .monday-install-home {
+      display: inline-block;
+      line-height: 0;
+      align-self: center;
+    }
+
+    .monday-install-home img { height: 32px; width: auto; display: block; }
   </style>
 
   <!-- Vercel Web Analytics -->
@@ -1672,6 +1680,29 @@
           </div>
         </div>
 
+        <!-- Product 3: XSync for QuickBooks Desktop -->
+        <div class="product-card reveal reveal-delay-2">
+          <span class="product-badge product-badge--live"><span class="live-dot"></span> On monday.com</span>
+          <h3>XSync for QuickBooks Desktop</h3>
+          <p>
+            Puts QuickBooks Desktop and Enterprise data onto the monday.com boards your team already works in. Invoices, customers and jobs, estimates, sales orders and items sync across and stay current, carrying the full customer:job hierarchy so you can see which job the money is against. Ask monday's Sidekick what a customer owes or what stock is left and get the real figures back. Nothing is ever written back into QuickBooks.
+          </p>
+
+          <div class="product-tech-stack">
+            <span class="tech-pill">monday.com</span>
+            <span class="tech-pill">QuickBooks Desktop</span>
+            <span class="tech-pill">Web Connector</span>
+            <span class="tech-pill">Read-Only Sync</span>
+          </div>
+          <div class="product-cta-group">
+            <a class="monday-install-home" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">
+              <img alt="Add to monday.com" height="32"
+                   src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/Tal/4b5d9548-0598-436e-a5b6-9bc5f29ee1d9_Group12441.png">
+            </a>
+            <a href="pricing-xsync.html" class="product-cta product-cta--secondary">Pricing &amp; how it works →</a>
+          </div>
+        </div>
+
         <!-- Product 3: AI Support & Growth Agent -->
         <div class="product-card reveal reveal-delay-2">
           <span class="product-badge">E-Commerce AI Platform</span>
@@ -1820,6 +1851,7 @@
           <h4>Products</h4>
           <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener">Order Issue Alerts</a>
           <a href="#products">ARBridge for QuickBooks</a>
+          <a href="#products">XSync for QuickBooks Desktop</a>
           <a href="#products">AI Support &amp; Growth Agent</a>
           <a href="blog/index.html">Blog</a>
         </div>
