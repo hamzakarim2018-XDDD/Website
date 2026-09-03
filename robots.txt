@@ -1,10 +1,14 @@
 User-agent: *
 Allow: /
-# Internal build artifacts behind the /blog/post.html?slug= and
-# /fr/blog/post.html?slug= rewrites - each one also carries a canonical tag
-# pointing back at its public ?slug= URL, this is just a second line of
-# defense against them getting indexed as separate duplicate pages.
+
+# Internal build artifacts behind the /blog/post.html?slug= rewrites - each one
+# also carries a canonical tag pointing back at its public ?slug= URL, this is
+# just a second line of defense against them getting indexed as separate
+# duplicate pages.
 Disallow: /blog/rendered-*.html
-Disallow: /fr/blog/rendered-*.html
+
+# Retired pages from before the QuickBooks-integration pivot. Also served with
+# X-Robots-Tag: noindex via vercel.json - this is the belt to that's braces.
+Disallow: /archive/
 
 Sitemap: https://agoracrew.com/sitemap.xml

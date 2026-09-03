@@ -4,17 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffe17c" />
-  <title>AgoraCrew — Custom Software Engineering & Enterprise Integrations</title>
-  <meta name="description" content="AgoraCrew builds high-performance custom software solutions, enterprise integrations, B2B automation, and deep e-commerce infrastructure. From complex CRM pipelines to real-time data sync — we ship production-grade systems." />
+  <title>AgoraCrew — QuickBooks Desktop Integrations for HubSpot &amp; monday.com</title>
+  <meta name="description" content="Expert CRM integrations into accounting software. We connect QuickBooks Desktop and Enterprise to HubSpot and monday.com — customers, invoices, payments and jobs, synced read-only via the QuickBooks Web Connector. Two live apps, 14-day free trials." />
   <link rel="canonical" href="https://agoracrew.com/index.html" />
-  <meta name="keywords" content="custom software development, enterprise integrations, Shopify apps, HubSpot integrations, QuickBooks sync, AI automation, B2B software, e-commerce infrastructure" />
-  <meta property="og:title" content="AgoraCrew — Custom Software Engineering Studio" />
-  <meta property="og:description" content="We build high-performance custom software, enterprise integrations, and AI-powered automation. From HubSpot to Shopify — production-grade systems, delivered." />
+  <meta name="keywords" content="QuickBooks Desktop HubSpot integration, QuickBooks Enterprise monday.com, QuickBooks Web Connector sync, CRM accounting integration, AR aging HubSpot, QuickBooks job costing monday boards" />
+  <meta property="og:title" content="AgoraCrew — QuickBooks Desktop Integrations for HubSpot &amp; monday.com" />
+  <meta property="og:description" content="QuickBooks Desktop and Enterprise have no API you can call. We build the two integrations that bridge them to HubSpot and monday.com — read-only, and maintained by us." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agoracrew.com/index.html" />
+  <meta property="og:image" content="https://agoracrew.com/logo-new-orange.png" />
+  <meta name="twitter:card" content="summary" />
   <link rel="alternate" hreflang="en" href="https://agoracrew.com/index.html" />
-  <link rel="alternate" hreflang="fr" href="https://agoracrew.com/fr/index.html" />
   <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/index.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/","logo":"https://agoracrew.com/logo-new-orange.png","email":"karim@agoracrew.com","telephone":"+36300841533","address":{"@type":"PostalAddress","addressLocality":"Budapest","addressCountry":"HU"},"taxID":"HU92198362"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://agoracrew.com/#org","name":"AgoraCrew","url":"https://agoracrew.com/","logo":"https://agoracrew.com/logo-new-orange.png","description":"Expert CRM integrations into accounting software. AgoraCrew connects QuickBooks Desktop and Enterprise to HubSpot and monday.com.","email":"karim@agoracrew.com","telephone":"+36300841533","address":{"@type":"PostalAddress","addressLocality":"Budapest","addressCountry":"HU"},"taxID":"HU92198362"},{"@type":"SoftwareApplication","name":"QuickBooks Desktop to HubSpot by AgoraCrew","applicationCategory":"BusinessApplication","operatingSystem":"Web, Windows (QuickBooks Web Connector)","url":"https://qbhubspot.agoracrew.com/Setup","publisher":{"@id":"https://agoracrew.com/#org"},"description":"Read-only sync of QuickBooks Desktop customers, invoices, line items and payments into HubSpot, with balance due, open invoice count, oldest invoice age, credit status and revenue metrics on every company.","offers":{"@type":"Offer","price":"149","priceCurrency":"USD","description":"$149 per month after a 14-day free trial"}},{"@type":"SoftwareApplication","name":"XSync for QuickBooks Desktop (monday.com)","applicationCategory":"BusinessApplication","operatingSystem":"Web, Windows (QuickBooks Web Connector)","url":"https://agoracrew.com/pricing-xsync.html","publisher":{"@id":"https://agoracrew.com/#org"},"description":"Read-only sync of QuickBooks Desktop and Enterprise invoices, customers and jobs, estimates, sales orders and items onto monday.com boards, carrying the full Customer:Job hierarchy.","offers":{"@type":"Offer","price":"199","priceCurrency":"USD","description":"$199 per month or $1,990 per year after a 14-day free trial, billed through monday.com"}}]}</script>
 
   <!-- Fonts: Cabinet Grotesk + Satoshi from Fontshare -->
   <link rel="preconnect" href="https://api.fontshare.com" />
@@ -1281,6 +1283,174 @@
     }
 
     .monday-install-home img { height: 32px; width: auto; display: block; }
+
+    /* ============================================
+       PIVOT 2026-09: QuickBooks Desktop → CRM
+       Sections added for the two-app site.
+       ============================================ */
+
+    /* ----- Wiring band: what we actually connect ----- */
+    .wiring {
+      background: var(--yellow);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      padding: 56px 0;
+    }
+    .wiring-band {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .wiring-node {
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .wiring-node img { width: 26px; height: 26px; flex-shrink: 0; }
+    .wiring-node-text { display: flex; flex-direction: column; line-height: 1.25; }
+    .wiring-node-name {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .wiring-node-sub {
+      font-size: 0.78rem;
+      opacity: 0.6;
+      font-weight: 500;
+    }
+    .wiring-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+    .wiring-arrow-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.65;
+      white-space: nowrap;
+    }
+    .wiring-arrow-line { font-size: 1.5rem; line-height: 1; }
+    .wiring-targets { display: flex; flex-direction: column; gap: 12px; }
+    .wiring-note {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      letter-spacing: -0.01em;
+    }
+
+    /* ----- Two-up product grid ----- */
+    .products-grid--two { grid-template-columns: repeat(2, 1fr); }
+
+    .product-bullets {
+      list-style: none;
+      margin: 0 0 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .product-bullets li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--white);
+      opacity: 0.75;
+    }
+    .product-bullets li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      flex-shrink: 0;
+      margin-top: 7px;
+      border-radius: 2px;
+    }
+    .product-price {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .product-price strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .product-price span {
+      font-size: 0.85rem;
+      color: var(--sage);
+      opacity: 0.8;
+    }
+
+    /* ----- Honest note callout ----- */
+    .honest-note {
+      max-width: 780px;
+      margin: 48px auto 0;
+      background: var(--white);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 24px 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .honest-note-icon {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+    .honest-note h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .honest-note p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      opacity: 0.75;
+      margin: 0;
+    }
+
+    /* ----- Direct contact strip under the form ----- */
+    .contact-direct {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+    .contact-direct a {
+      font-weight: 700;
+      border-bottom: 2px solid var(--yellow);
+    }
+
+    @media (max-width: 1024px) {
+      .products-grid--two { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .wiring-band { flex-direction: column; gap: 14px; }
+      .wiring-node { width: 100%; max-width: 340px; }
+      .wiring-targets { width: 100%; max-width: 340px; }
+      .wiring-arrow-line { transform: rotate(90deg); }
+      .honest-note { flex-direction: column; gap: 10px; }
+    }
   </style>
 
   <!-- Vercel Web Analytics -->
@@ -1299,16 +1469,14 @@
       </a>
 
       <div class="nav-center" id="navCenter">
-        <a href="#app-features">Our App</a>
-
-        <a href="#services">Services</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+        <a href="#apps">The Apps</a>
+        <a href="#why">Why It&rsquo;s Hard</a>
+        <a href="#how-we-work">How It Works</a>
+        <a href="blog/index.html">Blog</a>
       </div>
 
       <div class="nav-right">
-        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Try Our Shopify App</a>
-        <a href="fr/index.html" class="nav-lang-switch" aria-label="Switch to French">FR</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Book a Call</a>
       </div>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -1319,13 +1487,11 @@
 
       <!-- Mobile Slide-out Nav -->
       <div class="nav-links" id="navLinks">
-        <a href="#app-features">Our App</a>
-
-        <a href="#services">Services</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Try Our Shopify App</a>
-        <a href="fr/index.html" class="nav-lang-switch-mobile" aria-label="Switch to French">FR — Voir en français</a>
+        <a href="#apps">The Apps</a>
+        <a href="#why">Why It&rsquo;s Hard</a>
+        <a href="#how-we-work">How It Works</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Book a Call</a>
       </div>
     </div>
   </nav>
@@ -1335,392 +1501,202 @@
   <section class="hero dot-bg" id="hero">
 
     <div class="hero-badge animate-fade-up" style="opacity:0; animation-delay: 0.1s;">
-      <span class="dot"></span> Now Live on the Shopify App Store
+      <span class="dot"></span> Two live apps for QuickBooks Desktop &amp; Enterprise
     </div>
 
     <h1 class="hero-title animate-fade-up" style="opacity:0; animation-delay: 0.25s;">
-      Stop Order Issues<br/>
-      <span class="accent-text">Before They Cost You.</span>
+      Expert CRM Integrations<br/>
+      <span class="accent-text">Into Accounting Software.</span>
     </h1>
 
     <p class="hero-subtitle animate-fade-up" style="opacity:0; animation-delay: 0.4s;">
-      Fulfillment delays, inventory mismatches, undeliverable addresses — problems that silently eat your margins and trigger angry customers. Order Issue Alerts scans every order and delivers one prioritized daily digest, right inside Shopify Admin. No manual checking. No surprises. Free plan available.
+      We connect QuickBooks Desktop and Enterprise to the CRM your team already works in &mdash; HubSpot and monday.com. Customers, invoices, payments and jobs cross over and stay current, so sales stops asking accounting what a customer owes. Read-only by design: nothing is ever written back into QuickBooks.
     </p>
 
     <div class="hero-cta-group animate-fade-up" style="opacity:0; animation-delay: 0.5s;">
-      <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Start Free on Shopify →</a>
-      <a href="#app-features" class="hero-cta-secondary">See How It Works ↓</a>
+      <a href="#contact" class="hero-cta">Book a Call &rarr;</a>
+      <a href="#apps" class="hero-cta-secondary">See the Two Apps &darr;</a>
     </div>
 
-    <p class="trust-line animate-fade-up" style="opacity:0; animation-delay: 0.6s;">No credit card required · Works with any Shopify plan</p>
+    <p class="trust-line animate-fade-up" style="opacity:0; animation-delay: 0.6s;">14-day free trial on both &middot; Your company file is never modified</p>
 
   </section>
 
 
-  <!-- ==================== TECH PARTNERS ==================== -->
-  <section class="platforms" id="platforms">
+  <!-- ==================== WIRING BAND ==================== -->
+  <section class="wiring" id="wiring">
     <div class="container">
-      <div class="platforms-inner">
-        <span class="platforms-label">Partners</span>
-        <div class="platform-logos-wrapper">
-          <div class="platform-logos">
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
-              <span>Shopify</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.hubspot.com&size=64" alt="HubSpot" width="22" height="22" loading="lazy" />
-              <span>HubSpot</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quickbooks.intuit.com&size=64" alt="QuickBooks" width="22" height="22" loading="lazy" />
-              <span>QuickBooks</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.salesforce.com&size=64" alt="Salesforce" width="22" height="22" loading="lazy" />
-              <span>Salesforce</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://aws.amazon.com&size=64" alt="AWS" width="22" height="22" loading="lazy" />
-              <span>AWS</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://stripe.com&size=64" alt="Stripe" width="22" height="22" loading="lazy" />
-              <span>Stripe</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
-              <span>Zendesk</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
-              <span>Gorgias</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.mongodb.com&size=64" alt="MongoDB" width="22" height="22" loading="lazy" />
-              <span>MongoDB</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nodejs.org&size=64" alt="Node.js" width="22" height="22" loading="lazy" />
-              <span>Node.js</span>
-            </div>
-            <!-- Duplicate set for seamless marquee -->
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.shopify.com&size=64" alt="Shopify" width="22" height="22" loading="lazy" />
-              <span>Shopify</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.hubspot.com&size=64" alt="HubSpot" width="22" height="22" loading="lazy" />
-              <span>HubSpot</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://quickbooks.intuit.com&size=64" alt="QuickBooks" width="22" height="22" loading="lazy" />
-              <span>QuickBooks</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.salesforce.com&size=64" alt="Salesforce" width="22" height="22" loading="lazy" />
-              <span>Salesforce</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://aws.amazon.com&size=64" alt="AWS" width="22" height="22" loading="lazy" />
-              <span>AWS</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://stripe.com&size=64" alt="Stripe" width="22" height="22" loading="lazy" />
-              <span>Stripe</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.zendesk.com&size=64" alt="Zendesk" width="22" height="22" loading="lazy" />
-              <span>Zendesk</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.gorgias.com&size=64" alt="Gorgias" width="22" height="22" loading="lazy" />
-              <span>Gorgias</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.mongodb.com&size=64" alt="MongoDB" width="22" height="22" loading="lazy" />
-              <span>MongoDB</span>
-            </div>
-            <div class="platform-logo">
-              <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nodejs.org&size=64" alt="Node.js" width="22" height="22" loading="lazy" />
-              <span>Node.js</span>
-            </div>
+      <div class="wiring-band">
+
+        <div class="wiring-node">
+          <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL&amp;url=https://quickbooks.intuit.com&amp;size=64" alt="" width="26" height="26" loading="lazy" aria-hidden="true" />
+          <span class="wiring-node-text">
+            <span class="wiring-node-name">QuickBooks Desktop</span>
+            <span class="wiring-node-sub">Pro, Premier &amp; Enterprise, on-premises</span>
+          </span>
+        </div>
+
+        <div class="wiring-arrow" aria-hidden="true">
+          <span class="wiring-arrow-label">Web Connector</span>
+          <span class="wiring-arrow-line">&#10230;</span>
+          <span class="wiring-arrow-label">read-only</span>
+        </div>
+
+        <div class="wiring-targets">
+          <div class="wiring-node">
+            <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL&amp;url=https://www.hubspot.com&amp;size=64" alt="" width="26" height="26" loading="lazy" aria-hidden="true" />
+            <span class="wiring-node-text">
+              <span class="wiring-node-name">HubSpot</span>
+              <span class="wiring-node-sub">Companies, invoices, AR aging</span>
+            </span>
+          </div>
+          <div class="wiring-node">
+            <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL&amp;url=https://monday.com&amp;size=64" alt="" width="26" height="26" loading="lazy" aria-hidden="true" />
+            <span class="wiring-node-text">
+              <span class="wiring-node-name">monday.com</span>
+              <span class="wiring-node-sub">Boards for invoices, jobs &amp; items</span>
+            </span>
           </div>
         </div>
+
       </div>
+      <p class="wiring-note">That is the whole company. We do this one thing, and we do it on the hard side of QuickBooks.</p>
     </div>
   </section>
 
 
-  <!-- ==================== APP FEATURES SHOWCASE ==================== -->
-  <section class="app-features" id="app-features">
-    <div class="section-container">
-
-      <div class="app-features-layout">
-        <!-- Left Column: Text & Bullets -->
-        <div class="app-features-text-col reveal">
-          <span class="section-label">INSIDE SHOPIFY ADMIN</span>
-          <h2>Catch order problems<br/>before your customers do.</h2>
-          <div class="app-features-separator"></div>
-          <p class="app-features-sub">Issues appear the moment they happen. Nothing to configure.</p>
-
-          <div class="app-feature-bullets">
-            <div class="app-feature-bullet">
-              <span class="bullet-dot"></span>
-              <div><strong>Fulfillment delays</strong> <span>before they ask where it is</span></div>
-            </div>
-            <div class="app-feature-bullet">
-              <span class="bullet-dot"></span>
-              <div><strong>Oversold inventory</strong> <span>across every location</span></div>
-            </div>
-            <div class="app-feature-bullet">
-              <span class="bullet-dot"></span>
-              <div><strong>Bad addresses</strong> <span>before you pay to ship</span></div>
-            </div>
-            <div class="app-feature-bullet">
-              <span class="bullet-dot"></span>
-              <div><strong>Export to CSV</strong> <span>any digest, one click</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: App Screenshot -->
-        <div class="app-features-screenshot-col reveal reveal-delay-1">
-          <div class="app-screenshot-frame">
-            <div class="app-screenshot-toolbar">
-              <span class="dot-r"></span>
-              <span class="dot-y"></span>
-              <span class="dot-g"></span>
-            </div>
-            <div class="app-screenshot-content">
-              <div class="app-screenshot-header">
-                <h4>USD 45,829.10 at risk across 8 orders</h4>
-                <span class="refresh-btn">Refresh</span>
-              </div>
-              <div class="app-screenshot-severity-tags">
-                <span class="severity-tag severity-tag--high">1 high</span>
-                <span class="severity-tag severity-tag--medium">6 medium</span>
-                <span class="severity-tag severity-tag--low">1 low</span>
-              </div>
-
-              <!-- Issue: Fulfillment -->
-              <div class="app-screenshot-issue">
-                <div class="issue-info">
-                  <p class="issue-category">Fulfillment</p>
-                  <span class="issue-severity-label issue-severity-label--low">Low</span>
-                  <div class="issue-bar issue-bar--low"></div>
-                  <p class="issue-desc">Order #1003 (USD 3,499.75) has been unfulfilled for 2 days.</p>
-                </div>
-                <div class="issue-actions">
-                  <span class="issue-action-btn">Take me there</span>
-                  <span class="issue-action-btn">Mark resolved</span>
-                </div>
-              </div>
-
-              <!-- Issue: Inventory -->
-              <div class="app-screenshot-issue">
-                <div class="issue-info">
-                  <p class="issue-category">Inventory</p>
-                  <span class="issue-severity-label issue-severity-label--high">High</span>
-                  <div class="issue-bar issue-bar--high"></div>
-                  <p class="issue-desc">Order #1004 (USD 30,000.00) — short 50 unit(s) of The Collection Snowboard: Hydrogen at Shop location.</p>
-                </div>
-                <div class="issue-actions">
-                  <span class="issue-action-btn">Take me there</span>
-                  <span class="issue-action-btn">Mark resolved</span>
-                </div>
-              </div>
-
-              <!-- Issue: Address -->
-              <div class="app-screenshot-issue">
-                <div class="issue-info">
-                  <p class="issue-category">Address</p>
-                  <span class="issue-severity-label issue-severity-label--medium">Medium</span>
-                  <div class="issue-bar issue-bar--medium"></div>
-                  <p class="issue-desc">Order #1005 (USD 749.95)'s shipping address could not be verified.</p>
-                </div>
-                <div class="issue-actions">
-                  <span class="issue-action-btn">Take me there</span>
-                  <span class="issue-action-btn">Mark resolved</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="app-how-it-works reveal">
-        <h3>How It Works</h3>
-        <div class="app-flow-steps">
-          <div class="app-flow-step">
-            <span class="step-num">1</span>
-            Install in 30 seconds
-          </div>
-          <span class="app-flow-arrow">→</span>
-          <div class="app-flow-step">
-            <span class="step-num">2</span>
-            We scan your orders daily
-          </div>
-          <span class="app-flow-arrow">→</span>
-          <div class="app-flow-step">
-            <span class="step-num">3</span>
-            Get one prioritized digest
-          </div>
-          <span class="app-flow-arrow">→</span>
-          <div class="app-flow-step">
-            <span class="step-num">4</span>
-            Mark resolved — it won't come back
-          </div>
-        </div>
-      </div>
-
-      <div class="app-features-cta-group reveal">
-        <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="hero-cta">Start Free on Shopify →</a>
-        <p class="trust-line">No credit card required · Cancel anytime</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== SERVICES ==================== -->
-  <section class="services" id="services">
+  <!-- ==================== WHY IT'S HARD ==================== -->
+  <section class="services" id="why">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot"></span> What We Build</span>
-        <h2 class="section-title">Engineering Solutions for<br/><span class="accent-text">Complex Problems.</span></h2>
+        <span class="section-label"><span class="dot"></span> Why this is specialist work</span>
+        <h2 class="section-title">QuickBooks Desktop Has<br/><span class="accent-text">No API You Can Call.</span></h2>
         <p class="section-subtitle mx-auto">
-          We design, build, and maintain production-grade software systems that solve real business problems — not cookie-cutter templates.
+          Cloud accounting has a REST API and an OAuth button. Desktop and Enterprise have neither. They sit on a machine in your office, behind your firewall, and they only talk when they decide to. That single fact is why most integrations quietly skip them &mdash; and why we built for them on purpose.
         </p>
       </div>
 
       <div class="services-grid">
+
         <div class="service-card reveal">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3>Custom Software Development</h3>
-          <p>End-to-end application development, from architecture to deployment. APIs, dashboards, internal tools, and customer-facing platforms — built for scale.</p>
+          <div class="service-icon">&#8617;</div>
+          <h3>QuickBooks calls you, not the reverse</h3>
+          <p>
+            The only supported route in is the QuickBooks Web Connector &mdash; a small Windows program that polls a SOAP service on a schedule and pushes qbXML at it. You cannot request data on demand; you answer when it knocks. Every design decision downstream follows from that constraint.
+          </p>
         </div>
 
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><line x1="6" y1="12" x2="18" y2="12"/><path d="M12 5v2"/><path d="M12 17v2"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M19 5l-2 2"/><path d="M5 19l2-2"/></svg>
-          </div>
-          <h3>Enterprise Integrations</h3>
-          <p>Deep platform sync across CRMs, ERPs, and e-commerce stacks. HubSpot, QuickBooks, Shopify, Salesforce, and beyond — real-time data mapping with stateful workflows.</p>
+          <div class="service-icon">&#9729;</div>
+          <h3>Almost every rival connects to QuickBooks <em>Online</em></h3>
+          <p>
+            Search either marketplace and the QuickBooks integrations you find target the cloud product. A firm running Enterprise on-premises &mdash; most construction, manufacturing and wholesale companies we speak to &mdash; is left doing CSV exports by hand. That is the gap both our apps sit in.
+          </p>
         </div>
 
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>E-Commerce Infrastructure</h3>
-          <p>Custom Shopify apps, fulfillment automation, inventory systems, and operational tooling for high-volume merchants. We build the backend your storefront depends on.</p>
+          <div class="service-icon">&#128274;</div>
+          <h3>Read-only, and we mean it</h3>
+          <p>
+            Data moves one way: out of QuickBooks and into your CRM. Neither app writes, edits or deletes anything in your company file. Your bookkeeper&rsquo;s ledger stays exactly as they left it, and the worst case for a sync bug is a stale figure in your CRM &mdash; never a corrupted book.
+          </p>
         </div>
 
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/><path d="M8 6a4 4 0 0 0 3.25 3.93"/><circle cx="12" cy="14" r="4"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
-          </div>
-          <h3>AI &amp; Automation</h3>
-          <p>Intelligent workflows, AI-powered copilots, and automated backend systems that reduce manual work and scale your operations. Claude, GPT, and custom models.</p>
+          <div class="service-icon">&#9878;</div>
+          <h3>The accounting has to actually be right</h3>
+          <p>
+            A balance is not just the sum of invoices. Credit memos, partial payments, discounts, write-offs and multi-currency all move the number, and qbXML will happily return a valid-looking response that quietly omits the field you needed. Getting these right is most of the work, and it is the part you cannot see from a screenshot.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
 
 
-  <!-- ==================== PRODUCTS (Proof of Capability) ==================== -->
-  <section class="products" id="products">
+  <!-- ==================== THE TWO APPS ==================== -->
+  <section class="products" id="apps">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot"></span> Our Products</span>
-        <h2 class="section-title">Live &amp; Battle-Tested<br/><span class="accent-text">Products.</span></h2>
+        <span class="section-label"><span class="dot"></span> The Apps</span>
+        <h2 class="section-title">Two Integrations.<br/><span class="accent-text">Both Live. Both Ours.</span></h2>
         <p class="section-subtitle mx-auto">
-          We don't just talk about engineering. These are live products our team designed, built, and maintains — proof of what we can build for you.
+          We build and maintain these ourselves &mdash; no iPaaS subscription in the middle, no third-party console to log into, no mapping fields in someone else&rsquo;s UI. Pick the CRM your team already uses.
         </p>
       </div>
 
-      <div class="products-grid">
-        <!-- Product 1: Order Issue Alerts -->
+      <div class="products-grid products-grid--two">
+
+        <!-- App 1: QuickBooks Desktop -> HubSpot -->
         <div class="product-card reveal">
-          <span class="product-badge product-badge--live"><span class="live-dot"></span> Live on Shopify</span>
-          <h3>Order Issue Alerts</h3>
-          <p>
-            An intelligent daily operational digest for Shopify merchants that aggregates fulfillment delays, inventory mismatches, and address validation issues into a single prioritized list. Know what's broken before your customers do.
-          </p>
-
-          <div class="product-tech-stack">
-            <span class="tech-pill">Shopify</span>
-            <span class="tech-pill">Node.js</span>
-            <span class="tech-pill">AI-Powered</span>
-            <span class="tech-pill">REST API</span>
-          </div>
-          <div class="product-cta-group">
-            <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="product-cta">Install Free on Shopify →</a>
-            <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="product-cta product-cta--secondary">View on Shopify App Store →</a>
-          </div>
-        </div>
-
-        <!-- Product 2: ARBridge for QuickBooks -->
-        <div class="product-card reveal reveal-delay-1">
           <span class="product-badge product-badge--live"><span class="live-dot"></span> Live on HubSpot</span>
-          <h3>ARBridge for QuickBooks</h3>
+          <h3>QuickBooks Desktop &rarr; HubSpot</h3>
           <p>
-            A read-only bridge between QuickBooks Desktop and HubSpot for B2B teams selling on invoice terms. ARBridge syncs customers, invoices, and payments into HubSpot and computes AR aging, credit-status, and revenue metrics automatically — so sales never finds out a customer is 74 days past due from a forwarded email.
+            For B2B teams selling on invoice terms. Your customers become HubSpot companies and your invoices become native HubSpot invoices &mdash; then every company carries its own live receivables picture, so a rep sees a customer is 74 days past due <em>before</em> the call, not from a forwarded email afterwards.
           </p>
+
+          <ul class="product-bullets">
+            <li>Customers, invoices, line items and payments sync across on a schedule</li>
+            <li>Each company gets balance due, open invoice count, oldest invoice age and a credit status</li>
+            <li>Lifetime revenue, trailing-twelve-month revenue, first invoice date and last payment land as properties you can filter, sort and build lists on</li>
+            <li>Workflows and reports treat it as ordinary HubSpot data, because it is</li>
+          </ul>
 
           <div class="product-tech-stack">
             <span class="tech-pill">HubSpot</span>
             <span class="tech-pill">QuickBooks Desktop</span>
-            <span class="tech-pill">.NET</span>
-            <span class="tech-pill">Read-Only Sync</span>
-          </div>
-          <div class="product-cta-group">
-            <a href="#contact" class="product-cta">Request Access →</a>
-          </div>
-        </div>
-
-        <!-- Product 3: XSync for QuickBooks Desktop -->
-        <div class="product-card reveal reveal-delay-2">
-          <span class="product-badge product-badge--live"><span class="live-dot"></span> On monday.com</span>
-          <h3>XSync for QuickBooks Desktop</h3>
-          <p>
-            Puts QuickBooks Desktop and Enterprise data onto the monday.com boards your team already works in. Invoices, customers and jobs, estimates, sales orders and items sync across and stay current, carrying the full customer:job hierarchy so you can see which job the money is against. Ask monday's Sidekick what a customer owes or what stock is left and get the real figures back. Nothing is ever written back into QuickBooks.
-          </p>
-
-          <div class="product-tech-stack">
-            <span class="tech-pill">monday.com</span>
-            <span class="tech-pill">QuickBooks Desktop</span>
             <span class="tech-pill">Web Connector</span>
             <span class="tech-pill">Read-Only Sync</span>
           </div>
+
+          <div class="product-price">
+            <strong>$149 / month</strong>
+            <span>after a 14-day free trial &middot; cancel any time</span>
+          </div>
+
+          <div class="product-cta-group">
+            <a href="https://qbhubspot.agoracrew.com/Setup" class="product-cta">Install for HubSpot &rarr;</a>
+            <a href="/install" class="product-cta product-cta--secondary">Setup guide &rarr;</a>
+          </div>
+        </div>
+
+        <!-- App 2: QuickBooks Desktop -> monday.com -->
+        <div class="product-card reveal reveal-delay-1">
+          <span class="product-badge product-badge--live"><span class="live-dot"></span> On the monday.com marketplace</span>
+          <h3>QuickBooks Desktop &rarr; monday.com</h3>
+          <p>
+            For construction, manufacturing and wholesale firms running operations on monday boards while the money lives in QuickBooks Enterprise. XSync puts the financial records onto the boards your team is already in, keeping the structure your accountant built.
+          </p>
+
+          <ul class="product-bullets">
+            <li>Invoices, customers and jobs, estimates, sales orders and items become board items and stay current</li>
+            <li>The full QuickBooks <em>Customer:Job</em> hierarchy carries across, so you can see which job the money is against</li>
+            <li>Ask monday&rsquo;s Sidekick what a customer owes or what stock is left, and get the real figures back</li>
+            <li>Native inside monday &mdash; no separate console, no iPaaS bill on top</li>
+          </ul>
+
+          <div class="product-tech-stack">
+            <span class="tech-pill">monday.com</span>
+            <span class="tech-pill">QuickBooks Enterprise</span>
+            <span class="tech-pill">Job Costing</span>
+            <span class="tech-pill">Read-Only Sync</span>
+          </div>
+
+          <div class="product-price">
+            <strong>$199 / month</strong>
+            <span>or $1,990 a year &middot; 14-day free trial &middot; billed through monday.com</span>
+          </div>
+
           <div class="product-cta-group">
             <a class="monday-install-home" href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">
               <img alt="Add to monday.com" height="32"
                    src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/Tal/4b5d9548-0598-436e-a5b6-9bc5f29ee1d9_Group12441.png">
             </a>
-            <a href="pricing-xsync.html" class="product-cta product-cta--secondary">Pricing &amp; how it works →</a>
+            <a href="pricing-xsync.html" class="product-cta product-cta--secondary">Pricing &amp; how it works &rarr;</a>
           </div>
         </div>
 
-        <!-- Product 3: AI Support & Growth Agent -->
-        <div class="product-card reveal reveal-delay-2">
-          <span class="product-badge">E-Commerce AI Platform</span>
-          <h3>AI Support Agent &amp; Growth Engine</h3>
-          <p>
-            An intelligent AI agent for e-commerce brands that handles live chat and email support 24/7 — resolving order tracking queries instantly with real-time Shopify data, speaking your brand voice in 50+ languages. Built-in growth tools proactively recover abandoned carts, trigger win-back campaigns, and send replenishment reminders to drive repeat revenue.
-          </p>
-          <div class="product-tech-stack">
-            <span class="tech-pill">Shopify</span>
-            <span class="tech-pill">Gorgias</span>
-            <span class="tech-pill">Zendesk</span>
-            <span class="tech-pill">Claude AI</span>
-            <span class="tech-pill">50+ Languages</span>
-          </div>
-          <div class="product-cta-group">
-            <a href="#contact" class="product-cta">Request a Demo</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1730,50 +1706,71 @@
   <section class="how-we-work dot-bg" id="how-we-work">
     <div class="section-container">
       <div class="text-center">
-        <span class="section-label"><span class="dot" style="background: var(--black);"></span> Our Process</span>
-        <h2 class="section-title">From Discovery to<br/><span class="accent-text">Production.</span></h2>
-        <p class="section-subtitle mx-auto" style="opacity: 0.6;">
-          Every engagement starts with understanding your systems and ends with production-grade software your team can rely on.
+        <span class="section-label"><span class="dot"></span> How It Works</span>
+        <h2 class="section-title">From Call to<br/><span class="accent-text">Live Data.</span></h2>
+        <p class="section-subtitle mx-auto">
+          The apps install themselves. Connecting QuickBooks Desktop is the part that needs a human, so we do it with you.
         </p>
       </div>
 
       <div class="steps-grid steps-grid--three">
+
         <div class="step-card reveal">
-          <div class="step-number">01</div>
-          <h3 class="step-title">Discovery &amp; Scoping</h3>
-          <p class="step-text">We map your existing systems, define integration points, identify edge cases, and architect the solution with you.</p>
+          <div class="step-num">01</div>
+          <h3 class="step-title">Book a call</h3>
+          <p class="step-text">
+            Twenty minutes. We look at your QuickBooks version, how your company file is hosted and which CRM you run, and tell you plainly whether this fits. If it doesn&rsquo;t, we say so on the call.
+          </p>
         </div>
+
         <div class="step-card reveal reveal-delay-1">
-          <div class="step-number">02</div>
-          <h3 class="step-title">Build &amp; Iterate</h3>
-          <p class="step-text">Agile sprints with weekly demos. You see working software, not slideshows. Code reviews, testing, and CI/CD from day one.</p>
+          <div class="step-num">02</div>
+          <h3 class="step-title">Install and connect</h3>
+          <p class="step-text">
+            You install the app from HubSpot or monday. We set up the QuickBooks Web Connector on the machine that runs QuickBooks and authorise it against your company file &mdash; screen-share, with you driving your own machine.
+          </p>
         </div>
+
         <div class="step-card reveal reveal-delay-2">
-          <div class="step-number">03</div>
-          <h3 class="step-title">Launch &amp; Support</h3>
-          <p class="step-text">We deploy, monitor, and maintain. Your systems run in production — we keep them running, patched, and performant.</p>
+          <div class="step-num">03</div>
+          <h3 class="step-title">History backfills, then it keeps up</h3>
+          <p class="step-text">
+            The first sync pulls your existing customers and invoices across. After that the Web Connector runs on a schedule and only moves what changed, so your CRM stays current without anyone touching it.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="honest-note reveal">
+        <div class="honest-note-icon" aria-hidden="true">&#9888;</div>
+        <div>
+          <h4>One thing we won&rsquo;t pretend about</h4>
+          <p>
+            This is not a two-click OAuth integration, because QuickBooks Desktop does not offer one. The Web Connector is a Windows program that has to be installed and authorised on the machine holding your company file, and that machine has to be on for syncs to run. Setup is genuinely hands-on &mdash; which is exactly why the onboarding call is part of the product rather than an upsell.
+          </p>
         </div>
       </div>
+
     </div>
   </section>
 
 
-  <!-- ==================== CONTACT / SCHEDULE ==================== -->
+  <!-- ==================== CONTACT / BOOK A CALL ==================== -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="text-center">
         <span class="section-label"><span class="dot"></span> Get Started</span>
-        <h2 class="section-title">Let's Build Your<br/><span class="accent-text">Custom Infrastructure.</span></h2>
+        <h2 class="section-title">Book a Call.<br/><span class="accent-text">Find Out If It Fits.</span></h2>
         <p class="section-subtitle mx-auto">
-          Whether you need complex CRM integrations, custom Shopify/e-commerce tooling, or automated backend systems — tell us about your project.
+          Tell us which CRM you run and what your QuickBooks setup looks like. We&rsquo;ll come back within one business day with a time, or with a straight answer about why it isn&rsquo;t a fit.
         </p>
       </div>
 
       <div class="contact-grid contact-grid--single">
         <!-- Contact Form Side -->
         <div class="form-side reveal">
-          <h3>Describe Your Project</h3>
-          <p>Fill out the form below and we'll get back to you within one business day with a scoping outline.</p>
+          <h3>Request a Call</h3>
+          <p>Ready to install instead? Both apps are self-serve &mdash; <a href="https://qbhubspot.agoracrew.com/Setup">HubSpot</a> or <a href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">monday.com</a> &mdash; and the trial starts before you talk to anyone.</p>
 
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgojjvrv" method="POST">
             <!-- Formspree config -->
@@ -1785,33 +1782,32 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email">Work Email *</label>
               <input type="email" id="email" name="email" placeholder="jane@company.com" required />
             </div>
 
             <div class="form-group">
-              <label for="project-type">Project Type</label>
+              <label for="project-type">Which integration?</label>
               <select id="project-type" name="project-type">
-                <option value="" disabled selected>Select a category...</option>
-                <option value="custom-software">Custom Software Development</option>
-                <option value="enterprise-integration">Enterprise Integration (CRM/ERP)</option>
-                <option value="ecommerce">E-Commerce / Shopify App</option>
-                <option value="ai-automation">AI & Automation</option>
-                <option value="other">Other</option>
+                <option value="" disabled selected>Select one...</option>
+                <option value="qbd-hubspot">QuickBooks Desktop &rarr; HubSpot</option>
+                <option value="qbd-monday">QuickBooks Desktop &rarr; monday.com</option>
+                <option value="both">Both</option>
+                <option value="not-sure">Not sure yet</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="message">Tell Us About Your Project</label>
-              <textarea id="message" name="message" placeholder="What systems do you need connected? What problem are you solving? Any existing infrastructure we should know about?"></textarea>
+              <label for="message">Your QuickBooks setup</label>
+              <textarea id="message" name="message" placeholder="Which QuickBooks version (Pro, Premier, Enterprise)? Hosted on a local server, a remote desktop, or one machine in the office? Roughly how many customers and open invoices?"></textarea>
             </div>
 
             <button type="submit" class="form-submit" id="submitBtn">
-              Request Custom Solution →
+              Request a Call &rarr;
             </button>
 
             <p class="form-privacy">
-              Your information is secure. We'll never share your data with third parties.
+              Your information is secure. We&rsquo;ll never share your data with third parties.
             </p>
           </form>
 
@@ -1820,10 +1816,14 @@
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h4>Request Received!</h4>
-            <p>Thanks for reaching out. We'll review your project details and respond within one business day with a scoping outline.</p>
+            <p>Thanks for reaching out. We&rsquo;ll review your setup and come back within one business day with a time for the call.</p>
           </div>
         </div>
       </div>
+
+      <p class="contact-direct">
+        Prefer to skip the form? <a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a> &middot; <a href="tel:+36300841533">+36 30 084 1533</a>
+      </p>
     </div>
   </section>
 
@@ -1837,34 +1837,33 @@
             <img src="logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />
           </a>
           <p>
-            Custom software engineering studio specializing in enterprise integrations, e-commerce infrastructure, and AI-powered automation. We ship production-grade systems that scale.
+            We build CRM integrations for accounting software &mdash; specifically QuickBooks Desktop and Enterprise, the on-premises products most integrations skip. Two live apps, both read-only, both maintained by us.
           </p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
-          <a href="#services">Custom Software</a>
-          <a href="#services">Enterprise Integrations</a>
-          <a href="#services">E-Commerce Infrastructure</a>
-          <a href="#services">AI &amp; Automation</a>
+          <h4>The Apps</h4>
+          <a href="https://qbhubspot.agoracrew.com/Setup">QuickBooks &rarr; HubSpot</a>
+          <a href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install">QuickBooks &rarr; monday.com</a>
+          <a href="pricing-xsync.html">monday pricing</a>
+          <a href="#apps">Compare the two</a>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
-          <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener">Order Issue Alerts</a>
-          <a href="#products">ARBridge for QuickBooks</a>
-          <a href="#products">XSync for QuickBooks Desktop</a>
-          <a href="#products">AI Support &amp; Growth Agent</a>
+          <h4>Learn</h4>
+          <a href="/install">HubSpot setup guide</a>
+          <a href="/monday-setup">monday setup guide</a>
+          <a href="#why">Why Desktop is hard</a>
           <a href="blog/index.html">Blog</a>
         </div>
         <div class="footer-col footer-col--contact">
           <h4>Get In Touch</h4>
           <a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>
           <a href="tel:+36300841533">+36 30 084 1533</a>
-          <a href="#contact">Discuss Your Project</a>
+          <a href="#contact">Book a call</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 AgoraCrew. All rights reserved.</span>
-        <span class="footer-tax-id">Tax ID (Adószám): HU92198362</span>
+        <span class="footer-tax-id">Tax ID (Ad&oacute;sz&aacute;m): HU92198362</span>
         <div class="footer-bottom-links">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms-of-service.html">Terms of Service</a>
@@ -1875,14 +1874,14 @@
 
   <!-- ==================== STICKY BOTTOM CTA BAR ==================== -->
   <div class="sticky-cta-bar" id="stickyCta">
-    <span class="sticky-cta-text">🔥 Order Issue Alerts is live — catch fulfillment problems before your customers do.</span>
-    <a href="https://apps.shopify.com/agoracrew-ai" target="_blank" rel="noopener" class="sticky-cta-btn">Install Free →</a>
-    <button class="sticky-cta-dismiss" id="stickyCtaDismiss" aria-label="Dismiss">✕</button>
+    <span class="sticky-cta-text">&#9889; QuickBooks Desktop into HubSpot or monday.com &mdash; 14-day free trial on both.</span>
+    <a href="#contact" class="sticky-cta-btn">Book a Call &rarr;</a>
+    <button class="sticky-cta-dismiss" id="stickyCtaDismiss" aria-label="Dismiss">&#10005;</button>
   </div>
 
   <script src="script.js" defer></script>
 
-  <!-- AgoraCrew AI chat widget — live demo of our engineering -->
+  <!-- AgoraCrew AI chat widget -->
   <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
 </body>
 </html>

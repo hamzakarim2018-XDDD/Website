@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build:blog": "node blog/build-blog.js && node blog/build-blog.js --lang=fr"
+    "build:blog": "node blog/build-blog.js"
   },
   "repository": {
     "type": "git",

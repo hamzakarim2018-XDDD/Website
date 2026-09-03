@@ -163,39 +163,43 @@ const otherLangSlugs = fs.existsSync(otherPostsFile)
   ? new Set(JSON.parse(fs.readFileSync(otherPostsFile, 'utf-8')).map(p => p.slug))
   : new Set();
 
+// `default` is the fallback for a post with no `product:` in its frontmatter.
+// Before the 2026-09 pivot that fallback was a Shopify/CX pitch, which is now
+// the wrong company entirely - a reader who arrived on a QuickBooks search
+// term would have been sold abandoned-cart recovery. It points at the two
+// apps instead.
 const CTA = {
-  cx: {
+  default: {
     en: {
-      heading: 'Or Hand It To <span class="accent-text">Someone Else</span>',
-      body: 'AgoraCrew’s AI agents run the practices we write about on live stores — answering order-status questions, covering nights and weekends, and chasing abandoned carts.',
-      href: '../index.html#contact',
-      cta: 'Start My Free Trial →',
-      badges: ['5 days free', 'No credit card', 'No lock-in']
-    },
-    fr: {
-      heading: 'Ou confiez-le <span class="accent-text">à quelqu’un d’autre</span>',
-      body: 'Les agents IA d’AgoraCrew appliquent sur des boutiques en activité les pratiques dont nous parlons ici — réponses sur le statut des commandes, couverture des nuits et week-ends, et relance des paniers abandonnés.',
-      href: '../../fr/index.html#contact',
-      cta: 'Essai gratuit →',
-      badges: ['5 jours gratuits', 'Sans carte bancaire', 'Sans engagement']
+      heading: 'Get This Data Into <span class="accent-text">Your CRM</span>',
+      body: 'We build the two integrations that carry QuickBooks Desktop and Enterprise into the CRM your team already works in — HubSpot or monday.com. Read-only, so nothing is ever written back to your books.',
+      href: '../index.html#apps',
+      cta: 'See the Two Apps →',
+      badges: ['14-day free trial', 'Read-only', 'Desktop & Enterprise']
     }
   },
   arbridge: {
     en: {
-      heading: 'See <span class="accent-text">ARBridge for QuickBooks</span> In Action',
-      body: 'ARBridge is a read-only sync from QuickBooks Desktop into HubSpot — AR aging, credit status, and payment history on every Company and Contact record, without ever giving anyone write access to your books.',
-      href: '../index.html#contact',
-      cta: 'Request Access →',
-      badges: ['Read-only sync', 'Live on HubSpot', 'Free setup']
+      heading: 'Put This On Your <span class="accent-text">HubSpot Records</span>',
+      body: 'Our QuickBooks Desktop → HubSpot app is a read-only sync — balance due, credit status, invoice aging and payment history on every company record, without giving anyone write access to your books.',
+      href: 'https://qbhubspot.agoracrew.com/Setup',
+      cta: 'Install for HubSpot →',
+      badges: ['Read-only sync', '14-day free trial', 'Guided setup call']
     }
-    // No French ARBridge post exists yet - add an `fr` variant here first if
-    // one ever does. buildPost() below falls back to the `cx` CTA rather
-    // than publish untranslated/unreviewed copy.
+  },
+  xsync: {
+    en: {
+      heading: 'Put This On Your <span class="accent-text">monday Boards</span>',
+      body: 'Our QuickBooks Desktop → monday.com app syncs invoices, customers and jobs, estimates, sales orders and items onto the boards your team already works in — carrying the full Customer:Job hierarchy.',
+      href: 'https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&response_type=install',
+      cta: 'Add to monday.com →',
+      badges: ['Read-only sync', '14-day free trial', 'Job costing']
+    }
   }
 };
 
 function ctaHtml(productKey) {
-  const variant = (CTA[productKey] && CTA[productKey][lang]) || CTA.cx[lang];
+  const variant = (CTA[productKey] && CTA[productKey][lang]) || CTA.default[lang];
   const badges = variant.badges.map(b => `      <span class="page-cta-badge">${escapeHtml(b)}</span>`).join('\n');
   return `  <section class="page-cta-section">
     <h2>${variant.heading}</h2>
@@ -366,6 +370,17 @@ const vercelConfig = fs.existsSync(vercelJsonPath) ? JSON.parse(fs.readFileSync(
 
 const enPostsFile = path.join(__dirname, 'posts.json');
 const frPostsFile = path.join(__dirname, 'posts.fr.json');
+
+// Only the blog's own rules are ours to rebuild. vercel.json also carries
+// hand-written rewrites that have nothing to do with the blog - /install and
+// /monday-setup, which serve the two apps' setup guides. Reassigning the whole
+// array deleted those on every build, and nothing would have noticed until a
+// footer link 404'd. Anything whose source isn't a blog post.html URL is
+// carried through untouched.
+const isBlogRewrite = r => r && typeof r.source === 'string' &&
+  /^\/(?:[a-z]{2}\/)?blog\/post\.html$/.test(r.source);
+const preserved = (vercelConfig.rewrites || []).filter(r => !isBlogRewrite(r));
+
 const rewrites = [];
 
 // IMPORTANT: /blog/post.html and /fr/blog/post.html must NOT exist as real
@@ -398,6 +413,9 @@ if (fs.existsSync(frPostsFile)) {
   rewrites.push({ source: '/fr/blog/post.html', destination: '/fr/blog/post-shell.html' });
 }
 
-vercelConfig.rewrites = rewrites;
+// Non-blog rules first: /install and /monday-setup are exact paths that can
+// never collide with /blog/post.html, and putting them ahead keeps them
+// obvious at the top of the file when someone opens vercel.json by hand.
+vercelConfig.rewrites = [...preserved, ...rewrites];
 fs.writeFileSync(vercelJsonPath, JSON.stringify(vercelConfig, null, 2) + '\n');
-console.log(`✅ Updated vercel.json with ${rewrites.length} rewrite rule(s)`);
+console.log(`✅ Updated vercel.json with ${rewrites.length} blog rewrite rule(s), ${preserved.length} preserved`);

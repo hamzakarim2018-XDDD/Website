@@ -40,34 +40,48 @@
   </article>
 
   <!-- ==================== CTA ====================
-       Two variants share this template: the default is the CX/Shopify pitch;
-       posts with `product: arbridge` in their frontmatter get the ARBridge
-       pitch instead (toggled by blog.js after the post loads), since a
-       QuickBooks/HubSpot reader landing on "chasing abandoned carts" would be
-       the wrong product entirely. -->
-  <section id="page-cta-cx" class="page-cta-section">
-    <h2>Or Hand It To <span class="accent-text">Someone Else</span></h2>
+       Two variants share this template: the default points at both apps;
+       a post with `product: arbridge` (or `xsync`) in its frontmatter gets
+       that app's pitch instead, toggled by blog.js after the post loads,
+       so a reader who arrived on a HubSpot search term isn't sold the
+       monday app. Keep these ids in sync with the CTA table in
+       build-blog.js, which renders the same variants at build time. -->
+  <section id="page-cta-default" class="page-cta-section">
+    <h2>Get This Data Into <span class="accent-text">Your CRM</span></h2>
     <p>
-      AgoraCrew's AI agents run the practices we write about on live stores — answering order-status questions, covering nights and weekends, and chasing abandoned carts.
+      We build the two integrations that carry QuickBooks Desktop and Enterprise into the CRM your team already works in &mdash; HubSpot or monday.com. Read-only, so nothing is ever written back to your books.
     </p>
-    <a href="../index.html#contact" class="cta-button">Start My Free Trial →</a>
+    <a href="../index.html#apps" class="cta-button">See the Two Apps &rarr;</a>
     <div class="page-cta-badges">
-      <span class="page-cta-badge">5 days free</span>
-      <span class="page-cta-badge">No credit card</span>
-      <span class="page-cta-badge">No lock-in</span>
+      <span class="page-cta-badge">14-day free trial</span>
+      <span class="page-cta-badge">Read-only</span>
+      <span class="page-cta-badge">Desktop &amp; Enterprise</span>
     </div>
   </section>
 
   <section id="page-cta-arbridge" class="page-cta-section" style="display: none;">
-    <h2>See <span class="accent-text">ARBridge for QuickBooks</span> In Action</h2>
+    <h2>Put This On Your <span class="accent-text">HubSpot Records</span></h2>
     <p>
-      ARBridge is a read-only sync from QuickBooks Desktop into HubSpot — AR aging, credit status, and payment history on every Company and Contact record, without ever giving anyone write access to your books.
+      Our QuickBooks Desktop &rarr; HubSpot app is a read-only sync &mdash; balance due, credit status, invoice aging and payment history on every company record, without giving anyone write access to your books.
     </p>
-    <a href="../index.html#contact" class="cta-button">Request Access →</a>
+    <a href="https://qbhubspot.agoracrew.com/Setup" class="cta-button">Install for HubSpot &rarr;</a>
     <div class="page-cta-badges">
       <span class="page-cta-badge">Read-only sync</span>
-      <span class="page-cta-badge">Live on HubSpot</span>
-      <span class="page-cta-badge">Free setup</span>
+      <span class="page-cta-badge">14-day free trial</span>
+      <span class="page-cta-badge">Guided setup call</span>
+    </div>
+  </section>
+
+  <section id="page-cta-xsync" class="page-cta-section" style="display: none;">
+    <h2>Put This On Your <span class="accent-text">monday Boards</span></h2>
+    <p>
+      Our QuickBooks Desktop &rarr; monday.com app syncs invoices, customers and jobs, estimates, sales orders and items onto the boards your team already works in &mdash; carrying the full Customer:Job hierarchy.
+    </p>
+    <a href="https://auth.monday.com/oauth2/authorize?client_id=3557c97dc1a00d3f575e529907095935&amp;response_type=install" class="cta-button">Add to monday.com &rarr;</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">Read-only sync</span>
+      <span class="page-cta-badge">14-day free trial</span>
+      <span class="page-cta-badge">Job costing</span>
     </div>
   </section>
 

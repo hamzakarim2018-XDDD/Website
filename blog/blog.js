@@ -107,11 +107,14 @@
     link.setAttribute('href', href);
   }
 
+  // English-only since the 2026-09 pivot archived the French tree. This used
+  // to also emit an hreflang="fr" alternate built by substituting the slug
+  // into a /fr/blog/ URL, whether or not a French translation existed. Those
+  // URLs are now archived and noindexed, so advertising them as alternates
+  // would hand Google a set of dead references.
   function updateHreflangForSlug(slug) {
     var enUrl = 'https://agoracrew.com/blog/post.html?slug=' + encodeURIComponent(slug);
-    var frUrl = 'https://agoracrew.com/fr/blog/post.html?slug=' + encodeURIComponent(slug);
     setHreflang('en', enUrl);
-    setHreflang('fr', frUrl);
     setHreflang('x-default', enUrl);
   }
 
@@ -207,11 +210,11 @@
         }
 
         // Swap the end-of-post CTA for posts about a specific product, so a
-        // reader who came in on a QuickBooks/HubSpot search term doesn't land
-        // on a Shopify-abandoned-cart pitch. Only post.html defines these
-        // two sections; fr/blog/post.html doesn't yet, hence the null checks.
+        // reader who came in on a HubSpot search term isn't sold the monday
+        // app. The default section pitches both. Null checks kept because
+        // only post.html defines these sections.
         if (meta.product) {
-          var ctaDefault = document.getElementById('page-cta-cx');
+          var ctaDefault = document.getElementById('page-cta-default');
           var ctaProduct = document.getElementById('page-cta-' + meta.product);
           if (ctaProduct) {
             if (ctaDefault) ctaDefault.style.display = 'none';
