@@ -348,7 +348,7 @@
   <section class="privacy-hero">
     <a href="index.html" class="privacy-back-link">← Back to Home</a>
     <h1>Privacy <span class="accent-text">Policy</span></h1>
-    <p class="privacy-effective">Effective Date: August 7, 2026 &nbsp;·&nbsp; Last Updated: August 22, 2026</p>
+    <p class="privacy-effective">Effective Date: August 7, 2026 &nbsp;·&nbsp; Last Updated: November 15, 2026</p>
   </section>
 
 
@@ -598,7 +598,7 @@
           </tr>
           <tr>
             <td><strong>Cloudflare</strong> (edge network and TLS)</td>
-            <td>Serve <code>agoracrew.com</code> and the application endpoints; terminate TLS and filter abusive traffic</td>
+            <td>Where used, serve <code>agoracrew.com</code>; terminate TLS and filter abusive traffic. XSync for QuickBooks Desktop (<code>xsync.agoracrew.com</code>) is served directly by Render and does not pass through Cloudflare</td>
             <td>Request metadata and, in transit only, the contents of requests to our applications</td>
           </tr>
           <tr>
@@ -653,6 +653,19 @@
           </tr>
         </tbody>
       </table>
+
+      <p>
+        <strong>Third-party domains used by XSync for QuickBooks Desktop.</strong> The app is served
+        entirely from our own domain, <code>xsync.agoracrew.com</code>, hosted by Render (Frankfurt,
+        EU), with its database on Render managed PostgreSQL in the same region. Its screens inside
+        monday.com load no third-party scripts, fonts, analytics, monitoring, advertising or tracking
+        tools, and set no cookies. The only third-party services its backend contacts are
+        monday.com's own API and sign-in service (<code>api.monday.com</code>,
+        <code>auth.monday.com</code>), to read and write the customer's own boards and to identify the
+        account and its subscription. QuickBooks data arrives from the QuickBooks Web Connector
+        running on the customer's own computer, which connects to us; we do not call any Intuit
+        service.
+      </p>
 
       <p>
         <strong>XSync for QuickBooks Desktop sends no data to any language model.</strong> Its AI
