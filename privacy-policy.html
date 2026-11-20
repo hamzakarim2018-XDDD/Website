@@ -348,7 +348,7 @@
   <section class="privacy-hero">
     <a href="index.html" class="privacy-back-link">← Back to Home</a>
     <h1>Privacy <span class="accent-text">Policy</span></h1>
-    <p class="privacy-effective">Effective Date: August 7, 2026 &nbsp;·&nbsp; Last Updated: November 15, 2026</p>
+    <p class="privacy-effective">Effective Date: August 7, 2026 &nbsp;·&nbsp; Last Updated: November 20, 2026</p>
   </section>
 
 
@@ -504,6 +504,11 @@
             <td><strong>monday.com Account Identity</strong> (via XSync for QuickBooks Desktop)</td>
             <td>monday.com account identifier and account (organisation) name; the identifier (not the name) of the user who authorised the connection</td>
             <td>Identify which monday.com account an installation belongs to, keep each customer's data separated from every other customer's, and record who connected a QuickBooks company file</td>
+          </tr>
+          <tr>
+            <td><strong>Access &amp; Activity Logs</strong> (via XSync for QuickBooks Desktop)</td>
+            <td>For each request to the app: date and time, the action performed (the app endpoint), its result, the monday.com account and user identifiers, the QuickBooks connection concerned, the IP address and the browser or client user agent. No request contents, QuickBooks data, names or email addresses</td>
+            <td>Security and incident investigation (for example, confirming who performed an action or whether an account was accessed without permission), and providing customers with their own activity history on request. Legal basis: our legitimate interest in keeping the service and our customers' accounts secure</td>
           </tr>
         </tbody>
       </table>
@@ -702,6 +707,7 @@
         <li><strong>ARBridge for QuickBooks — GDPR erasure requests:</strong> When HubSpot notifies ARBridge of a <code>contact.privacyDeletion</code> event (an end-customer of our customer exercising their GDPR right to be forgotten), ARBridge permanently purges that contact's personal data (email address and name) from its own database and durably prevents QuickBooks from re-populating that same data on a future sync.</li>
         <li><strong>XSync for QuickBooks Desktop — synced monday.com data:</strong> Items the app has created on a customer's own monday.com boards are not deleted or retracted when that customer disconnects or uninstalls it. They remain ordinary board data under the customer's own control, since they reside in an account they own.</li>
         <li><strong>XSync for QuickBooks Desktop — staged QuickBooks data, credentials &amp; sync logs:</strong> When monday.com tells us a customer has uninstalled the app or revoked its authorisation, a deletion clock starts. Unless the app is reconnected, everything held for that connection — the staged QuickBooks records, the encrypted QuickBooks Web Connector credentials, the monday.com tokens, the board mappings and the sync history — is permanently erased within ten days, and in practice within seven. Deletion is deferred rather than immediate because uninstalling and reinstalling is a normal way to troubleshoot a problem, and an instant purge would destroy a customer's entire setup during their own attempt to fix it. Reconnecting stops the clock.</li>
+        <li><strong>XSync for QuickBooks Desktop — access &amp; activity logs:</strong> Kept for <strong>180 days</strong>, then deleted automatically. They are also erased together with the rest of a customer's data when the app is uninstalled (see above). A customer can request a copy of their account's logs at any time by emailing <a href="mailto:support@agoracrew.com">support@agoracrew.com</a>; we provide them within 30 days.</li>
       </ul>
     </div>
 
