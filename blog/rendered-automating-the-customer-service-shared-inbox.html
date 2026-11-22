@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests — AgoraCrew Blog</title>
+  <meta name="description" content="Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox" />
+  <meta property="og:title" content="Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests" />
+  <meta property="og:description" content="Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests","description":"Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them.","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests","item":"https://agoracrew.com/blog/post.html?slug=automating-the-customer-service-shared-inbox"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">November 22, 2026</div>
+    <h1 class="blog-post-title">Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests</h1>
+    <p class="blog-post-description">Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>Open any B2B client service or credit control inbox and read the last hundred emails. You&#39;ll find the same handful of requests over and over:</p>
+<ul>
+<li>Where&#39;s my order?</li>
+<li>Can you resend invoice 40213?</li>
+<li>Can I have a statement of account?</li>
+<li>Please update our billing address.</li>
+<li>We were charged twice.</li>
+<li>When will our credit note be issued?</li>
+</ul>
+<p>Most of these have an answer that already exists in your ERP. Someone on your team is reading the email, logging into the system, looking it up, and copying it back into a reply. That&#39;s the work automation should be doing.</p>
+<h2>Step 1: Sort the inbox</h2>
+<p>Before you can answer anything automatically, you need to know what each email is asking for. This is a good job for an AI model, because customers don&#39;t write in consistent ways. &quot;Can you send over the March paperwork&quot;, &quot;need copy inv pls&quot; and &quot;our AP team can&#39;t find your bill from last month&quot; are all the same request.</p>
+<p>A classifier reads each incoming email and tags it:</p>
+<ul>
+<li><strong>Request type:</strong> order status, invoice copy, statement, dispute, address change, complaint, other</li>
+<li><strong>Customer:</strong> matched from the sender&#39;s email domain and any account numbers in the text</li>
+<li><strong>Documents referenced:</strong> order numbers, invoice numbers, PO numbers</li>
+<li><strong>Urgency:</strong> words like &quot;overdue&quot;, &quot;urgent&quot;, &quot;stopped shipment&quot;, or a known key account</li>
+</ul>
+<p>Even if you stopped here, it&#39;s useful. Emails land in the right queue, with the customer and order already identified, and urgent ones rise to the top.</p>
+<h2>Step 2: Answer the routine ones</h2>
+<p>For request types where the answer is a lookup, the automation can do the lookup:</p>
+<ul>
+<li><strong>Invoice copies:</strong> pull the PDF from the ERP and reply with it attached</li>
+<li><strong>Statements:</strong> generate the statement of account as of today and send it</li>
+<li><strong>Order status:</strong> look up the order and shipment, and reply with status and tracking</li>
+<li><strong>&quot;Have you received our payment?&quot;:</strong> check the account and confirm what&#39;s been applied</li>
+</ul>
+<p>You decide how much runs without review. Many teams start with the automation drafting replies for a person to check and send, then switch the most reliable request types to send automatically once they trust them.</p>
+<p>A few rules that make this work:</p>
+<ul>
+<li>Only send to known contacts on the account. Anything from an unknown address goes to a person.</li>
+<li>Never change data (addresses, bank details, contacts) automatically from an email. Those are common fraud routes. Draft the change and have a person confirm it.</li>
+<li>Keep the replies in your team&#39;s voice. Use your best agents&#39; replies as the templates.</li>
+</ul>
+<h2>Step 3: Route the rest, with context</h2>
+<p>Disputes, complaints and anything unusual go to a person. The difference is they arrive ready to work:</p>
+<ul>
+<li>The customer and account are identified</li>
+<li>The invoice, order and payment history are attached</li>
+<li>The request is summarised in a line at the top</li>
+<li>It&#39;s in the right person&#39;s queue, not the general pile</li>
+</ul>
+<p>That alone saves several minutes per email, and it means the person spends those minutes on the actual problem.</p>
+<h2>What to measure</h2>
+<ul>
+<li><strong>First response time.</strong> This usually drops the most, because routine requests are answered in minutes.</li>
+<li><strong>Emails handled per person per day.</strong></li>
+<li><strong>Share of emails resolved without a person.</strong></li>
+<li><strong>Reopen rate.</strong> If customers are replying &quot;that&#39;s not what I asked for&quot;, the classifier needs tuning.</li>
+</ul>
+<h2>Where this fits with your other tools</h2>
+<p>If your team already uses a helpdesk like Zendesk, Freshdesk or HubSpot Service Hub, the automation sits alongside it: it reads tickets, adds tags and context, and posts replies through the helpdesk so everything stays in one history. If your team works straight out of Outlook or Gmail shared mailboxes, it works there too.</p>
+<p>The ERP connection is what makes it valuable. Generic helpdesk AI can suggest a polite reply, but it can&#39;t attach invoice 40213 unless something is connected to the system that holds it.</p>
+<h2>What stays with people</h2>
+<ul>
+<li>Complaints and escalations</li>
+<li>Disputes about price, quality or delivery</li>
+<li>Anything involving a credit, refund or write-off above an agreed amount</li>
+<li>Relationships with key accounts</li>
+</ul>
+<p>The aim isn&#39;t to stop customers from reaching a person. It&#39;s to make sure that when they do, the person has time to help.</p>
+<h2>Related reading</h2>
+<ul>
+<li><a href="post.html?slug=cash-application-and-collections-automation">Cash application and collections automation</a> uses the same email classification to route replies to payment reminders.</li>
+<li><a href="post.html?slug=rpa-vs-ai-automation-in-finance">RPA vs. AI automation in finance</a> explains why classification uses AI but the lookups and replies follow rules.</li>
+</ul>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>Want This Off Your <span class="accent-text">Team’s Plate?</span></h2>
+    <p>
+      Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Book a Free Process Audit →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">6+ years in finance ops</span>
+      <span class="page-cta-badge">Works with your ERP</span>
+      <span class="page-cta-badge">Fixed price before we build</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

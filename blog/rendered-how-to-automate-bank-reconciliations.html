@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>How to Automate Bank Reconciliations Without Changing Your ERP — AgoraCrew Blog</title>
+  <meta name="description" content="Daily bank reconciliations, matched automatically, with only the real breaks left for a person. How it works, what to set up first, and why it shortens the month-end close." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations" />
+  <meta property="og:title" content="How to Automate Bank Reconciliations Without Changing Your ERP" />
+  <meta property="og:description" content="Daily bank reconciliations, matched automatically, with only the real breaks left for a person. How it works, what to set up first, and why it shortens the month-end close." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Automate Bank Reconciliations Without Changing Your ERP","description":"Daily bank reconciliations, matched automatically, with only the real breaks left for a person. How it works, what to set up first, and why it shortens the month-end close.","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"How to Automate Bank Reconciliations Without Changing Your ERP","item":"https://agoracrew.com/blog/post.html?slug=how-to-automate-bank-reconciliations"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">November 22, 2026</div>
+    <h1 class="blog-post-title">How to Automate Bank Reconciliations Without Changing Your ERP</h1>
+    <p class="blog-post-description">Daily bank reconciliations, matched automatically, with only the real breaks left for a person. How it works, what to set up first, and why it shortens the month-end close.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>Bank reconciliations are one of the clearest examples of work that&#39;s simple, repetitive and still eats days every month. Most teams do them at month-end, which means a month of transactions to match at once, during the week when everyone is busiest.</p>
+<p>The fix isn&#39;t complicated. Reconcile every day, automatically, and leave only the real breaks for a person. Here&#39;s how that works in practice, without swapping out your ERP or your bank.</p>
+<h2>Why recs take so long by hand</h2>
+<p>The matching itself isn&#39;t hard. What takes the time:</p>
+<ul>
+<li>Downloading statements from several bank portals, each with its own login and export format</li>
+<li>Reformatting CSV or MT940 files so the ERP will accept them</li>
+<li>Matching where the bank description doesn&#39;t say much (&quot;TRF 0039812 ACME&quot;)</li>
+<li>Customer payments that cover several invoices, or pay the net after a credit</li>
+<li>Bank fees, FX differences and interest that need a journal before they&#39;ll clear</li>
+<li>Timing differences that carry over from the previous month</li>
+</ul>
+<p>None of this needs much judgment. It needs patience, and it needs doing at the same time as everything else in the close.</p>
+<h2>What an automated reconciliation looks like</h2>
+<h3>1. Getting the bank data in, daily</h3>
+<p>The best route is a direct bank feed into the ERP. SAP, NetSuite, Dynamics, Sage and QuickBooks all support some form of this, though coverage depends on your bank and country.</p>
+<p>Where there&#39;s no feed, a bot logs into the bank portal each morning, downloads the previous day&#39;s statement and imports it. This is a classic RPA job: same steps, every day, no judgment. It removes the &quot;someone forgot to download the statement&quot; problem entirely.</p>
+<h3>2. Matching on clear rules</h3>
+<p>Start with the easy matches:</p>
+<ul>
+<li>Exact amount and reference match an open item</li>
+<li>Exact amount and date match a payment run</li>
+<li>Recurring items (rent, payroll, loan repayments) that match a known pattern</li>
+</ul>
+<p>Most ERPs have bank matching rules built in, and many teams aren&#39;t using them fully. Before building anything custom, check what your system already offers. On a lot of audits, switching on and tuning the ERP&#39;s own rules is the first recommendation.</p>
+<h3>3. Matching the harder ones</h3>
+<p>What&#39;s left after the simple rules are the items where a person would normally go digging:</p>
+<ul>
+<li>One receipt covering three invoices</li>
+<li>A payment net of a credit note or a short-pay</li>
+<li>A reference that only partly matches (&quot;INV4471&quot; vs &quot;4471-A&quot;)</li>
+<li>Remittance details that arrived separately by email</li>
+</ul>
+<p>This is where AI-assisted matching helps. A model can read the remittance email, work out which invoices are being paid, and propose a match. A rule then checks the proposal adds up to the penny before accepting it. If it doesn&#39;t add up, it goes to a person.</p>
+<h3>4. Posting the routine adjustments</h3>
+<p>Bank charges, small FX differences and interest can be posted automatically against agreed accounts, within a threshold your controller sets. Anything above the threshold waits for review.</p>
+<h3>5. A short exception list</h3>
+<p>The output each morning is a list of the items that didn&#39;t match, with the reason and the closest candidates. Your team works through that list instead of the whole statement.</p>
+<h2>Why daily matters more than automated</h2>
+<p>If you only take one thing from this article: the biggest gain often comes from reconciling daily rather than monthly, and automation is what makes daily realistic.</p>
+<p>When recs run daily:</p>
+<ul>
+<li>Breaks get investigated while people still remember what happened</li>
+<li>Unapplied cash gets to the AR team in days, not weeks, which helps collections</li>
+<li>Month-end becomes a check of the last day, not a month of matching</li>
+<li>Fraud and errors are spotted sooner</li>
+</ul>
+<h2>What to set up before you automate</h2>
+<ul>
+<li><strong>A clean chart of accounts for bank-related postings.</strong> Fees, FX, interest, suspense.</li>
+<li><strong>Clear thresholds.</strong> What can be posted automatically, and what needs a person.</li>
+<li><strong>A suspense account policy.</strong> Who clears it, and how often.</li>
+<li><strong>Consistent customer references.</strong> Ask customers to quote invoice numbers. Put them on the invoice in a way that survives the bank&#39;s character limits.</li>
+</ul>
+<h2>Intercompany and card reconciliations</h2>
+<p>The same approach works for credit card statements (matching transactions to receipts and expense claims) and intercompany balances (matching both sides and flagging differences before the consolidation). Intercompany is often the slowest part of a group close, and it&#39;s highly rule-based, which makes it a good second project once bank recs are running.</p>
+<h2>Related reading</h2>
+<ul>
+<li><a href="post.html?slug=cash-application-and-collections-automation">Cash application and collections automation</a> picks up where reconciliation leaves off on the customer side.</li>
+<li><a href="post.html?slug=which-finance-processes-to-automate-first">Which finance processes to automate first</a> has a scorecard to compare bank recs against your other candidates.</li>
+</ul>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>Want This Off Your <span class="accent-text">Team’s Plate?</span></h2>
+    <p>
+      Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Book a Free Process Audit →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">6+ years in finance ops</span>
+      <span class="page-cta-badge">Works with your ERP</span>
+      <span class="page-cta-badge">Fixed price before we build</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

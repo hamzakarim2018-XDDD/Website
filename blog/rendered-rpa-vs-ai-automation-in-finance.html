@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>RPA vs. AI Automation in Finance: Which One Does What — AgoraCrew Blog</title>
+  <meta name="description" content="RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance" />
+  <meta property="og:title" content="RPA vs. AI Automation in Finance: Which One Does What" />
+  <meta property="og:description" content="RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RPA vs. AI Automation in Finance: Which One Does What","description":"RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both.","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"RPA vs. AI Automation in Finance: Which One Does What","item":"https://agoracrew.com/blog/post.html?slug=rpa-vs-ai-automation-in-finance"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">November 22, 2026</div>
+    <h1 class="blog-post-title">RPA vs. AI Automation in Finance: Which One Does What</h1>
+    <p class="blog-post-description">RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>Every vendor in this space now says &quot;AI-powered&quot;, which makes it hard to tell what you&#39;re actually buying. So here is the distinction we use with clients, in the terms a controller or an AP lead would use.</p>
+<p><strong>RPA (robotic process automation) does what a person does at a keyboard, following fixed rules.</strong> It logs into your ERP, opens a screen, copies a value from a spreadsheet, pastes it into a field, clicks Save. It does the same thing every time. It doesn&#39;t get tired at 5pm on day three of the close, and it doesn&#39;t fat-finger a vendor number.</p>
+<p><strong>AI handles the parts of the job that aren&#39;t fixed.</strong> Reading an invoice in a layout it hasn&#39;t seen before. Working out whether an email from a customer is asking for a statement, disputing a charge, or both. Matching a remittance that says &quot;INV 4471 + 4478 less credit&quot; to the right open items.</p>
+<p>Neither one is better. They do different jobs, and most processes in finance need both.</p>
+<h2>A worked example: one supplier invoice</h2>
+<p>Take a single invoice arriving in your AP inbox and follow it through.</p>
+<ol>
+<li><strong>The email arrives with a PDF attached.</strong> A rule can pick it up from the shared mailbox and save the attachment. That&#39;s RPA, or even a plain mailbox rule.</li>
+<li><strong>Someone needs to read the PDF.</strong> Supplier name, invoice number, date, PO number, line items, VAT, total. Every supplier lays this out differently, some send scans, some send three invoices in one file. This is where AI earns its place: a document model extracts the fields and tells you how confident it is about each one.</li>
+<li><strong>The invoice gets matched to the PO and the goods receipt.</strong> This is rules. Quantity matches or it doesn&#39;t. Price is within tolerance or it isn&#39;t. You want this to be boring and predictable, so it should be RPA or plain code, not a model making judgment calls.</li>
+<li><strong>The invoice gets posted in the ERP.</strong> Rules again. A bot (or an API call, if your ERP has a good one) creates the document with the right GL coding and attaches the PDF.</li>
+<li><strong>Anything that doesn&#39;t match goes to a person</strong>, with the reason attached: &quot;PO 88213 was for 40 units, invoice is for 44.&quot;</li>
+</ol>
+<p>Out of five steps, AI does one. That&#39;s typical, and it&#39;s how it should be. You want the model reading documents, not deciding what gets posted to the ledger.</p>
+<h2>Where RPA alone falls over</h2>
+<p>Classic RPA projects from the late 2010s had a reputation for being brittle, and the reputation was earned. The usual failure points:</p>
+<ul>
+<li><strong>Unstructured inputs.</strong> Bots were good at moving data between screens but couldn&#39;t read a PDF unless every supplier used the same template. So someone still had to key the invoice into a spreadsheet for the bot to pick up, which defeated the purpose.</li>
+<li><strong>Screen changes.</strong> A bot that clicks on &quot;the third button from the left&quot; breaks when your ERP gets an update and the button moves. Good builds use stable selectors and APIs where they exist. Cheap builds don&#39;t.</li>
+<li><strong>No one owns it after go-live.</strong> The consultant leaves, the bot breaks six months later, and the team quietly goes back to doing it by hand.</li>
+</ul>
+<p>AI fixed the first problem. The second and third are about how the automation is built and maintained, which no amount of AI changes.</p>
+<h2>Where AI alone falls over</h2>
+<p>The opposite mistake is now more common: pointing a language model at a process and asking it to &quot;handle AP&quot;. The problems:</p>
+<ul>
+<li><strong>It&#39;s not deterministic.</strong> Run the same input twice and you can get different outputs. That&#39;s fine for drafting an email. It isn&#39;t fine for a journal entry your auditor will sample.</li>
+<li><strong>It&#39;s hard to explain afterwards.</strong> &quot;The model decided&quot; is not an answer an auditor accepts. A rule (&quot;posted because PO, receipt and invoice matched within 2% tolerance&quot;) is.</li>
+<li><strong>Errors look confident.</strong> A model that misreads a total doesn&#39;t flag it. You need validation rules around it anyway, which brings you back to RPA and plain logic.</li>
+</ul>
+<h2>How we split it on real projects</h2>
+<p>A rule of thumb that holds up well:</p>
+<table>
+<thead>
+<tr>
+<th>Step in the process</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Reading documents, emails, free text</td>
+<td>AI, with confidence scores</td>
+</tr>
+<tr>
+<td>Classifying requests by type</td>
+<td>AI, with a fallback to a person</td>
+</tr>
+<tr>
+<td>Matching, validating, calculating</td>
+<td>Rules (RPA or code)</td>
+</tr>
+<tr>
+<td>Posting to the ERP or sending money</td>
+<td>Rules, always, with an audit log</td>
+</tr>
+<tr>
+<td>Drafting a reply to a customer</td>
+<td>AI, reviewed or within strict templates</td>
+</tr>
+<tr>
+<td>Deciding what to do with exceptions</td>
+<td>A person</td>
+</tr>
+</tbody></table>
+<p>The result is a process where AI turns messy inputs into clean data, rules do the work, and people handle the cases that actually need judgment.</p>
+<h2>Questions to ask any vendor</h2>
+<p>If someone is pitching you &quot;AI automation&quot; for finance, these questions separate the serious ones quickly:</p>
+<ul>
+<li>What happens when the model isn&#39;t sure? Where does that case go, and who sees it?</li>
+<li>Which steps are rule-based, and which use a model?</li>
+<li>Can I see a log of every action the automation took, and why?</li>
+<li>Who fixes it when our ERP is upgraded or a screen changes?</li>
+<li>What does it do with a document it has never seen before?</li>
+</ul>
+<p>If the answers are vague, the build will be too.</p>
+<h2>Where to start</h2>
+<p>If you&#39;re not sure which of your processes would suit RPA, AI or both, the <a href="post.html?slug=which-finance-processes-to-automate-first">guide to choosing which finance processes to automate first</a> walks through a simple scoring method. Or book a free process audit and we&#39;ll look at one of your processes with you.</p>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>Want This Off Your <span class="accent-text">Team’s Plate?</span></h2>
+    <p>
+      Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Book a Free Process Audit →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">6+ years in finance ops</span>
+      <span class="page-cta-badge">Works with your ERP</span>
+      <span class="page-cta-badge">Fixed price before we build</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

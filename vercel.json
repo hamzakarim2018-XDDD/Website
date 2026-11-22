@@ -25,6 +25,83 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "accounts-payable-automation-guide"
+        }
+      ],
+      "destination": "/blog/rendered-accounts-payable-automation-guide.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "automating-the-customer-service-shared-inbox"
+        }
+      ],
+      "destination": "/blog/rendered-automating-the-customer-service-shared-inbox.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "cash-application-and-collections-automation"
+        }
+      ],
+      "destination": "/blog/rendered-cash-application-and-collections-automation.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "how-to-automate-bank-reconciliations"
+        }
+      ],
+      "destination": "/blog/rendered-how-to-automate-bank-reconciliations.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rpa-vs-ai-automation-in-finance"
+        }
+      ],
+      "destination": "/blog/rendered-rpa-vs-ai-automation-in-finance.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rpa-with-sap-netsuite-and-dynamics"
+        }
+      ],
+      "destination": "/blog/rendered-rpa-with-sap-netsuite-and-dynamics.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "which-finance-processes-to-automate-first"
+        }
+      ],
+      "destination": "/blog/rendered-which-finance-processes-to-automate-first.html"
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "accounts-receivable-aging-in-hubspot"
         }
       ],

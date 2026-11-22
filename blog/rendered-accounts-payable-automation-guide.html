@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="8j5CAUfYGrN1G6ll" data-version="062024"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Accounts Payable Automation: A Practical Guide for Finance Teams — AgoraCrew Blog</title>
+  <meta name="description" content="How AP automation works step by step, from the invoice landing in your inbox to the payment run. What to automate, where people stay in the loop, and the mistakes that make projects stall." />
+  <link rel="canonical" href="https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide" />
+  <meta property="og:title" content="Accounts Payable Automation: A Practical Guide for Finance Teams" />
+  <meta property="og:description" content="How AP automation works step by step, from the invoice landing in your inbox to the payment run. What to automate, where people stay in the loop, and the mistakes that make projects stall." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="en" href="https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide" />
+  <link rel="alternate" hreflang="x-default" href="https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Accounts Payable Automation: A Practical Guide for Finance Teams","description":"How AP automation works step by step, from the invoice landing in your inbox to the payment run. What to automate, where people stay in the loop, and the mistakes that make projects stall.","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"en","author":{"@type":"Organization","name":"AgoraCrew","url":"https://agoracrew.com/"},"publisher":{"@type":"Organization","name":"AgoraCrew","logo":{"@type":"ImageObject","url":"https://agoracrew.com/logo-new-orange.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agoracrew.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agoracrew.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"Accounts Payable Automation: A Practical Guide for Finance Teams","item":"https://agoracrew.com/blog/post.html?slug=accounts-payable-automation-guide"}]}</script>
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&f[]=satoshi@300,400,500,600,700,800,900&display=swap" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../pages.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📩</text></svg>" />
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div id="navbar-root"></div>
+
+  <header class="blog-post-header">
+    <a href="./" class="blog-back-link">← Back to Blog</a>
+    <div class="blog-post-meta">November 22, 2026</div>
+    <h1 class="blog-post-title">Accounts Payable Automation: A Practical Guide for Finance Teams</h1>
+    <p class="blog-post-description">How AP automation works step by step, from the invoice landing in your inbox to the payment run. What to automate, where people stay in the loop, and the mistakes that make projects stall.</p>
+  </header>
+
+  <article class="blog-post-content">
+<p>Accounts payable is the most common first automation project in finance, for good reason. The volume is high, the steps are well defined, and the work is mostly moving data between an inbox, a spreadsheet and the ERP.</p>
+<p>It&#39;s also where a lot of projects stall, usually because the team bought a tool before mapping the process. This guide walks through what AP automation actually involves, step by step, so you can tell what you need before you talk to anyone selling it.</p>
+<h2>What a manual AP process usually looks like</h2>
+<p>Most mid-sized teams we work with run some version of this:</p>
+<ol>
+<li>Invoices arrive in a shared mailbox (ap@ or invoices@), on paper, or through a supplier portal.</li>
+<li>Someone opens each one, checks it&#39;s really an invoice and not a statement or a reminder, and saves it to a folder.</li>
+<li>They key the header and line details into the ERP, or into a spreadsheet that gets uploaded later.</li>
+<li>They look up the PO and goods receipt and check quantities and prices match.</li>
+<li>Mismatches go back and forth by email with purchasing, the warehouse or the supplier.</li>
+<li>Invoices without a PO get sent to a budget holder for approval, then chased.</li>
+<li>Approved invoices are posted, and the payment run is prepared weekly or twice a month.</li>
+<li>Supplier queries (&quot;have you received our invoice?&quot;, &quot;when will we be paid?&quot;) come in throughout.</li>
+</ol>
+<p>Every one of those steps can be automated in part. Not all of them should be.</p>
+<h2>Step by step: what to automate</h2>
+<h3>Capturing invoices</h3>
+<p><strong>Automate:</strong> Monitoring the AP mailbox, saving attachments, splitting multi-invoice PDFs, filtering out statements and marketing emails.</p>
+<p>This is simple and should be close to 100% automated. If paper invoices still arrive, scanning them into the same mailbox means one entry point for everything.</p>
+<h3>Reading the invoice</h3>
+<p><strong>Automate with AI:</strong> Extracting supplier, invoice number, dates, PO number, amounts, tax and line items.</p>
+<p>This used to be the hard part. Template-based OCR needed a template per supplier, and broke every time a supplier changed their layout. Modern document models read invoices they&#39;ve never seen before, and return a confidence score per field. Low-confidence fields go to a person to check. High-confidence ones go straight through.</p>
+<h3>Checking for duplicates and fraud signals</h3>
+<p><strong>Automate:</strong> Same supplier and invoice number already posted? Same amount and date from the same supplier? Bank details on the invoice don&#39;t match the vendor master?</p>
+<p>That last check matters more than most teams realise. Invoice fraud that changes the payee&#39;s bank details is common, and a bot that compares every invoice to the vendor master catches it on every invoice, not just the ones someone happened to look at closely.</p>
+<h3>Matching to the PO and goods receipt</h3>
+<p><strong>Automate:</strong> Two-way match (invoice to PO) or three-way match (invoice to PO and receipt), within the tolerances your policy already sets.</p>
+<p>This should be pure rules. No AI judgment. If quantities and prices match within tolerance, it passes. If not, it goes to a person with the specific difference shown.</p>
+<h3>Coding non-PO invoices</h3>
+<p><strong>Automate partially:</strong> Suggesting a GL code and cost centre based on the supplier&#39;s history.</p>
+<p>Utilities, subscriptions and rent are usually coded the same way every month, so a suggestion based on past invoices is right most of the time. A person still approves it.</p>
+<h3>Approvals</h3>
+<p><strong>Automate the chasing, not the decision.</strong> Route invoices to the right approver based on cost centre and amount, send reminders, escalate when someone is on leave. The approver still clicks approve.</p>
+<h3>Posting to the ERP</h3>
+<p><strong>Automate:</strong> Creating the invoice in SAP, NetSuite, Dynamics, Sage or QuickBooks with the PDF attached.</p>
+<p>Use the ERP&#39;s API where it has a decent one. Where it doesn&#39;t, or where the API doesn&#39;t cover a particular screen, an RPA bot can do the data entry through the user interface. Either way the posting is rule-based and logged.</p>
+<h3>Supplier queries</h3>
+<p><strong>Automate:</strong> &quot;Has my invoice been received?&quot; and &quot;when will it be paid?&quot; can be answered from ERP data. An automation that reads the incoming email, looks up the invoice status and drafts or sends a reply takes a surprising amount of load off the team.</p>
+<h2>What stays with people</h2>
+<ul>
+<li>Resolving genuine mismatches with purchasing or suppliers</li>
+<li>Approving spend</li>
+<li>Setting up new suppliers (with automated checks to support them)</li>
+<li>Releasing the payment run</li>
+<li>Anything the automation flags as unusual</li>
+</ul>
+<p>A well-built AP automation doesn&#39;t remove the AP team. It removes the keying and the chasing, so the team spends its time on exceptions, supplier relationships and month-end.</p>
+<h2>The mistakes that make AP projects stall</h2>
+<p><strong>Automating before cleaning the vendor master.</strong> If you have the same supplier set up three times with slightly different names, matching will fail. Clean it first.</p>
+<p><strong>No PO discipline.</strong> If half your invoices arrive without a PO number, three-way matching only helps with the other half. Fixing PO compliance often does more than the automation itself.</p>
+<p><strong>Buying a platform for a process problem.</strong> An AP suite with every feature won&#39;t help if approvals are stuck because nobody knows who owns a cost centre.</p>
+<p><strong>Nobody owns it after go-live.</strong> Suppliers change invoice layouts. ERPs get upgraded. Someone has to watch the exception rate and fix things when it creeps up.</p>
+<h2>Measuring whether it worked</h2>
+<p>Track a few numbers before you start and again three months after go-live:</p>
+<ul>
+<li>Invoices processed per person per month</li>
+<li>Average days from invoice receipt to posting</li>
+<li>Share of invoices that go through with no human touch</li>
+<li>Early-payment discounts captured</li>
+<li>Duplicate payments caught</li>
+</ul>
+<p>If the touchless rate isn&#39;t climbing month over month, something in the process upstream needs fixing.</p>
+<h2>Related reading</h2>
+<ul>
+<li><a href="post.html?slug=rpa-vs-ai-automation-in-finance">RPA vs. AI automation in finance</a> explains which parts of this use which technology.</li>
+<li><a href="post.html?slug=rpa-with-sap-netsuite-and-dynamics">Automating with SAP, NetSuite and Dynamics</a> covers how the posting step works on each ERP.</li>
+</ul>
+
+  </article>
+
+  <section class="page-cta-section">
+    <h2>Want This Off Your <span class="accent-text">Team’s Plate?</span></h2>
+    <p>
+      Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.
+    </p>
+    <a href="../index.html#contact" class="cta-button">Book a Free Process Audit →</a>
+    <div class="page-cta-badges">
+      <span class="page-cta-badge">6+ years in finance ops</span>
+      <span class="page-cta-badge">Works with your ERP</span>
+      <span class="page-cta-badge">Fixed price before we build</span>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="../components.js" data-base=".."></script>
+  <script defer src="https://api.agoracrew.com/widget/widget.js" data-client-id="agoracrew" data-client-name="AgoraCrew"></script>
+</body>
+</html>

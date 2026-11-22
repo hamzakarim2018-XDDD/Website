@@ -1,5 +1,47 @@
 [
   {
+    "slug": "accounts-payable-automation-guide",
+    "title": "Accounts Payable Automation: A Practical Guide for Finance Teams",
+    "date": "2026-11-22",
+    "description": "How AP automation works step by step, from the invoice landing in your inbox to the payment run. What to automate, where people stay in the loop, and the mistakes that make projects stall."
+  },
+  {
+    "slug": "automating-the-customer-service-shared-inbox",
+    "title": "Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests",
+    "date": "2026-11-22",
+    "description": "Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them."
+  },
+  {
+    "slug": "cash-application-and-collections-automation",
+    "title": "Cash Application and Collections Automation: Getting Paid Without the Chasing",
+    "date": "2026-11-22",
+    "description": "How to automate matching customer payments to invoices and sending collection reminders that sound like your team. Where AI helps with remittances, and where a person should still make the call."
+  },
+  {
+    "slug": "how-to-automate-bank-reconciliations",
+    "title": "How to Automate Bank Reconciliations Without Changing Your ERP",
+    "date": "2026-11-22",
+    "description": "Daily bank reconciliations, matched automatically, with only the real breaks left for a person. How it works, what to set up first, and why it shortens the month-end close."
+  },
+  {
+    "slug": "rpa-vs-ai-automation-in-finance",
+    "title": "RPA vs. AI Automation in Finance: Which One Does What",
+    "date": "2026-11-22",
+    "description": "RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both."
+  },
+  {
+    "slug": "rpa-with-sap-netsuite-and-dynamics",
+    "title": "Automating SAP, NetSuite, Dynamics and QuickBooks: API, RPA or Both?",
+    "date": "2026-11-22",
+    "description": "Every major ERP exposes some of its data through an API and hides the rest behind screens. What that means for finance automation on SAP, Oracle NetSuite, Microsoft Dynamics 365, Sage and QuickBooks."
+  },
+  {
+    "slug": "which-finance-processes-to-automate-first",
+    "title": "Which Finance Processes Should You Automate First? A Simple Scoring Method",
+    "date": "2026-11-22",
+    "description": "Volume, rules, systems, pain and stability. A five-question scorecard for picking the finance or client service process that will pay back fastest, and the ones to leave alone."
+  },
+  {
     "slug": "accounts-receivable-aging-in-hubspot",
     "title": "See AR Aging Inside HubSpot Without Asking Accounting",
     "date": "2026-08-13",

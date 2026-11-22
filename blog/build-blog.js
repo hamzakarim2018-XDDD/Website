@@ -163,19 +163,18 @@ const otherLangSlugs = fs.existsSync(otherPostsFile)
   ? new Set(JSON.parse(fs.readFileSync(otherPostsFile, 'utf-8')).map(p => p.slug))
   : new Set();
 
-// `default` is the fallback for a post with no `product:` in its frontmatter.
-// Before the 2026-09 pivot that fallback was a Shopify/CX pitch, which is now
-// the wrong company entirely - a reader who arrived on a QuickBooks search
-// term would have been sold abandoned-cart recovery. It points at the two
-// apps instead.
+// `default` is the fallback for a post with no `product:` (or `product:
+// "automation"`) in its frontmatter: the RPA/automation process-audit pitch
+// the site has led with since the 2026-11 pivot. `arbridge` and `xsync`
+// posts keep pointing at their own app.
 const CTA = {
   default: {
     en: {
-      heading: 'Get This Data Into <span class="accent-text">Your CRM</span>',
-      body: 'We build the two integrations that carry QuickBooks Desktop and Enterprise into the CRM your team already works in — HubSpot or monday.com. Read-only, so nothing is ever written back to your books.',
-      href: '../index.html#apps',
-      cta: 'See the Two Apps →',
-      badges: ['14-day free trial', 'Read-only', 'Desktop & Enterprise']
+      heading: 'Want This Off Your <span class="accent-text">Team’s Plate?</span>',
+      body: 'Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.',
+      href: '../index.html#contact',
+      cta: 'Book a Free Process Audit →',
+      badges: ['6+ years in finance ops', 'Works with your ERP', 'Fixed price before we build']
     }
   },
   arbridge: {
@@ -262,7 +261,7 @@ function buildPost(post) {
     alternates.push(`  <link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />`);
   }
 
-  const cta = ctaHtml(meta.product === 'arbridge' ? 'arbridge' : 'cx');
+  const cta = ctaHtml(CTA[meta.product] ? meta.product : 'default');
   const dateFormatted = formatDate(meta.date, cfg.dateLocale);
 
   const html = `<!DOCTYPE html>

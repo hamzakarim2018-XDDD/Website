@@ -30,9 +30,10 @@
   var navbarRoot = document.getElementById('navbar-root');
   if (navbarRoot) {
     var navItems =
-      '<a href="' + home + '#apps">The Apps</a>' +
-      '<a href="' + home + '#why">Why It’s Hard</a>' +
+      '<a href="' + home + '#services">What We Automate</a>' +
+      '<a href="' + home + '#why">Why Us</a>' +
       '<a href="' + home + '#how-we-work">How It Works</a>' +
+      '<a href="' + home + '#apps">QuickBooks Apps</a>' +
       '<a href="' + base + '/blog/index.html">Blog</a>';
 
     navbarRoot.outerHTML =
@@ -45,7 +46,7 @@
           '<div class="nav-center" id="navCenter">' + navItems + '</div>' +
 
           '<div class="nav-right">' +
-            '<a href="' + home + '#contact" class="btn btn-primary nav-cta">Book a Call</a>' +
+            '<a href="' + home + '#contact" class="btn btn-primary nav-cta">Free Process Audit</a>' +
           '</div>' +
 
           '<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">' +
@@ -53,7 +54,7 @@
           '</button>' +
 
           '<div class="nav-links" id="navLinks">' + navItems +
-            '<a href="' + home + '#contact" class="btn btn-primary nav-cta">Book a Call</a>' +
+            '<a href="' + home + '#contact" class="btn btn-primary nav-cta">Free Process Audit</a>' +
           '</div>' +
         '</div>' +
       '</nav>';
@@ -72,35 +73,36 @@
               '<a href="' + home + '" class="nav-logo" aria-label="AgoraCrew">' +
                 '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />' +
               '</a>' +
-              '<p>We build CRM integrations for accounting software — specifically ' +
-                'QuickBooks Desktop and Enterprise, the on-premises products most ' +
-                'integrations skip. Two live apps, both read-only, both maintained by us.</p>' +
+              '<p>AI and RPA automation for finance and client service teams. ' +
+                'Built by people with 6+ years running these processes by hand, ' +
+                'on the ERP you already use.</p>' +
             '</div>' +
 
             /* Apps Column */
             '<div class="footer-col">' +
-              '<h4>The Apps</h4>' +
-              '<a href="' + INSTALL_HUBSPOT + '">QuickBooks → HubSpot</a>' +
-              '<a href="' + INSTALL_MONDAY + '">QuickBooks → monday.com</a>' +
-              '<a href="' + base + '/pricing-xsync.html">monday pricing</a>' +
-              '<a href="' + home + '#apps">Compare the two</a>' +
+              '<h4>What We Automate</h4>' +
+              '<a href="' + home + '#services">Accounts payable</a>' +
+              '<a href="' + home + '#services">Cash application &amp; collections</a>' +
+              '<a href="' + home + '#services">Reconciliations &amp; close</a>' +
+              '<a href="' + home + '#services">Client service inbox</a>' +
             '</div>' +
 
             /* Learn Column */
             '<div class="footer-col">' +
-              '<h4>Learn</h4>' +
+              '<h4>Learn &amp; Apps</h4>' +
+              '<a href="' + base + '/blog/index.html">Blog</a>' +
+              '<a href="' + INSTALL_HUBSPOT + '">QuickBooks → HubSpot app</a>' +
+              '<a href="' + INSTALL_MONDAY + '">QuickBooks → monday.com app</a>' +
               '<a href="' + base + '/install">HubSpot setup guide</a>' +
               '<a href="' + base + '/monday-setup">monday setup guide</a>' +
-              '<a href="' + home + '#why">Why Desktop is hard</a>' +
-              '<a href="' + base + '/blog/index.html">Blog</a>' +
             '</div>' +
 
             /* Contact Column */
             '<div class="footer-col footer-col--contact">' +
               '<h4>Get In Touch</h4>' +
-              '<a href="mailto:karim@agoracrew.com">karim@agoracrew.com</a>' +
+              '<a href="mailto:support@agoracrew.com">support@agoracrew.com</a>' +
               '<a href="tel:+36300841533">+36 30 084 1533</a>' +
-              '<a href="' + home + '#contact">Book a call</a>' +
+              '<a href="' + home + '#contact">Book a free process audit</a>' +
             '</div>' +
 
           '</div>' +
