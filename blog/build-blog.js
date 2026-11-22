@@ -171,10 +171,10 @@ const CTA = {
   default: {
     en: {
       heading: 'Want This Off Your <span class="accent-text">Team’s Plate?</span>',
-      body: 'Book a free 30-minute process audit. Walk us through one finance or client service process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.',
+      body: 'Book a free 30-minute process audit. Walk us through one customer service or finance process and we’ll tell you whether it’s worth automating, roughly what it saves, and what it would take. If it isn’t worth it, we’ll say so.',
       href: '../index.html#contact',
       cta: 'Book a Free Process Audit →',
-      badges: ['6+ years in finance ops', 'Works with your ERP', 'Fixed price before we build']
+      badges: ['6+ years in service & finance ops', 'Works with your systems', 'Fixed price before we build']
     }
   },
   arbridge: {

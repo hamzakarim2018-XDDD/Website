@@ -1,11 +1,11 @@
 ---
 title: "Automating the Shared Inbox: Order Status, Invoice Copies and Statement Requests"
 date: "2026-11-22"
-description: "Most emails to a B2B client service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them."
+description: "Most emails to a B2B customer service team ask for something that already exists in your ERP. How to sort, answer and route them automatically, and keep people on the conversations that need them."
 product: "automation"
 ---
 
-Open any B2B client service or credit control inbox and read the last hundred emails. You'll find the same handful of requests over and over:
+Open any B2B customer service or credit control inbox and read the last hundred emails. You'll find the same handful of requests over and over:
 
 - Where's my order?
 - Can you resend invoice 40213?

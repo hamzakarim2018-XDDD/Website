@@ -1,7 +1,7 @@
 ---
 title: "RPA vs. AI Automation in Finance: Which One Does What"
 date: "2026-11-22"
-description: "RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or client service process, and why most real projects use both."
+description: "RPA follows rules. AI reads the messy stuff. A plain explanation of where each one belongs in a finance or customer service process, and why most real projects use both."
 product: "automation"
 ---
 

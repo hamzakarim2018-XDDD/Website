@@ -73,6 +73,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://agoracrew.com/blog/post.html?slug=automate-ticket-logging-and-crm-updates</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agoracrew.com/blog/post.html?slug=customer-service-automation-what-to-automate</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agoracrew.com/blog/post.html?slug=customer-service-ticket-triage-automation</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agoracrew.com/blog/post.html?slug=sla-monitoring-and-escalation-automation</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://agoracrew.com/blog/post.html?slug=how-to-connect-quickbooks-to-hubspot</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,7 +1,7 @@
 ---
 title: "Which Finance Processes Should You Automate First? A Simple Scoring Method"
 date: "2026-11-22"
-description: "Volume, rules, systems, pain and stability. A five-question scorecard for picking the finance or client service process that will pay back fastest, and the ones to leave alone."
+description: "Volume, rules, systems, pain and stability. A five-question scorecard for picking the finance or customer service process that will pay back fastest, and the ones to leave alone."
 product: "automation"
 ---
 
@@ -9,7 +9,7 @@ The most common mistake in a first automation project isn't a technical one. It'
 
 Teams usually start with whatever annoys the CFO most this month. Sometimes that's a good choice. Often it's a process that runs twelve times a year, depends on three people's judgment and changes every quarter, which is about the worst thing you can automate.
 
-Here's the scorecard we use on process audits. It takes about ten minutes per process and it works for finance and client service alike.
+Here's the scorecard we use on process audits. It takes about ten minutes per process and it works for finance and customer service alike.
 
 ## The five questions
 
@@ -69,7 +69,7 @@ Add up the five scores.
 
 ## The processes that usually score highest
 
-From what we see in mid-sized finance and client service teams, these come up near the top again and again:
+From what we see in mid-sized finance and customer service teams, these come up near the top again and again:
 
 - **Supplier invoice processing.** High volume, clear matching rules, multiple systems. See our [accounts payable automation guide](post.html?slug=accounts-payable-automation-guide).
 - **Cash application.** Matching bank receipts to open invoices. Painful when remittances are vague, which is exactly where AI reading helps. See [cash application and collections automation](post.html?slug=cash-application-and-collections-automation).

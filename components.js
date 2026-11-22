@@ -73,18 +73,19 @@
               '<a href="' + home + '" class="nav-logo" aria-label="AgoraCrew">' +
                 '<img src="' + base + '/logo-new-orange.png" alt="AgoraCrew" class="nav-logo-img" width="120" height="36" />' +
               '</a>' +
-              '<p>AI and RPA automation for finance and client service teams. ' +
+              '<p>AI and RPA automation for customer service and finance teams. ' +
                 'Built by people with 6+ years running these processes by hand, ' +
-                'on the ERP you already use.</p>' +
+                'on the systems you already use.</p>' +
             '</div>' +
 
             /* Apps Column */
             '<div class="footer-col">' +
               '<h4>What We Automate</h4>' +
+              '<a href="' + home + '#services">Ticket triage &amp; logging</a>' +
+              '<a href="' + home + '#services">Customer replies &amp; escalations</a>' +
               '<a href="' + home + '#services">Accounts payable</a>' +
               '<a href="' + home + '#services">Cash application &amp; collections</a>' +
               '<a href="' + home + '#services">Reconciliations &amp; close</a>' +
-              '<a href="' + home + '#services">Client service inbox</a>' +
             '</div>' +
 
             /* Learn Column */
